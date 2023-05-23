@@ -20,6 +20,13 @@ const pollSchema = new mongoose.Schema({
     }
 }, { collection: 'polls' });
 
+pollSchema.path('question').validate(async function(question) {
+    return (!await this.constructor.exists({
+        question,
+        _id: { $ne: this._id }
+    }));
+}, 'Question already exists', 'CONFLICT');
+
 pollSchema.path('options').validate(function(options) {
     if (options.length < 2 || options.length > 10) {
         return this.invalidate('options', 'A poll must contain between 2 and 10 options', options, 'INVALID_ARGUMENT');
