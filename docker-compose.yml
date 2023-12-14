@@ -15,7 +15,7 @@ services:
       dockerfile: Dockerfile
       context: ./client
     restart: on-failure
-    env_file: ./env/client/.env.production
+    env_file: ./env/client/.env.test
 
   backend:
     container_name: backend
@@ -27,13 +27,23 @@ services:
       context: ./backend
     restart: on-failure
     env_file:
-      - ./env/backend/.env.production
+      - ./env/backend/.env.test
 
   mongo:
     container_name: mongo
     image: mongo:latest
     env_file:
-      - ./env/mongo/.env.production
+      - ./env/database/mongo/.env.test
+    volumes:
+      - ./database/mongo/init:/docker-entrypoint-initdb.d:ro
+
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    env_file:
+      - ./env/database/mysql/.env.test
+    volumes:
+      - ./database/mysql/init:/docker-entrypoint-initdb.d:ro
 
   redis:
     container_name: redis
