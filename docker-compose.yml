@@ -45,6 +45,6 @@ services:
     volumes:
       - ./database/mysql/init:/docker-entrypoint-initdb.d:ro
 
-  redis:
-    container_name: redis
-    image: redis:latest
+  # redis:
+  #   container_name: redis
+  #   image: redis:latest

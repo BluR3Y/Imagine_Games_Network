@@ -1,13 +1,13 @@
-// Create a role in the mongodb which will be associated with the ign application
+// Create a role in the mongodb which will be primarily utilized by the application
 db.createUser(
     {
-        user: 'ignUser',
-        pwd: 'Password@1234',
+        user: 'admin',
+        pwd: 'AdminPassword@1234',
         roles: [
             {
                 // Role will have read and write permissions on the ign database
                 role: 'readWrite',
-                db: 'ign'
+                db: 'imagine_games_network'
             }
         ]
     }

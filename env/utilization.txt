@@ -1,0 +1,7 @@
+Different environment variable files are used to manage configuration settings and sensitive information effectively.
+
+Types of env files:
+    * Template: Public file which lists key-value pairs required to successfully run application
+    * Development: Configuration for the development environment (utilized when running app locally)
+    * Test: Configuration for the testing environment (utilized when composing app using docker)
+    * Production: Configuration for the production environment (utilized when building app in cloud)
