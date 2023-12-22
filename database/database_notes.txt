@@ -1,0 +1,65 @@
+Types of Database Management Systems (DBMS):
+    SQL:
+        * Relational database
+    NoSQL    
+        * Hierarchical database
+        * Document database
+        * Network database
+        * Object-Oriented database
+        * Graph database
+
+
+      | Relational | Scaling    | Structure | Consistency Model (Mostly)
+-------------------------------------------------------------------------
+SQL   |   true     | Vertical   | Tables    |           ACID
+-------------------------------------------------------------------------
+NoSQL |   false    | Horizontal | Documents |           BASE
+-------------------------------------------------------------------------
+
+
+Definition: Data Scalability
+    Refers to the ability of a database to manipulate changing demands by adding and removing data.
+    Via scaling, the database can expand or contract the capacity of the system's resources to support the app's frequency changing usage.
+    Databases can only be scaled in two ways:
+        * Horizontal scaling (scale-out)
+        * Vertical scaling (scale-up)
+
+Definition: Horizontal Scaling
+    This scaling approach adds more database nodes to handle the increased workload.
+    It decreases the load on the server rather than expanding the individual servers.
+    When you need more capacity, you can add more servers to the cluster.
+    
+Definition: Vertical Scaling
+    This scaling approach increases the capacity of a single machine by increasing the resources in the same logical server.
+    This involves adding resources like memory, storage, and processing power to existing software, enhancing its performance.
+
+
+Definition: ACID (Atomicity, Consitency, Isolation, Durability)
+    1. Atomicity - Transactions are atomic, meaning that they are treated as a single, indivisible unit of work.
+        Either all the changes made within a transaction are committed to the database, or none of them are.
+    2. Consistency - Transactions bring the database from one consistent state to another. 
+        The database must satisfy integrity constraints before and after the transaction.
+    3. Isolation - Each transaction is isolated from others. 
+        The execution of one transaction does not affect the concurrent execution of other transactions.
+    4. Durability - Once a transaction is committed, its effects are permanent and survive subsequent system failures.
+        The changes made by a committed transaction persist even if the system crashes.
+
+Definition: BASE (Basically Available, Soft state, Eventually consistent)
+    1. Basically Available - The system guarantees basic availability, meaning that it remains responsive to user requests even in the face
+            of network partitions or failures.
+    2. Soft state - The system allows for variations in consistency. The state of the system may be temporarily inconsistent, but it will
+            eventually converge to a consistent state.
+    3. Eventually consistent - Over time, all replicas of the data in the system will converge to a consistent state.
+
+
+     |              Focus              |                   Trade-offs          |                  Use Cases
+------------------------------------------------------------------------------------------------------------------------------------------
+     | Prioritizes strong consistency  | Focuses on immediate consistency even | Traditional relational databases (e.g., MySQL, Postgres)
+ACID |  and correctness of data at all |  if it means sacrificing availability |  are often ACID compliant and are suitable for apps
+     |  times.                         |  during network or failures.          |  where data integrity and strong consistency are crucial
+------------------------------------------------------------------------------------------------------------------------------------------
+     | Prioritizes availability and    | Accepts temporary inconsistencies to  | NoSQL databases(e.g.Cassandra,DynamoDB)often adhere to BASE
+BASE |  partition tolerance, allowing  |  maintain availability and partition  |  principles, making them suitable for distributed systems
+     |  for eventual consistency.      |  tolerance                            |  where availability & partition tolerance are more critical
+     |                                 |                                       |  than immediate consistency.
+------------------------------------------------------------------------------------------------------------------------------------------
