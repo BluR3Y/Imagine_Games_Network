@@ -1,1 +1,0 @@
-mysql -u root -p$MYSQL_ROOT_PASSWORD -h localhost --execute "ALTER USER '$MYSQL_USER' IDENTIFIED WITH mysql_native_password BY '$MYSQL_PASSWORD'; FLUSH PRIVILEGES;"
