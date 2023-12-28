@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mysql = require('mysql');
+const { Sequelize } = require('sequelize');
 
 // Mongo Connection
 const mongoConnect = () => {
@@ -19,22 +19,27 @@ const mongoConnect = () => {
 // MYSQL Connection
 const mysqlConnection = () => {
     const { MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE, MYSQL_ACCESS_USER, MYSQL_ACCESS_PASSWORD } = process.env;
-    return mysql.createConnection({
-        host: MYSQL_HOST,
-        port: MYSQL_PORT,
-        database: MYSQL_DATABASE,
-        user: MYSQL_ACCESS_USER,
-        password: MYSQL_ACCESS_PASSWORD
-    });
+    return new Sequelize(
+        MYSQL_DATABASE,
+        MYSQL_ACCESS_USER,
+        MYSQL_ACCESS_PASSWORD,
+        {
+            host: MYSQL_HOST,
+            port: MYSQL_PORT,
+            dialect: 'mysql'
+        }
+    );
 }
 
 const ready = Promise.all([
     mongoConnect(),
-    mysqlConnection().connect()
+    mysqlConnection().authenticate()
 ]);
 
 module.exports = {
     ready,
     // Returns the current mongoose instance
-    getMongoose: () => mongoose
+    getMongoose: () => mongoose,
+    // Returns the current sequelize instance
+    sequelizeInstance: mysqlConnection
 }
