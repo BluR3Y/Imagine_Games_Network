@@ -48,3 +48,13 @@ services:
   # redis:
   #   container_name: redis
   #   image: redis:latest
+
+  scrapy:
+    container_name: scrapy
+    depends_on:
+      - mysql
+    build:
+      dockerfile: Dockerfile
+      context: ./scrapy
+    restart: "no"
+    # env file
