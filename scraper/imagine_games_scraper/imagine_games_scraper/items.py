@@ -15,13 +15,13 @@ class ImagineGamesScraperItem(scrapy.Item):
 class Article(scrapy.Item):
     url = scrapy.Field()
     thumbnail = scrapy.Field()
-    content_type = scrapy.Field()
-    content_category = scrapy.Field()
+    tags = scrapy.Field()
+    category = scrapy.Field()
     reporter = scrapy.Field()
     headline = scrapy.Field()
     sub_headline = scrapy.Field()
-    publish_date = scrapy.Field()
-    last_revision_date = scrapy.Field()
+    published_date = scrapy.Field()
+    modified_date = scrapy.Field()
 
 # Scrapy Item used to define the structure of video content
 class Video(scrapy.Item):

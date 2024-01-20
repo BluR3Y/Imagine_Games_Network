@@ -12,12 +12,27 @@ BOT_NAME = "imagine_games_scraper"
 SPIDER_MODULES = ["imagine_games_scraper.spiders"]
 NEWSPIDER_MODULE = "imagine_games_scraper.spiders"
 
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = "imagine_games_scraper (+http://www.yourdomain.com)"
+
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-# ScrapeOps Proxy API credentials
+# ScrapeOps Credentials (Fake Browser Header API)
 SCRAPEOPS_API_KEY = 'f8b688fe-e729-476e-8809-e9e41844ddd5'
-SCRAPEOPS_PROXY_ENABLED = True
+SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+SCRAPEOPS_NUM_RESULTS = 5
+
+# Configure Rotating/Backconnect Proxies
+# ROTATING_PROXY_LIST = []
+# ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
+PROXY_USER = ''
+PROXY_PASSWORD = ''
+PROXY_PROTOCOL = 'socks5'
+PROXY_ENDPOINT = '162.214.169.211'
+PROXY_PORT = '30769'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -51,8 +66,9 @@ SCRAPEOPS_PROXY_ENABLED = True
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   # "imagine_games_scraper.middlewares.ImagineGamesScraperDownloaderMiddleware": 543,
-    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725
+   "imagine_games_scraper.middlewares.ImagineGamesScraperDownloaderMiddleware": 543,
+   "imagine_games_scraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+   # "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
 }
 
 # Enable or disable extensions
