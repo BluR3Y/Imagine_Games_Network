@@ -5,7 +5,7 @@ from imagine_games_scraper.items import Article, Video
 class ContentspiderSpider(scrapy.Spider):
     name = "contentSpider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com/news?endIndex=10"]
+    start_urls = ["https://ign.com?endIndex=0"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {
@@ -48,46 +48,63 @@ class ContentspiderSpider(scrapy.Spider):
         article_item['tags'] = response.xpath("//a[@data-cy='object-breadcrumb']/text()").getall()
         article_item['category'] = self.identify_category(response)
 
-        print(article_item)
-
     # Parsing function for video pages
     def parse_video_page(self, response):
         pass
 
-    def identify_category(self, response):
-        category_identifiers = {
-            'Games': ['games', 'game'],
-            'Movies': ['movies', 'film', 'movie', 'theater'],
-            'TV': ['tv', 'television', 'show', 'tv show'],
-            'Comics': ['comics', 'comic', 'book'],
-            'Tech': ['tech', 'technology']
-        }
+    # Potential Elements: meta:vertical, meta:tags, breadcrumbs, url
 
-        print('**********************************')
-
-        breadcrumb_elements = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
-        prev_crumb_index = 0
-        current_crumb_index = 1
-        while prev_crumb_index < len(breadcrumb_elements) - 1:
-            if breadcrumb_elements[prev_crumb_index].split('/')[1] 
-
-    # Last Here
     # def identify_category(self, response):
-    #     valid_categories = ['games', 'movies', 'tv', 'comics', 'tech']
+    #     category_identifiers = (
+    #         ['games', 'game'],
+    #         ['movies', 'movie', 'film', 'theater'],
+    #         ['tv', 'television', 'show', 'tv-show'],
+    #         ['comics', 'comic', 'book'],
+    #         ['tech', 'technology']
+    #     )
 
-    #     vertical_element = response.xpath("//meta[@name='vertical']/@content").get()
-    #     vertical_element = vertical_element.lower() if vertical_element is not None else vertical_element
-    #     if vertical_element is not None and vertical_element in valid_categories:
-    #         return vertical_element
+    #     breadcrumb_elements = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
+    #     breadcrumb_categories = []
+    #     for crumb in breadcrumb_elements:
+    #         breadcrumb_categories.append(crumb.split('/')[1])
+    #     breadcrumb_category = self.breadcrumb_identification(breadcrumb_categories)
 
-    #     tag_elements = response.xpath("//meta[@property='article:tag']/@content").getall()
-    #     for tag in tag_elements:
-    #         if tag.lower() in valid_categories:
-    #             return tag.lower()
-            
-    #     summary_element = response.xpath("/html/body/div[1]/div[1]/main/div[5]/section/div/div[2]/div[2]/div[2]/div/a/svg/title/text()").get()
-    #     print("******************", summary_element)
+    #     vertical_identification = lambda value: value if value is not None and value != 'Entertainment' else None
+    #     vertical_category = vertical_identification(response.xpath("//meta[@name='vertical']/@content").get())
 
-            
-        # second_category_identification_attempt = response.css("div.card.box.object-box a.title5 ::attr(href)").get()
-        # return second_category_identification_attempt if second_category_identification_attempt in valid_categories else 'unknown'
+    #     tag_categories = filter(lambda value : value != 'News' and value != 'Entertainment', response.xpath("//meta[@property='article:tag']/@content").getall())
+
+    #     combined_categories = [breadcrumb_category, vertical_category, *tag_categories]
+
+    def identify_category(self, response):
+        breadcrumb_category_identification = lambda url : url.split('/')[1]
+        breadcrumb_urls = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
+        breadcrumb_categories = [breadcrumb_category_identification(url) for url in breadcrumb_urls]
+        
+        vertical_category_identification = lambda value: value if value is not None and value != 'Entertainment' else None
+        vertical_category = vertical_category_identification(response.xpath("//meta[@name='vertical']/@content").get())
+
+        tag_category_identification = lambda value : value != 'News' and value != 'Entertainment'
+        tag_categories = response.xpath("//meta[@property='article:tag']/@content").getall()
+        filtered_tag_categories = filter(tag_category_identification, tag_categories)
+
+        combined_categories = [vertical_category, *breadcrumb_categories, *filtered_tag_categories]
+        print(combined_categories)
+        # Last Here
+
+    def breadcrumb_identification(self, categories):
+        if not categories:
+            return None
+
+        category_count = dict()
+
+        # Count occurrences of each category
+        for category in categories:
+            # get method will return the value for key if it exists, else it will return 0
+            category_count[category] = category_count.get(category, 0) + 1
+
+        # Find the category with the maximum occurence
+            # max function will compare every value in the dictionary using "lambda" function that returns the value associated with each key
+        most_occuring_category = max(category_count, key=category_count.get)
+
+        return most_occuring_category
