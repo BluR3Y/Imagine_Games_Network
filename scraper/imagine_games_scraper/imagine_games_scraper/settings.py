@@ -28,11 +28,11 @@ SCRAPEOPS_NUM_RESULTS = 5
 # Configure Rotating/Backconnect Proxies
 # ROTATING_PROXY_LIST = []
 # ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
-PROXY_USER = ''
-PROXY_PASSWORD = ''
-PROXY_PROTOCOL = 'socks5'
-PROXY_ENDPOINT = '162.214.169.211'
-PROXY_PORT = '30769'
+PROXY_USER = 'brd-customer-hl_c04488a6-zone-datacenter_proxy1'
+PROXY_PASSWORD = 'a981qdixvqma'
+PROXY_PROTOCOL = 'http'
+PROXY_ENDPOINT = 'brd.superproxy.io'
+PROXY_PORT = '22225'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -68,7 +68,7 @@ PROXY_PORT = '30769'
 DOWNLOADER_MIDDLEWARES = {
    "imagine_games_scraper.middlewares.ImagineGamesScraperDownloaderMiddleware": 543,
    "imagine_games_scraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
-   # "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
+   "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
 }
 
 # Enable or disable extensions

@@ -19,18 +19,6 @@ class ContentspiderSpider(scrapy.Spider):
     def start_requests(self):
         yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
 
-    # Last Here **
-    def identify_category(self, response):
-        valid_categories = ['games', 'movies', 'tv', 'comics', 'tech']
-        
-        first_category_identification_attempt = response.xpath("//meta[@name='vertical']/@content").getall()
-        for vertical in first_category_identification_attempt:
-            if vertical in valid_categories:
-                return vertical
-            
-        second_category_identification_attempt = response.css("div.card.box.object-box a.title5 ::attr(href)").get()
-        return second_category_identification_attempt if second_category_identification_attempt in valid_categories else 'unknown'
-
     # Main parse function for the spider
     def parse(self, response):
         # Extracting content elements from the response
@@ -54,7 +42,7 @@ class ContentspiderSpider(scrapy.Spider):
         article_item['thumbnail'] = response.xpath("//meta[@property='og:image']/@content").get()
         article_item['headline'] = response.xpath("//h1[@data-cy='article-headline']/text()").get()
         article_item['sub_headline'] = response.xpath("//h2[@data-cy='article-sub-headline']/text()").get()
-        article_item['reporter'] = response.xpath("//meta[@property='article:author']/@content").get(),
+        article_item['reporter'] = response.xpath("//meta[@property='article:author']/@content").get()
         article_item['published_date'] = response.xpath("//meta[@property='article:published_time']/@content").get()
         article_item['modified_date'] = response.xpath("//meta[@property='article:modified_time']/@content").get()
         article_item['tags'] = response.xpath("//a[@data-cy='object-breadcrumb']/text()").getall()
@@ -65,3 +53,41 @@ class ContentspiderSpider(scrapy.Spider):
     # Parsing function for video pages
     def parse_video_page(self, response):
         pass
+
+    def identify_category(self, response):
+        category_identifiers = {
+            'Games': ['games', 'game'],
+            'Movies': ['movies', 'film', 'movie', 'theater'],
+            'TV': ['tv', 'television', 'show', 'tv show'],
+            'Comics': ['comics', 'comic', 'book'],
+            'Tech': ['tech', 'technology']
+        }
+
+        print('**********************************')
+
+        breadcrumb_elements = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
+        prev_crumb_index = 0
+        current_crumb_index = 1
+        while prev_crumb_index < len(breadcrumb_elements) - 1:
+            if breadcrumb_elements[prev_crumb_index].split('/')[1] 
+
+    # Last Here
+    # def identify_category(self, response):
+    #     valid_categories = ['games', 'movies', 'tv', 'comics', 'tech']
+
+    #     vertical_element = response.xpath("//meta[@name='vertical']/@content").get()
+    #     vertical_element = vertical_element.lower() if vertical_element is not None else vertical_element
+    #     if vertical_element is not None and vertical_element in valid_categories:
+    #         return vertical_element
+
+    #     tag_elements = response.xpath("//meta[@property='article:tag']/@content").getall()
+    #     for tag in tag_elements:
+    #         if tag.lower() in valid_categories:
+    #             return tag.lower()
+            
+    #     summary_element = response.xpath("/html/body/div[1]/div[1]/main/div[5]/section/div/div[2]/div[2]/div[2]/div/a/svg/title/text()").get()
+    #     print("******************", summary_element)
+
+            
+        # second_category_identification_attempt = response.css("div.card.box.object-box a.title5 ::attr(href)").get()
+        # return second_category_identification_attempt if second_category_identification_attempt in valid_categories else 'unknown'

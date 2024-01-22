@@ -188,9 +188,12 @@ class MyProxyMiddleware(object):
     def process_request(self, request, spider):
         # Create a basic authentication string using the provided username and password
         user_credentials = '{user}:{passw}'.format(user=self.user, passw=self.password)
-        basic_authentication = 'Basic ' + base64.b64encode(user_credentials.encode()).decode()
+        basic_authentication = 'Basic ' + base64.b64encode(user_credentials.encode('utf-8')).decode('utf-8')
         # Construct the proxy endpoint URL using the specified endpoint and port
         host = '{protocol}://{endpoint}:{port}'.format(protocol=self.protocol, endpoint=self.endpoint, port=self.port)
         # Set the proxy and add the Proxy-Authorization header to the request
         request.meta['proxy'] = host
-        # request.headers['Proxy-Authorization'] = basic_authentication
+        request.headers['Proxy-Authorization'] = basic_authentication
+
+        # Ip address can be checked by using scrapy shell and making a request to https://lumtest.com/myip.json
+        #   then use "view(response)"
