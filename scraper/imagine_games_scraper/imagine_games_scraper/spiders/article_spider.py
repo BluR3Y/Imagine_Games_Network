@@ -1,15 +1,14 @@
 import scrapy
-from imagine_games_scraper.items import Article, Video
+from imagine_games_scraper.items import Article
 
-
-class ContentspiderSpider(scrapy.Spider):
-    name = "contentSpider"
+class ArticleSpiderSpider(scrapy.Spider):
+    name = "article_spider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com?endIndex=200"]
+    start_urls = ["https://ign.com/news?endIndex=0"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {
-            'content_data.json': {
+            'article_data': {
                 'format': 'json',
                 'overwrite': True
             }
@@ -19,30 +18,25 @@ class ContentspiderSpider(scrapy.Spider):
     def start_requests(self):
         yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
 
-    # Main parse function for the spider
     def parse(self, response):
-        # Extracting content elements from the response
-        page_content = response.css('div.content-item')
+        # Extracting article content elements from the response
+        article_content = response.xpath(
+            # Search for a <div> element whose's class attribute contains "content-item"
+            "//div[contains(@class, 'content-item')]" + 
+            # From those previous elements, select those that have a child of type <a> with an href attribute that includes "/articles/"
+            "/a[contains(@href, '/articles/')]" + 
+            # From the previous elements, provide the ancestor element of type <div> whose class attribute contains 'content-item'
+            "/ancestor::div[contains(@class, 'content-item')]"
+        )
 
         # Iterate over each content element
-        for content_item in page_content:
-            item_uri = content_item.css('a.item-body ::attr(href)').get()
-            item_url = 'https://www.ign.com' + item_uri
-            item_content_type = item_uri.split('/')[1]
-            item_callback_function = None
-
-            # Determine the appropriate callback function based on the type of content            
-            if item_content_type == 'articles':
-                item_callback_function = self.parse_article_page
-            elif item_content_type == 'videos':
-                item_callback_function = self.parse_video_page
-            elif item_content_type == 'wikis':
-                item_callback_function = self.parse_wiki_page
+        for article in article_content:
+            article_uri = article.css('a.item-body ::attr(href)').get()
+            article_url = 'https://www.ign.com' + article_uri
 
             # Following the link to the content's page and calling parsing function
-            yield scrapy.Request(url=item_url, callback=item_callback_function)
-            return
-        
+            yield scrapy.Request(url=article_url, callback=self.parse_article_page)
+
     # Parsing function for article pages
     def parse_article_page(self, response):
         # Creating an Article instance to store the scraped data
@@ -59,14 +53,7 @@ class ContentspiderSpider(scrapy.Spider):
         article_item['tags'] = response.xpath("//a[@data-cy='object-breadcrumb']/text()").getall()
         article_item['category'] = self.identify_category(response)
         # Last Here
-
-    # Parsing function for video pages
-    def parse_video_page(self, response):
-        pass
-
-    # Parsing function for wiki pages
-    def parse_wiki_page(self, response):
-        pass
+        print(article_item)
 
     def identify_category(self, response):
         
