@@ -1,10 +1,11 @@
 import scrapy
+import json
 from imagine_games_scraper.items import Video
 
 class VideoSpiderSpider(scrapy.Spider):
     name = "video_spider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com?endIndex=0"]
+    start_urls = ["https://ign.com/videos?endIndex=0"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {
@@ -38,4 +39,19 @@ class VideoSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=video_url, callback=self.parse_video_page)
 
     def parse_video_page(self, response):
-        print('lmao')
+        # Creating a Video item instance to store the scraped data
+        video_item = Video({ 'url': response.url })
+
+        page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
+        page_json_data = json.loads(page_script_data)
+        
+        page_data = page_json_data['props']['pageProps']['page']
+        video_item['thumbnail'] = page_data['image']
+        video_item['title'] = page_data['title']
+        video_item['description'] = page_data['description']
+        video_item['published_date'] = page_data['publishDate']
+        video_item['category'] = page_data['vertical']
+        video_item['franchise'] = page_data['contentForGA']['primaryObject']['metadata']['names']['name']
+        video_item['assets'] = page_data['video']['assets']
+
+        # Last Here

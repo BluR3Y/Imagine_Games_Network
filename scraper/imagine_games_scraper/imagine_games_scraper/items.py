@@ -28,9 +28,14 @@ class Article(scrapy.Item):
 class Video(scrapy.Item):
     url = scrapy.Field()
     thumbnail = scrapy.Field()
-    content_category = scrapy.Field()
-    content_sub_category = scrapy.Field()
-    reporter = scrapy.Field()
+    published_date = scrapy.Field()
+    title = scrapy.Field()
+    description = scrapy.Field()
+    category = scrapy.Field()
+    video_qualities = scrapy.Field()
+    video_duration = scrapy.Field()
+    franchise = scrapy.Field()
+
 
 # Possibly include Review Item
 # Possibly include Wiki Item

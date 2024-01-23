@@ -1,0 +1,2652 @@
+{
+    "props": {
+        "pageProps": {
+            "page": {
+                "canonical": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                "region": "us",
+                "type": "video.other",
+                "pageType": "video",
+                "isCommunity": "no",
+                "resource": "videos",
+                "slug": "palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                "publishDate": "2024-01-22T22:59:27.668Z",
+                "videoId": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                "liveOnAir": false,
+                "hasAds": true,
+                "image": "https://assets-prd.ignimgs.com/2024/01/22/gfix-012224-blogroll-1705963503327.jpg?width=1280",
+                "description": "In today&#39;s Daily Fix:\nPalworld sold 5 million copies across Steam and Xbox over the weekend, making it a certified smash hit. But not everyone&#39;s happy. Apparently some die-hard Pokémon fans are taking issue with the pals&#39; very Pokémon-esque character design (which...fair), and have sent some very nasty messages to the developers. In other news, the Cyberpunk 2077 sequel could be getting multiplayer, after the mode was planned and then scrapped from the most recent game. And finally, RoboCop: Rogue City gets an update that adds New Game Plus, which now makes killing bad guys in cheesy 80&#39;s style just a little more difficult, if that&#39;s your thing.",
+                "title": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                "pageTitle": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                "category": "News",
+                "categories": [
+                    "News"
+                ],
+                "vertical": "Games",
+                "isPreview": false,
+                "additionalDataLayer": {
+                    "content": {
+                        "contentId": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                        "objectIds": [
+                            "5d270a65-2b2c-487d-a7f9-d8921c8f1705"
+                        ]
+                    }
+                },
+                "editPage": {
+                    "type": "video",
+                    "params": {
+                        "id": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b"
+                    }
+                },
+                "platforms": [
+                    "PlayStation 5",
+                    "Xbox Series X|S",
+                    "PlayStation 4",
+                    "Xbox One",
+                    "PC",
+                    "Stadia"
+                ],
+                "franchiseNames": [
+                    "Cyberpunk"
+                ],
+                "contentForGA": {
+                    "id": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                    "title": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                    "primaryObject": {
+                        "__typename": "Object",
+                        "id": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                        "url": "/games/cyberpunk-2077",
+                        "slug": "cyberpunk-2077",
+                        "type": "Game",
+                        "metadata": {
+                            "__typename": "Metadata",
+                            "names": {
+                                "__typename": "Names",
+                                "name": "Cyberpunk 2077",
+                                "alt": [
+                                    "Mike Pondsmith's Cyberpunk",
+                                    "CD Projekt RED Project",
+                                    "Cyberpunk 2020"
+                                ],
+                                "short": "Cyberpunk 2077"
+                            }
+                        },
+                        "objectRegions": [
+                            {
+                                "__typename": "ObjectRegion",
+                                "id": 2032032,
+                                "name": "",
+                                "region": "US",
+                                "releases": [
+                                    {
+                                        "__typename": "Release",
+                                        "id": "06e6f9f1-a186-477d-9312-a2975003c96a",
+                                        "date": "2020-12-10",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 4473462,
+                                                "name": "PlayStation 4"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__typename": "Release",
+                                        "id": "248e45bb-20ac-487b-85ed-bc58667901ab",
+                                        "date": "2020-12-10",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 4553331,
+                                                "name": "Xbox One"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__typename": "Release",
+                                        "id": "3206c3cd-2aeb-4e97-8460-8a9cd094064f",
+                                        "date": "2020-12-10",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 4473466,
+                                                "name": "PC"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__typename": "Release",
+                                        "id": "5e2fad70-e8a7-4d61-9ae5-74ebc207f1b0",
+                                        "date": "2020-12-10",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 5631604,
+                                                "name": "Stadia"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__typename": "Release",
+                                        "id": "2aef7433-24e7-4402-8fc2-25b3fa048fbd",
+                                        "date": "2022-02-15",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 5711233,
+                                                "name": "PlayStation 5"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "__typename": "Release",
+                                        "id": "c564b7d9-50cc-452c-8197-a8f34c191d28",
+                                        "date": "2022-02-15",
+                                        "platformAttributes": [
+                                            {
+                                                "__typename": "Attribute",
+                                                "id": 5711232,
+                                                "name": "Xbox Series X|S"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "franchises": [
+                            {
+                                "__typename": "Attribute",
+                                "name": "Cyberpunk"
+                            }
+                        ]
+                    },
+                    "attributes": [
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Sci-Fi"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "RPG"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "PlayStation 4"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "PC"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Shooter"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Producer",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Teyon"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Publisher",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Warner Bros.  Interactive"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Feature",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Online Co-Op Multiplayer"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Xbox One"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Producer",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "CD Projekt Red"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Publisher",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "CD Projekt"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "First-Person"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Stadia"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Xbox Series X|S"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Platform",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "PlayStation 5"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Publisher",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Nacon"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Franchise",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Cyberpunk"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Franchise",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "RoboCop"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Survival"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Open-World"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Producer",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Pocket Pair Inc."
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Publisher",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Pocket Pair Inc."
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Genre",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Crafting"
+                            }
+                        },
+                        {
+                            "__typename": "TypedAttribute",
+                            "type": "Feature",
+                            "attribute": {
+                                "__typename": "Attribute",
+                                "name": "Unreal Engine 5"
+                            }
+                        }
+                    ],
+                    "events": [],
+                    "brand": {
+                        "__typename": "Brand",
+                        "name": "IGN Daily Fix"
+                    },
+                    "contentCategory": {
+                        "__typename": "ContentCategory",
+                        "id": 1,
+                        "name": "News"
+                    },
+                    "publishDate": "2024-01-22T22:59:27.668Z",
+                    "contributors": [
+                        {
+                            "__typename": "Contributor",
+                            "id": "fdf1f557-b4af-11ea-b2e3-0e7c1d759882",
+                            "name": "Max Scoville",
+                            "nickname": "maxscoville"
+                        }
+                    ],
+                    "vertical": "Games"
+                },
+                "schema": {
+                    "@context": "http://schema.org/",
+                    "@type": "VideoObject",
+                    "playerType": "HTML5 Flash",
+                    "url": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                    "embedUrl": "https://widgets.ign.com/video/embed/content.html?url=/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                    "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/22/gfix-012224-blogroll-1705963503327.jpg?width=1280",
+                    "duration": "PT0H5M34S",
+                    "uploadDate": "2024-01-22T22:59:27.668Z",
+                    "datePublished": "2024-01-22T22:59:27.668Z",
+                    "name": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix - IGN",
+                    "description": "In today&#39;s Daily Fix:\nPalworld sold 5 million copies across Steam and Xbox over the weekend, making it a certified smash hit. But not everyone&#39;s happy. Apparently some die-hard Pokémon fans are taking issue with the pals&#39; very Pokémon-esque character design (which...fair), and have sent some very nasty messages to the developers. In other news, the Cyberpunk 2077 sequel could be getting multiplayer, after the mode was planned and then scrapped from the most recent game. And finally, RoboCop: Rogue City gets an update that adds New Game Plus, which now makes killing bad guys in cheesy 80&#39;s style just a little more difficult, if that&#39;s your thing."
+                },
+                "video": {
+                    "__typename": "ModernVideo",
+                    "content": {
+                        "__typename": "ModernContent",
+                        "ads": true,
+                        "ageGate": false,
+                        "state": "Published",
+                        "updatedAt": "2024-01-22T23:03:03.180Z",
+                        "vertical": "Games",
+                        "hrefLangs": {},
+                        "comments": true,
+                        "events": [],
+                        "attributes": [
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Sci-Fi"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "RPG"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "PlayStation 4"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "PC"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Shooter"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Producer",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Teyon"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Publisher",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Warner Bros.  Interactive"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Feature",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Online Co-Op Multiplayer"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Xbox One"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Producer",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "CD Projekt Red"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Publisher",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "CD Projekt"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "First-Person"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Stadia"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Xbox Series X|S"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Platform",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "PlayStation 5"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Publisher",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Nacon"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Franchise",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Cyberpunk"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Franchise",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "RoboCop"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Survival"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Open-World"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Producer",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Pocket Pair Inc."
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Publisher",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Pocket Pair Inc."
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Genre",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Crafting"
+                                }
+                            },
+                            {
+                                "__typename": "TypedAttribute",
+                                "type": "Feature",
+                                "attribute": {
+                                    "__typename": "Attribute",
+                                    "name": "Unreal Engine 5"
+                                }
+                            }
+                        ],
+                        "brand": {
+                            "__typename": "Brand",
+                            "name": "IGN Daily Fix"
+                        },
+                        "contentCategory": {
+                            "__typename": "ContentCategory",
+                            "id": 1,
+                            "name": "News"
+                        },
+                        "contributors": [
+                            {
+                                "__typename": "Contributor",
+                                "id": "fdf1f557-b4af-11ea-b2e3-0e7c1d759882",
+                                "name": "Max Scoville",
+                                "nickname": "maxscoville"
+                            }
+                        ],
+                        "primaryObject": {
+                            "__typename": "Object",
+                            "id": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                            "url": "/games/cyberpunk-2077",
+                            "slug": "cyberpunk-2077",
+                            "type": "Game",
+                            "metadata": {
+                                "__typename": "Metadata",
+                                "names": {
+                                    "__typename": "Names",
+                                    "name": "Cyberpunk 2077",
+                                    "alt": [
+                                        "Mike Pondsmith's Cyberpunk",
+                                        "CD Projekt RED Project",
+                                        "Cyberpunk 2020"
+                                    ],
+                                    "short": "Cyberpunk 2077"
+                                }
+                            },
+                            "objectRegions": [
+                                {
+                                    "__typename": "ObjectRegion",
+                                    "id": 2032032,
+                                    "name": "",
+                                    "region": "US",
+                                    "releases": [
+                                        {
+                                            "__typename": "Release",
+                                            "id": "06e6f9f1-a186-477d-9312-a2975003c96a",
+                                            "date": "2020-12-10",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 4473462,
+                                                    "name": "PlayStation 4"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "__typename": "Release",
+                                            "id": "248e45bb-20ac-487b-85ed-bc58667901ab",
+                                            "date": "2020-12-10",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 4553331,
+                                                    "name": "Xbox One"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "__typename": "Release",
+                                            "id": "3206c3cd-2aeb-4e97-8460-8a9cd094064f",
+                                            "date": "2020-12-10",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 4473466,
+                                                    "name": "PC"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "__typename": "Release",
+                                            "id": "5e2fad70-e8a7-4d61-9ae5-74ebc207f1b0",
+                                            "date": "2020-12-10",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 5631604,
+                                                    "name": "Stadia"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "__typename": "Release",
+                                            "id": "2aef7433-24e7-4402-8fc2-25b3fa048fbd",
+                                            "date": "2022-02-15",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 5711233,
+                                                    "name": "PlayStation 5"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "__typename": "Release",
+                                            "id": "c564b7d9-50cc-452c-8197-a8f34c191d28",
+                                            "date": "2022-02-15",
+                                            "platformAttributes": [
+                                                {
+                                                    "__typename": "Attribute",
+                                                    "id": 5711232,
+                                                    "name": "Xbox Series X|S"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "franchises": [
+                                {
+                                    "__typename": "Attribute",
+                                    "name": "Cyberpunk"
+                                }
+                            ]
+                        },
+                        "id": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                        "type": "Video",
+                        "title": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                        "subtitle": null,
+                        "promoteAt": null,
+                        "publishDate": "2024-01-22T22:59:27.668Z",
+                        "slug": "palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                        "feedTitle": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                        "feedImage": {
+                            "__typename": "Image",
+                            "url": "https://assets-prd.ignimgs.com/2024/01/22/gfix-012224-blogroll-1705963503327.jpg"
+                        },
+                        "v3Id": null,
+                        "url": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix"
+                    },
+                    "videoMetadata": {
+                        "__typename": "VideoMetadata",
+                        "adBreaks": null,
+                        "captions": null,
+                        "chatEnabled": true,
+                        "descriptionHtml": "<p>In today&#39;s Daily Fix:\nPalworld sold 5 million copies across Steam and Xbox over the weekend, making it a certified smash hit. But not everyone&#39;s happy. Apparently some die-hard Pokémon fans are taking issue with the pals&#39; very Pokémon-esque character design (which...fair), and have sent some very nasty messages to the developers. In other news, the Cyberpunk 2077 sequel could be getting multiplayer, after the mode was planned and then scrapped from the most recent game. And finally, RoboCop: Rogue City gets an update that adds New Game Plus, which now makes killing bad guys in cheesy 80&#39;s style just a little more difficult, if that&#39;s your thing.</p>",
+                        "downloadable": false,
+                        "duration": 334,
+                        "livestreamUrl": null,
+                        "m3uUrl": "https://assets.ign.com/master/videos/zencoder/2024/01/22/,640/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,852/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,960/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,1280/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,1920/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,-1705964369/master.m3u8"
+                    },
+                    "assets": [
+                        {
+                            "__typename": "VideoAsset",
+                            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1920/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                            "width": 1920,
+                            "height": 1080,
+                            "fps": 30
+                        },
+                        {
+                            "__typename": "VideoAsset",
+                            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1280/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                            "width": 1280,
+                            "height": 720,
+                            "fps": 30
+                        },
+                        {
+                            "__typename": "VideoAsset",
+                            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/960/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                            "width": 960,
+                            "height": 540,
+                            "fps": 30
+                        },
+                        {
+                            "__typename": "VideoAsset",
+                            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/852/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                            "width": 852,
+                            "height": 480,
+                            "fps": 30
+                        },
+                        {
+                            "__typename": "VideoAsset",
+                            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/640/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                            "width": 640,
+                            "height": 360,
+                            "fps": 30
+                        }
+                    ],
+                    "recommendations": [
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 227,
+                            "title": "Palworld Sells 1 Million Copies in 8 Hours, and Steam's Servers Are Struggling - IGN Daily Fix ",
+                            "url": "/videos/palworld-sells-1-million-copies-in-8-hours-and-steams-servers-are-struggling-ign-daily-fix",
+                            "videoId": "eb34c8c4-49e8-485e-aec9-ac31c8800ea5",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/19/gfix-011924-blogroll-1705689906047.jpg",
+                            "slug": "palworld-sells-1-million-copies-in-8-hours-and-steams-servers-are-struggling-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 241,
+                            "title": " GTA Online Is Approaching the \"Limits of What's Possible\" on PS4, Xbox One - IGN Daily Fix",
+                            "url": "/videos/gta-online-is-approaching-the-limits-of-whats-possible-on-ps4-xbox-one-ign-daily-fix",
+                            "videoId": "394be78b-9432-49c3-907e-d2068beba0cc",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/18/gfix-011824-blogroll-1705618594604.jpg",
+                            "slug": "gta-online-is-approaching-the-limits-of-whats-possible-on-ps4-xbox-one-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 344,
+                            "title": "Activision's Anti-Cheat Tech Will Shut Your Game Down If You Turn On Aim Assist - IGN Daily Fix",
+                            "url": "/videos/activisions-anti-cheat-tech-will-shut-your-game-down-if-you-turn-on-aim-assist-ign-daily-fix",
+                            "videoId": "1fc601dd-6bb5-48d3-878b-f032eaff527b",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/18/gfix-011724-blogroll-1705538346868.jpg",
+                            "slug": "activisions-anti-cheat-tech-will-shut-your-game-down-if-you-turn-on-aim-assist-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 301,
+                            "title": "Ubisoft Hoping Gamers Get 'Comfortable' Not Owning Their Games - IGN Daily Fix",
+                            "url": "/videos/ubisoft-hoping-gamers-get-comfortable-not-owning-their-games-ign-daily-fix",
+                            "videoId": "570765df-b4e1-4465-9a0e-0f759de70328",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/16/36190303-gamesfix-ubisoft-blogroll-1705443777938.jpg",
+                            "slug": "ubisoft-hoping-gamers-get-comfortable-not-owning-their-games-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 369,
+                            "title": "Smite 2 Announces Alpha Playtest for Spring 2024 - IGN Daily Fix",
+                            "url": "/videos/smite-2-announces-alpha-playtest-for-spring-2024-ign-daily-fix",
+                            "videoId": "434616ee-6268-4a94-b8f5-d6113f6f6ef3",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/12/gfix-011224-blogroll-1705102304579.jpg",
+                            "slug": "smite-2-announces-alpha-playtest-for-spring-2024-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 364,
+                            "title": "Possible Nintendo Switch 2 Release Window Leaked - IGN Daily Fix",
+                            "url": "/videos/possible-nintendo-switch-2-release-window-leaked-ign-daily-fix",
+                            "videoId": "e5782918-90c4-47dd-8ac2-f2d341ccf8cd",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/11/gfix-011112-blogroll-1705000135325.jpg",
+                            "slug": "possible-nintendo-switch-2-release-window-leaked-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 362,
+                            "title": "PlayStation Plus Games for January 2024 Announced - IGN Daily Fix",
+                            "url": "/videos/playstation-plus-games-for-january-2024-announced-ign-daily-fix",
+                            "videoId": "56095320-01a8-46b9-9f73-c38a8a88df2d",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/11/gfix-011024-blogroll-1704932946765.jpg",
+                            "slug": "playstation-plus-games-for-january-2024-announced-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 258,
+                            "title": "Xbox Direct to Reveal First Look at Indiana Jones Game - IGN Daily Fix",
+                            "url": "/videos/xbox-direct-to-reveal-first-look-at-indiana-jones-game-ign-daily-fix",
+                            "videoId": "6d760863-20c1-4219-af8f-85a858d01c7d",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/09/gfix-010924-blogroll-1704828144317.jpg",
+                            "slug": "xbox-direct-to-reveal-first-look-at-indiana-jones-game-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 377,
+                            "title": "Xbox Exclusive Hi-Fi Rush Could Be Coming to Switch - IGN Daily Fix",
+                            "url": "/videos/xbox-exclusive-hi-fi-rush-could-be-coming-to-switch-ign-daily-fix",
+                            "videoId": "7efdd817-a2c6-4692-8213-83cf19276c54",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/08/gfix-010824-blogroll-1704753316835.jpg",
+                            "slug": "xbox-exclusive-hi-fi-rush-could-be-coming-to-switch-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 371,
+                            "title": "Star Citizen in Selling a $48,000 Ship Bundle...With a Catch - IGN Daily Fix",
+                            "url": "/videos/star-citizen-in-selling-a-48000-ship-bundlewith-a-catch-ign-daily-fix",
+                            "videoId": "970379ac-b08d-4d71-b23e-a22a4a5577ba",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/05/gfix-010524-blogroll-1704496478163.jpg",
+                            "slug": "star-citizen-in-selling-a-48000-ship-bundlewith-a-catch-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 243,
+                            "title": "Nintendo Switch 2 Predicted to Arrive in 2024, Possibly $400 - IGN Daily Fix",
+                            "url": "/videos/nintendo-switch-2-predicted-to-arrive-in-2024-possibly-400-ign-daily-fix",
+                            "videoId": "6d5a12eb-b0db-436c-9054-7ea61efee4ef",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/04/gfix-010424-blogroll-1704405171046.jpg",
+                            "slug": "nintendo-switch-2-predicted-to-arrive-in-2024-possibly-400-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 237,
+                            "title": "Here's What's Coming to Xbox Game Pass January 2024 - IGN Daily Fix",
+                            "url": "/videos/heres-whats-coming-to-xbox-game-pass-january-2024-ign-daily-fix",
+                            "videoId": "c635c168-79ad-45dd-a7cd-aec19ca113ef",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/03/gfix-010324-blogroll-1704323342347.jpg",
+                            "slug": "heres-whats-coming-to-xbox-game-pass-january-2024-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 271,
+                            "title": "Disney Might Have Just Revealed Star Wars: Outlaws' Release Window - IGN Daily Fix",
+                            "url": "/videos/disney-might-have-just-revealed-star-wars-outlaws-release-window-ign-daily-fix",
+                            "videoId": "88c52b9e-2848-4850-b73b-711b79322d5f",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/02/gfix-010224-blogroll-1704227163000.jpg",
+                            "slug": "disney-might-have-just-revealed-star-wars-outlaws-release-window-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 461,
+                            "title": "The Day Before Servers Shutting Down 45 Days After Launch | IGN Daily Fix",
+                            "url": "/videos/the-day-before-servers-shutting-down-45-days-after-launch-ign-daily-fix",
+                            "videoId": "66293c54-6a8a-40c8-b83c-ad3d17976880",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/22/231222-g-fix-oo-1703276111329.jpg",
+                            "slug": "the-day-before-servers-shutting-down-45-days-after-launch-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 364,
+                            "title": "Sony Reportedly Pressured Studios to Make Big Cuts Amid Rising Development Costs - IGN Daily Fix",
+                            "url": "/videos/sony-reportedly-pressured-studios-to-make-big-cuts-amid-rising-development-costs-ign-daily-fix",
+                            "videoId": "bf3e3566-d4f5-4554-a2b3-09a6ae73672d",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/22/36190303-gfix-spider-man2-blogroll-1703203297243.jpg",
+                            "slug": "sony-reportedly-pressured-studios-to-make-big-cuts-amid-rising-development-costs-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 359,
+                            "title": "PlayStation 5 Is Outselling the Xbox Series X By a Comfortable Margin - IGN Daily Fix",
+                            "url": "/videos/playstation-5-is-outselling-the-xbox-series-x-by-a-comfortable-margin-ign-daily-fix",
+                            "videoId": "3130dc91-1c4d-442a-b6cd-345d8ce58907",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/20/gfix-122023-blogroll-1703112667319.jpg",
+                            "slug": "playstation-5-is-outselling-the-xbox-series-x-by-a-comfortable-margin-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 461,
+                            "title": "Insomniac Hack Is One of the Most Damaging In Years - IGN Daily Fix",
+                            "url": "/videos/insomniac-hack-is-one-of-the-most-damaging-in-years-ign-daily-fix",
+                            "videoId": "9566ab57-bc88-406b-8636-44e132019781",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/19/gfix-121923-blogroll-1703030195263.jpg",
+                            "slug": "insomniac-hack-is-one-of-the-most-damaging-in-years-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 437,
+                            "title": "≈ Leaked for Suicide Squad: Kill the Justice League - IGN Daily Fix",
+                            "url": "/videos/leaked-for-suicide-squad-kill-the-justice-league-ign-daily-fix",
+                            "videoId": "a9d9350d-c5ff-428d-a81e-dc5e54ee8171",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/19/gfix-121823-blogroll-1702945073739.jpg",
+                            "slug": "leaked-for-suicide-squad-kill-the-justice-league-ign-daily-fix"
+                        },
+                        {
+                            "__typename": "Recommendation",
+                            "duration": 374,
+                            "title": "Don't Expect Baldur's Gate 3 on Game Pass, Ever - IGN Daily Fix",
+                            "url": "/videos/dont-expect-baldurs-gate-3-on-game-pass-ever-ign-daily-fix",
+                            "videoId": "c3df9841-c715-4b02-b95c-a68a3b77bb3a",
+                            "extra": {
+                                "__typename": "RecommendationExtra",
+                                "videoSeries": null,
+                                "active": null,
+                                "liveOnAir": false
+                            },
+                            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/15/dailyfix-121523-blogroll-1702682562446.jpg",
+                            "slug": "dont-expect-baldurs-gate-3-on-game-pass-ever-ign-daily-fix"
+                        }
+                    ]
+                },
+                "requestReferer": "https://www.ign.com/videos?endIndex=0",
+                "siteEntryReferrer": "ign.com",
+                "referrer": "ign.com",
+                "parsedUrl": {
+                    "slashes": false,
+                    "protocol": "",
+                    "hash": "",
+                    "query": {},
+                    "pathname": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                    "auth": "",
+                    "host": "",
+                    "port": "",
+                    "hostname": "",
+                    "password": "",
+                    "username": "",
+                    "origin": "null",
+                    "href": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix"
+                },
+                "uaDevice": "desktop"
+            }
+        },
+        "loggedIn": false,
+        "apolloState": {
+            "Contributor:fdf1f557-b4af-11ea-b2e3-0e7c1d759882": {
+                "__typename": "Contributor",
+                "id": "fdf1f557-b4af-11ea-b2e3-0e7c1d759882",
+                "name": "Max Scoville",
+                "nickname": "maxscoville"
+            },
+            "Attribute:4473462": {
+                "__typename": "Attribute",
+                "id": 4473462,
+                "name": "PlayStation 4",
+                "slug": "ps4"
+            },
+            "Release:06e6f9f1-a186-477d-9312-a2975003c96a": {
+                "__typename": "Release",
+                "id": "06e6f9f1-a186-477d-9312-a2975003c96a",
+                "date": "2020-12-10",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473462"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "Attribute:4553331": {
+                "__typename": "Attribute",
+                "id": 4553331,
+                "name": "Xbox One",
+                "slug": "xbox-one"
+            },
+            "Release:248e45bb-20ac-487b-85ed-bc58667901ab": {
+                "__typename": "Release",
+                "id": "248e45bb-20ac-487b-85ed-bc58667901ab",
+                "date": "2020-12-10",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4553331"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "Attribute:4473466": {
+                "__typename": "Attribute",
+                "id": 4473466,
+                "name": "PC",
+                "slug": "pc"
+            },
+            "Release:3206c3cd-2aeb-4e97-8460-8a9cd094064f": {
+                "__typename": "Release",
+                "id": "3206c3cd-2aeb-4e97-8460-8a9cd094064f",
+                "date": "2020-12-10",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473466"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "Attribute:5631604": {
+                "__typename": "Attribute",
+                "id": 5631604,
+                "name": "Stadia",
+                "slug": "stadia"
+            },
+            "Release:5e2fad70-e8a7-4d61-9ae5-74ebc207f1b0": {
+                "__typename": "Release",
+                "id": "5e2fad70-e8a7-4d61-9ae5-74ebc207f1b0",
+                "date": "2020-12-10",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5631604"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "Attribute:5711233": {
+                "__typename": "Attribute",
+                "id": 5711233,
+                "name": "PlayStation 5",
+                "slug": "ps5"
+            },
+            "Release:2aef7433-24e7-4402-8fc2-25b3fa048fbd": {
+                "__typename": "Release",
+                "id": "2aef7433-24e7-4402-8fc2-25b3fa048fbd",
+                "date": "2022-02-15",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711233"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "Attribute:5711232": {
+                "__typename": "Attribute",
+                "id": 5711232,
+                "name": "Xbox Series X|S",
+                "slug": "xbox-4"
+            },
+            "Release:c564b7d9-50cc-452c-8197-a8f34c191d28": {
+                "__typename": "Release",
+                "id": "c564b7d9-50cc-452c-8197-a8f34c191d28",
+                "date": "2022-02-15",
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711232"
+                    }
+                ],
+                "estimatedDate": false,
+                "timeframeYear": null
+            },
+            "ObjectRegion:2032032": {
+                "__typename": "ObjectRegion",
+                "id": 2032032,
+                "name": "",
+                "region": "US",
+                "releases": [
+                    {
+                        "__ref": "Release:06e6f9f1-a186-477d-9312-a2975003c96a"
+                    },
+                    {
+                        "__ref": "Release:248e45bb-20ac-487b-85ed-bc58667901ab"
+                    },
+                    {
+                        "__ref": "Release:3206c3cd-2aeb-4e97-8460-8a9cd094064f"
+                    },
+                    {
+                        "__ref": "Release:5e2fad70-e8a7-4d61-9ae5-74ebc207f1b0"
+                    },
+                    {
+                        "__ref": "Release:2aef7433-24e7-4402-8fc2-25b3fa048fbd"
+                    },
+                    {
+                        "__ref": "Release:c564b7d9-50cc-452c-8197-a8f34c191d28"
+                    }
+                ],
+                "objectId": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                "ageRating": {
+                    "__ref": "AgeRating:12"
+                },
+                "ageRatingDescriptors": [
+                    {
+                        "__typename": "Attribute",
+                        "name": "Blood and Gore"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Strong Sexual Content"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Intense Violence"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Nudity"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Use of Drugs and Alcohol"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Strong Language"
+                    }
+                ],
+                "interactiveElements": []
+            },
+            "Object:5d270a65-2b2c-487d-a7f9-d8921c8f1705": {
+                "__typename": "Object",
+                "id": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                "url": "/games/cyberpunk-2077",
+                "slug": "cyberpunk-2077",
+                "type": "Game",
+                "metadata": {
+                    "__typename": "Metadata",
+                    "names": {
+                        "__typename": "Names",
+                        "name": "Cyberpunk 2077",
+                        "short": "Cyberpunk 2077",
+                        "alt": [
+                            "Mike Pondsmith's Cyberpunk",
+                            "CD Projekt RED Project",
+                            "Cyberpunk 2020"
+                        ]
+                    },
+                    "state": "Published",
+                    "descriptions": {
+                        "__typename": "Description",
+                        "long": "In the sci-fi action RPG Cyberpunk 2077, players are thrown into the dark future of the year 2077 and into a world where advanced technologies have become both the salvation and the curse of humanity. A multi-threaded, nonlinear story designed for mature players takes place in the sprawling metropolis of Night City and its surroundings. \r\n<p>\r\nBased on renowned pen-and-paper-RPG designer Mike Pondsmith's Cyberpunk system, Cyberpunk 2077 provides freedom of action and diversity in gameplay thanks to the sandbox nature of the game and mechanics. Players experience the world through their own unique characters chosen from different classes -- be they blood-thirsty mercenaries or cunning hackers -- that they will equip with vast selection of cybernetic implants and deadly weapons. Gameplay pumps adrenaline through players' veins with the celebrated Cyberpunk spirit -- rebellion, style, edge, uncertainty.  ",
+                        "short": "Cyberpunk 2077 is a non-linear sci-fi RPG based on renowned pen-and-paper-RPG designer Mike Pondsmith's Cyberpunk system and created by CD Projekt, the acclaimed development group behind The Witcher."
+                    }
+                },
+                "objectRegions({\"region\":\"us\"})": [
+                    {
+                        "__ref": "ObjectRegion:2032032"
+                    }
+                ],
+                "franchises": [
+                    {
+                        "__typename": "Attribute",
+                        "name": "Cyberpunk",
+                        "slug": "cyberpunk"
+                    }
+                ],
+                "canceled": false,
+                "wikiSlug": "cyberpunk-2077",
+                "paywall": false,
+                "features": [],
+                "genres": [
+                    {
+                        "__typename": "Attribute",
+                        "name": "RPG",
+                        "slug": "rpg"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "Sci-Fi",
+                        "slug": "sci-fi"
+                    }
+                ],
+                "producers": [
+                    {
+                        "__typename": "Attribute",
+                        "name": "CD Projekt Red",
+                        "shortName": null,
+                        "slug": "cd-projekt-red"
+                    }
+                ],
+                "publishers": [
+                    {
+                        "__typename": "Attribute",
+                        "name": "Warner Bros.  Interactive",
+                        "shortName": null,
+                        "slug": "warner-bros-interactive"
+                    },
+                    {
+                        "__typename": "Attribute",
+                        "name": "CD Projekt",
+                        "shortName": null,
+                        "slug": "cd-projekt"
+                    }
+                ],
+                "primaryImage": {
+                    "__typename": "Image",
+                    "url": "https://assets-prd.ignimgs.com/2020/07/16/cyberpunk-2077-button-fin-1594877291453.jpg"
+                },
+                "objectRegions": [
+                    {
+                        "__ref": "ObjectRegion:2032032"
+                    },
+                    {
+                        "__ref": "ObjectRegion:2032033"
+                    },
+                    {
+                        "__ref": "ObjectRegion:2032034"
+                    }
+                ]
+            },
+            "ContentCategory:1": {
+                "__typename": "ContentCategory",
+                "id": 1,
+                "name": "News"
+            },
+            "ModernContent:b2b00bcd-28e7-44cf-9d0a-851ec5a7935b": {
+                "__typename": "ModernContent",
+                "id": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                "type": "Video",
+                "title": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                "subtitle": null,
+                "promoteAt": null,
+                "publishDate": "2024-01-22T22:59:27.668Z",
+                "slug": "palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                "feedTitle": "Palworld Sells 5 Million Copies Over the Weekend, Devs Get Death Threats - IGN Daily Fix",
+                "feedImage": {
+                    "__typename": "Image",
+                    "url": "https://assets-prd.ignimgs.com/2024/01/22/gfix-012224-blogroll-1705963503327.jpg"
+                },
+                "v3Id": null,
+                "url": "/videos/palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix",
+                "contributorsOrBylines": [
+                    {
+                        "__ref": "Contributor:fdf1f557-b4af-11ea-b2e3-0e7c1d759882"
+                    }
+                ],
+                "primaryObject": {
+                    "__ref": "Object:5d270a65-2b2c-487d-a7f9-d8921c8f1705"
+                },
+                "ads": true,
+                "ageGate": false,
+                "state": "Published",
+                "updatedAt": "2024-01-22T23:03:03.180Z",
+                "vertical": "Games",
+                "hrefLangs": {},
+                "comments": true,
+                "events": [],
+                "attributes": [
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Sci-Fi"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "RPG"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "PlayStation 4"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "PC"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Shooter"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Producer",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Teyon"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Publisher",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Warner Bros.  Interactive"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Feature",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Online Co-Op Multiplayer"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Xbox One"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Producer",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "CD Projekt Red"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Publisher",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "CD Projekt"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "First-Person"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Stadia"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Xbox Series X|S"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Platform",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "PlayStation 5"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Publisher",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Nacon"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Franchise",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Cyberpunk"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Franchise",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "RoboCop"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Survival"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Open-World"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Producer",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Pocket Pair Inc."
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Publisher",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Pocket Pair Inc."
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Genre",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Crafting"
+                        }
+                    },
+                    {
+                        "__typename": "TypedAttribute",
+                        "type": "Feature",
+                        "attribute": {
+                            "__typename": "Attribute",
+                            "name": "Unreal Engine 5"
+                        }
+                    }
+                ],
+                "brand": {
+                    "__typename": "Brand",
+                    "name": "IGN Daily Fix"
+                },
+                "contentCategory": {
+                    "__ref": "ContentCategory:1"
+                }
+            },
+            "ModernVideo:{\"content\":{\"id\":\"b2b00bcd-28e7-44cf-9d0a-851ec5a7935b\"}}": {
+                "__typename": "ModernVideo",
+                "content": {
+                    "__ref": "ModernContent:b2b00bcd-28e7-44cf-9d0a-851ec5a7935b",
+                    "id": "b2b00bcd-28e7-44cf-9d0a-851ec5a7935b"
+                },
+                "videoMetadata": {
+                    "__typename": "VideoMetadata",
+                    "adBreaks": null,
+                    "captions": null,
+                    "chatEnabled": true,
+                    "descriptionHtml": "<p>In today&#39;s Daily Fix:\nPalworld sold 5 million copies across Steam and Xbox over the weekend, making it a certified smash hit. But not everyone&#39;s happy. Apparently some die-hard Pokémon fans are taking issue with the pals&#39; very Pokémon-esque character design (which...fair), and have sent some very nasty messages to the developers. In other news, the Cyberpunk 2077 sequel could be getting multiplayer, after the mode was planned and then scrapped from the most recent game. And finally, RoboCop: Rogue City gets an update that adds New Game Plus, which now makes killing bad guys in cheesy 80&#39;s style just a little more difficult, if that&#39;s your thing.</p>",
+                    "downloadable": false,
+                    "duration": 334,
+                    "livestreamUrl": null,
+                    "m3uUrl": "https://assets.ign.com/master/videos/zencoder/2024/01/22/,640/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,852/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,960/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,1280/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,1920/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b,-1705964369/master.m3u8"
+                },
+                "assets": [
+                    {
+                        "__typename": "VideoAsset",
+                        "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1920/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                        "width": 1920,
+                        "height": 1080,
+                        "fps": 30
+                    },
+                    {
+                        "__typename": "VideoAsset",
+                        "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1280/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                        "width": 1280,
+                        "height": 720,
+                        "fps": 30
+                    },
+                    {
+                        "__typename": "VideoAsset",
+                        "url": "https://assets.ign.com/videos/zencoder/2024/01/22/960/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                        "width": 960,
+                        "height": 540,
+                        "fps": 30
+                    },
+                    {
+                        "__typename": "VideoAsset",
+                        "url": "https://assets.ign.com/videos/zencoder/2024/01/22/852/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                        "width": 852,
+                        "height": 480,
+                        "fps": 30
+                    },
+                    {
+                        "__typename": "VideoAsset",
+                        "url": "https://assets.ign.com/videos/zencoder/2024/01/22/640/b2b00bcd-28e7-44cf-9d0a-851ec5a7935b-1705964369.mp4",
+                        "width": 640,
+                        "height": 360,
+                        "fps": 30
+                    }
+                ],
+                "recommendations": [
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 227,
+                        "title": "Palworld Sells 1 Million Copies in 8 Hours, and Steam's Servers Are Struggling - IGN Daily Fix ",
+                        "url": "/videos/palworld-sells-1-million-copies-in-8-hours-and-steams-servers-are-struggling-ign-daily-fix",
+                        "videoId": "eb34c8c4-49e8-485e-aec9-ac31c8800ea5",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/19/gfix-011924-blogroll-1705689906047.jpg",
+                        "slug": "palworld-sells-1-million-copies-in-8-hours-and-steams-servers-are-struggling-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 241,
+                        "title": " GTA Online Is Approaching the \"Limits of What's Possible\" on PS4, Xbox One - IGN Daily Fix",
+                        "url": "/videos/gta-online-is-approaching-the-limits-of-whats-possible-on-ps4-xbox-one-ign-daily-fix",
+                        "videoId": "394be78b-9432-49c3-907e-d2068beba0cc",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/18/gfix-011824-blogroll-1705618594604.jpg",
+                        "slug": "gta-online-is-approaching-the-limits-of-whats-possible-on-ps4-xbox-one-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 344,
+                        "title": "Activision's Anti-Cheat Tech Will Shut Your Game Down If You Turn On Aim Assist - IGN Daily Fix",
+                        "url": "/videos/activisions-anti-cheat-tech-will-shut-your-game-down-if-you-turn-on-aim-assist-ign-daily-fix",
+                        "videoId": "1fc601dd-6bb5-48d3-878b-f032eaff527b",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/18/gfix-011724-blogroll-1705538346868.jpg",
+                        "slug": "activisions-anti-cheat-tech-will-shut-your-game-down-if-you-turn-on-aim-assist-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 301,
+                        "title": "Ubisoft Hoping Gamers Get 'Comfortable' Not Owning Their Games - IGN Daily Fix",
+                        "url": "/videos/ubisoft-hoping-gamers-get-comfortable-not-owning-their-games-ign-daily-fix",
+                        "videoId": "570765df-b4e1-4465-9a0e-0f759de70328",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/16/36190303-gamesfix-ubisoft-blogroll-1705443777938.jpg",
+                        "slug": "ubisoft-hoping-gamers-get-comfortable-not-owning-their-games-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 369,
+                        "title": "Smite 2 Announces Alpha Playtest for Spring 2024 - IGN Daily Fix",
+                        "url": "/videos/smite-2-announces-alpha-playtest-for-spring-2024-ign-daily-fix",
+                        "videoId": "434616ee-6268-4a94-b8f5-d6113f6f6ef3",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/12/gfix-011224-blogroll-1705102304579.jpg",
+                        "slug": "smite-2-announces-alpha-playtest-for-spring-2024-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 364,
+                        "title": "Possible Nintendo Switch 2 Release Window Leaked - IGN Daily Fix",
+                        "url": "/videos/possible-nintendo-switch-2-release-window-leaked-ign-daily-fix",
+                        "videoId": "e5782918-90c4-47dd-8ac2-f2d341ccf8cd",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/11/gfix-011112-blogroll-1705000135325.jpg",
+                        "slug": "possible-nintendo-switch-2-release-window-leaked-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 362,
+                        "title": "PlayStation Plus Games for January 2024 Announced - IGN Daily Fix",
+                        "url": "/videos/playstation-plus-games-for-january-2024-announced-ign-daily-fix",
+                        "videoId": "56095320-01a8-46b9-9f73-c38a8a88df2d",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/11/gfix-011024-blogroll-1704932946765.jpg",
+                        "slug": "playstation-plus-games-for-january-2024-announced-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 258,
+                        "title": "Xbox Direct to Reveal First Look at Indiana Jones Game - IGN Daily Fix",
+                        "url": "/videos/xbox-direct-to-reveal-first-look-at-indiana-jones-game-ign-daily-fix",
+                        "videoId": "6d760863-20c1-4219-af8f-85a858d01c7d",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/09/gfix-010924-blogroll-1704828144317.jpg",
+                        "slug": "xbox-direct-to-reveal-first-look-at-indiana-jones-game-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 377,
+                        "title": "Xbox Exclusive Hi-Fi Rush Could Be Coming to Switch - IGN Daily Fix",
+                        "url": "/videos/xbox-exclusive-hi-fi-rush-could-be-coming-to-switch-ign-daily-fix",
+                        "videoId": "7efdd817-a2c6-4692-8213-83cf19276c54",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/08/gfix-010824-blogroll-1704753316835.jpg",
+                        "slug": "xbox-exclusive-hi-fi-rush-could-be-coming-to-switch-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 371,
+                        "title": "Star Citizen in Selling a $48,000 Ship Bundle...With a Catch - IGN Daily Fix",
+                        "url": "/videos/star-citizen-in-selling-a-48000-ship-bundlewith-a-catch-ign-daily-fix",
+                        "videoId": "970379ac-b08d-4d71-b23e-a22a4a5577ba",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/05/gfix-010524-blogroll-1704496478163.jpg",
+                        "slug": "star-citizen-in-selling-a-48000-ship-bundlewith-a-catch-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 243,
+                        "title": "Nintendo Switch 2 Predicted to Arrive in 2024, Possibly $400 - IGN Daily Fix",
+                        "url": "/videos/nintendo-switch-2-predicted-to-arrive-in-2024-possibly-400-ign-daily-fix",
+                        "videoId": "6d5a12eb-b0db-436c-9054-7ea61efee4ef",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/04/gfix-010424-blogroll-1704405171046.jpg",
+                        "slug": "nintendo-switch-2-predicted-to-arrive-in-2024-possibly-400-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 237,
+                        "title": "Here's What's Coming to Xbox Game Pass January 2024 - IGN Daily Fix",
+                        "url": "/videos/heres-whats-coming-to-xbox-game-pass-january-2024-ign-daily-fix",
+                        "videoId": "c635c168-79ad-45dd-a7cd-aec19ca113ef",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/03/gfix-010324-blogroll-1704323342347.jpg",
+                        "slug": "heres-whats-coming-to-xbox-game-pass-january-2024-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 271,
+                        "title": "Disney Might Have Just Revealed Star Wars: Outlaws' Release Window - IGN Daily Fix",
+                        "url": "/videos/disney-might-have-just-revealed-star-wars-outlaws-release-window-ign-daily-fix",
+                        "videoId": "88c52b9e-2848-4850-b73b-711b79322d5f",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2024/01/02/gfix-010224-blogroll-1704227163000.jpg",
+                        "slug": "disney-might-have-just-revealed-star-wars-outlaws-release-window-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 461,
+                        "title": "The Day Before Servers Shutting Down 45 Days After Launch | IGN Daily Fix",
+                        "url": "/videos/the-day-before-servers-shutting-down-45-days-after-launch-ign-daily-fix",
+                        "videoId": "66293c54-6a8a-40c8-b83c-ad3d17976880",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/22/231222-g-fix-oo-1703276111329.jpg",
+                        "slug": "the-day-before-servers-shutting-down-45-days-after-launch-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 364,
+                        "title": "Sony Reportedly Pressured Studios to Make Big Cuts Amid Rising Development Costs - IGN Daily Fix",
+                        "url": "/videos/sony-reportedly-pressured-studios-to-make-big-cuts-amid-rising-development-costs-ign-daily-fix",
+                        "videoId": "bf3e3566-d4f5-4554-a2b3-09a6ae73672d",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/22/36190303-gfix-spider-man2-blogroll-1703203297243.jpg",
+                        "slug": "sony-reportedly-pressured-studios-to-make-big-cuts-amid-rising-development-costs-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 359,
+                        "title": "PlayStation 5 Is Outselling the Xbox Series X By a Comfortable Margin - IGN Daily Fix",
+                        "url": "/videos/playstation-5-is-outselling-the-xbox-series-x-by-a-comfortable-margin-ign-daily-fix",
+                        "videoId": "3130dc91-1c4d-442a-b6cd-345d8ce58907",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/20/gfix-122023-blogroll-1703112667319.jpg",
+                        "slug": "playstation-5-is-outselling-the-xbox-series-x-by-a-comfortable-margin-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 461,
+                        "title": "Insomniac Hack Is One of the Most Damaging In Years - IGN Daily Fix",
+                        "url": "/videos/insomniac-hack-is-one-of-the-most-damaging-in-years-ign-daily-fix",
+                        "videoId": "9566ab57-bc88-406b-8636-44e132019781",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/19/gfix-121923-blogroll-1703030195263.jpg",
+                        "slug": "insomniac-hack-is-one-of-the-most-damaging-in-years-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 437,
+                        "title": "≈ Leaked for Suicide Squad: Kill the Justice League - IGN Daily Fix",
+                        "url": "/videos/leaked-for-suicide-squad-kill-the-justice-league-ign-daily-fix",
+                        "videoId": "a9d9350d-c5ff-428d-a81e-dc5e54ee8171",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/19/gfix-121823-blogroll-1702945073739.jpg",
+                        "slug": "leaked-for-suicide-squad-kill-the-justice-league-ign-daily-fix"
+                    },
+                    {
+                        "__typename": "Recommendation",
+                        "duration": 374,
+                        "title": "Don't Expect Baldur's Gate 3 on Game Pass, Ever - IGN Daily Fix",
+                        "url": "/videos/dont-expect-baldurs-gate-3-on-game-pass-ever-ign-daily-fix",
+                        "videoId": "c3df9841-c715-4b02-b95c-a68a3b77bb3a",
+                        "extra": {
+                            "__typename": "RecommendationExtra",
+                            "videoSeries": null,
+                            "active": null,
+                            "liveOnAir": false
+                        },
+                        "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/12/15/dailyfix-121523-blogroll-1702682562446.jpg",
+                        "slug": "dont-expect-baldurs-gate-3-on-game-pass-ever-ign-daily-fix"
+                    }
+                ]
+            },
+            "ROOT_QUERY": {
+                "__typename": "Query",
+                "videoBySlug({\"slug\":\"palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix\"})": {
+                    "__ref": "ModernVideo:{\"content\":{\"id\":\"b2b00bcd-28e7-44cf-9d0a-851ec5a7935b\"}}"
+                },
+                "objectSelectByTypeAndSlug({\"slug\":\"cyberpunk-2077\",\"type\":\"Game\"})": {
+                    "__ref": "Object:5d270a65-2b2c-487d-a7f9-d8921c8f1705"
+                },
+                "slotter({\"region\":\"US\",\"slug\":\"doodle\"})": null,
+                "slotter({\"region\":\"US\",\"slug\":\"global-alert\"})": null,
+                "slotter({\"region\":\"US\",\"slug\":\"footer\"})": {
+                    "__ref": "SlotterBlock:60"
+                },
+                "wiki({\"slug\":\"cyberpunk-2077\"})": {
+                    "__typename": "Wiki",
+                    "navigation": [
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cyberpunk 2077 Guide",
+                            "url": ""
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Tips and Tricks",
+                            "url": "Tips_and_Tricks"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Walkthrough - Main Jobs",
+                            "url": "Walkthrough_-_Main_Jobs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "All Romance Options and Sexual Encounters Guide",
+                            "url": "All_Romance_Options_and_Sexual_Encounters_Guide"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cyberpunk 2077 Phantom Liberty",
+                            "url": "Cyberpunk_2077_Phantom_Liberty"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cyberpunk 2077 Console Commands and Cheats List",
+                            "url": "Cyberpunk_2077_Console_Commands_and_Cheats_List"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Weapons",
+                            "url": "Weapons"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Side Jobs",
+                            "url": "Side_Jobs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Characters",
+                            "url": "Characters"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Beginner's Guide - Tips for Getting Started",
+                            "url": "Beginner%27s_Guide_-_Tips_for_Getting_Started"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Edgerunners Update",
+                            "url": "Edgerunners_Update"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Best Sandevistans and Sandevistan Locations",
+                            "url": "Best_Sandevistans_and_Sandevistan_Locations"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "How-To Guides",
+                            "url": "How-To_Guides"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Life Path Guide and Differences",
+                            "url": "Life_Path_Guide_and_Differences"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Ripperdoc Upgrades Explained",
+                            "url": "Ripperdoc_Upgrades_Explained"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Ripperdoc Locations and Abilities List",
+                            "url": "Ripperdoc_Locations_and_Abilities_List"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Gigs",
+                            "url": "Gigs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Shop Locations",
+                            "url": "Shop_Locations"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Fast Travel Guide - How to Use and Unlock All Points",
+                            "url": "Fast_Travel_Guide_-_How_to_Use_and_Unlock_All_Points"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Crafting Guide: How to Craft, Components, and More",
+                            "url": "Crafting_Guide:_How_to_Craft,_Components,_and_More"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cyberpunk Hacking Explained and Breach Protocol Tips",
+                            "url": "Cyberpunk_Hacking_Explained_and_Breach_Protocol_Tips"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "All Permanent Buffs and Locations",
+                            "url": "All_Permanent_Buffs_and_Locations"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Attributes and Character Perks (Skill Tree)",
+                            "url": "Attributes_and_Character_Perks_(Skill_Tree)"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Clothing List",
+                            "url": "Clothing_List"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cyberware",
+                            "url": "Cyberware"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Vehicles",
+                            "url": "Vehicles"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Gangs",
+                            "url": "Gangs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Corporations",
+                            "url": "Corporations"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Districts Guide",
+                            "url": "Districts_Guide"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Metro Entrance Locations",
+                            "url": "Metro_Entrance_Locations"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Apartments",
+                            "url": "Apartments"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "All Radio Stations and Songs",
+                            "url": "All_Radio_Stations_and_Songs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Cheats and Secrets",
+                            "url": "Cheats_and_Secrets"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Easter Eggs and References",
+                            "url": "Easter_Eggs_and_References"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "All Cyberpunk 2077 2.0 Updates and Changes",
+                            "url": "All_Cyberpunk_2077_2.0_Updates_and_Changes"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Microtransactions",
+                            "url": "Microtransactions"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Minimum and Recommended PC Specs",
+                            "url": "Minimum_and_Recommended_PC_Specs"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "The Best Settings to Use in Cyberpunk 2077",
+                            "url": "The_Best_Settings_to_Use_in_Cyberpunk_2077"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Multiplayer",
+                            "url": "Multiplayer"
+                        },
+                        {
+                            "__typename": "WikiNavigation",
+                            "label": "Updates and Patch Notes",
+                            "url": "Updates_and_Patch_Notes"
+                        }
+                    ]
+                }
+            },
+            "AgeRating:12": {
+                "__typename": "AgeRating",
+                "id": "12",
+                "name": "M",
+                "slug": "m",
+                "ageRatingTypeId": 4,
+                "enabled": true,
+                "ageRatingType": "ESRB"
+            },
+            "AgeRating:95": {
+                "__typename": "AgeRating",
+                "id": "95",
+                "name": "RP",
+                "slug": "rp",
+                "ageRatingTypeId": 6,
+                "enabled": true,
+                "ageRatingType": "OFLC"
+            },
+            "Release:013ea9aa-fa8e-4d7b-b76a-488c8ffc5cdb": {
+                "__typename": "Release",
+                "id": "013ea9aa-fa8e-4d7b-b76a-488c8ffc5cdb",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473462"
+                    }
+                ]
+            },
+            "Release:35e3bb63-da79-4aec-9df1-df9eeb24acbb": {
+                "__typename": "Release",
+                "id": "35e3bb63-da79-4aec-9df1-df9eeb24acbb",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4553331"
+                    }
+                ]
+            },
+            "Release:cfe4fa30-f7ae-494f-b33a-b0bf160b8048": {
+                "__typename": "Release",
+                "id": "cfe4fa30-f7ae-494f-b33a-b0bf160b8048",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5631604"
+                    }
+                ]
+            },
+            "Release:f0b7a5e1-d732-45c6-9e15-07c1586c3bab": {
+                "__typename": "Release",
+                "id": "f0b7a5e1-d732-45c6-9e15-07c1586c3bab",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473466"
+                    }
+                ]
+            },
+            "Release:7e2c2dd6-5696-48db-a815-24870fd2517e": {
+                "__typename": "Release",
+                "id": "7e2c2dd6-5696-48db-a815-24870fd2517e",
+                "date": "2022-02-15",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711233"
+                    }
+                ]
+            },
+            "Release:e79f5034-aa4c-4854-aaed-6f1d6d0447db": {
+                "__typename": "Release",
+                "id": "e79f5034-aa4c-4854-aaed-6f1d6d0447db",
+                "date": "2022-02-15",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711232"
+                    }
+                ]
+            },
+            "ObjectRegion:2032033": {
+                "__typename": "ObjectRegion",
+                "id": 2032033,
+                "name": "",
+                "objectId": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                "region": "AU",
+                "ageRating": {
+                    "__ref": "AgeRating:95"
+                },
+                "releases": [
+                    {
+                        "__ref": "Release:013ea9aa-fa8e-4d7b-b76a-488c8ffc5cdb"
+                    },
+                    {
+                        "__ref": "Release:35e3bb63-da79-4aec-9df1-df9eeb24acbb"
+                    },
+                    {
+                        "__ref": "Release:cfe4fa30-f7ae-494f-b33a-b0bf160b8048"
+                    },
+                    {
+                        "__ref": "Release:f0b7a5e1-d732-45c6-9e15-07c1586c3bab"
+                    },
+                    {
+                        "__ref": "Release:7e2c2dd6-5696-48db-a815-24870fd2517e"
+                    },
+                    {
+                        "__ref": "Release:e79f5034-aa4c-4854-aaed-6f1d6d0447db"
+                    }
+                ],
+                "ageRatingDescriptors": [],
+                "interactiveElements": []
+            },
+            "AgeRating:6": {
+                "__typename": "AgeRating",
+                "id": "6",
+                "name": "RP",
+                "slug": "rp",
+                "ageRatingTypeId": 7,
+                "enabled": true,
+                "ageRatingType": "PEGI"
+            },
+            "Release:06c7cf55-a91c-4822-b3ae-c06f7f670412": {
+                "__typename": "Release",
+                "id": "06c7cf55-a91c-4822-b3ae-c06f7f670412",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5631604"
+                    }
+                ]
+            },
+            "Release:225eeb86-5869-4c4a-ad7c-2aca5e67154f": {
+                "__typename": "Release",
+                "id": "225eeb86-5869-4c4a-ad7c-2aca5e67154f",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4553331"
+                    }
+                ]
+            },
+            "Release:25fd6cbe-1ce5-4949-af6d-036ee7536d07": {
+                "__typename": "Release",
+                "id": "25fd6cbe-1ce5-4949-af6d-036ee7536d07",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473466"
+                    }
+                ]
+            },
+            "Release:a85523ce-1f78-42a3-ab60-e1a1c6fc2315": {
+                "__typename": "Release",
+                "id": "a85523ce-1f78-42a3-ab60-e1a1c6fc2315",
+                "date": "2020-12-10",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:4473462"
+                    }
+                ]
+            },
+            "Release:8cb808e3-e48d-4f7f-8b38-55be5c110b9a": {
+                "__typename": "Release",
+                "id": "8cb808e3-e48d-4f7f-8b38-55be5c110b9a",
+                "date": "2022-02-15",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711232"
+                    }
+                ]
+            },
+            "Release:bf6180cc-d808-49fc-b9eb-0a283f08e77b": {
+                "__typename": "Release",
+                "id": "bf6180cc-d808-49fc-b9eb-0a283f08e77b",
+                "date": "2022-02-15",
+                "estimatedDate": false,
+                "timeframeYear": null,
+                "platformAttributes": [
+                    {
+                        "__ref": "Attribute:5711233"
+                    }
+                ]
+            },
+            "ObjectRegion:2032034": {
+                "__typename": "ObjectRegion",
+                "id": 2032034,
+                "name": "",
+                "objectId": "5d270a65-2b2c-487d-a7f9-d8921c8f1705",
+                "region": "UK",
+                "ageRating": {
+                    "__ref": "AgeRating:6"
+                },
+                "releases": [
+                    {
+                        "__ref": "Release:06c7cf55-a91c-4822-b3ae-c06f7f670412"
+                    },
+                    {
+                        "__ref": "Release:225eeb86-5869-4c4a-ad7c-2aca5e67154f"
+                    },
+                    {
+                        "__ref": "Release:25fd6cbe-1ce5-4949-af6d-036ee7536d07"
+                    },
+                    {
+                        "__ref": "Release:a85523ce-1f78-42a3-ab60-e1a1c6fc2315"
+                    },
+                    {
+                        "__ref": "Release:8cb808e3-e48d-4f7f-8b38-55be5c110b9a"
+                    },
+                    {
+                        "__ref": "Release:bf6180cc-d808-49fc-b9eb-0a283f08e77b"
+                    }
+                ],
+                "ageRatingDescriptors": [],
+                "interactiveElements": []
+            },
+            "SlotterBlockItem:151": {
+                "__typename": "SlotterBlockItem",
+                "id": 151,
+                "contentId": null,
+                "position": 0,
+                "title": "Reviews",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/reviews",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:677": {
+                "__typename": "SlotterBlockItem",
+                "id": 677,
+                "contentId": null,
+                "position": 2,
+                "title": "Best Picks",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/best-picks",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:637": {
+                "__typename": "SlotterBlockItem",
+                "id": 637,
+                "contentId": null,
+                "position": 3,
+                "title": "Starfield Cheats",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/wikis/starfield/Console_Command_Cheat_Codes_and_Item_Codes",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:150": {
+                "__typename": "SlotterBlockItem",
+                "id": 150,
+                "contentId": null,
+                "position": 4,
+                "title": "News",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/news",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:679": {
+                "__typename": "SlotterBlockItem",
+                "id": 679,
+                "contentId": null,
+                "position": 5,
+                "title": "GTA 5 Cheats",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/wikis/gta-5/GTA_5_Cheats_and_Secrets",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:154": {
+                "__typename": "SlotterBlockItem",
+                "id": 154,
+                "contentId": null,
+                "position": 7,
+                "title": "IGN Store",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://store.ign.com/",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:156": {
+                "__typename": "SlotterBlockItem",
+                "id": 156,
+                "contentId": null,
+                "position": 8,
+                "title": "HowLongToBeat",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://howlongtobeat.com/",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:152": {
+                "__typename": "SlotterBlockItem",
+                "id": 152,
+                "contentId": null,
+                "position": 9,
+                "title": "Deals",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/deals/tech",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:153": {
+                "__typename": "SlotterBlockItem",
+                "id": 153,
+                "contentId": null,
+                "position": 10,
+                "title": "Contact Us",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://corp.ign.com/contact",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:149": {
+                "__typename": "SlotterBlockItem",
+                "id": 149,
+                "contentId": null,
+                "position": 11,
+                "title": "Guides",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.ign.com/wikis",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:157": {
+                "__typename": "SlotterBlockItem",
+                "id": 157,
+                "contentId": null,
+                "position": 12,
+                "title": "IGN YouTube",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.youtube.com/channel/UCKy1dAqELo0zrOtPkf0eTMw",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:160": {
+                "__typename": "SlotterBlockItem",
+                "id": 160,
+                "contentId": null,
+                "position": 13,
+                "title": "IGN TikTok",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://www.tiktok.com/@ign",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:158": {
+                "__typename": "SlotterBlockItem",
+                "id": 158,
+                "contentId": null,
+                "position": 14,
+                "title": "IGN Twitter",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://twitter.com/IGN",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlockItem:155": {
+                "__typename": "SlotterBlockItem",
+                "id": 155,
+                "contentId": null,
+                "position": 16,
+                "title": "Map Genie",
+                "subtitle": null,
+                "imageUrl": null,
+                "url": "https://mapgenie.io/",
+                "color": null,
+                "occursAt": null,
+                "sponsorship": null
+            },
+            "SlotterBlock:60": {
+                "__typename": "SlotterBlock",
+                "id": 60,
+                "blockType": "nav",
+                "name": "Footer",
+                "imageUrl": null,
+                "items": [
+                    {
+                        "__ref": "SlotterBlockItem:151"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:677"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:637"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:150"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:679"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:154"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:156"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:152"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:153"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:149"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:157"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:160"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:158"
+                    },
+                    {
+                        "__ref": "SlotterBlockItem:155"
+                    }
+                ]
+            }
+        }
+    },
+    "page": "/videos/show",
+    "query": {
+        "slug": "palworld-sells-5-million-copies-over-the-weekend-devs-get-death-threats-ign-daily-fix"
+    },
+    "buildId": "p4qJUJ7bOHmLczYROyBo2",
+    "assetPrefix": "https://kraken.ignimgs.com",
+    "runtimeConfig": {
+        "KRAKEN_ENV": "production",
+        "GRAPH_API_URL": "https://mollusk.apis.ign.com/graphql",
+        "RELEASE": "v0.37.1",
+        "SENTRY_DSN": "https://258f7434a02a42848a43b89281bddba1@sentry.io/1215921",
+        "SENTRY_ENVIRONMENT": "production",
+        "SHOW_PS_NOW_CTA": "true",
+        "FIREBASE_PROJECT_ID": "ignfaceoffs",
+        "FIREBASE_API_KEY": "AIzaSyAGWDDy1NGswHBaguDQabsq7jfpt_cUxrQ",
+        "BOARDS_URL": "https://www.ignboards.com",
+        "MOLLUSK_URL": "https://mollusk.apis.ign.com",
+        "OPEN_WEB_SPOT_ID": "sp_xEkoxAFD",
+        "METRICS_SAMPLE_RATE": "0.05"
+    },
+    "isFallback": false,
+    "customServer": true,
+    "gip": true,
+    "appGip": true,
+    "scriptLoader": []
+}
