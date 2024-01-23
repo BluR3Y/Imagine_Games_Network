@@ -17,7 +17,8 @@ class Article(scrapy.Item):
     thumbnail = scrapy.Field()
     tags = scrapy.Field()
     category = scrapy.Field()
-    reporter = scrapy.Field()
+    reporter_name = scrapy.Field()
+    reporter_avatar = scrapy.Field()
     headline = scrapy.Field()
     sub_headline = scrapy.Field()
     published_date = scrapy.Field()
@@ -30,3 +31,6 @@ class Video(scrapy.Item):
     content_category = scrapy.Field()
     content_sub_category = scrapy.Field()
     reporter = scrapy.Field()
+
+# Possibly include Review Item
+# Possibly include Wiki Item

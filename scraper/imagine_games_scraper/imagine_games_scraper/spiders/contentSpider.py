@@ -5,7 +5,7 @@ from imagine_games_scraper.items import Article, Video
 class ContentspiderSpider(scrapy.Spider):
     name = "contentSpider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com?endIndex=0"]
+    start_urls = ["https://ign.com?endIndex=200"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {
@@ -26,12 +26,22 @@ class ContentspiderSpider(scrapy.Spider):
 
         # Iterate over each content element
         for content_item in page_content:
-            # Construct absolute URL of the item
-            item_url = 'https://www.ign.com' + content_item.css('a.item-body ::attr(href)').get()
-            # Determine the appropriate callback function based on the type of content
-            callback_function = self.parse_article_page if 'video' not in item_url else self.parse_video_page
+            item_uri = content_item.css('a.item-body ::attr(href)').get()
+            item_url = 'https://www.ign.com' + item_uri
+            item_content_type = item_uri.split('/')[1]
+            item_callback_function = None
+
+            # Determine the appropriate callback function based on the type of content            
+            if item_content_type == 'articles':
+                item_callback_function = self.parse_article_page
+            elif item_content_type == 'videos':
+                item_callback_function = self.parse_video_page
+            elif item_content_type == 'wikis':
+                item_callback_function = self.parse_wiki_page
+
             # Following the link to the content's page and calling parsing function
-            yield scrapy.Request(url=item_url, callback=callback_function)
+            yield scrapy.Request(url=item_url, callback=item_callback_function)
+            return
         
     # Parsing function for article pages
     def parse_article_page(self, response):
@@ -42,69 +52,77 @@ class ContentspiderSpider(scrapy.Spider):
         article_item['thumbnail'] = response.xpath("//meta[@property='og:image']/@content").get()
         article_item['headline'] = response.xpath("//h1[@data-cy='article-headline']/text()").get()
         article_item['sub_headline'] = response.xpath("//h2[@data-cy='article-sub-headline']/text()").get()
-        article_item['reporter'] = response.xpath("//meta[@property='article:author']/@content").get()
+        article_item['reporter_name'] = response.xpath("//meta[@property='article:author']/@content").get()
+        article_item['reporter_avatar'] = response.css("div.author-thumb.profile-thumb img::attr(src)").get()
         article_item['published_date'] = response.xpath("//meta[@property='article:published_time']/@content").get()
         article_item['modified_date'] = response.xpath("//meta[@property='article:modified_time']/@content").get()
         article_item['tags'] = response.xpath("//a[@data-cy='object-breadcrumb']/text()").getall()
         article_item['category'] = self.identify_category(response)
+        # Last Here
 
     # Parsing function for video pages
     def parse_video_page(self, response):
         pass
 
-    # Potential Elements: meta:vertical, meta:tags, breadcrumbs, url
-
-    # def identify_category(self, response):
-    #     category_identifiers = (
-    #         ['games', 'game'],
-    #         ['movies', 'movie', 'film', 'theater'],
-    #         ['tv', 'television', 'show', 'tv-show'],
-    #         ['comics', 'comic', 'book'],
-    #         ['tech', 'technology']
-    #     )
-
-    #     breadcrumb_elements = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
-    #     breadcrumb_categories = []
-    #     for crumb in breadcrumb_elements:
-    #         breadcrumb_categories.append(crumb.split('/')[1])
-    #     breadcrumb_category = self.breadcrumb_identification(breadcrumb_categories)
-
-    #     vertical_identification = lambda value: value if value is not None and value != 'Entertainment' else None
-    #     vertical_category = vertical_identification(response.xpath("//meta[@name='vertical']/@content").get())
-
-    #     tag_categories = filter(lambda value : value != 'News' and value != 'Entertainment', response.xpath("//meta[@property='article:tag']/@content").getall())
-
-    #     combined_categories = [breadcrumb_category, vertical_category, *tag_categories]
+    # Parsing function for wiki pages
+    def parse_wiki_page(self, response):
+        pass
 
     def identify_category(self, response):
-        breadcrumb_category_identification = lambda url : url.split('/')[1]
-        breadcrumb_urls = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
-        breadcrumb_categories = [breadcrumb_category_identification(url) for url in breadcrumb_urls]
         
-        vertical_category_identification = lambda value: value if value is not None and value != 'Entertainment' else None
-        vertical_category = vertical_category_identification(response.xpath("//meta[@name='vertical']/@content").get())
+        breadcrumb_category_identification = lambda url : url.split('/')[1]
+        # Extract all breadcrumb element links from the document
+        breadcrumb_urls = response.xpath("//a[@data-cy='object-breadcrumb']/@href").getall()
+        # Loop through every string in breadcrumb_urls and run the lambda function that will extract the category from the url and be stored in the list
+        breadcrumb_categories = [breadcrumb_category_identification(url) for url in breadcrumb_urls]
 
-        tag_category_identification = lambda value : value != 'News' and value != 'Entertainment'
+        # Retrieve the value of the content attribute from a <meta> element whose's 'name' attribute is 'vertical'
+        vertical_category = response.xpath("//meta[@name='vertical']/@content").get()
+        # Run the closest_valid_category method which will return the closest valid category of a given string
+        validated_vertical_category = self.closest_valid_category(vertical_category)
+
+        # Retrieve the value of the content attribute from all the <meta> elements whose's 'property' attribute is 'article:tag'
         tag_categories = response.xpath("//meta[@property='article:tag']/@content").getall()
-        filtered_tag_categories = filter(tag_category_identification, tag_categories)
-
-        combined_categories = [vertical_category, *breadcrumb_categories, *filtered_tag_categories]
-        print(combined_categories)
-        # Last Here
-
-    def breadcrumb_identification(self, categories):
-        if not categories:
-            return None
-
-        category_count = dict()
+        # Loop through all the items in tag_categories and run the method closest_valid_category() passing the current looping item as an argument
+            # The returned values will be stored in a list
+        validated_tag_categories = [self.closest_valid_category(category) for category in tag_categories]
+    
+        # Store all the values that will be considered for category in a list 
+            # Unpacking all the values from lists using the unpacking operator (*)
+        combined_categories = [validated_vertical_category, *breadcrumb_categories, *validated_tag_categories]
+        # Remove all items in combined_categories that are not string values or are instances of None
+        filtered_categories = [category for category in combined_categories if category is not None and isinstance(category, str)]
+        # category_counter is used to keep track of how many times each category is found in filtered_categories
+        category_counter = dict()
 
         # Count occurrences of each category
-        for category in categories:
+        for category in filtered_categories:
             # get method will return the value for key if it exists, else it will return 0
-            category_count[category] = category_count.get(category, 0) + 1
+            category_counter[category] = category_counter.get(category, 0) + 1
 
         # Find the category with the maximum occurence
             # max function will compare every value in the dictionary using "lambda" function that returns the value associated with each key
-        most_occuring_category = max(category_count, key=category_count.get)
+        most_occuring_category = max(category_counter, key=category_counter.get)
 
         return most_occuring_category
+
+    def closest_valid_category(self, category):
+        if category is None:
+            return None
+
+        game_platforms = ('pc', 'xbox', 'playstation', 'nintendo')
+        movie_platforms = ('dvd', 'blu-ray')
+        category_identifiers = [
+            ['games', 'game', *game_platforms],
+            ['movies', 'movie', 'film', 'theater', *movie_platforms],
+            ['tv', 'television', 'show', 'tv-show'],
+            ['comics', 'comic', 'book'],
+            ['tech', 'technology'],
+            ['commerce']
+        ]
+
+        for row in category_identifiers:
+            for row_item in row:
+                if category.lower() in row_item:
+                    return row[0]
+        return None
