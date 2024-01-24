@@ -12,7 +12,6 @@ BOT_NAME = "imagine_games_scraper"
 SPIDER_MODULES = ["imagine_games_scraper.spiders"]
 NEWSPIDER_MODULE = "imagine_games_scraper.spiders"
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "imagine_games_scraper (+http://www.yourdomain.com)"
 

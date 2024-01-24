@@ -104,7 +104,7 @@ class ArticleSpiderSpider(scrapy.Spider):
         category_identifiers = [
             ['games', 'game', *game_platforms],
             ['movies', 'movie', 'film', 'theater', *movie_platforms],
-            ['tv', 'television', 'show', 'tv-show'],
+            ['tv', 'television', 'show', 'tv-show', 'on-demand'],
             ['comics', 'comic', 'book'],
             ['tech', 'technology'],
             ['commerce']
