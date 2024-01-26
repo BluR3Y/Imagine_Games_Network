@@ -14,16 +14,22 @@ class ImagineGamesScraperItem(scrapy.Item):
 # Scrapy Item used to define the structure of article content
 class Article(scrapy.Item):
     url = scrapy.Field()
-    thumbnail = scrapy.Field()
-    tags = scrapy.Field()
+    legacy_id = scrapy.Field()
+    slug = scrapy.Field()
     category = scrapy.Field()
-    reporter_name = scrapy.Field()
-    reporter_avatar = scrapy.Field()
-    headline = scrapy.Field()
-    sub_headline = scrapy.Field()
-    published_date = scrapy.Field()
-    modified_date = scrapy.Field()
-
+    vertical = scrapy.Field()
+    cover = scrapy.Field()
+    title = scrapy.Field()
+    subtitle = scrapy.Field()
+    description = scrapy.Field()
+    excerpt = scrapy.Field()
+    processedHtml = scrapy.Field()
+    publish_date = scrapy.Field()
+    modify_date = scrapy.Field()
+    contributors = scrapy.Field()
+    review = scrapy.Field()
+    objects = scrapy.Field()
+    
 # Scrapy Item used to define the structure of video content
 class Video(scrapy.Item):
     url = scrapy.Field()
