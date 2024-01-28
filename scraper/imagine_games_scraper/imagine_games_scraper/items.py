@@ -26,6 +26,7 @@ class Article(scrapy.Item):
     processedHtml = scrapy.Field()
     publish_date = scrapy.Field()
     modify_date = scrapy.Field()
+    brand = scrapy.Field()
     contributors = scrapy.Field()
     review = scrapy.Field()
     objects = scrapy.Field()
