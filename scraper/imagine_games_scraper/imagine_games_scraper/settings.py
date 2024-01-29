@@ -9,7 +9,7 @@
 
 BOT_NAME = "imagine_games_scraper"
 
-SPIDER_MODULES = ["imagine_games_scraper.spiders"]
+SPIDER_MODULES = ["imagine_games_scraper.spiders", "imagine_games_scraper.spiders.article_spider", "imagine_games_scraper.spiders.video_spider"]
 NEWSPIDER_MODULE = "imagine_games_scraper.spiders"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
