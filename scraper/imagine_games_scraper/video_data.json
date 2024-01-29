@@ -1,0 +1,99 @@
+[
+{
+    "url": "https://www.ign.com/videos/everything-we-saw-at-ces-2024",
+    "legacy_id": "9e169267-ef3f-4454-966f-6bf43b2bf6fc",
+    "description": "CES 2024 was full of amazing and innovative tech like mountless and transparent TVs, adorable robots, Flying Cars, 3D AR HUD Windshield tech, and so much more! So we&#39;re recapping all the coolest things we saw at the post powerful tech event in the world! Join Seth Macy as he recaps the coolest tech from Displace, CY Visions, LG, Sony, Honda, SK, Mobis, BMW, and many others. Presented by the United States Airforce.",
+    "slug": "everything-we-saw-at-ces-2024",
+    "category": "Sponsored",
+    "vertical": "Tech",
+    "publish_date": "2024-01-22T23:00:00.000Z",
+    "modify_date": "2024-01-23T00:33:25.722Z",
+    "title": "Everything We Saw at CES 2024!",
+    "subtitle": null,
+    "thumbnail": "https://assets-prd.ignimgs.com/2024/01/22/ces-recap-oo-thumb-1705961879021.png",
+    "brand": null,
+    "events": [
+        "CES"
+    ],
+    "metadata": {
+        "duration": 119,
+        "description_html": "<p>CES 2024 was full of amazing and innovative tech like mountless and transparent TVs, adorable robots, Flying Cars, 3D AR HUD Windshield tech, and so much more! So we&#39;re recapping all the coolest things we saw at the post powerful tech event in the world! Join Seth Macy as he recaps the coolest tech from Displace, CY Visions, LG, Sony, Honda, SK, Mobis, BMW, and many others. </p><p></p><p>Presented by the United States Airforce.</p>",
+        "m3u": "https://assets.ign.com/master/videos/zencoder/2024/01/22/,640/9e169267-ef3f-4454-966f-6bf43b2bf6fc,852/9e169267-ef3f-4454-966f-6bf43b2bf6fc,960/9e169267-ef3f-4454-966f-6bf43b2bf6fc,1280/9e169267-ef3f-4454-966f-6bf43b2bf6fc,1920/9e169267-ef3f-4454-966f-6bf43b2bf6fc,-1705962154/master.m3u8"
+    },
+    "objects": [
+        {
+            "legacy_id": "b2ae264b-d355-46eb-8c0c-903401262a42",
+            "url": "/tech/lg-c3-oled-evo-2023",
+            "slug": "lg-c3-oled-evo-2023",
+            "type": "Tech",
+            "cover": "https://assets-prd.ignimgs.com/2023/10/23/3d7d14ee-51e7-4e75-b00b-2f7c50f12835-cr001464600-pt0-sx1464-v1-1698085192900.jpg",
+            "names": {
+                "primary": "LG C3 OLED Evo (2023)",
+                "alt": [],
+                "short": null
+            },
+            "descriptions": {
+                "long": "The LG OLED evo C3 blends into the background with an almost invisible bezel for a seamless look. When you're finished watching, display paintings, photos and other content to blend the LG OLED evo C3 into your space.",
+                "short": "The LG OLED evo C3 blends into the background with an almost invisible bezel for a seamless look."
+            },
+            "franchises": [],
+            "genres": [
+                {
+                    "name": "TV / Monitor / Display",
+                    "slug": "monitor-display"
+                }
+            ],
+            "features": [],
+            "producers": [],
+            "publishers": [
+                {
+                    "name": "LG Electronics",
+                    "short_name": null,
+                    "slug": "lg-electronics"
+                }
+            ],
+            "regions": []
+        }
+    ],
+    "contributors": [
+        {
+            "legacy_id": "20a438b4-b4b0-11ea-b2e3-0e7c1d759882",
+            "name": "Seth Macy",
+            "nickname": "Big_Pick_Zel"
+        }
+    ],
+    "assets": [
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1920/9e169267-ef3f-4454-966f-6bf43b2bf6fc-1705962154.mp4",
+            "width": 1920,
+            "height": 1080,
+            "fps": 30
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/1280/9e169267-ef3f-4454-966f-6bf43b2bf6fc-1705962154.mp4",
+            "width": 1280,
+            "height": 720,
+            "fps": 30
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/960/9e169267-ef3f-4454-966f-6bf43b2bf6fc-1705962154.mp4",
+            "width": 960,
+            "height": 540,
+            "fps": 30
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/852/9e169267-ef3f-4454-966f-6bf43b2bf6fc-1705962154.mp4",
+            "width": 852,
+            "height": 480,
+            "fps": 30
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/22/640/9e169267-ef3f-4454-966f-6bf43b2bf6fc-1705962154.mp4",
+            "width": 640,
+            "height": 360,
+            "fps": 30
+        }
+    ],
+    "recommendations": []
+}
+]

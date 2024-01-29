@@ -20,8 +20,8 @@ class ArticleSpiderSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        # yield scrapy.Request(url='https://www.ign.com/articles/the-last-of-us-part-2-review', callback=self.parse_article_page)
+        # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
+        yield scrapy.Request(url='https://www.ign.com/articles/death-stranding-directors-cut-arrives-on-iphone-15-pro-next-week', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting article content elements from the response
@@ -49,8 +49,7 @@ class ArticleSpiderSpider(scrapy.Spider):
         page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
         page_json_data = json.loads(page_script_data)
 
-        # For debugging issues with data extraction
-        with open('problematic_article.json', 'w') as f:
+        with open('last_of_us_two_review.json', 'w') as f:
             json.dump(page_json_data, f)
 
         # Select page metadata from json object
@@ -70,7 +69,16 @@ class ArticleSpiderSpider(scrapy.Spider):
         article_item['contributors'] = self.parse_article_contributors(page_json_data)
         article_item['brand'] = page_data.get('brand')
         article_item['embeded_content'] = self.parse_html_content(page_json_data)
-        article_item['objects'] = []
+        article_item['objects'] = self.parse_article_objects(page_json_data, [f'Object:{object['id']}' for object in page_data['objects']])
+
+        recommendation_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'topPages' in key), None)
+        article_item['recommendations'] = self.parse_article_recommendations(page_json_data, [recommendation_article['__ref'] for recommendation_article in page_json_data['props']['apolloState']['ROOT_QUERY'][recommendation_key]]) if recommendation_key is not None else None
+
+        slideshow_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'slideshow' in key]
+        article_item['slideshows'] = self.parse_article_slideshows(page_json_data, slideshow_keys)
+
+        wiki_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'wiki' in key), None)
+        article_item['object_wiki'] = self.parse_object_wiki(page_json_data, wiki_key) if wiki_key is not None else None
 
         review_data = page_data['review']
         article_item['review'] = None if review_data is None else {
@@ -83,51 +91,66 @@ class ArticleSpiderSpider(scrapy.Spider):
             'review_date': review_data.get('reviewedOn')
         }
 
-        for object_id in [object['id'] for object in page_data['objects']]:
-            object_data = page_json_data['props']['apolloState'][f'Object:{object_id}']
+        # Yielding the Article Item for further processing or storage
+        yield article_item
 
-            article_item['objects'].append({
-                'legacy_id': object_data.get('id'),
-                'url': object_data.get('url'),
-                'slug': object_data.get('slug'),
-                'type': object_data.get('type'),
-                'names': {
+    def parse_article_objects(self, page_json_data, object_keys):
+        parsed_objects = []
+
+        for key in object_keys:
+            object_data = page_json_data['props']['apolloState'][key]
+            parsed_item = {
+                'legacy_id': object_data['id'],
+                'url': object_data['url'],
+                'slug': object_data['slug'],
+                'type': object_data['type']
+            }
+
+            if 'names' in object_data['metadata']:
+                parsed_item['names'] = {
                     'primary': object_data['metadata']['names'].get('name'),
                     'alt': object_data['metadata']['names'].get('alt'),
                     'short': object_data['metadata']['names'].get('short')
-                },
-                'descriptions': {
-                    'long': object_data['metadata']['descriptions']['long'],
-                    'short': object_data['metadata']['descriptions']['short']
-                },
-                'franchises': [{
+                }
+            if 'descriptions' in object_data['metadata']:
+                parsed_item['descriptions'] = {
+                    'long': object_data['metadata']['descriptions'].get('long'),
+                    'short': object_data['metadata']['descriptions'].get('short')
+                }
+            if 'franchises' in object_data:
+                parsed_item['franchises'] = [{
                     'name': franchise.get('name'),
                     'slug': franchise.get('slug')
-                } for franchise in object_data['franchises']],
-                'genres': [{
+                } for franchise in object_data['franchises']]
+            if 'genres' in object_data:
+                parsed_item['genres'] = [{
                     'name': genre.get('name'),
                     'slug': genre.get('slug')
-                } for genre in object_data['genres']],
-                'features': [{
+                } for genre in object_data['genres']]
+            if 'features' in object_data:
+                parsed_item['features'] = [{
                     'name': feature.get('name'),
                     'slug': feature.get('slug')
-                } for feature in object_data['features']],
-                'producers': [{
+                } for feature in object_data['features']]
+            if 'producers' in object_data:
+                parsed_item['producers'] = [{
                     'name': producer.get('name'),
                     'short_name': producer.get('shortName'),
                     'slug': producer.get('slug')
-                } for producer in object_data['producers']],
-                'publishers': [{
+                } for producer in object_data['producers']]
+            if 'publishers' in object_data:
+                parsed_item['publishers'] = [{
                     'name': publisher.get('name'),
                     'short_name': publisher.get('shortName'),
                     'slug': publisher.get('slug')
-                } for publisher in object_data['publishers']],
-                'regions': self.parse_object_regions(page_json_data, [region['__ref'] for region in object_data['objectRegions']])
-            } )
+                } for publisher in object_data['publishers']]
 
+            region_key = next((key for key in object_data if 'objectRegions' in key))
+            if region_key is not None:
+                parsed_item['regions'] = self.parse_object_regions(page_json_data, [region['__ref'] for region in object_data[region_key]])
 
-        # Yielding the Article Item for further processing or storage
-        yield article_item
+            parsed_objects.append(parsed_item)
+        return parsed_objects
 
     # Missing: Embeded HTML Content
     def parse_html_content(self, page_json_data):
@@ -162,7 +185,7 @@ class ArticleSpiderSpider(scrapy.Spider):
                     feed_content_data = page_json_data['props']['apolloState'][f'ModernContent:{feed_article_data['content']['id']}']
                     feed_object_data = page_json_data['props']['apolloState'][feed_content_data['primaryObject']['__ref']]
 
-                    parsed_feed_item = {
+                    contributor_object['recommendation_feed']['feed_items'].append({
                         'url': feed_content_data.get('url'),
                         'slug': feed_content_data.get('slug'),
                         'legacy_id': feed_content_data.get('id'),
@@ -186,46 +209,11 @@ class ArticleSpiderSpider(scrapy.Spider):
                                 'short': feed_object_data['metadata']['names'].get('short')
                             },
                             'franchises': feed_object_data.get('franchises'),
-                            'regions': self.parse_feed_regions(page_json_data, [region_item['__ref'] for region_item in feed_object_data[next((key for key in feed_object_data if 'objectRegions' in key), None)]])
+                            'regions': self.parse_object_regions(page_json_data, [region_item['__ref'] for region_item in feed_object_data[next((key for key in feed_object_data if 'objectRegions' in key), None)]])
                         }
-                    }                       
-
-                    contributor_object['recommendation_feed']['feed_items'].append(parsed_feed_item)
+                    })
             parsed_contributors.append(contributor_object)
         return parsed_contributors
-    
-    def parse_feed_regions(self, page_json_data, feed_object_data):
-        parsed_regions = []
-        region_partial_key = 'objectRegions('
-        region_complete_key = next((key for key in feed_object_data if region_partial_key in key), None)
-
-        if (region_complete_key):
-            region_params_str = region_complete_key[len(region_partial_key):len(region_complete_key) - 1]
-            region_params_json = json.loads(region_params_str)
-            for region_key in feed_object_data[region_complete_key]:
-                region_object = page_json_data['props']['apolloState'][region_key['__ref']]
-                parsed_region_object = {
-                    'legacy_id': region_object['id'],
-                    'region': region_object['region'],
-                    'releases': [],
-                    **region_params_json
-                }
-                for region_release_key in [release['__ref'] for release in region_object['releases']]:
-                    region_release_object = page_json_data['props']['apolloState'][region_release_key]
-                    parsed_region_released_object = {
-                        'legacy_id': region_release_object['id'],
-                        'date': region_release_object['date'],
-                        'platform_attribute': []
-                    }
-                    for release_platform_key in region_release_object['platformAttributes']:
-                        release_platform_object = page_json_data['props']['apolloState'][release_platform_key['__ref']]
-                        parsed_region_released_object['platform_attribute'].append({
-                            'legacy_id': release_platform_object['id'],
-                            'name': release_platform_object['name']
-                        })
-                    parsed_region_object['releases'].append(parsed_region_released_object)
-                parsed_regions.append(parsed_region_object)
-        return parsed_regions
     
     def parse_object_regions(self, page_json_data, region_keys):
         parsed_regions = []
@@ -266,3 +254,67 @@ class ArticleSpiderSpider(scrapy.Spider):
                 parsed_region_object['releases'].append(parsed_region_released_object)
             parsed_regions.append(parsed_region_object)
         return parsed_regions
+    
+    def parse_article_recommendations(self, page_json_data, article_keys):
+        parsed_recommendations = []
+
+        for key in article_keys:
+            article_key = page_json_data['props']['apolloState'][key]['content']['__ref']
+            article_object = page_json_data['props']['apolloState'][article_key]
+            article_category = page_json_data['props']['apolloState'][article_object['contentCategory']['__ref']]
+            
+            parsed_recommendations.append({
+                'legacy_id': article_object['id'],
+                'url': article_object['url'],
+                'slug': article_object['slug'],
+                'type': article_object['type'],
+                'title': article_object['title'],
+                'subtitle': article_object['subtitle'],
+                'publish_date': article_object['publishDate'],
+                'cover': article_object['feedImage']['url'],
+                'category': article_category['name'],
+                'brand': article_object['brand'],
+                'primary_object': self.parse_article_objects(page_json_data, [article_object['primaryObject']['__ref']])[0]
+            })
+
+        return parsed_recommendations
+    
+    def parse_article_slideshows(self, page_json_data, slideshow_keys):
+        parsed_slideshows = []
+
+        for key in slideshow_keys:
+            slideshow_object = page_json_data['props']['apolloState']['ROOT_QUERY'][key]
+            slideshow_content = page_json_data['props']['apolloState'][slideshow_object['content']['__ref']]
+            gallery_key = next((key for key in slideshow_object if 'slideshowImages' in key), None)
+            image_keys = [image['__ref'] for image in slideshow_object[gallery_key]['images']]
+            image_objects = [page_json_data['props']['apolloState'][key] for key in image_keys]
+
+            parsed_slideshows.append({
+                'legacy_id': slideshow_content['id'],
+                'url': slideshow_content['url'],
+                'slug': slideshow_content['slug'],
+                'title': slideshow_content['title'],
+                'subtitle': slideshow_content['subtitle'],
+                'publish_date': slideshow_content['publishDate'],
+                'vertical': slideshow_content['vertical'],
+                'brand': slideshow_content['brand'],
+                'category': slideshow_content['contentCategory']['name'],
+                'images': [{
+                    'legacy_id': image['id'],
+                    'url': image['url'],
+                    'caption': image['caption']
+                } for image in image_objects]
+            })
+        return parsed_slideshows
+    
+    def parse_object_wiki(self, page_json_data, wiki_key):
+        key_params_str = wiki_key[wiki_key.find('{'):wiki_key.find('}') + 1]
+        key_params_json = json.loads(key_params_str)
+        wiki_items = page_json_data['props']['apolloState']['ROOT_QUERY'][wiki_key]['navigation']
+        return {
+            **key_params_json,
+            'navigation': [{
+                'label': item.get('label'),
+                'url': item.get('url')
+            } for item in wiki_items]
+        }

@@ -1,183 +1,77 @@
 [
 {
-    "url": "https://www.ign.com/articles/knives-out-3-will-reportedly-begin-filming-this-year",
-    "legacy_id": "29a28bf9-ce94-4deb-80b1-0566d28456c4",
-    "cover": "https://assets-prd.ignimgs.com/2023/02/23/glass-onion-directors-commentary-1677163385132.jpeg?width=1280",
-    "title": "Knives Out 3 Will Reportedly Begin Filming This Year",
-    "subtitle": "More Benoit Blanc is on the way soon enough.",
-    "description": "Get ready for another Benoit Blanc mystery soon enough, as the third Knives Out movie is reportedly heading into production later this year.",
-    "excerpt": "Get ready for another Benoit Blanc mystery soon enough, as the third Knives Out movie is reportedly heading into production later this year.",
-    "publish_date": "2024-01-26T20:07:24.785Z",
-    "modify_date": "2024-01-26T20:20:54.212Z",
-    "slug": "knives-out-3-will-reportedly-begin-filming-this-year",
-    "category": "News",
-    "vertical": "Entertainment",
-    "processedHtml": "<section class=\"article-page\"><p>Get ready for another Benoit Blanc mystery, as the third Knives Out movie is apparently heading into production this year, according to <a href=\"https://deadline.com/2024/01/knives-out-t-street-rian-johnson-ram-bergman-katie-mcneill-join-as-producer-1235805133/\">Deadline</a>. </p><section data-transform=\"mobile-ad-break\"></section><p>The news came somewhat buried in an article about Knives Out writer/director Rian Johnson and Ram Bergman&#39;s independent studio T-Street hiring a new producer, Katie McNeill. In it, Deadline notes that T-Street &quot;is gearing up to make the third installment of the Benoit Blanc franchise for Netflix later this year.&quot; The report also mentions that the third movie in the series is currently untitled.</p><p>IGN has reached out to Netflix to confirm.</p><p>While this is our latest update on Benoit Blanc&#39;s next investigation, we already knew Knives Out 3 had been greenlit. <a href=\"https://www.ign.com/articles/netflix-purchases-knives-out-sequels-rian-johnson-daniel-craig\">Back in March 2021</a>, Netflix nabbed the rights to Knives Out 2 (which would eventually become Glass Onion: A Knives Out Mystery) and 3 in a massive $450 million deal. It was also confirmed at the time that Daniel Craig would return for both sequels to reprise his central role, with Johnson also returning.</p><section data-transform=\"slideshow\" data-slug=\"movies-like-glass-onion-a-knives-out-mystery\" data-value=\"movies-like-glass-onion-a-knives-out-mystery\" data-type=\"slug\" data-caption=\"\"></section><p>Our last update came in October 2023, when Johnson said during an interview with <a href=\"https://www.thewrap.com/fair-play-netflix-t-street-rian-johnson-ram-bergman-chloe-domont-interview/\">The Wrap</a>, &quot;obviously couldn’t work [on Knives Out 3] during the strike, and now that it’s over, I’m diving in full force, and so it’s coming along.&quot;</p><p>&quot;I’ve got the premise, I’ve got the setting, I’ve got what the movie is in my head,&quot; he added. &quot;It’s just a matter of writing the damn thing.&quot;</p><p>Both Knives Out films, focusing on two separate Benoit Blanc mysteries, have been massive successes, with the first movie making an impressive $310 million worldwide in 2019 (<a href=\"https://www.boxofficemojo.com/release/rl3204875777/\">per Box Office Mojo</a>). The success of Glass Onion is a little harder to quantify, given that Netflix released the sequel and gave it a limited theatrical run for just a week before it hit Netflix.</p><p>Still, of what we do know of Glass Onion&#39;s viewership, it reportedly broke a record as the <a href=\"https://www.ign.com/articles/glass-onion-breaks-record-as-the-most-streamed-movie-in-one-single-week\">most-streamed movie in one week</a>, and critics loved it as well. <a href=\"https://www.ign.com/articles/glass-onion-a-knives-out-mystery-review\">IGN gave it a 9/10</a>, with Rafael Motamayor writing that it &quot;improves upon virtually every aspect of its predecessor and delivers a big, bold, funny, angry, timely, and timeless whodunit.&quot;</p><section data-transform=\"divider\"></section><p><em>Alex Stedman is a Senior News Editor with IGN, overseeing entertainment reporting. When she&#39;s not writing or editing, you can find her reading fantasy novels or playing Dungeons &amp; Dragons. </em></p></section>",
-    "contributors": [
-        {
-            "legacy_author_id": 97808291,
-            "legacy_id": "9836955a-c125-4bdc-a960-be36e5fc6d66",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/60ec97f42548b2156beb42a3/headshot-1645834880680.jpg",
-            "name": "Alex Stedman",
-            "nickname": "Alex.Stedman"
-        }
-    ],
-    "brand": null,
-    "objects": [
-        {
-            "legacy_id": "3cea4f6d-91b5-4205-a23a-0e23e20950e6",
-            "url": "/movies/knives-out-3",
-            "slug": "knives-out-3",
-            "type": "Movie",
-            "names": {
-                "primary": "Knives Out 3",
-                "alt": [
-                    "Knives Out Three",
-                    "Knives Out III"
-                ],
-                "short": "Knives Out 3"
-            },
-            "descriptions": {
-                "long": "This is a planned sequel to writer/director Rian Johnson's modern take on the classic detective genre.",
-                "short": null
-            },
-            "franchises": [
-                {
-                    "name": "Knives Out",
-                    "slug": "knives-out"
-                }
-            ],
-            "genres": [
-                {
-                    "name": "Mystery",
-                    "slug": "mystery"
-                }
-            ],
-            "features": [],
-            "producers": [],
-            "publishers": [
-                {
-                    "name": "Netflix",
-                    "short_name": null,
-                    "slug": "netflix-873188"
-                }
-            ],
-            "regions": [
-                {
-                    "legacy_id": 1856160,
-                    "name": null,
-                    "region": "US",
-                    "releases": [
-                        {
-                            "legacy_id": "ffd39b1e-ece6-4e4f-9bb9-c85b7cb61d26",
-                            "date": "2049-12-31",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4238122,
-                                    "name": "On-Demand"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 1856161,
-                    "name": null,
-                    "region": "AU",
-                    "releases": [
-                        {
-                            "legacy_id": "b982540f-cac6-4a46-8918-b719325539db",
-                            "date": "2049-12-31",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4238122,
-                                    "name": "On-Demand"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 1856162,
-                    "name": null,
-                    "region": "UK",
-                    "releases": [
-                        {
-                            "legacy_id": "b3f57a6a-7388-4bbc-af35-36721cf4fb0f",
-                            "date": "2049-12-31",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4238122,
-                                    "name": "On-Demand"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/bloodborne-kart-creator-says-she-will-scrub-the-branding-off-after-sony-reached-out",
-    "legacy_id": "d70dfa10-b7cb-4f92-9adb-1fbcd5b2b474",
-    "cover": "https://assets-prd.ignimgs.com/2024/01/26/bllodbornekart-1706311052107.jpg?width=1280",
-    "title": "Bloodborne Kart Creator Says She Will 'Scrub the Branding Off' After Sony Reached Out",
-    "subtitle": "So it's just 'Kart' now?",
-    "description": "The creator of the game formerly known as Bloodborne Kart has announced she plans to delay the game's release and \"scrub the branding off\" after being contacted by Sony about the kart racer's use of, well, Bloodborne.",
-    "excerpt": "The creator of the game formerly known as Bloodborne Kart has announced she plans to delay the game's release and \"scrub the branding off\" after being contacted by Sony about the kart racer's use of, well, Bloodborne.",
-    "publish_date": "2024-01-26T23:18:03.074Z",
-    "modify_date": "2024-01-26T23:20:55.224Z",
-    "slug": "bloodborne-kart-creator-says-she-will-scrub-the-branding-off-after-sony-reached-out",
+    "url": "https://www.ign.com/articles/death-stranding-directors-cut-arrives-on-iphone-15-pro-next-week",
+    "legacy_id": "c81a524c-6665-4c35-95bf-5ff9ff6b4555",
+    "cover": "https://assets-prd.ignimgs.com/2024/01/23/rfzhxcmt7zkhrckg1umvtbqcctdi3pb1m0yd1ds2ug4jv6j5emvvarrwwt58vzyazqtb4uwazk6d7jzja-72crpcgm-64juiwti18wqzgg-j8xnug7zuz5tsd7gywmhf4n4z0wgd41k0fzok-1706027743913.jpeg?width=1280",
+    "title": "Death Stranding: Director's Cut Arrives on iPhone 15 Pro Next Week",
+    "subtitle": "One of a handful of games making their way to Apple devices.",
+    "description": "Death Stranding Director's Cut finally has an iPhone 15 Pro series release date.",
+    "excerpt": "Death Stranding Director's Cut finally has an iPhone 15 Pro series release date.",
+    "publish_date": "2024-01-23T16:51:02.439Z",
+    "modify_date": "2024-01-23T16:51:25.927Z",
+    "slug": "death-stranding-directors-cut-arrives-on-iphone-15-pro-next-week",
     "category": "News",
     "vertical": "Games",
-    "processedHtml": "<section class=\"article-page\"><p>The creator of the game formerly known as Bloodborne Kart has announced she plans to delay the game&#39;s release and &quot;scrub the branding off&quot; after being contacted by Sony about the kart racer&#39;s use of, well, Bloodborne.</p><section data-transform=\"mobile-ad-break\"></section><p></p><blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">WHELP. IT HAPPENED<br><br>Sony contacted me 🫣<br><br>Long story short I need to scrub the branding off of what was previously known as Bloodborne Kart, which we will do. But that requires a short delay.<br><br>Don&#39;t worry, the game is still coming out! It&#39;ll just look slightly different 💙</p>&mdash; 🪄💫 PSX Bunlith🐰🏳️‍⚧️ BLM ACAB 🇵🇸 (@b0tster) <a href=\"https://twitter.com/b0tster/status/1750995361353842790?ref_src=twsrc%5Etfw\">January 26, 2024</a></blockquote> <p>Today, Lilith Walker, or PSX Bunlith (@b0tster) on X/Twitter posted a thread explaining that Sony had reached out, with the end result being that she needed to update the in-progress kart racer to get rid of anything that was too close to copyright infringement.</p><p>Walker seems to be taking the change in stride. Her thread continued, saying that &quot;we were all expecting this to happen so we could be pleasantly surprised if it didn&#39;t,&quot; and that she&#39;d have to push the release date as a result, but that she was excited about the transition from a fan game to an original game that the team would have &quot;full creative control over.&quot;</p><p>Composer Evelyn Lark chimed in as well, expressing excitement to get to work on &quot;an original (albeit familiar) soundtrack&quot;.</p><blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">It’s tough news, but we’re all really excited to adjust this into a project we have more direct control over. Plus, this opens up the opportunity for an original (albeit familiar) soundtrack! <a href=\"https://t.co/1AY6PO7ryb\">https://t.co/1AY6PO7ryb</a></p>&mdash; Evelyn Lark (@TheNobleDemon) <a href=\"https://twitter.com/TheNobleDemon/status/1750997787687469240?ref_src=twsrc%5Etfw\">January 26, 2024</a></blockquote> <p>Bloodborne Kart, or I suppose just &#39;Kart&#39; now that it can&#39;t be about Bloodborne anymore, was <a href=\"https://www.ign.com/articles/bloodborne-kart-gets-official-release-date\">originally planned for a release on January 31, 2024</a>. Originally revealed back in 2022, Bloodborne Kart was originally a fan community meme taken to its logical confusion: a PS1-style kart racer with characters, karts, and environments directly derived from Bloodborne. It is expected to include 12 racers, 16 maps, boss fights, a campaign, a battle mode, and split-screen multiplayer.</p><p>No word yet on when we&#39;ll be able to play Not-Bloodborne Kart, but you can currently play <a href=\"https://www.ign.com/articles/bloodborne-ps1-demake-release\">Bloodborne PSX</a>, which is a PS1-style Bloodborne de-make from the same team working on Not-Bloodborne Kart.</p><section data-transform=\"divider\"></section><p><em>Rebekah Valentine is a senior reporter for IGN. Got a story tip? Send it to rvalentine@ign.com.</em></p></section>",
+    "processedHtml": "<section class=\"article-page\"><p>After missing its <a href=\"https://www.ign.com/articles/hideo-kojima-appears-at-wwdc-to-promise-support-for-apple-platforms\">initial release window last year</a>, publisher 505 Games announced today that Death Stranding is coming to Apple devices on January 30. </p><section data-transform=\"mobile-ad-break\"></section><p>Death Stranding: Director&#39;s Cut will arrive on January 30 for the <a href=\"https://www.ign.com/tech/iphone-15-pro/articles\">iPhone 15 Pro</a> series and Apple Silicon-powered iPads and Mac computers (e.g., devices with an M1 series chip or newer). The biggest takeaway is that Death Stranding will be available natively on iPhone 15 Pro thanks to the smartphone&#39;s <a href=\"https://www.ign.com/articles/iphone-15-pro-adding-resident-evil-4-remake-assassins-creed-mirage-and-more-in-2024\">A17 Pro chip</a>. </p><section data-transform=\"ignvideo\" data-slug=\"death-stranding-directors-cut-review\" data-loop=\"\"></section><p>Like <a href=\"https://www.ign.com/articles/resident-evil-4-iphone-15-pro-version-price-revealed\">Resident Evil 4 Remake&#39;s Apple devices port</a>, Death Stranding: Director&#39;s Cut will be a universal purchase; if you buy it once for one device, you can access the other versions, too, so long as you have a compatible device to run the game. The game will retail for $39.99, though those who preorder can buy it for just $19.99 on the App Store. </p><p>Death Stranding: Director&#39;s Cut <a href=\"https://www.ign.com/articles/hideo-kojima-appears-at-wwdc-to-promise-support-for-apple-platforms\">was announced at WWDC last year</a> when Hideo Kojima appeared during the keynote to announce the port. More interestingly, Kojima revealed he is working with Apple to bring future games to its platforms. Though he did not specify what future projects he was referring to, we know his studio, Kojima Productions, is currently working on two games: <a href=\"https://www.ign.com/games/death-stranding-2\">Death Stranding 2</a> and <a href=\"https://www.ign.com/games/od-a-hideo-kojima-game/articles\">OD</a>. </p><p>In our review of <a href=\"https://www.ign.com/articles/death-stranding-directors-cut-ps5-review\">Death Stranding: Director&#39;s Cut</a>, we said: &quot;Death Stranding Director’s Cut is more accessible than the original, but feels like a compromised version of the director’s vision.&quot;</p><section data-transform=\"divider\"></section><p><em>Taylor is a Reporter at IGN. You can follow her on Twitter </em><a href=\"https://twitter.com/TayNixster\"><em>@TayNixster.</em></a></p></section>",
     "contributors": [
         {
-            "legacy_author_id": 97559961,
-            "legacy_id": "38948b2b-e40c-401e-aedd-75d228c4c00b",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/5ff35af62d3cc815bfd36656/Reb-1683318754726.png",
-            "name": "Rebekah Valentine",
-            "nickname": "duckvalentine"
+            "legacy_author_id": 97700987,
+            "legacy_id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/6099655d64297108d60d8ff2/picture-1620852569928.jpg",
+            "name": "Taylor Lyles",
+            "nickname": "tlyles"
         }
     ],
     "brand": null,
+    "embeded_content": null,
     "objects": [
         {
-            "legacy_id": "7b6c97e8-b634-4ce7-a6e2-f8a5f898b41a",
-            "url": "/games/bloodborne",
-            "slug": "bloodborne",
+            "legacy_id": "35a1694b-bc61-482e-a379-80ee842c4238",
+            "url": "/games/death-stranding-directors-cut",
+            "slug": "death-stranding-directors-cut",
             "type": "Game",
             "names": {
-                "primary": "Bloodborne",
+                "primary": "Death Stranding: Director's Cut",
                 "alt": [
-                    "Project Beast [working title]"
+                    "Death Stranding: DC"
                 ],
                 "short": null
             },
             "descriptions": {
-                "long": "From Hidetaka Miyazaki and FromSoftware -- creators of the legendary games Demon's Souls and Dark Souls -- comes Bloodborne, an all-new action RPG brimming with unforgiving, unrelenting terror, developed exclusively for the PlayStation 4 system.\r\n<P>\r\nFace your fears as you search for answers in the ancient city of Yharnam, now cursed with a strange  endemic illness spreading through the streets like wildfire. Danger, death and\tmadness lurk around every  corner of this dark and horrific world, and you must discover its darkest secrets in order to survive.",
-                "short": "Face your fears\tas you search for answers\tin the ancient city of Yharnam in Bloodborne, an action RPG from Hidetaka  Miyazaki and FromSoftware."
+                "long": "From legendary game creator Hideo Kojima comes the genre-defying experience Death Stranding, starring Norman Reedus, Mads Mikkelsen, Léa Seydoux, and Lindsay Wagner. This Director's Cut has been remastered for even more immersive visuals and sound, while also adding new features, equipment, and areas to explore. Use additional weapons and vehicles, take on new enemies, and explore new locations such as the Firing Range and Racetrack, featuring extra missions and minigames. Stay connected with players around the globe using the Social Strand System, as you set delivery time records for others to challenge in the competitive ranking system. \n<p>\nIn the near future, mysterious explosions have rocked the planet, setting off a series of supernatural events known as the Death Stranding. With spectral creatures plaguing the landscape, and the planet on the verge of a mass extinction, it’s up to Sam Bridges to journey across the ravaged wasteland and save mankind from impending annihilation. ",
+                "short": "From game creator Hideo Kojima comes the genre-defying experience Death Stranding. After the collapse of civilization, Sam Bridges must journey across a ravaged landscape crawling with otherworldly threats to save mankind. "
             },
             "franchises": [
                 {
-                    "name": "Bloodborne",
-                    "slug": "bloodborne"
+                    "name": "Death Stranding",
+                    "slug": "death-stranding"
                 }
             ],
             "genres": [
                 {
                     "name": "Action",
                     "slug": "action"
+                },
+                {
+                    "name": "Adventure",
+                    "slug": "adventure"
+                },
+                {
+                    "name": "Open-World",
+                    "slug": "open-world"
                 }
             ],
-            "features": [],
+            "features": [
+                {
+                    "name": "Online Co-Op Multiplayer",
+                    "slug": "online-co-op-multiplayer"
+                }
+            ],
             "producers": [
                 {
-                    "name": "FromSoftware",
+                    "name": "Kojima Productions",
                     "short_name": null,
-                    "slug": "fromsoftware"
+                    "slug": "kojima-studio"
                 }
             ],
             "publishers": [
@@ -185,21 +79,66 @@
                     "name": "Sony Computer Entertainment",
                     "short_name": null,
                     "slug": "sony-computer-entertainment"
+                },
+                {
+                    "name": "505 Games",
+                    "short_name": null,
+                    "slug": "505-games"
                 }
             ],
             "regions": [
                 {
-                    "legacy_id": 2076064,
-                    "name": "Bloodborne",
+                    "legacy_id": 2184704,
+                    "name": null,
                     "region": "US",
                     "releases": [
                         {
-                            "legacy_id": "47c2d84e-b6bd-40db-b5b6-109b9e1c1a46",
-                            "date": "2015-03-24",
+                            "legacy_id": "05e2c8ef-dc29-438e-bf45-dc5dd9da8531",
+                            "date": "2021-09-23",
                             "platform_attributes": [
                                 {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
+                                    "legacy_id": 5711233,
+                                    "name": "PlayStation 5"
+                                }
+                            ]
+                        },
+                        {
+                            "legacy_id": "fc2eed8a-31e9-4640-b1c2-cfea9a7d7b43",
+                            "date": "2022-03-29",
+                            "platform_attributes": [
+                                {
+                                    "legacy_id": 4473466,
+                                    "name": "PC"
+                                }
+                            ]
+                        },
+                        {
+                            "legacy_id": "357dd211-efa1-4395-aa96-0517d21b328c",
+                            "date": "2024-01-30",
+                            "platform_attributes": [
+                                {
+                                    "legacy_id": 4475321,
+                                    "name": "iPad"
+                                }
+                            ]
+                        },
+                        {
+                            "legacy_id": "67550302-5e94-4637-9c2f-4454eda82aca",
+                            "date": "2024-01-30",
+                            "platform_attributes": [
+                                {
+                                    "legacy_id": 4473729,
+                                    "name": "Macintosh"
+                                }
+                            ]
+                        },
+                        {
+                            "legacy_id": "83e27cf0-fd5a-4f4d-8a69-5adde211ef58",
+                            "date": "2024-01-30",
+                            "platform_attributes": [
+                                {
+                                    "legacy_id": 10014379,
+                                    "name": "iPhone 15 Pro"
                                 }
                             ]
                         }
@@ -210,581 +149,80 @@
                         "slug": "m",
                         "type": "ESRB",
                         "descriptors": [
-                            "Blood and Gore, Violence"
+                            "Partial Nudity",
+                            "Blood",
+                            "Strong Language",
+                            "Intense Violence"
                         ]
                     }
-                },
-                {
-                    "legacy_id": 2076065,
-                    "name": "Bloodborne",
-                    "region": "AU",
-                    "releases": [
-                        {
-                            "legacy_id": "01b75760-b7f0-422c-ac27-993ef3e60b69",
-                            "date": "2015-03-25",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        }
-                    ],
-                    "age_rating": {
-                        "legacy_id": "31",
-                        "name": "MA15+",
-                        "slug": "ma15",
-                        "type": "OFLC",
-                        "descriptors": []
-                    }
-                },
-                {
-                    "legacy_id": 2076066,
-                    "name": "Bloodborne",
-                    "region": "JP",
-                    "releases": [
-                        {
-                            "legacy_id": "cab6bd42-0927-47d7-a773-27d2371091de",
-                            "date": "2015-03-26",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 2076067,
-                    "name": "Bloodborne",
-                    "region": "UK",
-                    "releases": [
-                        {
-                            "legacy_id": "6896860f-4e2a-408f-82d5-21cd1d443b03",
-                            "date": "2015-03-28",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        }
-                    ],
-                    "age_rating": {
-                        "legacy_id": "6",
-                        "name": "RP",
-                        "slug": "rp",
-                        "type": "PEGI",
-                        "descriptors": []
-                    }
                 }
             ]
-        }
-    ],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/nasa-astronauts-could-be-at-risk-of-moonquakes-and-landslides-while-exploring-the-lunar-south-pole",
-    "legacy_id": "ca5be4c8-1a05-420b-b797-d1787cab03e9",
-    "cover": "https://assets-prd.ignimgs.com/2024/01/26/moon-exploration-1706293295965.jpg?width=1280",
-    "title": "NASA Astronauts Could be at Risk of Moonquakes and Landslides While Exploring the Lunar South Pole",
-    "subtitle": "\"It’s important to keep our astronauts, our equipment, and infrastructure as safe as possible\".",
-    "description": "NASA astronauts setting up a base at the lunar south pole could be put at risk by regolith landslides and moonquakes, according to the results of a new scientific study.",
-    "excerpt": "NASA astronauts setting up a base at the lunar south pole could be put at risk by regolith landslides and moonquakes, according to the results of a new scientific study.",
-    "publish_date": "2024-01-26T18:41:40.062Z",
-    "modify_date": "2024-01-26T18:50:56.680Z",
-    "slug": "nasa-astronauts-could-be-at-risk-of-moonquakes-and-landslides-while-exploring-the-lunar-south-pole",
-    "category": "News",
-    "vertical": "Science",
-    "processedHtml": "<section class=\"article-page\"><p>NASA astronauts setting up a base near the lunar south pole could be put at risk by regolith landslides and moonquakes, according to the results of a new scientific study.</p><section data-transform=\"mobile-ad-break\"></section><p></p><p>The circumference of Earth’s moon has shrunk by about 150 feet over the past few hundred million years, as heat lost from the satellite’s interior structure has caused the entire world to contract. This seemingly subtle transformation has forced the Moon’s brittle surface to wrinkle, and fracture at locations where sections of crust came into contact, causing widespread warping, and the appearance of fault zones.</p><p></p><p>According to a new study published in the <a href=\"https://iopscience.iop.org/article/10.3847/PSJ/ad1332\">Planetary Science Journal</a>, the moonquakes generated by activity at the faultlines could pose a significant threat to astronauts attempting to establish a permanent base at the lunar south pole, as part of NASA’s planned program of Artemis missions.</p><p></p><p>“As we get closer to the crewed Artemis mission’s launch date, it’s important to keep our astronauts, our equipment and infrastructure as safe as possible,” said paper co-author Nicholas Schmerr, an associate professor of geology at the <a href=\"https://cmns.umd.edu/news-events/news/Nicholas-Schmerr-moon-shrinking-causing-landslides-and-instability-lunar-south-pole\">University of Maryland</a>. “This work is helping us prepare for what awaits us on the moon—whether that’s engineering structures that can better withstand lunar seismic activity or protecting people from really dangerous zones.”</p><p></p><p>For the new study, a team of researchers performed a seismic hazard analysis by using computer models to simulate the stability of lunar slopes. The models showed that slip events around existing fault areas could give rise to shallow moonquakes capable of generating powerful tremors.</p><section data-transform=\"slideshow\" data-slug=\"nasas-artemis-ii-mission-meet-the-astronauts\" data-value=\"nasas-artemis-ii-mission-meet-the-astronauts\" data-type=\"slug\" data-caption=\"\"></section><p>Each of these events have the potential to last for hours at a time - far longer than their terrestrial equivalents, earthquakes, which tend to last for minutes at most. The resulting shakes have the worrying potential to dislodge the rubble-like material known as regolith that coats the lunar surface, triggering landslides up to 10 km from a given fault zone that could damage structures, or even endanger the lives of astronauts.</p><p></p><p>Taking these dangers into account, the researchers were able to pinpoint a series of potential landing locations that NASA should avoid when planning future missions to the Moon&#39;s surface, and are planning to look for more hazard sites in the future. <a href=\"https://www.ign.com/articles/nasa-astronauts-wont-step-foot-on-the-moon-until-september-2026-at-the-earliest?_gl=1*1wuafdk*_up*MQ..*_ga*MTQ5NjgxNTQuMTcwNjI4MzE0OA..*_ga_736S6FVMCL*MTcwNjI4MzE0OC4xLjAuMTcwNjI4MzE0OC4wLjAuMA..\">NASA recently announced a series of delays to its Artemis program</a>, which have pushed the first crewed launch of its next generation Orion spacecraft to 2025, in order to allow for more development time for key technologies, and to fix some of the hardware for upcoming missions. These delays mean that NASA astronauts won’t return to the moon until September 2026 at the earliest.</p><section data-transform=\"slideshow\" data-slug=\"nasas-maiden-launch-of-the-space-launch-system-moon-rocket\" data-value=\"nasas-maiden-launch-of-the-space-launch-system-moon-rocket\" data-type=\"slug\" data-caption=\"\"></section><p>Prior to that, the agency and its partners have planned a series of robotic missions to pave the way for crewed exploration missions. Unfortunately, two such missions to touch down on the Moon’s surface in the fast part of 2024 have been met with varying degrees of failure. Astrobotic’s Peregrine lunar lander, which was set to be the United States’ first soft landing on the Moon since the Apollo era, <a href=\"https://www.ign.com/articles/first-us-commercial-robotic-launch-to-moons-surface-suffers-anomaly?_gl=1*1kahtkc*_up*MQ..*_ga*MTQ5NjgxNTQuMTcwNjI4MzE0OA..*_ga_736S6FVMCL*MTcwNjI4MzE0OC4xLjAuMTcwNjI4MzE0OC4wLjAuMA..\">was forced to end its mission by burning up in Earth’s atmosphere, following a propulsion anomaly that was detected en route to the Moon</a>. </p><p></p><p>Japan&#39;s SLIM spacecraft meanwhile was able to survive the perilous automated descent to the lunar surface, <a href=\"https://www.ign.com/articles/japan-becomes-fifth-country-to-land-on-the-moon\">making Japan only the fifth country in history to make a controlled, soft landing on the Moon</a>. Sadly, the spacecraft came to rest on its nose, and was unable to generate electricity using its solar cells, forcing mission handlers to put the probe into hibernation, in the hope that it can be reawakened further down the line.</p><section data-transform=\"divider\"></section><p>Anthony is a freelance contributor covering science and video gaming news for IGN. He has over eight years experience of covering breaking developments in multiple scientific fields and absolutely no time for your shenanigans. Follow him on Twitter @BeardConGamer</p><p>Image credit: NASA</p></section>",
-    "contributors": [
+        },
         {
-            "legacy_author_id": 96625371,
-            "legacy_id": "972a98f9-b4b1-11ea-b2e3-0e7c1d759882",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/5a54cc858f03070f7d126165/Elden_Ring_Me_As_Ranni-1681493683350.jpg",
-            "name": "Anthony Wood",
-            "nickname": "AnthonyWood"
-        }
-    ],
-    "brand": null,
-    "objects": [],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/vince-mcmahon-has-resigned-from-wwe-and-ufc-owner-tko-following-sexual-misconduct-allegations",
-    "legacy_id": "4df5c66a-879c-44b9-9761-1a72b036cd33",
-    "cover": "https://assets-prd.ignimgs.com/2024/01/27/mcmahon-1706326949236.png?width=1280",
-    "title": "Vince McMahon Has Resigned From WWE and UFC Owner TKO Following Sexual Misconduct Allegations",
-    "subtitle": "This is not the first time McMahon has been accused of sexual misconduct.",
-    "description": "Vince McMahon has resigned from WWE and UFC owner TKO Group Holdings, where he was the executive chairman of the board, following allegations of sexual abuse and trafficking.",
-    "excerpt": "Vince McMahon has resigned from WWE and UFC owner TKO Group Holdings, where he was the executive chairman of the board, following allegations of sexual abuse and trafficking.",
-    "publish_date": "2024-01-27T05:24:41.662Z",
-    "modify_date": "2024-01-27T05:24:44.329Z",
-    "slug": "vince-mcmahon-has-resigned-from-wwe-and-ufc-owner-tko-following-sexual-misconduct-allegations",
-    "category": "News",
-    "vertical": "Entertainment",
-    "processedHtml": "<section class=\"article-page\"><p>Vince McMahon has resigned from WWE and UFC owner TKO Group Holdings, where he was the executive chairman of the board, following allegations of sexual abuse and trafficking.</p><section data-transform=\"mobile-ad-break\"></section><p>As reported by <a href=\"https://variety.com/2024/biz/news/vince-mcmahon-removed-tko-group-board-of-directors-sexual-abuse-trafficking-lawsuit-1235888175/\">Variety,</a> McMahon&#39;s resignation was in response to <a href=\"https://variety.com/wp-content/uploads/2024/01/grant-v-wwe.pdf\">a lawsuit filed against him from former WWE employee Janel Grant.</a> The lawsuit itself alleges that McMahon, former WWE head of talent relations John Laurinaitis, and the WWE itself all violated the Trafficking Victims Prevention Act. Furthermore, it states McMahon and Laurinaitis used Grant &quot;both for their own pleasure and as a pawn to secure talent deals with prospective wrestlers they were recruiting.&quot;</p><section data-transform=\"image-with-caption\" data-image-url=\"https://assets-prd.ignimgs.com/2024/01/27/mcmahon-1706326901184.png\" data-image-title=\"Image Credit: Michelle Farsi/Zuffa LLC\" data-image-class=\"article-image-full-size\" data-image-link=\"https://assets-prd.ignimgs.com/2024/01/27/mcmahon-1706326901184.png\" data-caption=\"Image%20Credit%3A%20Michelle%20Farsi%2FZuffa%20LLC\" /></section><p>McMahon also released a statement denying these allegations, sharing he would be fighting to &quot;defend myself against these baseless accusations.&quot;</p><p>&quot;I stand by my prior statement that Ms. Grant’s lawsuit is replete with lies, obscene made-up instances that never occurred, and is a vindictive distortion of the truth,” McMahon said in a statement. “I intend to vigorously defend myself against these baseless accusations, and look forward to clearing my name. However, out of respect for the WWE Universe, the extraordinary TKO business and its board members and shareholders, partners and constituents, and all of the employees and Superstars who helped make WWE into the global leader it is today, I have decided to resign from my executive chairmanship and the TKO board of directors, effective immediately.”</p><p>WWE President and TKO board member Nick Khan also sent an internal memo seen by Variety that relayed the news.</p><p>&quot;I wanted to inform you that Vince McMahon has tendered his resignation from his positions as TKO Executive Chairman and on the TKO Board of Directors,” WWE president and TKO board member Nick Khan said in an email to staff seen by Variety. “He will no longer have a role with TKO Group Holdings or WWE.”</p><p><a href=\"https://www.ign.com/articles/wwe-vince-mcmahon-steps-down-ceo-misconduct-probe\">This is not the first time McMahon has both been accused of allegations of misconduct</a> and retired from the WWE. In 2022, allegations arose that McMahon and had established a separation agreement and paid $3 million to a former female employee he had a consensual affair with. The report also claimed to discover even more potential payouts and legal agreements McMahon and Lauinaitis had with other women.</p><p><a href=\"https://www.ign.com/articles/vince-mcmahon-is-retiring-from-wwe\">McMahon announced he was retiring from the WWE</a> just about a month after he <a href=\"https://www.ign.com/articles/wwe-vince-mcmahon-steps-down-ceo-misconduct-probe\">&quot;voluntarily stepped back&quot; from his role as CEO and chairman of WWE</a> after these allegations were made public. However, <a href=\"https://www.ign.com/articles/vince-mcmahon-plots-wwe-return\">he returned to WWE&#39;s board in January 2023.</a></p><section data-transform=\"divider\"></section><p><em>Have a tip for us? Want to discuss a possible story? Please send an email to </em><a href=\"mailto:newstips@ign.com\"><em>newstips@ign.com</em></a><em>.</em></p><p><em>Adam Bankhurst is a news writer for IGN. You can follow him on Twitter </em><a href=\"https://twitter.com/AdamBankhurst\"><em>@AdamBankhurst</em></a><em> and on </em><a href=\"https://www.twitch.tv/AdamBankhurst\"><em>Twitch.</em></a></p></section>",
-    "contributors": [
-        {
-            "legacy_author_id": 1564611,
-            "legacy_id": "12b35e03-b4b0-11ea-b2e3-0e7c1d759882",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/4ec7dfcfe4b0ca04b5bca47a/wanu8zLq_400x400-1588309801243.jpg",
-            "name": "Adam Bankhurst",
-            "nickname": "Falcon-X32"
-        }
-    ],
-    "brand": null,
-    "objects": [
-        {
-            "legacy_id": "5a237e7e-18bc-4082-8dad-52d2e72120c2",
-            "url": "/tv/wwe-raw",
-            "slug": "wwe-raw",
-            "type": "Show",
+            "legacy_id": "a7108207-8360-4f36-a30f-7cc48694600f",
+            "url": "/tech/iphone-15-pro",
+            "slug": "iphone-15-pro",
+            "type": "Tech",
             "names": {
-                "primary": "WWE RAW",
-                "alt": [
-                    "RAW",
-                    "Raw is War",
-                    "Raw"
-                ],
+                "primary": "iPhone 15 Pro",
+                "alt": [],
                 "short": null
-            },
-            "descriptions": {
-                "long": null,
-                "short": null
-            },
-            "franchises": [],
-            "genres": [
-                {
-                    "name": "Wrestling",
-                    "slug": "wrestling"
-                }
-            ],
-            "features": [],
-            "producers": [],
-            "publishers": [
-                {
-                    "name": "USA Network",
-                    "short_name": null,
-                    "slug": "usa-network"
-                }
-            ],
-            "regions": [
-                {
-                    "legacy_id": 1674434,
-                    "name": "WWE RAW",
-                    "region": "US",
-                    "releases": [
-                        {
-                            "legacy_id": "ce160dc4-d5f5-4274-a264-967953cda805",
-                            "date": "1993-01-11",
-                            "platform_attributes": []
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/krafton-striking-distance-sued-by-former-employee-for-sexual-harassment-wrongful-termination",
-    "legacy_id": "57ef63fd-26f0-42ed-9332-b2aa96237b3b",
-    "cover": "https://assets-prd.ignimgs.com/2024/01/26/krafton-basic-1706298426856.jpg?width=1280",
-    "title": "Krafton, Striking Distance Sued by Former Employee for Sexual Harassment, Wrongful Termination",
-    "subtitle": "A former employee says she was assaulted at a Striking Distance party after The Game Awards 2022.",
-    "description": "PUBG and Callisto Protocol studio owner Krafton is currently being sued in the state of California by a former Krafton employee, who alleges she was sexually assaulted at an industry event by Krafton head of business and strategy Kevin Kimball, and then fired from the company two months later after Krafton failed to investigate the event.",
-    "excerpt": "PUBG and Callisto Protocol studio owner Krafton is currently being sued in the state of California by a former Krafton employee, who alleges she was sexually assaulted at an industry event by Krafton head of business and strategy Kevin Kimball, and then fired from the company two months later after Krafton failed to investigate the event.",
-    "publish_date": "2024-01-26T19:56:02.623Z",
-    "modify_date": "2024-01-26T21:57:25.684Z",
-    "slug": "krafton-striking-distance-sued-by-former-employee-for-sexual-harassment-wrongful-termination",
-    "category": "News",
-    "vertical": "Games",
-    "processedHtml": "<section class=\"article-page\"><p><strong>Content Warning: This piece contains some descriptions of sexual assault.</strong></p><section data-transform=\"mobile-ad-break\"></section><p>PUBG and Callisto Protocol studio owner Krafton is currently being sued in the state of California by a former Krafton employee, who alleges she was sexually assaulted at an industry event by Krafton head of business and strategy Kevin Kimball, and then fired from the company two months later after Krafton failed to investigate the event.</p><p>This comes from a complaint filed in Los Angeles county in December, <a href=\"https://www.polygon.com/24051558/pubg-krafton-striking-distance-sexual-assault-termination-lawsuit\">first noticed by Polygon</a>, in which the plaintiff alleges she was working in Krafton&#39;s publishing division and attended a Striking Distance (a subsidiary of Krafton, developer of Callisto Protocol) party following The Game Awards on December 8, 2022. At the party, she claims that she suffered &quot;egregious sex harassment and sexual assault&quot; from Kimball at the &quot;alcohol fueled&quot; party. The plaintiff says she rejected Kimball&#39;s advances, but he &quot;provided her more and more alcohol&quot; and finally cornered her in a bathroom stall and &quot;forced himself on the helpless Plaintiff until she was crying and finally escaped.&quot;</p><p>The plaintiff goes on to allege her repeated complaints about this behavior were ignored by Krafton for two months, before she was finally fired on February 15, 2023. She then filed claims with the California Department of Fair Employment and Housing for statutory violations, and was granted a &quot;right to sue.&quot;</p><p>&quot;Because of Plaintiff’s great fear, emotional distress, anxieties, physical symptoms, feelings of powerlessness and helplessness stemming from the physical andmental abuse, as well as lack of protection, discrimination, harassment, hostile work place, stalking, unwelcome, and tortuous conduct and conditions presented to her within her joband job duties in the work place, Plaintiff has, is and will be caused to suffer past, present and future damages and losses,&quot; the suit reads. &quot;Plaintiff has been unable to find full time employment as her confidence, spirit, trust, interview skills with prospective new employers, etc., are crushed. She experiences great discomfort thinking of working for a new male stranger.&quot;</p><p>Kimball was formerly the global group manager for Insomniac Studios, Sucker Punch, Kojima Productions, and San Diego Studios at PlayStation from 2017 to 2020, after which he became the VP of global marketing for Striking Distance. He was promoted to head of strategy and business development in January of 2023, <a href=\"https://www.linkedin.com/in/kevinkimball96/\">per his LinkedIn</a>, just one month after the alleged incident occurred. He departed Krafton in September of 2023, and is currently self-employed.</p><p>The plaintiff is asking to be awarded damages, attorney&#39;s fees, and other costs of the suit.</p><p><strong>Update 1:57pm PT: </strong>Krafton has provided IGN with the following statement:</p><p>&quot;We treat all allegations of improper workplace conduct with the utmost seriousness. As this is an ongoing legal matter, we are unable to comment on the specifics of the case.”</p><section data-transform=\"divider\"></section><p><em>Rebekah Valentine is a senior reporter for IGN. Got a story tip? Send it to rvalentine@ign.com.</em></p></section>",
-    "contributors": [
-        {
-            "legacy_author_id": 97559961,
-            "legacy_id": "38948b2b-e40c-401e-aedd-75d228c4c00b",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/5ff35af62d3cc815bfd36656/Reb-1683318754726.png",
-            "name": "Rebekah Valentine",
-            "nickname": "duckvalentine"
-        }
-    ],
-    "brand": null,
-    "objects": [
-        {
-            "legacy_id": "f66d80f3-f620-4e0c-8795-5ca883867045",
-            "url": "/games/pubg-battlegrounds",
-            "slug": "pubg-battlegrounds",
-            "type": "Game",
-            "names": {
-                "primary": "PUBG: Battlegrounds",
-                "alt": [
-                    "Battlegrounds",
-                    "PlayerUnknown's Battlegrounds",
-                    "\nPUBG Battlegrounds"
-                ],
-                "short": "PUBG"
-            },
-            "descriptions": {
-                "long": "The blockbuster military battle royale game PUBG drops players into a competitive survival battle where you’ll engage in a heart-racing fight to be the last player left alive. Loot supplies, find weapons and gear-up to take on the competition in a solo or team squad match. Emerge the lone survivor in a thrilling game experience full of unexpected, adrenaline-pumping moments. ",
-                "short": "The blockbuster military battle royale game PUBG drops players into a competitive survival battle where you’ll engage in a heart-racing fight to be the last player left alive. "
             },
             "franchises": [
                 {
-                    "name": "PUBG",
-                    "slug": "pubg"
-                }
-            ],
-            "genres": [
-                {
-                    "name": "Shooter",
-                    "slug": "shooter"
-                },
-                {
-                    "name": "Battle Royale",
-                    "slug": "battle-royale"
-                }
-            ],
-            "features": [
-                {
-                    "name": "Online Versus Multiplayer",
-                    "slug": "online-versus-multiplayer"
-                }
-            ],
-            "producers": [
-                {
-                    "name": "Bluehole Studio",
-                    "short_name": null,
-                    "slug": "bluehole-studio"
-                },
-                {
-                    "name": "PUBG Studio",
-                    "short_name": null,
-                    "slug": "pubg-studio"
-                }
-            ],
-            "publishers": [
-                {
-                    "name": "Krafton",
-                    "short_name": null,
-                    "slug": "krafton-game-union"
+                    "name": "iPhone",
+                    "slug": null
                 }
             ],
             "regions": [
                 {
-                    "legacy_id": 1946272,
-                    "name": "",
+                    "legacy_id": 2149278,
+                    "name": null,
                     "region": "US",
                     "releases": [
                         {
-                            "legacy_id": "45230a82-a56d-4af9-9371-4997af79384d",
-                            "date": "2017-03-23",
+                            "legacy_id": "bc84be23-297c-4579-973e-5e48197c127b",
+                            "date": "2023-09-22",
                             "platform_attributes": [
                                 {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "34515ca8-e7b6-49a7-9e52-fc1350418377",
-                            "date": "2017-12-12",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4553331,
-                                    "name": "Xbox One"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "203916ef-a77e-4f97-97cd-a4cdd13adec0",
-                            "date": "2018-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "ae145899-bc4d-4900-9e4a-90f602547bb1",
-                            "date": "2020-04-28",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 5631604,
-                                    "name": "Stadia"
-                                }
-                            ]
-                        }
-                    ],
-                    "age_rating": {
-                        "legacy_id": "11",
-                        "name": "T",
-                        "slug": "t",
-                        "type": "ESRB",
-                        "descriptors": [
-                            "Violence",
-                            "Blood"
-                        ]
-                    }
-                },
-                {
-                    "legacy_id": 1946273,
-                    "name": "",
-                    "region": "UK",
-                    "releases": [
-                        {
-                            "legacy_id": "55950cfa-4c64-4f5a-9ce4-1a88697622c9",
-                            "date": "2017-03-23",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "1e7427ad-903e-494c-9b16-fd282d5c998b",
-                            "date": "2017-12-12",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4553331,
-                                    "name": "Xbox One"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "1e19cf4c-e47e-4df8-9d29-7afb53b19fe8",
-                            "date": "2018-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "21b4b6ba-1cb6-4acd-904d-087c088bda0a",
-                            "date": "2020-04-28",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 5631604,
-                                    "name": "Stadia"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 1946274,
-                    "name": "",
-                    "region": "AU",
-                    "releases": [
-                        {
-                            "legacy_id": "cade2438-d397-4c1a-958d-e6bb9bb18e39",
-                            "date": "2017-03-23",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "3d4fc4e0-0dba-4d4d-90e0-f7febf2eb6bc",
-                            "date": "2017-12-12",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4553331,
-                                    "name": "Xbox One"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "fd4d048d-3bce-456c-8673-ac4ddf79257f",
-                            "date": "2018-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473462,
-                                    "name": "PlayStation 4"
-                                }
-                            ]
-                        },
-                        {
-                            "legacy_id": "93b231e0-00ff-4c38-920a-40d7ea2a7e63",
-                            "date": "2020-04-28",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 5631604,
-                                    "name": "Stadia"
+                                    "legacy_id": 4473408,
+                                    "name": "iPhone"
                                 }
                             ]
                         }
                     ]
                 }
             ]
-        }
-    ],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/sundance-film-festival-programmer-on-the-state-of-indie-filmmaking-hollywood-and-his-2024-favorites",
-    "legacy_id": "4fd667ff-9c46-48f7-818a-48ae9c01ca0b",
-    "cover": "https://assets-prd.ignimgs.com/2024/01/27/fest-interview-blogroll-1706398688046.jpg?width=1280",
-    "title": "Sundance Film Festival Programmer on the State of Indie Filmmaking, Hollywood, and His 2024 Favorites",
-    "subtitle": "John Nein sits down with IGN during Sundance's 40th edition.",
-    "description": "During the Sundance Film Festival's 40th edition, we talked to senior programmer John Nein about the state of indie filmmaking, his 2024 favorites, and what today's Hollywood can learn from a festival like Sundance.",
-    "excerpt": "During the Sundance Film Festival's 40th edition, we talked to senior programmer John Nein about the state of indie filmmaking, his 2024 favorites, and what today's Hollywood can learn from a festival like Sundance.",
-    "publish_date": "2024-01-27T23:43:34.848Z",
-    "modify_date": "2024-01-28T00:32:43.807Z",
-    "slug": "sundance-film-festival-programmer-on-the-state-of-indie-filmmaking-hollywood-and-his-2024-favorites",
-    "category": "News",
-    "vertical": "Entertainment",
-    "processedHtml": "<section class=\"article-page\"><p>Sundance, the world&#39;s largest independent film festival, is celebrating its 40th edition this year, and there&#39;s a lot to reflect on. Over the past four decades, everything from Clerks to Little Miss Sunshine to Get Out have premiered on at the Park City, Utah, and this year boasts some starry entries too.</p><section data-transform=\"mobile-ad-break\"></section><p>There&#39;s Freaky Tales, starring Pedro Pascal and from Captain Marvel directors Anna Boden and Ryan Fleck; two Kristen Stewart films in Love Lies Bleeding (<a href=\"https://www.ign.com/articles/loves-lies-bleeding-review-kristen-stewart\">read IGN&#39;s review here</a>) and Love Me; Richard Linklater&#39;s Netflix film Hit Man: Steven Soderbergh&#39;s latest, Presence; and much, much more. It&#39;s a massive lineup, but luckily, we got to sit down with Sundance Senior Programmer John Nein to help us comb through it.</p><p>As Hollywood finds itself at a crossroads, with tried-and-true tentpole trends proving less reliable than usual, now&#39;s as good a time as any to talk about the strength of indie films and what Hollywood can learn from festivals like Sundance. Below, Nein talks about that, his favorite picks from the 2024 festival, what Sundance&#39;s role is in the industry today, and so much more. </p><p><strong>We&#39;re talking kind of around the tailend of the festival this year. We&#39;ve gotten the lay of the land of the movies. I know I&#39;m going to ask you to basically pick among your children, but any personal favorites this year?</strong></p><p><strong>John Nein</strong>: That is picking among my children. It&#39;s true. I came into it always the same thing, appreciating the mix between discovery and filmmakers who we&#39;ve shown before. </p><p>I love the [Steven] Soderbergh film. I thought the idea of continuing to explore a language of cinema and tell a ghost story or a presence story – it&#39;s called Presence (<a href=\"https://www.ign.com/articles/presence-review-steven-soderbergh\"><u><em>read IGN’s review here</em></u></a><em>)</em> – and it&#39;s a ghost story told entirely from the point of view of a ghost. And I was like, “wow.” I mean, he just continues to do innovative work. And then there&#39;s so many discovery films. I love a film called Didi, which is about a Taiwanese American kid who grew up in Fremont, California, loving coming-of-age stories, but wanting to tell them from the point of view of where he grew up in Fremont with the people that he knew, which were first-generation children of immigrants. It&#39;s funny. It&#39;s got such an energy. He&#39;s such a talented filmmaker. His name is Sean Wong. </p><section data-transform=\"quoteBox\">You want to feel jolted into believing in the freshness of a movie, and that&#39;s what happens with some of these movies. </section><p>I just thought there were also so many interesting films that dealt with mishmash of genre. Like Freaky Tales (<a href=\"https://www.ign.com/articles/freaky-tales-review-pedro-pascal\"><u>read IGN’s review here</u></a>) is a film that’s told in four parts about Oakland in 1987, but it&#39;s such a mash of pulp and comedy, anthology horror, old Testament wrath. I mean, it&#39;s such a creative film from – again, going back to that idea of a mix between discovery and new filmmakers – Ryan Fleck and Anna Boden, who were here 20 years ago with their first short film that they made together, Gowanus, Brooklyn, and then they go on to make Half Nelson and Mississippi Grind and Sugar, Captain Marvel. And then they come back with an indie feature, Freaky Tales, that I think is about something really special, and yet it&#39;s a kind of cool genre mishmash. So there&#39;s a ton of stuff that you go through the programming cycle and you want to feel jolted into believing in the freshness of a movie, and that&#39;s what happens with some of these movies. </p><p><strong>I want to talk more about the lineup and the submissions in particular. I think there was a little bit of trepidation before the announcement lineup, basically, because we&#39;re coming off two strikes and we&#39;re still dealing with the pandemic, but I think you guys had a record-breaking amount of submissions this year. What was it, like 17,000 or something?</strong></p><p><strong>John Nein: </strong>That&#39;s right, yeah. If you count short films and features, it was a huge, and it was a record-breaking number, but we have a team of really great programmers who have a great system and we made our way through and we found what I think were some really special films within that. But yes, it was a very daunting task to go through those submissions. </p><p><strong>It is daunting, but it&#39;s also kind of impressive. I mean, does that tell you something about the enduring strength of Sundance, 40 editions in?</strong></p><p><strong>John Nein</strong>: Absolutely, and the enduring strength of indie storytelling. And I think there&#39;s always so many dimensions to a story, and while it&#39;s true that there was definitely a sense of production coming to a close or a pause for a certain amount of time, but from the standpoint of the program, I think that the program, what I am hearing this year from the industry – the very industry that could have been the people who are anticipating or wondering what to anticipate – is that it&#39;s the strongest program they&#39;ve seen for a long time. And so we never know that going in. We have an intuitive feeling that we&#39;re really proud of the program, but I was literally talking to someone just before I came here about how the industry, I think, is looking at the program this year and finding a lot from the standpoint of discovery and also acquisitions. So yeah, I think it&#39;s a really strong program despite some of those adversities. </p><section data-transform=\"ignvideo\" data-slug=\"the-top-10-sundance-films-of-all-time-a-cinefix-movie-list\" data-loop=\"\"></section><p><strong>What major trends did you see emerging in both the submissions and what would become the lineup? </strong></p><p><strong>John Nein</strong>: I think there&#39;s definitely some continuing trends. Let&#39;s say what we&#39;re responding to and have been for a number of years is not surprising, which is that there&#39;s almost a relish in genre, broadly speaking. Not just horror, but horror science fiction sort of comedy, basically. I think that the fact is that the market is certainly favorable towards distinctive genre work. What&#39;s cool about that, though, is that filmmakers are using it in a really artful, expressive way. And so you have people using genre to ask questions and to deal with race and to deal with really interesting social questions. That&#39;s a trend that&#39;s for sure continuing. And we see creativity in genre even like I mentioned, science fiction. </p><p>I think one of the most inventive films that we&#39;re showing in the festival is Love Me (<a href=\"https://www.ign.com/articles/love-me-review-kristen-stewart-steven-yeun\"><u>read IGN’s review here</u></a>), which also has almost a gimmicky tagline. It&#39;s a buoy that falls in love with a satellite told over a billion years, and yet it&#39;s so smart about the way that it asks questions about AI, machine learning, being in consciousness. And it&#39;s very funny, and it has Kristen Stewart and Steven Yeun, and it, I think, has this formal innovation to it that just tells me that independent filmmakers are seeing ways to use genre in incredibly creative ways that also still ask questions. </p><p>And it goes back to, I think, a lot of films that we could cite from the last few years too. And you do see also in this space a continuing trend towards biographical work that&#39;s certainly true in nonfiction. We saw so many interesting films this year about people like Frida Kahlo, Sue Bird, Tammy Faye Bakker, Mavis Beacon, someone who I think many of us didn&#39;t necessarily know, and yet so many other people came of age learning typing from this software. And this is a film (Seeking Mavis Beacon) that goes to seek out who is Mavis Beacon, so almost a different kind of biographical film. And the band Devo, a biographical film about them. </p><section data-transform=\"quoteBox\">You have people using genre to ask questions and to deal with race and to deal with really interesting social questions.</section><p>And then you even see that in fiction as well. There was a biopic about Rob Peace called Rob Peace made by Chiwetel Ejiofor. It&#39;s a fascinating story about a real person. I mean, that&#39;s a trend for sure. I think the way that we look at it is we&#39;re trying to find those works that allow us to open up the history that they&#39;re dealing with in a way that is deeper, more sophisticated, that lets us look at history through a different perspective. So I would say if you look at Devo, sure, it&#39;s a story of a band. Maybe some people know it only from their more outward Whip It or something like that. What I see is a film that looks at the ability of art and music to be responsive to its time. Devo is a band that came out of Kent State, and it was a band that asked questions about how art could be responsive to society, and that&#39;s where the whole idea of devolution came. So sure, it&#39;s a biographical film, but it&#39;s a film that is really, really about everything that Sundance should be about, which is how is art responsive to its time. </p><p><strong>You mentioned the genres that we keep seeing pop up, and I think this is a really, really strong year for docs. I think two of the biggest movies – Will &amp; Harper and Super/Man: The Christopher Reeve Story – I mean those were both documentaries and I think there&#39;s a ton on the lineup. Was that a conscious choice for you guys to really lean into that this year? </strong></p><p><strong>John Nein</strong>: It wasn&#39;t a conscious choice to lean in, and in fact, had you seen the vast pool from which we were drawing, it may not even feel like leaning in. It just is that that is a reality of what&#39;s being made right now. I think that in those cases, in the ones that I mentioned, it really is a question of trying to find the films that speak more broadly to themes and ideas and questions about society and something that really exploits the possibilities that longform nonfiction has to tell deeper stories, to bring different perspectives. I think of a film that we showed called Sugarcane, which I was doing the Q&amp;A of that film, and that&#39;s maybe the most moving experience I&#39;ve ever had at Sundance. It was incredible. It&#39;s a story about the residential schools in Canada that forcibly removed children from their homes, indigenous children. And the story is framed through both investigative journalism but also personal experiences. And that was true of one of the filmmakers. And so to me, it&#39;s an example of the form itself being different and more resounding, I guess, emotionally, intellectually than other forms that are out there, investigative journalism or maybe some of the things that you would see in mainstream media. It&#39;s like, this is what we can do when we devote longform nonfiction to important subjects. </p><p><strong>I also want to talk to you about the festival experience at large because you guys have kind of been forced to evolve over the past few years. You had the all-digital festival and then you had last year&#39;s hybrid, and I feel like this year was fully back in action, but you still have the digital screenings. So I&#39;m curious how you guys balance prioritizing that in-person experience that&#39;s so special while also making the films available for people who can&#39;t get out here. </strong></p><p><strong>John Nein</strong>: Yeah, I mean, you said it and it is exactly that. It&#39;s a balance. The notion that the online festival creates accessibility, we&#39;re a place that is not easy to get to. It&#39;s a costly festival for some people. And so the notion that our competitions are available to all around the country, to those who buy those passes packages, is really part of what we&#39;re about in terms of creating accessibility. That is true of industry as well too. We certainly have a huge number of American press and industry who come to the festival internationally as well, and yet we know that there are opportunities created for the films by virtue of industry who are watching them through online passes and packages too. So on one hand, you&#39;re creating that accessibility, and on the other hand, we&#39;re being responsive to an industry that is rightly pointing out that there is a huge energy and vitality to the way that the film meets the world. That first time in person in a theater with an audience, with the press industry and attendance, there&#39;s nothing like that. We&#39;ve always known that, and we have evolved that hybrid model in order to try to balance those two things as best we can. </p><section data-transform=\"poll\" data-id=\"60852318-9933-485c-9f5a-08068cf10c5d\"></section><p><strong>I also want to talk to you about Sundance&#39;s role in the movie business at large, because if you look at movie business in general, it&#39;s kind of at this weird place. Like I said, we had two strikes last year. We’re in this time where tentpoles are kind of not doing so hot, and Sundance is still this beacon for indie filmmaking. So what do you think the industry can learn from Sundance&#39;s enduring success? </strong></p><p><strong>John Nein: </strong>Yeah, I think it&#39;s a really good question because I think in the end, I&#39;ve been here for long enough to see the ups and downs of the industry and to see other moments where we&#39;ve had challenging circumstances. We certainly do at this time as well for a lot of different reasons, but maybe the sort of brightest beacon is that we have always known that there is a connection between artist and audience that is so clear at this festival, the way that the films are being received, the enthusiasm that there is for them. To me, it is an indicator that at the fundamental level, there is an appetite for these films. There is a deep desire amongst audiences to hear personal stories, independent stories, the kinds of creativity and innovation and pushing the form that we put a showcase together at the festival. That&#39;s what we believe in. That is kind of the foundation. </p><p>And then when you look at, yeah, there are some questions that we have to ask in terms of the industry and release models and distribution and financing, and these are tricky things, but I do think that most of the industry and the artists, the community, the indie community itself, I think they approach those questions from that sort of step back and say, “but do we believe that there&#39;s value to the work and that the audience is there?” And then we just got to figure out the rest. </p><p><strong>What is Sundance&#39;s role in 2024 and is it different than it was 40 years ago, or 20 years ago?</strong></p><p><strong>John Nein</strong>: The sense that the goal has always to be responsive to the changing landscape and to maintain our sort of fixed star, which is how do we create opportunities for the independent storytellers? How do we facilitate the industry stuff? That&#39;s always been our goal. Probably what&#39;s different are the intricacies of that and the way that we have to recognize what&#39;s happening and change a little bit how it is that we create those opportunities. We have to recognize what&#39;s happening in the landscape in order to do the thing that we know we&#39;re here to do, which is to uplift those stories and to create that point of connection with the audience and with the industry. </p><section data-transform=\"quoteBox\">We have to recognize what&#39;s happening in the landscape in order to do the thing that we know we&#39;re here to do, which is to uplift those stories.</section><p>I think what I hear from folks that I talk to is that in this world where there are challenges in theatrical and in release models, it has never been more important to have festivals that are there in order to showcase the work in order to create those opportunities. And then maybe in some ways, in order to highlight work in a landscape where there&#39;s quite a lot, there&#39;s a lot of noise. And so I think that we go into this year asking questions about how we&#39;ll evolve next year and how we&#39;ll try to see what&#39;s happening in the market, try to see what&#39;s happening with how films are being made or in some cases not being made, and we&#39;ll continue to adjust the festival in ways that we think will foster opportunities for the filmmakers. </p><p><strong>Not to put you on the spot, but when you talk about how you want to evolve, are there any specific areas in which you do want to evolve? </strong></p><p><strong>John Nein</strong>: Yeah, I mean, I think for example, when we look at the acquisitions market, when we look at the way in which films have visibility, and I&#39;m thinking particularly within press, particularly within audience response, how is that read online, for example, not on screenings, but in social media and things like that. When I think of those things, it&#39;s very much with an eye toward how can we make sure that there&#39;s more visibility and press coverage for some of these films? How can we recognize that we may have to find ways to talk to the industry about the films in a better way, or that I think it&#39;s about creating opportunity and it&#39;s about recognizing how that&#39;s changing and trying to compensate for that. </p><p>But it&#39;s also about, for example, I would say we look at even films that are in release, they&#39;ve been acquired, or maybe they already had a distributor when they came to Sundance. What are the challenges that those films have, and is there a way that Sundance Institute – not necessarily just during the period of the festival – but what&#39;s our relationship to the work that goes out into the world? What&#39;s our relationship to creating visibility even when it&#39;s being released by another company or things like that? What&#39;s our relationship to trying to get ourself unstuck from some of the things that are problematic right now? We just had what we called a think tank of companies and producers and philanthropic interests and organizations, and it was really for the purpose of coming together and trying to create some momentum towards solutions for this particular moment when there are some challenges. So when you ask what is it that our role in that would be, it&#39;s beyond simply the festival, and it&#39;s the things that we ask ourselves about what the wider institute can do as well. Yeah. </p><p><strong>Is there anything you&#39;ve seen this year that&#39;s got you like, “yeah, I feel really good about the movie business and feel really good about what we&#39;re doing”? </strong></p><p><strong>John Nein</strong>: Oh man. That&#39;s tough. Yeah, I mean, it&#39;s weird because I feel like there were films that deal with interesting questions, and yet my hope is that they will be popular films. They will be well-received. [I’m] thinking of a film like American Society of Magical Negroes, which I think is a really smart, biting satire that asks tough questions, but it is a romantic comedy. It is very funny. It is very witty and clever and charming, frankly. So to me, it&#39;s a film that I think sort of squeezes into the national dialogue and conversation in an interesting way. It just made me happy. And yet I am asking questions as well too. And so just seeing how well that played was really, really heartening. </p><section data-transform=\"ignvideo\" data-slug=\"does-really-getting-the-babadook-make-clint-a-bad-parent\" data-loop=\"\"></section><p>Even some of our international films, there was such an amazing response for a Mexican film that we all really love on our programming team called Sujo. Just to see the audience response to that. Not everyone flocks towards international language films, and to see that one get a standing ovation was amazing. There&#39;s a film called Black Box Diaries that has some really difficult subject matter, and yet at the end, the filmmaker was leading the audience in a karaoke of I Will Survive, which was a pretty amazing moment to see. So yeah, I think those heartening moments are everything that is the sort of best quality of being in person. Those are the things that happen only when you&#39;re here in person. </p></section>",
-    "contributors": [
+        },
         {
-            "legacy_author_id": 97808291,
-            "legacy_id": "9836955a-c125-4bdc-a960-be36e5fc6d66",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/60ec97f42548b2156beb42a3/headshot-1645834880680.jpg",
-            "name": "Alex Stedman",
-            "nickname": "Alex.Stedman"
-        }
-    ],
-    "brand": null,
-    "objects": [],
-    "review": null
-},
-{
-    "url": "https://www.ign.com/articles/batman-is-not-in-the-script-of-superman-legacy-says-james-gunn",
-    "legacy_id": "a4f525e9-c65f-4256-b212-cedb49478606",
-    "cover": "https://assets-prd.ignimgs.com/2023/04/18/superman-legacy-pre-production-1681826985799.jpg?width=1280",
-    "title": "Batman Is 'Not in the Script' of Superman: Legacy, Says James Gunn",
-    "subtitle": "But he'll likely show up elsewhere in the new DCU.",
-    "description": "Batman will not be in the upcoming DC Superman film, Superman: Legacy, according to James Gunn himself.",
-    "excerpt": "Batman will not be in the upcoming DC Superman film, Superman: Legacy, according to James Gunn himself.",
-    "publish_date": "2024-01-26T23:39:46.671Z",
-    "modify_date": "2024-01-26T23:50:54.707Z",
-    "slug": "batman-is-not-in-the-script-of-superman-legacy-says-james-gunn",
-    "category": "News",
-    "vertical": "Entertainment",
-    "processedHtml": "<section class=\"article-page\"><p>Batman will not be in the upcoming DC Superman film, Superman: Legacy, according to James Gunn himself.</p><section data-transform=\"mobile-ad-break\"></section><p>Speaking on Threads <a href=\"https://www.threads.net/@jamesgunn?hl=en\">in response to a fan question</a>, Gunn confirmed that Batman cannot appear in Superman Legacy &quot;because he&#39;s not in the script.&quot;</p><section data-transform=\"ignvideo\" data-slug=\"james-gunn-has-said-all-the-right-words-so-far-superman-legacy\" data-loop=\"\"></section><p>While it might seem like a bit of a silly thing to have to confirm, the question was likely sparked by <a href=\"https://screenrant.com/superman-legacy-batman-ryan-gosling-rumor-james-gunn/\">a weird rumor from earlier this year</a> that Ryan Gosling had been cast as Batman in the upcoming film. At the time, Gunn responded with an eyeroll emoji, indicating this was not the case, but he never outright denounced a Batman being in his Superman, and so the questions appear to have persisted.</p><p>Batman-less though it may be, we actually know a good chunk of the cast of Superman: Legacy already. <a href=\"https://www.ign.com/articles/superman-legacy-cast-revealed\">David Corenswet will play the man himself</a>, starring alongside Rachel Brosnahan as Lois Lane, with Nicholas Hoult <a href=\"https://www.ign.com/articles/superman-legacy-may-have-found-its-lex-luthor\">tapped to play Lex Luthor</a>. Eve Teschmacher and Jimmy Olsen <a href=\"https://www.ign.com/articles/superman-legacy-finds-eve-teschmacher-jimmy-olsen\">will be played by</a> Sara Sampaio and Skyler Gisondo respectively. Supergirl will also appear in the film, <a href=\"https://www.ign.com/articles/james-gunns-dcu-is-reportedly-close-to-finding-its-supergirl\">with recent reports suggesting</a> she may be played by either Milly Alcock or Meg Donnelly.</p><p>Superman: Legacy is <a href=\"https://www.ign.com/articles/superman-legacy-will-keep-its-release-date-despite-the-strikes-james-gunn-confirms\">planned for release on July 11, 2025</a> and will serve as a reboot film and the start of a new, James Gunn-helmed DCU. It is expected to be followed by The Authority, The Brave and the Bold, Supergirl: Woman of Tomorrow, and Swamp Thing. While we won&#39;t see Batman in Superman: Legacy, he&#39;ll almost certainly show up in time for The Brave and the Bold, which is based on a comic series of the same name and is expected to feature the Bat-family.</p><section data-transform=\"divider\"></section><p><em>Rebekah Valentine is a senior reporter for IGN. Got a story tip? Send it to rvalentine@ign.com.</em></p></section>",
-    "contributors": [
-        {
-            "legacy_author_id": 97559961,
-            "legacy_id": "38948b2b-e40c-401e-aedd-75d228c4c00b",
-            "thumbnail_url": "https://assets-prd.ignimgs.com/avatars/5ff35af62d3cc815bfd36656/Reb-1683318754726.png",
-            "name": "Rebekah Valentine",
-            "nickname": "duckvalentine"
-        }
-    ],
-    "brand": null,
-    "objects": [
-        {
-            "legacy_id": "32d61ebc-ba2f-4cd4-8957-c46315dddd49",
-            "url": "/movies/superman-legacy",
-            "slug": "superman-legacy",
-            "type": "Movie",
+            "legacy_id": "75d693aa-7550-4be5-afa6-599fcc6cf649",
+            "url": "/tech/iphone-15-pro-max",
+            "slug": "iphone-15-pro-max",
+            "type": "Tech",
             "names": {
-                "primary": "Superman: Legacy",
-                "alt": [
-                    "Superman [James Gunn reboot]",
-                    "\nSuperman's Legacy",
-                    "\nSuperman Legacy"
-                ],
-                "short": "Superman: Legacy"
-            },
-            "descriptions": {
-                "long": "James Gunn and Peter Safran are rebooting the Superman film franchise.  Superman: Legacy focuses on Superman balancing his Kryptonian heritage with his human upbringing.",
-                "short": "Superman balances his Kryptonian heritage with his human upbringing."
+                "primary": "iPhone 15 Pro Max",
+                "alt": [],
+                "short": null
             },
             "franchises": [
                 {
-                    "name": "DC Comics",
-                    "slug": "dc"
-                },
-                {
-                    "name": "Superman",
-                    "slug": "superman"
-                }
-            ],
-            "genres": [
-                {
-                    "name": "Superhero",
-                    "slug": "superhero"
-                },
-                {
-                    "name": "Action",
-                    "slug": "action"
-                },
-                {
-                    "name": "Fantasy",
-                    "slug": "fantasy"
-                }
-            ],
-            "features": [],
-            "producers": [
-                {
-                    "name": "DC Studios",
-                    "short_name": null,
-                    "slug": "dc-studios"
-                }
-            ],
-            "publishers": [
-                {
-                    "name": "Warner Bros. Pictures",
-                    "short_name": null,
-                    "slug": "warner-bros-pictures"
+                    "name": "iPhone",
+                    "slug": null
                 }
             ],
             "regions": [
                 {
-                    "legacy_id": 2092250,
-                    "name": null,
-                    "region": "AU",
-                    "releases": [
-                        {
-                            "legacy_id": "ab8cabdb-241a-4dc2-b86c-7b2a2db75f49",
-                            "date": "2025-07-11",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4236628,
-                                    "name": "Theater"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 2092251,
-                    "name": null,
-                    "region": "UK",
-                    "releases": [
-                        {
-                            "legacy_id": "1a424703-246d-4bc9-bc41-bdcaa83dca0a",
-                            "date": "2025-07-11",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4236628,
-                                    "name": "Theater"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 2092252,
+                    "legacy_id": 2149284,
                     "name": null,
                     "region": "US",
                     "releases": [
                         {
-                            "legacy_id": "5774a1f9-3adc-4fab-90d8-c95c8fa30460",
-                            "date": "2025-07-11",
+                            "legacy_id": "4711937e-587b-4109-83b5-acc1c9443d39",
+                            "date": "2023-09-22",
                             "platform_attributes": [
                                 {
-                                    "legacy_id": 4236628,
-                                    "name": "Theater"
+                                    "legacy_id": 4473408,
+                                    "name": "iPhone"
                                 }
                             ]
                         }
@@ -793,6 +231,650 @@
             ]
         }
     ],
+    "recommendations": [
+        {
+            "legacy_id": "417fe926-ed2e-403f-bbfd-06d2e3a236f0",
+            "url": "/articles/suicide-squad-kill-the-justice-league-review",
+            "slug": "suicide-squad-kill-the-justice-league-review",
+            "type": "Article",
+            "title": "Where's Our Suicide Squad: Kill the Justice League Review?",
+            "subtitle": "Review codes have not been sent out ahead of time.",
+            "publish_date": "2024-01-27T19:25:29.251Z",
+            "cover": "https://assets-prd.ignimgs.com/2023/11/15/suicidesquadkillthejusticeleagueepisode1developerdeepdive-ign-blogroll1-1700072768851.jpg",
+            "category": "Review",
+            "brand": {
+                "__ref": "Brand:156"
+            },
+            "primary_object": {
+                "legacy_id": "dbf3311b-d13f-4e23-92a6-4a42baa5afb2",
+                "url": "/games/suicide-squad-kill-the-justice-league",
+                "slug": "suicide-squad-kill-the-justice-league",
+                "type": "Game",
+                "names": {
+                    "primary": "Suicide Squad: Kill The Justice League",
+                    "alt": [
+                        "DC's Suicide Squad",
+                        "Suicide Squad: The Movie",
+                        "Suicide Squad: The Game",
+                        "Suicide Squad Kill The Justice League",
+                        "Rocksteady Games Project",
+                        "Suicide Squad Kills The Justice League"
+                    ],
+                    "short": "Suicide Squad"
+                },
+                "franchises": [
+                    {
+                        "name": "DC Comics",
+                        "slug": null
+                    },
+                    {
+                        "name": "Suicide Squad",
+                        "slug": null
+                    }
+                ],
+                "regions": [
+                    {
+                        "legacy_id": 2110821,
+                        "name": "",
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "5aed1b7c-23f0-45ba-b8c8-38f634c15db1",
+                                "date": "2024-02-02",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711233,
+                                        "name": "PlayStation 5"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "65aa9df4-bc1a-4ce0-87fa-0ad4ad44c142",
+                                "date": "2024-02-02",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "d65149c0-02c4-4b17-a635-b8f7f3ac40d3",
+                                "date": "2024-02-02",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "b6005032-9706-45dd-bfc4-03e899e42c7a",
+            "url": "/articles/5-tips-for-your-first-palworld-base",
+            "slug": "5-tips-for-your-first-palworld-base",
+            "type": "Article",
+            "title": "5 Tips for Your First Palworld Base",
+            "subtitle": "Get yourself set up for success.",
+            "publish_date": "2024-01-27T17:00:00.000Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/26/palworld-base-sad-1706297604623.jpg",
+            "category": "Walkthrough",
+            "brand": null,
+            "primary_object": {
+                "legacy_id": "82020d6e-53c3-473a-aaf5-f2434aa21d87",
+                "url": "/games/palworld",
+                "slug": "palworld",
+                "type": "Game",
+                "names": {
+                    "primary": "Palworld",
+                    "alt": [
+                        "Pal World"
+                    ],
+                    "short": null
+                },
+                "franchises": [],
+                "regions": [
+                    {
+                        "legacy_id": 2184269,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "5926ebdc-0d52-4df6-a279-42691b62a309",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "6ac5c3ea-48a1-4b13-a392-59f2b50df1ff",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "9b6964c7-4ad5-450d-a07e-196b3745d7d7",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4553331,
+                                        "name": "Xbox One"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "297274f6-09d1-4175-a504-39d94c300a34",
+            "url": "/articles/dungeonborne-mixes-strategic-extraction-and-battle-royale-gameplay-and-you-can-try-it-out-at-steam-next-fest",
+            "slug": "dungeonborne-mixes-strategic-extraction-and-battle-royale-gameplay-and-you-can-try-it-out-at-steam-next-fest",
+            "type": "Article",
+            "title": "Dungeonborne Mixes Strategic, Extraction and Battle Royale Gameplay, and You Can Try It Out at Steam Next Fest",
+            "subtitle": "",
+            "publish_date": "2024-01-27T00:00:00.000Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/18/1920-1080-1705600669693.png",
+            "category": "Sponsored",
+            "brand": null,
+            "primary_object": {
+                "legacy_id": "18d6772c-cba3-4af9-8624-c70cfee42260",
+                "url": "/games/project-crawl",
+                "slug": "project-crawl",
+                "type": "Game",
+                "names": {
+                    "primary": "Project Crawl",
+                    "alt": [],
+                    "short": null
+                },
+                "franchises": [],
+                "regions": [
+                    {
+                        "legacy_id": 2151510,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "f4bd1d89-0d28-4c9f-b026-b7a77654ec4d",
+                                "date": "2049-12-31",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "de0eb67e-bc0a-4b7b-9060-1bf72635f3b2",
+            "url": "/articles/palworld-vs-pokmon-comparison-just-how-similar-are-the-designs",
+            "slug": "palworld-vs-pokmon-comparison-just-how-similar-are-the-designs",
+            "type": "Article",
+            "title": "Palworld vs. Pokémon Comparison: Just How Similar Are the Designs?",
+            "subtitle": "From familiar details to larger similarities, we look at how much Pokémon we can see in Palworld.",
+            "publish_date": "2024-01-26T20:01:10.048Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/26/palworldandpokemon-column-360-1706310387565.jpg",
+            "category": "Column",
+            "brand": {
+                "__ref": "Brand:325"
+            },
+            "primary_object": {
+                "legacy_id": "82020d6e-53c3-473a-aaf5-f2434aa21d87",
+                "url": "/games/palworld",
+                "slug": "palworld",
+                "type": "Game",
+                "names": {
+                    "primary": "Palworld",
+                    "alt": [
+                        "Pal World"
+                    ],
+                    "short": null
+                },
+                "franchises": [],
+                "regions": [
+                    {
+                        "legacy_id": 2184269,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "5926ebdc-0d52-4df6-a279-42691b62a309",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "6ac5c3ea-48a1-4b13-a392-59f2b50df1ff",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "9b6964c7-4ad5-450d-a07e-196b3745d7d7",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4553331,
+                                        "name": "Xbox One"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "853ab0dc-181a-459f-ac97-b349b1d88381",
+            "url": "/articles/the-pokemon-company-makes-an-official-statement-on-palworld-we-intend-to-investigate",
+            "slug": "the-pokemon-company-makes-an-official-statement-on-palworld-we-intend-to-investigate",
+            "type": "Article",
+            "title": "The Pokemon Company Makes an Official Statement on Palworld: 'We Intend to Investigate'",
+            "subtitle": "Despite not mentioning Palworld by name, the message is clear.",
+            "publish_date": "2024-01-25T04:01:33.725Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/25/palworldearlyaccessreleasedatetrailer-ign-blogroll-1704822459672-1706155084682.jpg",
+            "category": "News",
+            "brand": null,
+            "primary_object": {
+                "legacy_id": "82020d6e-53c3-473a-aaf5-f2434aa21d87",
+                "url": "/games/palworld",
+                "slug": "palworld",
+                "type": "Game",
+                "names": {
+                    "primary": "Palworld",
+                    "alt": [
+                        "Pal World"
+                    ],
+                    "short": null
+                },
+                "franchises": [],
+                "regions": [
+                    {
+                        "legacy_id": 2184269,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "5926ebdc-0d52-4df6-a279-42691b62a309",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "6ac5c3ea-48a1-4b13-a392-59f2b50df1ff",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "9b6964c7-4ad5-450d-a07e-196b3745d7d7",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4553331,
+                                        "name": "Xbox One"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "732345e0-2e37-4177-8ac0-f6d4096c5450",
+            "url": "/articles/palworld-interactive-map",
+            "slug": "palworld-interactive-map",
+            "type": "Article",
+            "title": "Palworld Interactive Map Is Live With Merchant Locations, Fast Travel Points, and More",
+            "subtitle": "Track and locate every collectible and potential spawn location.",
+            "publish_date": "2024-01-24T18:25:11.369Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/24/palworld-map-interactive-1706120696630.png",
+            "category": "Walkthrough",
+            "brand": {
+                "__ref": "Brand:318"
+            },
+            "primary_object": {
+                "legacy_id": "82020d6e-53c3-473a-aaf5-f2434aa21d87",
+                "url": "/games/palworld",
+                "slug": "palworld",
+                "type": "Game",
+                "names": {
+                    "primary": "Palworld",
+                    "alt": [
+                        "Pal World"
+                    ],
+                    "short": null
+                },
+                "franchises": [],
+                "regions": [
+                    {
+                        "legacy_id": 2184269,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "5926ebdc-0d52-4df6-a279-42691b62a309",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "6ac5c3ea-48a1-4b13-a392-59f2b50df1ff",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "9b6964c7-4ad5-450d-a07e-196b3745d7d7",
+                                "date": "2024-01-19",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4553331,
+                                        "name": "Xbox One"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "a7c5d9c0-3cc5-4cf6-b228-b08fefb447de",
+            "url": "/articles/like-a-dragon-infinite-wealth-review",
+            "slug": "like-a-dragon-infinite-wealth-review",
+            "type": "Article",
+            "title": "Like a Dragon: Infinite Wealth Review",
+            "subtitle": "Hawaiian punch.",
+            "publish_date": "2024-01-23T15:00:00.000Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/23/likeadragoninfinitewealth-review-blogroll-1705976427332.jpg",
+            "category": "Review",
+            "brand": {
+                "__ref": "Brand:156"
+            },
+            "primary_object": {
+                "legacy_id": "04a9727b-5064-44fa-a0eb-1844147801fe",
+                "url": "/games/like-a-dragon-infinite-wealth",
+                "slug": "like-a-dragon-infinite-wealth",
+                "type": "Game",
+                "names": {
+                    "primary": "Like a Dragon: Infinite Wealth",
+                    "alt": [
+                        "Yakuza: Like a Dragon 2",
+                        "\nRyu ga Gotoku 8",
+                        "\nYakuza: Like a Dragon 8",
+                        "Yakuza 8"
+                    ],
+                    "short": null
+                },
+                "franchises": [
+                    {
+                        "name": "Yakuza: Like A Dragon",
+                        "slug": null
+                    }
+                ],
+                "regions": [
+                    {
+                        "legacy_id": 2184541,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "1878b98c-ded0-445f-a6e6-1c8e1a79df85",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473462,
+                                        "name": "PlayStation 4"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "23179afc-d174-4848-9294-0d78f2c15e1c",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "acabad1c-2455-4ce5-9522-919f7b199066",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711233,
+                                        "name": "PlayStation 5"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "ea2b2a06-b603-4ffe-9d7b-466a8a6d8ce6",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "f5869318-3c8b-4310-9cbf-d3c64de87fd9",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4553331,
+                                        "name": "Xbox One"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "legacy_id": "17e16bc1-fc96-4c5c-9e4a-89dceddfb752",
+            "url": "/articles/tekken-8-review",
+            "slug": "tekken-8-review",
+            "type": "Article",
+            "title": "Tekken 8 Review ",
+            "subtitle": "Fist Meets Face.",
+            "publish_date": "2024-01-23T14:00:00.000Z",
+            "cover": "https://assets-prd.ignimgs.com/2024/01/22/tekken8-review-blogroll-1705944513847.jpg",
+            "category": "Review",
+            "brand": {
+                "__ref": "Brand:156"
+            },
+            "primary_object": {
+                "legacy_id": "683a78a8-e211-4706-92f8-09c3233c19cf",
+                "url": "/games/tekken-8",
+                "slug": "tekken-8",
+                "type": "Game",
+                "names": {
+                    "primary": "Tekken 8",
+                    "alt": [
+                        "Tekken VIII",
+                        "Teken 8\n"
+                    ],
+                    "short": "Tekken 8"
+                },
+                "franchises": [
+                    {
+                        "name": "Tekken",
+                        "slug": null
+                    }
+                ],
+                "regions": [
+                    {
+                        "legacy_id": 2179001,
+                        "name": null,
+                        "region": "US",
+                        "releases": [
+                            {
+                                "legacy_id": "2ac6dece-318a-4ac0-a6da-c2e2c62258e2",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711232,
+                                        "name": "Xbox Series X|S"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "6f212a7e-3a99-406a-a83f-ce2a5772fac7",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 4473466,
+                                        "name": "PC"
+                                    }
+                                ]
+                            },
+                            {
+                                "legacy_id": "a313501b-dc59-4dda-a16d-41795c2cc33f",
+                                "date": "2024-01-26",
+                                "platform_attributes": [
+                                    {
+                                        "legacy_id": 5711233,
+                                        "name": "PlayStation 5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "slideshows": [],
+    "object_wiki": {
+        "slug": "death-stranding",
+        "navigation": [
+            {
+                "label": "Death Stranding Guide",
+                "url": ""
+            },
+            {
+                "label": "Beginner's Guide - Basics and Features",
+                "url": "Beginner%27s_Guide_-_Basics_and_Features"
+            },
+            {
+                "label": "How-To Guides",
+                "url": "How-To_Guides"
+            },
+            {
+                "label": "Walkthrough (Orders for Sam)",
+                "url": "Walkthrough_(Orders_for_Sam)"
+            },
+            {
+                "label": "Essential Death Stranding Tips and Tricks",
+                "url": "Essential_Death_Stranding_Tips_and_Tricks"
+            },
+            {
+                "label": "Vehicles Guide - How to Repair, Charge, and Use Reverse Trikes and Trucks",
+                "url": "Vehicles_Guide_-_How_to_Repair,_Charge,_and_Use_Reverse_Trikes_and_Trucks"
+            },
+            {
+                "label": "Connection Level Rewards - List of Upgrades and Unlocks for Knot Cities, Facilities, and Preppers",
+                "url": "Connection_Level_Rewards_-_List_of_Upgrades_and_Unlocks_for_Knot_Cities,_Facilities,_and_Preppers"
+            },
+            {
+                "label": "Equipment and Weapons Unlocking Guide",
+                "url": "Equipment_and_Weapons_Unlocking_Guide"
+            },
+            {
+                "label": "Cosmetic Color Unlock Guide for Vehicles, Backpack, Cap, and Sunglasses",
+                "url": "Cosmetic_Color_Unlock_Guide_for_Vehicles,_Backpack,_Cap,_and_Sunglasses"
+            },
+            {
+                "label": "List of Facilities and Prepper Locations",
+                "url": "List_of_Facilities_and_Prepper_Locations"
+            },
+            {
+                "label": "List of Standard Orders",
+                "url": "List_of_Standard_Orders"
+            },
+            {
+                "label": "Characters and Cast",
+                "url": "Characters_and_Cast"
+            },
+            {
+                "label": "Easter Eggs and Cameos",
+                "url": "Easter_Eggs_and_Cameos"
+            },
+            {
+                "label": "DOOMS, Chiral Allergies, and Aphenphosmphobia Explained",
+                "url": "DOOMS,_Chiral_Allergies,_and_Aphenphosmphobia_Explained"
+            },
+            {
+                "label": "How Online Interaction Works in Death Stranding (Social Strand System)",
+                "url": "How_Online_Interaction_Works_in_Death_Stranding_(Social_Strand_System)"
+            },
+            {
+                "label": "The Chiral Network",
+                "url": "The_Chiral_Network"
+            },
+            {
+                "label": "Death Stranding Trophies",
+                "url": "Death_Stranding_Trophies"
+            },
+            {
+                "label": "Collectibles Guide - Memory Chips",
+                "url": "Collectibles_Guide_-_Memory_Chips"
+            },
+            {
+                "label": "Hot Springs Locations and Effects",
+                "url": "Hot_Springs_Locations_and_Effects"
+            },
+            {
+                "label": "Director's Cut Changes and New Features",
+                "url": "Director%27s_Cut_Changes_and_New_Features"
+            }
+        ]
+    },
     "review": null
 }
 ]

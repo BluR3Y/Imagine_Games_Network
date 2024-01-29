@@ -30,21 +30,31 @@ class Article(scrapy.Item):
     contributors = scrapy.Field()
     review = scrapy.Field()
     objects = scrapy.Field()
+    embeded_content = scrapy.Field()
+    slideshows = scrapy.Field()
+    object_wiki = scrapy.Field()
+    recommendations = scrapy.Field()
     
 # Scrapy Item used to define the structure of video content
 class Video(scrapy.Item):
     url = scrapy.Field()
+    legacy_id = scrapy.Field()
     thumbnail = scrapy.Field()
     slug = scrapy.Field()
-    published_date = scrapy.Field()
+    publish_date = scrapy.Field()
+    modify_date = scrapy.Field()
     title = scrapy.Field()
+    subtitle = scrapy.Field()
     description = scrapy.Field()
     category = scrapy.Field()
-    duration = scrapy.Field()
-    object = scrapy.Field()
+    brand = scrapy.Field()
+    events = scrapy.Field()
+    objects = scrapy.Field()
     assets = scrapy.Field()
     vertical = scrapy.Field()
     contributors = scrapy.Field()
+    metadata = scrapy.Field()
+    recommendations = scrapy.Field()
 
 
 # Possibly include Review Item

@@ -20,7 +20,8 @@ class VideoSpiderSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
+        # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
+        yield scrapy.Request(url='https://www.ign.com/videos/everything-we-saw-at-ces-2024', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting video content elements from the response
@@ -51,46 +52,49 @@ class VideoSpiderSpider(scrapy.Spider):
         
         # Selection of page meta data from json object
         page_data = page_json_data['props']['pageProps']['page']
-        video_item['thumbnail'] = page_data['image']
-        video_item['title'] = page_data['title']
+        video_data = page_json_data['props']['apolloState'][f'ModernContent:{page_data['videoId']}']
+        video_metadata = page_data['video']['videoMetadata']
+
+        video_item['legacy_id'] = page_data['videoId']
         video_item['description'] = page_data['description']
         video_item['slug'] = page_data['slug']
-        video_item['published_date'] = page_data['publishDate']
         video_item['category'] = page_data['category']
-        video_item['duration'] = page_data['video']['videoMetadata']['duration']
         video_item['vertical'] = page_data['vertical']
+        video_item['publish_date'] = video_data['publishDate']
+        video_item['modify_date'] = video_data['updatedAt']
+        video_item['title'] = video_data['title']
+        video_item['subtitle'] = video_data['subtitle']
+        video_item['thumbnail'] = video_data['feedImage']['url']
+        video_item['brand'] = video_data['brand']
+        video_item['events'] = video_data['events']
+        video_item['metadata'] = {
+            'duration': video_metadata['duration'],
+            'description_html': video_metadata['descriptionHtml'],
+            'm3u': video_metadata['m3uUrl']
+        }
+        video_item['objects'] = self.parse_video_primary_object(page_json_data)
+
         video_item['contributors'] = [{
+            'legacy_id': contributor['id'],
             'name': contributor['name'],
             'nickname': contributor['nickname']
         } for contributor in page_data['contentForGA']['contributors']]
 
-        # Selection of object data from json object
-        object_data = page_data['contentForGA']['primaryObject']
-        object_id = object_data['id']
-        additional_object_data = page_json_data['props']['apolloState'][f'Object:{object_id}']
-        video_item['object'] = {
-            'url': object_data['url'],
-            'slug': object_data['slug'],
-            'type': object_data['type'],
-            'platforms': page_data['platforms'],
-            'names': {
-                'primary': object_data['metadata']['names']['name'],
-                'alt': object_data['metadata']['names']['alt'],
-                'short': object_data['metadata']['names']['short']
-            },
-            'franchise': [{ 'name': franchise['name'], 'slug': franchise['slug'] } for franchise in additional_object_data['franchises']],
-            'features': [{ 'name': feature['name'], 'slug': feature['slug'] } for feature in additional_object_data['features']],
-            'genres': [{ 'name': genre['name'], 'slug': genre['slug'] } for genre in additional_object_data['genres']],
-            'producers':[{ 'name': producer['name'], 'slug': producer['slug'] } for producer in  additional_object_data['producers']],
-            'publishers': [{ 'name': publisher['name'], 'slug': publisher['slug'] } for publisher in additional_object_data['publishers']]
-        }
+        video_item['assets'] = [{
+            'url': asset['url'],
+            'width': asset['width'],
+            'height': asset['height'],
+            'fps': asset['fps']
+        } for asset in page_data['video']['assets']]
 
-        # Selection of video assets from json object
-        video_assets = page_data['video']['assets']
-        video_asset_keys = ['url', 'width', 'height', 'fps']
-        # Loop through every dictionary in video_assets and extract every key=value pair whose's key appears in video_asset_keys
-            # which will be stored in a list
-        video_item['assets'] = [{ key: asset[key] for key in video_asset_keys } for asset in video_assets]
+        video_item['recommendations'] = [{
+            'duration': recommendation['duration'],
+            'title': recommendation['title'],
+            'url': recommendation['url'],
+            'legacy_id': recommendation['videoId'],
+            'thumbnail': recommendation['thumbnailUrl'],
+            'slug': recommendation['slug']
+        } for recommendation in page_data['video']['recommendations']]
 
         if recursion_level < 1:
             for recommendation in page_data['video']['recommendations']:
@@ -99,3 +103,90 @@ class VideoSpiderSpider(scrapy.Spider):
 
         # Yielding the Video Item for further processing or storage
         yield video_item
+
+    def parse_video_primary_object(self, page_json_data):
+        parsed_objects = []
+
+        for object_id in page_json_data['props']['pageProps']['page']['additionalDataLayer']['content']['objectIds']:
+            object_data = page_json_data['props']['apolloState'][f'Object:{object_id}']
+
+            parsed_objects.append({
+                'legacy_id': object_data.get('id'),
+                'url': object_data.get('url'),
+                'slug': object_data.get('slug'),
+                'type': object_data.get('type'),
+                'cover': object_data['primaryImage'].get('url'),
+                'names': {
+                    'primary': object_data['metadata']['names'].get('name'),
+                    'alt': object_data['metadata']['names'].get('alt'),
+                    'short': object_data['metadata']['names'].get('short')
+                },
+                'descriptions': {
+                    'long': object_data['metadata']['descriptions'].get('long'),
+                    'short': object_data['metadata']['descriptions'].get('short')
+                },
+                'franchises': [{
+                    'name': franchise.get('name'),
+                    'slug': franchise.get('slug')
+                } for franchise in object_data['franchises']],
+                'genres': [{
+                    'name': genre.get('name'),
+                    'slug': genre.get('slug')
+                } for genre in object_data['genres']],
+                'features': [{
+                    'name': feature.get('name'),
+                    'slug': feature.get('slug')
+                } for feature in object_data['features']],
+                'producers': [{
+                    'name': producer.get('name'),
+                    'short_name': producer.get('shortName'),
+                    'slug': producer.get('slug')
+                } for producer in object_data['producers']],
+                'publishers': [{
+                    'name': publisher.get('name'),
+                    'short_name': publisher.get('shortName'),
+                    'slug': publisher.get('slug')
+                } for publisher in object_data['publishers']],
+                'regions': self.parse_object_regions(page_json_data, [region['__ref'] for region in object_data['objectRegions']])
+            })
+        return parsed_objects
+    
+    def parse_object_regions(self, page_json_data, region_keys):
+        parsed_regions = []
+
+        for region_key in region_keys:
+            region_object = page_json_data['props']['apolloState'][region_key]
+            region_rating_ref = region_object['ageRating']['__ref'] if region_object.get('ageRating') else None
+            region_rating_object = page_json_data['props']['apolloState'].get(region_rating_ref)
+
+            parsed_region_object = {
+                'legacy_id': region_object.get('id'),
+                'name': region_object.get('name'),
+                'region': region_object.get('region'),
+                'releases': [],
+                **({
+                    'age_rating': {
+                        'legacy_id': region_rating_object['id'],
+                        'name': region_rating_object['name'],
+                        'slug': region_rating_object['slug'],
+                        'type': region_rating_object['ageRatingType'],
+                        'descriptors': [descriptor['name'] for descriptor in region_object['ageRatingDescriptors']]
+                    }
+                } if region_rating_ref is not None else {})
+            }
+            for region_release_key in [release['__ref'] for release in region_object['releases']]:
+                region_release_object = page_json_data['props']['apolloState'][region_release_key]
+                parsed_region_released_object = {
+                    'legacy_id': region_release_object.get('id'),
+                    'date': region_release_object.get('date'),
+                    'platform_attributes': []
+                }
+                for release_platform_key in region_release_object['platformAttributes']:
+                    release_platform_object = page_json_data['props']['apolloState'][release_platform_key['__ref']]
+                    parsed_region_released_object['platform_attributes'].append({
+                        'legacy_id': release_platform_object.get('id'),
+                        'name': release_platform_object.get('name')
+                    })
+                parsed_region_object['releases'].append(parsed_region_released_object)
+            parsed_regions.append(parsed_region_object)
+        return parsed_regions
