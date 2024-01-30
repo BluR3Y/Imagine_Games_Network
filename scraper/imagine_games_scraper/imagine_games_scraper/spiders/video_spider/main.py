@@ -16,8 +16,7 @@ class VideoSpiderSpider(scrapy.Spider):
                 'store_empty': False,
                 'indent': 4
             }
-        },
-        **dotenv_values('../../env/scraper/.env.development')
+        }
     }
 
     def start_requests(self):

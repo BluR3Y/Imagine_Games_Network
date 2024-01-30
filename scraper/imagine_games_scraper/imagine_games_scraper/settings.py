@@ -1,3 +1,22 @@
+import os
+from dotenv import dotenv_values
+
+env = os.environ.get("PYTHON_ENV")
+environment_variables = os.environ if env == "production" else dotenv_values("../../env/scraper/.env.development")
+
+# ScrapeOps Credentials (Fake Browser Header API)
+SCRAPEOPS_API_KEY = environment_variables.get("SCRAPEOPS_API_KEY")
+SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = environment_variables.get("SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT")
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = environment_variables.get("SCRAPEOPS_FAKE_USER_AGENT_ENABLED")
+SCRAPEOPS_NUM_RESULTS = environment_variables.get("SCRAPEOPS_NUM_RESULTS")
+
+# Bright Data Credentials (Rotating/Backconnect Proxies)
+PROXY_USER = environment_variables.get("PROXY_USER")
+PROXY_PASSWORD = environment_variables.get("PROXY_PASSWORD")
+PROXY_PROTOCOL = environment_variables.get("PROXY_PROTOCOL")
+PROXY_ENDPOINT = environment_variables.get("PROXY_ENDPOINT")
+PROXY_PORT = environment_variables.get("PROXY_PORT")
+
 # Scrapy settings for imagine_games_scraper project
 #
 # For simplicity, this file contains only settings considered important or
