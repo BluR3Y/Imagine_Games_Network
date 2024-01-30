@@ -33,7 +33,7 @@ class Article(scrapy.Item):
     embeded_content = scrapy.Field()
     slideshows = scrapy.Field()
     object_wiki = scrapy.Field()
-    poll = scrapy.Field()
+    polls = scrapy.Field()
     recommendations = scrapy.Field()
     
 # Scrapy Item used to define the structure of video content

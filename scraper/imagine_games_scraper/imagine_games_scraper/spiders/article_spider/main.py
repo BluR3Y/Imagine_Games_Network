@@ -1,4 +1,5 @@
 import scrapy
+from dotenv import dotenv_values
 from . import parse_methods
 
 class ArticleSpiderSpider(scrapy.Spider):
@@ -15,12 +16,13 @@ class ArticleSpiderSpider(scrapy.Spider):
                 'store_empty': False,
                 'indent': 4
             }
-        }
+        },
+        **dotenv_values('../../env/scraper/.env.development')
     }
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/articles/the-last-of-us-part-2-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
+        yield scrapy.Request(url='https://www.ign.com/articles/the-last-of-us-part-2-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting article content elements from the response
@@ -49,4 +51,4 @@ ArticleSpiderSpider.parse_object_regions = parse_methods.parse_object_regions
 ArticleSpiderSpider.parse_article_recommendations = parse_methods.parse_article_recommendations
 ArticleSpiderSpider.parse_article_slideshows = parse_methods.parse_article_slideshows
 ArticleSpiderSpider.parse_object_wiki = parse_methods.parse_object_wiki
-ArticleSpiderSpider.parse_object_poll = parse_methods.parse_object_poll
+ArticleSpiderSpider.parse_object_polls = parse_methods.parse_object_polls

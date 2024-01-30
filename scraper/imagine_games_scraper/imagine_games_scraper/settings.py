@@ -18,20 +18,9 @@ NEWSPIDER_MODULE = "imagine_games_scraper.spiders"
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-# ScrapeOps Credentials (Fake Browser Header API)
-SCRAPEOPS_API_KEY = 'f8b688fe-e729-476e-8809-e9e41844ddd5'
-SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
-SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
-SCRAPEOPS_NUM_RESULTS = 5
-
 # Configure Rotating/Backconnect Proxies
 # ROTATING_PROXY_LIST = []
 # ROTATING_PROXY_LIST_PATH = '/my/path/proxies.txt'
-PROXY_USER = 'brd-customer-hl_c04488a6-zone-datacenter_proxy1'
-PROXY_PASSWORD = 'a981qdixvqma'
-PROXY_PROTOCOL = 'http'
-PROXY_ENDPOINT = 'brd.superproxy.io'
-PROXY_PORT = '22225'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

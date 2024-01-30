@@ -1,4 +1,5 @@
 import scrapy
+from dotenv import dotenv_values
 from . import parse_methods
 
 class VideoSpiderSpider(scrapy.Spider):
@@ -15,7 +16,8 @@ class VideoSpiderSpider(scrapy.Spider):
                 'store_empty': False,
                 'indent': 4
             }
-        }
+        },
+        **dotenv_values('../../env/scraper/.env.development')
     }
 
     def start_requests(self):

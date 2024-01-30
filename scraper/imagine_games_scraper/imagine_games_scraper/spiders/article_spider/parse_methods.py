@@ -30,17 +30,7 @@ def parse_article_page(self, response, recursion_level = 0):
     article_item['objects'] = self.parse_article_objects(page_json_data, [f'Object:{object['id']}' for object in page_data['objects']])
 
     recommendation_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'topPages' in key), None)
-    if recommendation_key is not None:
-        recommendation_items = [recommendation_article['__ref'] for recommendation_article in page_json_data['props']['apolloState']['ROOT_QUERY'][recommendation_key]]
-        article_item['recommendations'] = self.parse_article_recommendations(page_json_data, recommendation_items)
-
-        if recursion_level < 1:
-            for recommendation in article_item['recommendations']:
-                recommendation_url = 'https://www.ign.com' + recommendation['url']
-                yield scrapy.Request(url=recommendation_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })
-
-    else:
-        article_item['recommendations'] = None
+    article_item['recommendations'] = self.parse_article_recommendations(page_json_data, [recommendation['__ref'] for recommendation in page_json_data['props']['apolloState']['ROOT_QUERY'].get(recommendation_key, [])])
 
     slideshow_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'slideshow' in key]
     article_item['slideshows'] = self.parse_article_slideshows(page_json_data, slideshow_keys)
@@ -48,8 +38,8 @@ def parse_article_page(self, response, recursion_level = 0):
     wiki_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'wiki' in key), None)
     article_item['object_wiki'] = self.parse_object_wiki(page_json_data, wiki_key) if wiki_key is not None else None
 
-    poll_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'poll' in key), None)
-    article_item['poll'] = self.parse_object_poll(page_json_data, poll_key) if poll_key is not None else None
+    poll_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'poll' in key]
+    article_item['polls'] = self.parse_object_polls(page_json_data, poll_keys)
 
     review_data = page_data['review']
     article_item['review'] = None if review_data is None else {
@@ -62,6 +52,11 @@ def parse_article_page(self, response, recursion_level = 0):
         'verdict': review_data.get('verdict'),
         'review_date': review_data.get('reviewedOn')
     }
+
+    if recursion_level < 1:
+        for recommendation in article_item['recommendations']:
+            recommendation_url = 'https://www.ign.com' + recommendation['url']
+            yield scrapy.Request(url=recommendation_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })
 
     # Yielding the Article Item for further processing or storage
     yield article_item
@@ -300,22 +295,27 @@ def parse_object_wiki(self, page_json_data, wiki_key):
     }
 
 @classmethod
-def parse_object_poll(self, page_json_data, poll_key):
-    poll_ref = page_json_data['props']['apolloState']['ROOT_QUERY'][poll_key]['__ref']
-    poll_object = page_json_data['props']['apolloState'][poll_ref]
-    poll_content = page_json_data['props']['apolloState'][poll_object['content']['__ref']]
-    content_category = page_json_data['props']['apolloState'][poll_content['contentCategory']['__ref']]
-    poll_answers = [page_json_data['props']['apolloState'][key['__ref']] for key in poll_object['answers']]
+def parse_object_polls(self, page_json_data, poll_keys):
+    parsed_polls = []
 
-    return {
-        'url': poll_content['url'],
-        'legacy_id': poll_content['id'],
-        'title': poll_content['title'],
-        'subtitle': poll_content['subtitle'],
-        'slug': poll_content['slug'],
-        'publish_date': poll_content['publishDate'],
-        'category': content_category['name'],
-        'vertical': poll_content['vertical'],
-        'brand': poll_content['brand'],
-        'answers': [answer['answer'] for answer in poll_answers]
-    }
+    for key in poll_keys:
+        poll_ref = page_json_data['props']['apolloState']['ROOT_QUERY'][key]['__ref']
+        poll_object = page_json_data['props']['apolloState'][poll_ref]
+        poll_content = page_json_data['props']['apolloState'][poll_object['content']['__ref']]
+        content_category = page_json_data['props']['apolloState'][poll_content['contentCategory']['__ref']]
+        poll_answers = [page_json_data['props']['apolloState'][key['__ref']] for key in poll_object['answers']]
+
+        parsed_polls.append({
+            'legacy_id': poll_content['id'],
+            'url': poll_content['url'],
+            'title': poll_content['title'],
+            'subtitle': poll_content['subtitle'],
+            'slug': poll_content['slug'],
+            'publish_date': poll_content['publishDate'],
+            'category': content_category['name'],
+            'vertical': poll_content['vertical'],
+            'brand': poll_content['brand'],
+            'answers': [answer['answer'] for answer in poll_answers]
+        })
+
+    return parsed_polls
