@@ -1,5 +1,4 @@
 import scrapy
-from dotenv import dotenv_values
 from . import parse_methods
 
 class ArticleSpiderSpider(scrapy.Spider):

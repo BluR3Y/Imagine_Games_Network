@@ -75,7 +75,7 @@ ROBOTSTXT_OBEY = False
 DOWNLOADER_MIDDLEWARES = {
    "imagine_games_scraper.middlewares.ImagineGamesScraperDownloaderMiddleware": 543,
    "imagine_games_scraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
-   # "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
+   "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
 }
 
 # Enable or disable extensions
@@ -86,9 +86,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
+ITEM_PIPELINES = {
 #    "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
-#}
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
