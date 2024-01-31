@@ -15,7 +15,9 @@ class ArticleSpiderSpider(scrapy.Spider):
                 'store_empty': False,
                 'indent': 4
             }
-        }
+        },
+        # Delay between consecutive requests to same domain (seconds)
+        'DOWNLOAD_DELAY': 3
     }
 
     def start_requests(self):
@@ -42,11 +44,11 @@ class ArticleSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=article_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
 
 ArticleSpiderSpider.parse_article_page = parse_methods.parse_article_page
-ArticleSpiderSpider.parse_article_objects = parse_methods.parse_article_objects
+ArticleSpiderSpider.parse_article_object = parse_methods.parse_article_object
 ArticleSpiderSpider.parse_html_content = parse_methods.parse_html_content
-ArticleSpiderSpider.parse_article_contributors = parse_methods.parse_article_contributors
-ArticleSpiderSpider.parse_object_regions = parse_methods.parse_object_regions
-ArticleSpiderSpider.parse_article_recommendations = parse_methods.parse_article_recommendations
-ArticleSpiderSpider.parse_article_slideshows = parse_methods.parse_article_slideshows
+ArticleSpiderSpider.parse_article_contributor = parse_methods.parse_article_contributor
+ArticleSpiderSpider.parse_object_region = parse_methods.parse_object_region
+ArticleSpiderSpider.parse_article_recommendation = parse_methods.parse_article_recommendation
+ArticleSpiderSpider.parse_article_slideshow = parse_methods.parse_article_slideshow
 ArticleSpiderSpider.parse_object_wiki = parse_methods.parse_object_wiki
-ArticleSpiderSpider.parse_object_polls = parse_methods.parse_object_polls
+ArticleSpiderSpider.parse_object_poll = parse_methods.parse_object_poll

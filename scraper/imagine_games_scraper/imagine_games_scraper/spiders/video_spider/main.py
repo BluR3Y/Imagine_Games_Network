@@ -15,12 +15,14 @@ class VideoSpiderSpider(scrapy.Spider):
                 'store_empty': False,
                 'indent': 4
             }
-        }
+        },
+        # Delay between consecutive requests to same domain (seconds)
+        'DOWNLOAD_DELAY': 3
     }
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/videos/everything-we-saw-at-ces-2024', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/videos/terminator-dark-fate-defiance-the-final-preview', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting video content elements from the response
@@ -43,5 +45,5 @@ class VideoSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=video_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
 
 VideoSpiderSpider.parse_video_page = parse_methods.parse_video_page
-VideoSpiderSpider.parse_video_primary_object = parse_methods.parse_video_primary_object
-VideoSpiderSpider.parse_object_regions = parse_methods.parse_object_regions
+VideoSpiderSpider.parse_video_object = parse_methods.parse_video_object
+VideoSpiderSpider.parse_object_region = parse_methods.parse_object_region

@@ -17,6 +17,13 @@ PROXY_PROTOCOL = environment_variables.get("PROXY_PROTOCOL")
 PROXY_ENDPOINT = environment_variables.get("PROXY_ENDPOINT")
 PROXY_PORT = environment_variables.get("PROXY_PORT")
 
+# MySQL Database Credentials
+MYSQL_HOST = environment_variables.get("MYSQL_HOST")
+MYSQL_PORT = environment_variables.get("MYSQL_PORT")
+MYSQL_DATABASE = environment_variables.get("MYSQL_DATABASE")
+MYSQL_USER = environment_variables.get("MYSQL_USER")
+MYSQL_PASSWORD = environment_variables.get("MYSQL_PASSWORD")
+
 # Scrapy settings for imagine_games_scraper project
 #
 # For simplicity, this file contains only settings considered important or
@@ -87,7 +94,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-#    "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
+    # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
+    # "imagine_games_scraper.pipelines.MySQLStore": 400
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

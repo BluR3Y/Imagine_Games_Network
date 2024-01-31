@@ -9,7 +9,7 @@ def parse_video_page(self, response, recursion_level = 0):
 
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
-    
+
     # Selection of page meta data from json object
     page_data = page_json_data['props']['pageProps']['page']
     video_data = page_json_data['props']['apolloState'][f'ModernContent:{page_data['videoId']}']
@@ -32,7 +32,8 @@ def parse_video_page(self, response, recursion_level = 0):
         'description_html': video_metadata['descriptionHtml'],
         'm3u': video_metadata['m3uUrl']
     }
-    video_item['objects'] = self.parse_video_primary_object(page_json_data)
+
+    video_item['objects'] = [self.parse_video_object(page_json_data, object) for object in page_json_data['props']['pageProps']['page']['additionalDataLayer']['content']['objectIds']]
 
     video_item['contributors'] = [{
         'legacy_id': contributor['id'],
@@ -65,90 +66,83 @@ def parse_video_page(self, response, recursion_level = 0):
     yield video_item
 
 @classmethod
-def parse_video_primary_object(self, page_json_data):
-    parsed_objects = []
+def parse_video_object(self, page_json_data, object_key):
+    object_data = page_json_data['props']['apolloState'][f'Object:{object_key}']
 
-    for object_id in page_json_data['props']['pageProps']['page']['additionalDataLayer']['content']['objectIds']:
-        object_data = page_json_data['props']['apolloState'][f'Object:{object_id}']
-
-        parsed_objects.append({
-            'legacy_id': object_data.get('id'),
-            'url': object_data.get('url'),
-            'slug': object_data.get('slug'),
-            'type': object_data.get('type'),
-            'cover': object_data['primaryImage'].get('url'),
-            'names': {
-                'primary': object_data['metadata']['names'].get('name'),
-                'alt': object_data['metadata']['names'].get('alt'),
-                'short': object_data['metadata']['names'].get('short')
-            },
-            'descriptions': {
-                'long': object_data['metadata']['descriptions'].get('long'),
-                'short': object_data['metadata']['descriptions'].get('short')
-            },
-            'franchises': [{
-                'name': franchise.get('name'),
-                'slug': franchise.get('slug')
-            } for franchise in object_data['franchises']],
-            'genres': [{
-                'name': genre.get('name'),
-                'slug': genre.get('slug')
-            } for genre in object_data['genres']],
-            'features': [{
-                'name': feature.get('name'),
-                'slug': feature.get('slug')
-            } for feature in object_data['features']],
-            'producers': [{
-                'name': producer.get('name'),
-                'short_name': producer.get('shortName'),
-                'slug': producer.get('slug')
-            } for producer in object_data['producers']],
-            'publishers': [{
-                'name': publisher.get('name'),
-                'short_name': publisher.get('shortName'),
-                'slug': publisher.get('slug')
-            } for publisher in object_data['publishers']],
-            'regions': self.parse_object_regions(page_json_data, [region['__ref'] for region in object_data['objectRegions']])
-        })
-    return parsed_objects
+    return dict({
+        'legacy_id': object_data.get('id'),
+        'url': object_data.get('url'),
+        'slug': object_data.get('slug'),
+        'type': object_data.get('type'),
+        'cover': object_data['primaryImage'].get('url'),
+        'names': {
+            'primary': object_data['metadata']['names'].get('name'),
+            'alt': object_data['metadata']['names'].get('alt'),
+            'short': object_data['metadata']['names'].get('short')
+        },
+        'descriptions': {
+            'long': object_data['metadata']['descriptions'].get('long'),
+            'short': object_data['metadata']['descriptions'].get('short')
+        },
+        'franchises': [{
+            'name': franchise.get('name'),
+            'slug': franchise.get('slug')
+        } for franchise in object_data['franchises']],
+        'genres': [{
+            'name': genre.get('name'),
+            'slug': genre.get('slug')
+        } for genre in object_data['genres']],
+        'features': [{
+            'name': feature.get('name'),
+            'slug': feature.get('slug')
+        } for feature in object_data['features']],
+        'producers': [{
+            'name': producer.get('name'),
+            'short_name': producer.get('shortName'),
+            'slug': producer.get('slug')
+        } for producer in object_data['producers']],
+        'publishers': [{
+            'name': publisher.get('name'),
+            'short_name': publisher.get('shortName'),
+            'slug': publisher.get('slug')
+        } for publisher in object_data['publishers']],
+        # 'regions': self.parse_object_regions(page_json_data, [region['__ref'] for region in object_data['objectRegions']])
+        'regions': [self.parse_object_region(page_json_data, region['__ref']) for region in object_data['objectRegions']]
+    })
 
 @classmethod
-def parse_object_regions(self, page_json_data, region_keys):
-    parsed_regions = []
+def parse_object_region(self, page_json_data, region_key):
+    region_object = page_json_data['props']['apolloState'][region_key]
+    region_rating_ref = region_object['ageRating']['__ref'] if region_object.get('ageRating') else None
+    region_rating_object = page_json_data['props']['apolloState'].get(region_rating_ref)
 
-    for region_key in region_keys:
-        region_object = page_json_data['props']['apolloState'][region_key]
-        region_rating_ref = region_object['ageRating']['__ref'] if region_object.get('ageRating') else None
-        region_rating_object = page_json_data['props']['apolloState'].get(region_rating_ref)
-
-        parsed_region_object = {
-            'legacy_id': region_object.get('id'),
-            'name': region_object.get('name'),
-            'region': region_object.get('region'),
-            'releases': [],
-            **({
-                'age_rating': {
-                    'legacy_id': region_rating_object['id'],
-                    'name': region_rating_object['name'],
-                    'slug': region_rating_object['slug'],
-                    'type': region_rating_object['ageRatingType'],
-                    'descriptors': [descriptor['name'] for descriptor in region_object['ageRatingDescriptors']]
-                }
-            } if region_rating_ref is not None else {})
-        }
-        for region_release_key in [release['__ref'] for release in region_object['releases']]:
-            region_release_object = page_json_data['props']['apolloState'][region_release_key]
-            parsed_region_released_object = {
-                'legacy_id': region_release_object.get('id'),
-                'date': region_release_object.get('date'),
-                'platform_attributes': []
+    parsed_region_object = {
+        'legacy_id': region_object.get('id'),
+        'name': region_object.get('name'),
+        'region': region_object.get('region'),
+        'releases': [],
+        **({
+            'age_rating': {
+                'legacy_id': region_rating_object['id'],
+                'name': region_rating_object['name'],
+                'slug': region_rating_object['slug'],
+                'type': region_rating_object['ageRatingType'],
+                'descriptors': [descriptor['name'] for descriptor in region_object['ageRatingDescriptors']]
             }
-            for release_platform_key in region_release_object['platformAttributes']:
-                release_platform_object = page_json_data['props']['apolloState'][release_platform_key['__ref']]
-                parsed_region_released_object['platform_attributes'].append({
-                    'legacy_id': release_platform_object.get('id'),
-                    'name': release_platform_object.get('name')
-                })
-            parsed_region_object['releases'].append(parsed_region_released_object)
-        parsed_regions.append(parsed_region_object)
-    return parsed_regions
+        } if region_rating_ref is not None else {})
+    }
+    for region_release_key in [release['__ref'] for release in region_object['releases']]:
+        region_release_object = page_json_data['props']['apolloState'][region_release_key]
+        parsed_region_released_object = {
+            'legacy_id': region_release_object.get('id'),
+            'date': region_release_object.get('date'),
+            'platform_attributes': []
+        }
+        for release_platform_key in region_release_object['platformAttributes']:
+            release_platform_object = page_json_data['props']['apolloState'][release_platform_key['__ref']]
+            parsed_region_released_object['platform_attributes'].append({
+                'legacy_id': release_platform_object.get('id'),
+                'name': release_platform_object.get('name')
+            })
+        parsed_region_object['releases'].append(parsed_region_released_object)
+    return parsed_region_object
