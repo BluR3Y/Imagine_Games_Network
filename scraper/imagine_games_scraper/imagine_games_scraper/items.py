@@ -31,10 +31,6 @@ class Article(scrapy.Item):
     review = scrapy.Field()
     objects = scrapy.Field()
     embeded_content = scrapy.Field()
-    slideshows = scrapy.Field()
-    object_wiki = scrapy.Field()
-    polls = scrapy.Field()
-    recommendations = scrapy.Field()
     
 # Scrapy Item used to define the structure of video content
 class Video(scrapy.Item):
@@ -55,7 +51,37 @@ class Video(scrapy.Item):
     vertical = scrapy.Field()
     contributors = scrapy.Field()
     metadata = scrapy.Field()
-    recommendations = scrapy.Field()
+
+# Scrapy Item used to define the structure of reporter content
+class Reporter(scrapy.Item):
+    legacy_id = scrapy.Field()
+    legacy_author_id = scrapy.Field()
+    uri = scrapy.Field()
+    name = scrapy.Field()
+    nickname = scrapy.Field()
+    avatar = scrapy.Field()
+    cover = scrapy.Field()
+    position = scrapy.Field()
+    bio = scrapy.Field()
+    location = scrapy.Field()
+    socials = scrapy.Field()
+
+# Scrapy Item used to define the structure of entertainment
+class Entertainment(scrapy.Item):
+    legacy_id = scrapy.Field()
+    uri = scrapy.Field()
+    slug = scrapy.Field()
+    wiki_slug = scrapy.Field()
+    type = scrapy.Field()
+    cover = scrapy.Field()
+    names = scrapy.Field()
+    descriptions = scrapy.Field()
+    franchises = scrapy.Field()
+    genres = scrapy.Field()
+    features = scrapy.Field()
+    producers = scrapy.Field()
+    publishers = scrapy.Field()
+    regions = scrapy.Field()
 
 
 # Possibly include Review Item

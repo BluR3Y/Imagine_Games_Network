@@ -1,4 +1,5 @@
 import mysql.connector
+from imagine_games_scraper.items import Article, Video, Reporter
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -26,7 +27,14 @@ class MySQLStore:
         self.cur = self.conn.cursor()
 
     def process_item(self, item, spider):
-        parsed_item = ItemAdapter(item)
+        if isinstance(item, Article):
+            print('****** Article ******')
+        elif isinstance(item, Video):
+            print('******* Video *******')
+        elif isinstance(item, Reporter):
+            print('******* Reporter *******')
+        else: print('******** other ************')
+        return item
 
     def close_spider(self, spider):
         # Close cursor & connection to database when the spider is closed

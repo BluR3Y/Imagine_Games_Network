@@ -1,5 +1,6 @@
 import scrapy
 from . import parse_methods
+from imagine_games_scraper import shared_methods
 
 class ArticleSpiderSpider(scrapy.Spider):
     name = "article_spider"
@@ -44,11 +45,10 @@ class ArticleSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=article_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
 
 ArticleSpiderSpider.parse_article_page = parse_methods.parse_article_page
-ArticleSpiderSpider.parse_article_object = parse_methods.parse_article_object
 ArticleSpiderSpider.parse_html_content = parse_methods.parse_html_content
-ArticleSpiderSpider.parse_article_contributor = parse_methods.parse_article_contributor
-ArticleSpiderSpider.parse_object_region = parse_methods.parse_object_region
-ArticleSpiderSpider.parse_article_recommendation = parse_methods.parse_article_recommendation
 ArticleSpiderSpider.parse_article_slideshow = parse_methods.parse_article_slideshow
 ArticleSpiderSpider.parse_object_wiki = parse_methods.parse_object_wiki
 ArticleSpiderSpider.parse_object_poll = parse_methods.parse_object_poll
+ArticleSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
+ArticleSpiderSpider.parse_object_page = shared_methods.parse_object_page
+ArticleSpiderSpider.parse_object_region = shared_methods.parse_object_region

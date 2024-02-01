@@ -1,5 +1,6 @@
 import scrapy
 from . import parse_methods
+from imagine_games_scraper import shared_methods
 
 class VideoSpiderSpider(scrapy.Spider):
     name = "video_spider"
@@ -22,7 +23,7 @@ class VideoSpiderSpider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/videos/terminator-dark-fate-defiance-the-final-preview', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/videos/apex-legends-x-final-fantasy-7-rebirth-event-gameplay-cosmetics-showcase', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting video content elements from the response
@@ -45,5 +46,7 @@ class VideoSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=video_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
 
 VideoSpiderSpider.parse_video_page = parse_methods.parse_video_page
-VideoSpiderSpider.parse_video_object = parse_methods.parse_video_object
-VideoSpiderSpider.parse_object_region = parse_methods.parse_object_region
+VideoSpiderSpider.parse_object_page = shared_methods.parse_object_page
+VideoSpiderSpider.parse_object_region = shared_methods.parse_object_region
+VideoSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
+VideoSpiderSpider.parse_object_page = shared_methods.parse_object_page

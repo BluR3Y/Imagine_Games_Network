@@ -1,167 +1,73 @@
 [
 {
-    "url": "https://www.ign.com/videos/terminator-dark-fate-defiance-the-final-preview",
-    "legacy_id": "26c5124e-e2b4-4b23-ab74-c252b4130ae8",
-    "description": "Terminator: Dark Fate – Defiance is based on an alternate reality of the most recent Terminator movie, and despite the time travel-based shenanigans, there are nevertheless some interesting ideas glimmering in the gaps beneath its synthetic flesh in this slightly clunky but overall competent squad-based RTS. Previewed on PC by Leana Hafer.",
-    "slug": "terminator-dark-fate-defiance-the-final-preview",
-    "category": "Preview",
+    "url": "https://www.ign.com/videos/apex-legends-x-final-fantasy-7-rebirth-event-gameplay-cosmetics-showcase",
+    "legacy_id": "dc4c9b8d-902a-4d06-8e20-4d8138fdf330",
+    "description": "Check out this Apex Legends Final Fantasy 7 Rebirth Buster Sword gameplay from the new Apex Legends FF7 takeover event. Running from January 9-30, this Apex Legends collaboration introduces a brand new Final Fantasy VII Takeover mode, featuring the Buster Sword, Materia Hop-Ups, and more.See the Buster Sword R2R5 in action in this Apex Legends x Final Fantasy event gameplay, and get a look at the Apex Legends Final Fantasy cosmetics you can buy, and rewards you can earn by participating in the crossover event.",
+    "slug": "apex-legends-x-final-fantasy-7-rebirth-event-gameplay-cosmetics-showcase",
+    "category": "Gameplay",
     "vertical": "Games",
-    "publish_date": "2024-01-31T14:00:00.000Z",
-    "modify_date": "2024-01-31T02:36:36.054Z",
-    "title": "Terminator: Dark Fate – Defiance | The Final Preview",
-    "subtitle": null,
-    "thumbnail": "https://assets-prd.ignimgs.com/2024/01/31/tdarkdef-youtube-template-1706667582992.jpg",
-    "brand": {
-        "__typename": "Brand",
-        "name": "IGN Game Previews"
-    },
+    "publish_date": "2024-01-10T18:00:00.000Z",
+    "modify_date": "2024-01-11T19:12:19.370Z",
+    "title": "Apex Legends x Final Fantasy 7 Rebirth Event Gameplay & Cosmetics Showcase",
+    "subtitle": "The Buster Sword has landed in the Outlands.",
+    "thumbnail": "https://assets-prd.ignimgs.com/2024/01/10/apexlegendsfinalfantasy-blog-1704904123655.jpg",
+    "brand": null,
     "events": [],
-    "metadata": {
-        "duration": 405,
-        "description_html": "<p>Terminator: Dark Fate – Defiance is based on an alternate reality of the most recent Terminator movie, and despite the time travel-based shenanigans, there are nevertheless some interesting ideas glimmering in the gaps beneath its synthetic flesh in this slightly clunky but overall competent squad-based RTS. Previewed on PC by Leana Hafer.</p>",
-        "m3u": "https://assets.ign.com/master/videos/zencoder/2024/01/31/,640/26c5124e-e2b4-4b23-ab74-c252b4130ae8,852/26c5124e-e2b4-4b23-ab74-c252b4130ae8,960/26c5124e-e2b4-4b23-ab74-c252b4130ae8,1280/26c5124e-e2b4-4b23-ab74-c252b4130ae8,1920/26c5124e-e2b4-4b23-ab74-c252b4130ae8,-1706667733/master.m3u8"
-    },
-    "objects": [
-        {
-            "legacy_id": "1ee91e61-c18d-47b9-9ac0-cc1ff3377da9",
-            "url": "/games/terminator-dark-fate-defiance",
-            "slug": "terminator-dark-fate-defiance",
-            "type": "Game",
-            "cover": "https://assets-prd.ignimgs.com/2021/12/14/terminator-dark-fate-defiance-button-00-1639447759678.jpg",
-            "names": {
-                "primary": "Terminator: Dark Fate -- Defiance",
-                "alt": [],
-                "short": "Terminator Defiance"
-            },
-            "descriptions": {
-                "long": "In Terminator: Dark Fate -- Defiance, a realtime strategy game set in the Terminator universe, command forces in the war between humanity and Legion's synthetic intelligent machine network. In the single-player campaign, you take the role of a commander in the Founders faction and guide your army in an attempt to foil Legion's plan to exterminate the last remnants of humanity. In skirmish and multiplayer modes, play as three very diverse factions: Founders, Legion and Resistance. Take control of an army carried over from mission to mission on a series of large strategic maps. Make decisions about unit placement, battle tactics and abilities so that you just don’t survive but become the leader of resistance against the machines. Hone your skills and military expertise by replaying and achieving the best possible outcomes. Test your skills in online multiplayer matches. Fight against real-life human opponents in 1v1, 2v1, and 2v2 battles. ",
-                "short": "In Terminator: Dark Fate -- Defiance, a realtime strategy game set in the Terminator universe, command forces in the war between humanity and Legion's synthetic intelligent machine network. "
-            },
-            "franchises": [
-                {
-                    "name": "Terminator",
-                    "slug": "terminator"
-                }
-            ],
-            "genres": [
-                {
-                    "name": "Strategy",
-                    "slug": "strategy"
-                },
-                {
-                    "name": "Real-Time",
-                    "slug": "real-time"
-                }
-            ],
-            "features": [
-                {
-                    "name": "Online Versus Multiplayer",
-                    "slug": "online-versus-multiplayer"
-                }
-            ],
-            "producers": [
-                {
-                    "name": "Cats Who Play",
-                    "short_name": null,
-                    "slug": "cats-who-play"
-                }
-            ],
-            "publishers": [
-                {
-                    "name": "Slitherine Software",
-                    "short_name": null,
-                    "slug": "slitherine-software"
-                }
-            ],
-            "regions": [
-                {
-                    "legacy_id": 2167732,
-                    "name": null,
-                    "region": "US",
-                    "releases": [
-                        {
-                            "legacy_id": "b55b955b-e5ba-4790-aca5-be9b11a0f70f",
-                            "date": "2023-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 2167733,
-                    "name": null,
-                    "region": "AU",
-                    "releases": [
-                        {
-                            "legacy_id": "15c8b9a7-0877-45fe-b925-f4d3c8d29c8f",
-                            "date": "2023-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "legacy_id": 2167734,
-                    "name": null,
-                    "region": "UK",
-                    "releases": [
-                        {
-                            "legacy_id": "9fcd43fb-7784-4520-877a-a7401507138b",
-                            "date": "2023-12-07",
-                            "platform_attributes": [
-                                {
-                                    "legacy_id": 4473466,
-                                    "name": "PC"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
     "contributors": [
         {
-            "legacy_id": "4fc32035-b4b1-11ea-b2e3-0e7c1d759882",
-            "name": "Leana Hafer",
-            "nickname": "LeanaVanadis"
+            "legacy_id": "65d1b6bc-a507-41e7-9534-804a2c266a5a",
+            "url": "/person/emma_matthews",
+            "name": "Emma Matthews",
+            "nickname": "emma_matthews"
+        },
+        {
+            "legacy_id": "6a949ca8-b4b1-11ea-b2e3-0e7c1d759882",
+            "url": "/person/DaleDriver",
+            "name": "Dale Driver",
+            "nickname": "DaleDriver"
         }
     ],
+    "objects": [
+        "d382dd2b-83f1-4093-b74a-a958ccf31497"
+    ],
+    "metadata": {
+        "duration": 704,
+        "description_html": "<p>Check out this Apex Legends Final Fantasy 7 Rebirth Buster Sword gameplay from the new Apex Legends FF7 takeover event. Running from January 9-30, this Apex Legends collaboration introduces a brand new Final Fantasy VII Takeover mode, featuring the Buster Sword, Materia Hop-Ups, and more.</p><p>See the Buster Sword R2R5 in action in this Apex Legends x Final Fantasy event gameplay, and get a look at the Apex Legends Final Fantasy cosmetics you can buy, and rewards you can earn by participating in the crossover event.</p>",
+        "m3u": "https://assets.ign.com/master/videos/zencoder/2024/01/10/,640/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,852/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,960/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,1280/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,1920/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,2560/dc4c9b8d-902a-4d06-8e20-4d8138fdf330,-1704907686/master.m3u8"
+    },
     "assets": [
         {
-            "url": "https://assets.ign.com/videos/zencoder/2024/01/31/1920/26c5124e-e2b4-4b23-ab74-c252b4130ae8-1706667733.mp4",
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/2560/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
+            "width": 2560,
+            "height": 1440,
+            "fps": 60
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/1920/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
             "width": 1920,
             "height": 1080,
             "fps": 60
         },
         {
-            "url": "https://assets.ign.com/videos/zencoder/2024/01/31/1280/26c5124e-e2b4-4b23-ab74-c252b4130ae8-1706667733.mp4",
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/1280/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
             "width": 1280,
             "height": 720,
             "fps": 30
         },
         {
-            "url": "https://assets.ign.com/videos/zencoder/2024/01/31/960/26c5124e-e2b4-4b23-ab74-c252b4130ae8-1706667733.mp4",
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/960/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
             "width": 960,
             "height": 540,
             "fps": 30
         },
         {
-            "url": "https://assets.ign.com/videos/zencoder/2024/01/31/852/26c5124e-e2b4-4b23-ab74-c252b4130ae8-1706667733.mp4",
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/852/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
             "width": 852,
             "height": 480,
             "fps": 30
         },
         {
-            "url": "https://assets.ign.com/videos/zencoder/2024/01/31/640/26c5124e-e2b4-4b23-ab74-c252b4130ae8-1706667733.mp4",
+            "url": "https://assets.ign.com/videos/zencoder/2024/01/10/640/dc4c9b8d-902a-4d06-8e20-4d8138fdf330-1704907686.mp4",
             "width": 640,
             "height": 360,
             "fps": 30
@@ -169,156 +75,566 @@
     ],
     "recommendations": [
         {
-            "duration": 342,
-            "title": "Mario vs. Donkey Kong: The Final Preview",
-            "url": "/videos/mario-vs-donkey-kong-the-final-preview",
-            "legacy_id": "51b53414-9b30-41a6-a42c-6b17f7cf92e5",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/30/mariovsdonkeykong-yt-1706598424725.jpg",
-            "slug": "mario-vs-donkey-kong-the-final-preview"
+            "duration": 120,
+            "title": "Apex Legends Final Fantasy 7 Rebirth Crossover: Where to Find the Buster Sword",
+            "url": "/videos/apex-legends-final-fantasy-7-rebirth-crossover-where-to-find-the-buster-sword",
+            "legacy_id": "216dd4c8-e4e0-4ea0-b7dd-df66e58e506f",
+            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/11/blog-1704938738185.jpg",
+            "slug": "apex-legends-final-fantasy-7-rebirth-crossover-where-to-find-the-buster-sword"
         },
         {
-            "duration": 301,
-            "title": "Skull and Bones: Hands-On With Endgame Content",
-            "url": "/videos/skull-and-bones-hands-on-with-endgame-content",
-            "legacy_id": "8c19ff8f-4556-410b-95a3-7624417a5885",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/25/36939348-skullandbones-endgame-yt-1706144863701.jpg",
-            "slug": "skull-and-bones-hands-on-with-endgame-content"
+            "duration": 105,
+            "title": "Apex Legends X Final Fantasy 7 Rebirth - Official Collaboration Event Trailer",
+            "url": "/videos/apex-legends-x-final-fantasy-7-rebirth-official-collaboration-event-trailer",
+            "legacy_id": "9f0477c9-4664-4678-b848-40a4f02c216a",
+            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/04/apexthumb-1704385142129.png",
+            "slug": "apex-legends-x-final-fantasy-7-rebirth-official-collaboration-event-trailer"
         },
         {
-            "duration": 356,
-            "title": "Helskate Hands-On Preview: Skate or Die? How about Skate AND Die?",
-            "url": "/videos/helskate-hands-on-preview-skate-or-die-how-about-skate-and-die",
-            "legacy_id": "8a748b80-4819-476b-9096-88ac2950f026",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/25/36939348-helskate-yt-1706142425123.jpg",
-            "slug": "helskate-hands-on-preview-skate-or-die-how-about-skate-and-die"
+            "duration": 3120,
+            "title": "Our Favorite Xbox Moments of 2023 – Unlocked 625",
+            "url": "/videos/our-favorite-xbox-moments-of-2023-unlocked-625",
+            "legacy_id": "4fe2b683-65d9-4419-8990-5cadf59361e0",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/20/unlocked-625-bestxboxmoments-blogroll-1703113112191.jpg",
+            "slug": "our-favorite-xbox-moments-of-2023-unlocked-625"
         },
         {
-            "duration": 283,
-            "title": "Islands of Insight Is a Dreamlike Open-World Puzzle Game",
-            "url": "/videos/islands-of-insight-is-a-dreamlike-open-world-puzzle-game",
-            "legacy_id": "a89fdc77-753f-4e72-9373-8773b58348a3",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/25/36939348-islandsofinsight-preview-yt-1706144047690.jpg",
-            "slug": "islands-of-insight-is-a-dreamlike-open-world-puzzle-game"
+            "duration": 567,
+            "title": "Every Reveal from The Game Awards 2023 in 9 Minutes",
+            "url": "/videos/every-reveal-from-the-game-awards-2023-in-9-minutes",
+            "legacy_id": "00e2ad73-9512-4b97-852d-4601cfd83e27",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/08/everyrevealtga23blogroll-2-1702019805552.jpg",
+            "slug": "every-reveal-from-the-game-awards-2023-in-9-minutes"
         },
         {
-            "duration": 368,
-            "title": "Shapez 2 Preview: A Factory-Builder Whose Hunger Is Never Satisfied",
-            "url": "/videos/shapez-2-preview-a-factory-builder-whose-hunger-is-never-satisfied",
-            "legacy_id": "eb5915c1-fe3a-4a10-8579-cb042cb3e075",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/25/36939348-shapez2preview-youtube-template-1706142174369.jpg",
-            "slug": "shapez-2-preview-a-factory-builder-whose-hunger-is-never-satisfied"
+            "duration": 40,
+            "title": "Apex Legends x Final Fantasy 7: Rebirth Reveal Trailer | Game Awards 2023",
+            "url": "/videos/apex-legends-x-final-fantasy-7-rebirth-reveal-trailer-game-awards-2023",
+            "legacy_id": "90fc4e05-d5b8-4410-b81b-51977572950f",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/08/ff7-apex-1702003471639.jpg",
+            "slug": "apex-legends-x-final-fantasy-7-rebirth-reveal-trailer-game-awards-2023"
         },
         {
-            "duration": 511,
-            "title": "Magic: The Gathering - Ravnica: Clue Edition Hands-On Preview",
-            "url": "/videos/magic-the-gathering-ravnica-clue-edition-hands-on-preview",
-            "legacy_id": "866ee669-0b85-40bf-9ce1-74d49311e561",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/21/ravnica-blogroll-1705874914867.jpg",
-            "slug": "magic-the-gathering-ravnica-clue-edition-hands-on-preview"
+            "duration": 121,
+            "title": "Apex Legends - Official Uprising Collection Event Trailer",
+            "url": "/videos/apex-legends-official-uprising-collection-event-trailer",
+            "legacy_id": "27a169b8-81fa-4db4-a0a6-4032cc57e601",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/11/30/apexlegendsuprisingcollectioneventtrailer-ign-blogroll-1701362212642.jpg",
+            "slug": "apex-legends-official-uprising-collection-event-trailer"
         },
         {
-            "duration": 356,
-            "title": "Nightingale: The Final Preview",
-            "url": "/videos/nightingale-the-final-preview",
-            "legacy_id": "ca5c138a-1e20-4f0b-a4bc-54b8f310dd38",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/18/nightingale-final-preview-blog-1705621582929.jpg",
-            "slug": "nightingale-the-final-preview"
+            "duration": 236,
+            "title": "Apex Legends - Official 'Kill Code Part 4' Trailer",
+            "url": "/videos/apex-legends-official-kill-code-part-4-trailer",
+            "legacy_id": "6e491510-1acc-4f84-8c1f-c833fda5afde",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/11/27/apexlegendskillcode4trailer-ign-blogroll-1701102110226.jpg",
+            "slug": "apex-legends-official-kill-code-part-4-trailer"
         },
         {
-            "duration": 263,
-            "title": "Persona 3 Reload: The Final Preview",
-            "url": "/videos/persona-3-reload-the-final-preview",
-            "legacy_id": "435bada8-c4b7-46e1-9f12-9b387c0ef42d",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/12/persona3reloadthefinalpreview-36939348-persona3reloadpreview-howitplays-yt-1705097331047.jpg",
-            "slug": "persona-3-reload-the-final-preview"
+            "duration": 83,
+            "title": "Apex Legends - Official Kill Code: A Life for a Life Trailer",
+            "url": "/videos/apex-legends-official-kill-code-a-life-for-a-life-trailer",
+            "legacy_id": "9a8e95bd-1ae1-4180-a919-69fb3d6bbb37",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/11/20/apexlegendskillcodealifeforalifetrailer-ign-blogroll-1700496803875.jpg",
+            "slug": "apex-legends-official-kill-code-a-life-for-a-life-trailer"
         },
         {
-            "duration": 196,
-            "title": "SMITE 2: The First Preview",
-            "url": "/videos/smite-2-the-first-preview",
-            "legacy_id": "986ab125-1738-4797-9d00-95d3feb7847c",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/11/36939348-smite2-firstpreview-yt-1705016589510.jpg",
-            "slug": "smite-2-the-first-preview"
+            "duration": 117,
+            "title": "Apex Legends X Post Malone - Official Crossover Event Trailer",
+            "url": "/videos/apex-legends-x-post-malone-official-crossover-event-trailer",
+            "legacy_id": "14c4113b-8f46-40c9-8f86-4432168d729e",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/11/02/apexthumb-1698939509413.jpg",
+            "slug": "apex-legends-x-post-malone-official-crossover-event-trailer"
         },
         {
-            "duration": 382,
-            "title": "Solium Infernum Hands-On Preview: If Civilization Was Set in Hell",
-            "url": "/videos/solium-infernum-hands-on-preview-if-civilization-was-set-in-hell",
-            "legacy_id": "a72ba51e-3094-4fd2-9acf-7f97678eeca4",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/10/36939348-si-youtube-template-1704931146219.jpg",
-            "slug": "solium-infernum-hands-on-preview-if-civilization-was-set-in-hell"
+            "duration": 90,
+            "title": "Apex Legends - Official Ignite Battle Pass Trailer",
+            "url": "/videos/apex-legends-official-ignite-battle-pass-trailer",
+            "legacy_id": "858b6050-4bcc-429c-9b7b-3a30bb0fc023",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/30/apexthumb-1698680327386.jpg",
+            "slug": "apex-legends-official-ignite-battle-pass-trailer"
         },
         {
-            "duration": 313,
-            "title": "Expeditions: A MudRunner Game – The First Preview",
-            "url": "/videos/expeditions-a-mudrunner-game-the-first-preview",
-            "legacy_id": "b6ba2661-2c55-4299-be30-4e6223300a39",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/08/expeditionsthumb-blogroll-1704687619663.jpg",
-            "slug": "expeditions-a-mudrunner-game-the-first-preview"
+            "duration": 201,
+            "title": "Apex Legends Season 19: New Legend Conduit Abilities and Cross Progression Explained",
+            "url": "/videos/apex-legends-season-19-new-legend-conduit-abilities-and-cross-progression-explained",
+            "legacy_id": "26e63d18-c458-40d0-a9a9-284f93e8afc1",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/25/yt-1698256173823.jpg",
+            "slug": "apex-legends-season-19-new-legend-conduit-abilities-and-cross-progression-explained"
         },
         {
-            "duration": 549,
-            "title": "We Played Suicide Squad: Kill the Justice League and Did Not Like It",
-            "url": "/videos/we-played-suicide-squad-kill-the-justice-league-and-did-not-like-it",
-            "legacy_id": "86936ae8-b944-48d9-ae74-660e3d509c32",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/09/sskillthejl-blogroll-1704758966913.jpg",
-            "slug": "we-played-suicide-squad-kill-the-justice-league-and-did-not-like-it"
+            "duration": 124,
+            "title": "Apex Legends: Ignite - Official Gameplay Trailer",
+            "url": "/videos/apex-legends-ignite-official-gameplay-trailer",
+            "legacy_id": "2908ab61-36d8-40d1-aa3b-b9e6d3d479fe",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/26/apexlegendsignitegameplaytrailer-ign-blogroll-1698333525443.jpg",
+            "slug": "apex-legends-ignite-official-gameplay-trailer"
         },
         {
-            "duration": 355,
-            "title": "Like a Dragon: Infinite Wealth - The Final Preview",
-            "url": "/videos/like-a-dragon-infinite-wealth-the-final-preview",
-            "legacy_id": "af87e03a-ad45-4f7e-90e5-1981c034997b",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/03/36190303-like-a-dragon-infinite-wealth-blogroll-1704317426449.jpg",
-            "slug": "like-a-dragon-infinite-wealth-the-final-preview"
+            "duration": 500,
+            "title": "7 Biggest Halloween In-Game Events To Play Right Now",
+            "url": "/videos/7-biggest-halloween-in-game-events-to-play-right-now",
+            "legacy_id": "3fdde8b1-b69a-44ef-b3cd-fcd3a40a7559",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/26/horrorweek-ingameevents-blogroll-1698278882694.jpg",
+            "slug": "7-biggest-halloween-in-game-events-to-play-right-now"
         },
         {
-            "duration": 207,
-            "title": "Mecha BREAK: The First Preview",
-            "url": "/videos/mecha-break-the-first-preview",
-            "legacy_id": "3f0a26f5-6a55-49a2-bcbf-3c3f72ce2853",
-            "thumbnail": "https://assets-prd.ignimgs.com/2024/01/03/mb-blogroll-1704245325392.jpg",
-            "slug": "mecha-break-the-first-preview"
+            "duration": 185,
+            "title": "Apex Legends: Ignite - Official Launch Trailer",
+            "url": "/videos/apex-legends-ignite-official-launch-trailer",
+            "legacy_id": "0e74c966-f85b-49fb-8dce-85cf671127fa",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/23/apexlegendsignitetrailer-ign-blogroll1-1698075728526.jpg",
+            "slug": "apex-legends-ignite-official-launch-trailer"
         },
         {
-            "duration": 271,
-            "title": "Skull & Bones: Closed Beta Impressions After 6 Hours",
-            "url": "/videos/skull-bones-closed-beta-impressions-after-6-hours",
-            "legacy_id": "b7e0a13b-d51c-4d90-aab3-4c89c5bc188b",
-            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/18/36190303-skullbones-betaimpressions-blogroll-1702937826606.jpg",
-            "slug": "skull-bones-closed-beta-impressions-after-6-hours"
+            "duration": 246,
+            "title": "Apex Legends - Official Stories from the Outlands 'For Us, Utang na Loob' Trailer",
+            "url": "/videos/apex-legends-official-stories-from-the-outlands-for-us-utang-na-loob-trailer",
+            "legacy_id": "3821fbe5-60a8-4c51-8d55-aa7a9bc06d67",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/19/apexlegendsstoriesfromtheoutlandsconduittrailer-ign-blogroll-1697729228102.jpg",
+            "slug": "apex-legends-official-stories-from-the-outlands-for-us-utang-na-loob-trailer"
         },
         {
-            "duration": 383,
-            "title": "Tarisland: Closed Beta Preview",
-            "url": "/videos/tarisland-closed-beta-preview",
-            "legacy_id": "9e0b30a6-3afd-4dd4-a149-4ea9b38ef0c7",
-            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/18/tarislandclosedbetapreview-36190303-tarisland2-blogroll-1702922989710.jpg",
-            "slug": "tarisland-closed-beta-preview"
+            "duration": 111,
+            "title": "Apex Legends - Official Doppelgangers Collection Event Trailer",
+            "url": "/videos/apex-legends-official-doppelgangers-collection-event-trailer",
+            "legacy_id": "1587efcf-c08b-43bf-9066-f5a8a0ca0edd",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/12/apexlegendsdopplegangerscollectioneventtrailer-ign-blogroll-1697124223358.jpg",
+            "slug": "apex-legends-official-doppelgangers-collection-event-trailer"
         },
         {
-            "duration": 407,
-            "title": "Prince of Persia: The Lost Crown – The Final Preview",
-            "url": "/videos/prince-of-persia-the-lost-crown-the-final-preview",
-            "legacy_id": "6870274d-55a7-4f39-81f5-b8922ef11372",
-            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/11/36939348-popthelostcrown-finalpreview-yt-1702339130210.jpg",
-            "slug": "prince-of-persia-the-lost-crown-the-final-preview"
+            "duration": 256,
+            "title": "Apex Legends - Official 'Kill Code Part 3' Trailer",
+            "url": "/videos/apex-legends-official-kill-code-part-3-trailer",
+            "legacy_id": "1ae5c7d7-e475-4a1e-94e3-480cf0d7ea2d",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/10/09/apexlegendskillcodepart3-ign-blogroll-1696865143340.jpg",
+            "slug": "apex-legends-official-kill-code-part-3-trailer"
         },
         {
-            "duration": 606,
-            "title": "Tekken 8: The Final Preview",
-            "url": "/videos/tekken-8-the-final-preview",
-            "legacy_id": "2e395070-ea50-4d85-b8e2-6e64e304631f",
-            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/11/36939348-tekkem8preview-youtube-template-1702331152714.jpg",
-            "slug": "tekken-8-the-final-preview"
+            "duration": 80,
+            "title": "Apex Legends - Official Harbingers Collection Event Trailer",
+            "url": "/videos/apex-legends-official-harbingers-collection-event-trailer",
+            "legacy_id": "ae802d92-a647-4d79-b56e-d8eb4560f2a5",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/09/14/apexlegendsharbingercollectioneventtrailer-ign-blogroll-1694711005939.jpg",
+            "slug": "apex-legends-official-harbingers-collection-event-trailer"
         },
         {
-            "duration": 325,
-            "title": "Alone in the Dark: The Final Preview",
-            "url": "/videos/alone-in-the-dark-the-final-preview",
-            "legacy_id": "1fdd2eb9-b67a-4bc0-8b01-f9bd431cdbb2",
-            "thumbnail": "https://assets-prd.ignimgs.com/2023/12/09/36939348-aloneinthedark-finalpreview-yt-1702083289003.jpg",
-            "slug": "alone-in-the-dark-the-final-preview"
+            "duration": 93,
+            "title": "Apex Legends: Resurrection - Official Battle Pass Trailer",
+            "url": "/videos/apex-legends-resurrection-official-battle-pass-trailer",
+            "legacy_id": "cf89d5d5-905a-4c5c-901c-47f22899c68c",
+            "thumbnail": "https://assets-prd.ignimgs.com/2023/08/07/apexlegendsresurrectionbattlepasstrailer-ign-blogroll-1691423211163.jpg",
+            "slug": "apex-legends-resurrection-official-battle-pass-trailer"
+        }
+    ]
+},
+{
+    "legacy_id": "6a949ca8-b4b1-11ea-b2e3-0e7c1d759882",
+    "legacy_author_id": 9867923,
+    "uri": "/person/daledriver",
+    "avatar": "https://assets-prd.ignimgs.com/2022/03/09/monkey-1646844968364.jpg",
+    "cover": "https://assets-prd.ignimgs.com/avatars/561bb7fb8f909b17b516772a/JR50gG_3_400x400-1621845826809.jpeg",
+    "name": "Dale Driver",
+    "nickname": "DaleDriver",
+    "position": "Senior Video Producer",
+    "bio": "Dale is the UK Video Lead for IGN. Dale oversees all video coverage out of the UK office and primarily creates long-form, narrative content. When not leading day-to-day UK video production, Dale is a project lead on IGN Inside Stories and IGN Experts React, two of IGN's most successful series he has helped shape and develop.",
+    "location": "London",
+    "socials": [
+        {
+            "platform": "Twitter",
+            "username": "@_daledriver"
+        }
+    ]
+},
+{
+    "legacy_id": "65d1b6bc-a507-41e7-9534-804a2c266a5a",
+    "legacy_author_id": 97742861,
+    "uri": "/person/emma_matthews",
+    "avatar": null,
+    "cover": "https://assets-prd.ignimgs.com/avatars/60b776661cacdb08d458aabc/Emma_Matthews__2_-1647344248429.png",
+    "name": "Emma Matthews",
+    "nickname": "emma_matthews",
+    "position": null,
+    "bio": "",
+    "location": "UK",
+    "socials": []
+},
+{
+    "legacy_id": "d382dd2b-83f1-4093-b74a-a958ccf31497",
+    "uri": "/games/apex-legends",
+    "slug": "apex-legends",
+    "type": "Game",
+    "wiki_slug": "apex-legends",
+    "cover": "https://assets-prd.ignimgs.com/2023/02/16/apexrevelry-1676588335122.jpg",
+    "names": {
+        "primary": "Apex Legends",
+        "alt": [
+            "Titanfall: Apex Legends"
+        ],
+        "short": "Apex Legends"
+    },
+    "descriptions": {
+        "long": "Conquer with character in Apex Legends, a free-to-play Battle Royale shooter where legendary characters with powerful abilities team up to battle for fame and fortune on the fringes of the Frontier. Master an ever-growing roster of diverse legends, deep tactical squad play, and bold new innovations that level-up the Battle Royale experience -- all within a rugged world where anything goes. \r\n<p>\r\nExperience a brand-new array of innovative features that level-up the Battle Royale genre, including Respawn Beacons, Smart Comms, Intelligent Inventory, and an all-new way to drop into the action with Jumpmaster deployment. Choose your Legend and combine their unique skills together with other players to form the ultimate crew. Use your abilities -- and your wits -- to make strategic calls on the fly, adapting your crew's strengths to meet new challenges as the match evolves. Drop in and loot up with a host of powerful weapons, diverse attachments, and useful armor to protect you in battle. After the battle, collect a wealth of cosmetic options for personalizing your character and weapons, and unlock new ways to show off during the match. ",
+        "short": "Conquer with character in Apex Legends, a free-to-play Battle Royale shooter where legendary characters with powerful abilities team up to battle for fame and fortune on the fringes of the Frontier. "
+    },
+    "franchises": [
+        {
+            "name": "Apex Legends",
+            "slug": "apex-legends"
+        }
+    ],
+    "genres": [
+        {
+            "name": "Shooter",
+            "slug": "shooter"
+        },
+        {
+            "name": "Battle Royale",
+            "slug": "battle-royale"
+        },
+        {
+            "name": "Live Service",
+            "slug": "live-service"
+        }
+    ],
+    "features": [
+        {
+            "name": "Online Versus Multiplayer",
+            "slug": "online-versus-multiplayer"
+        },
+        {
+            "name": "Steam Deck Verified",
+            "slug": "steam-deck-verified"
+        }
+    ],
+    "producers": [
+        {
+            "name": "Panic Button",
+            "short_name": null,
+            "slug": "panic-button"
+        },
+        {
+            "name": "Respawn Entertainment",
+            "short_name": "Respawn",
+            "slug": "respawn-entertainment"
+        }
+    ],
+    "publishers": [
+        {
+            "name": "Electronic Arts",
+            "short_name": null,
+            "slug": "electronic-arts"
+        }
+    ],
+    "regions": [
+        {
+            "legacy_id": 2097964,
+            "name": "",
+            "region": "AU",
+            "releases": [
+                {
+                    "legacy_id": "50f2839d-21d8-4087-85fd-c31eeb4c14bc",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473462,
+                            "name": "PlayStation 4",
+                            "slug": "ps4"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "9b3ce46e-693a-4b75-b067-48211e106ccb",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473466,
+                            "name": "PC",
+                            "slug": "pc"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "a83b3b4e-b568-42ea-9980-97221705b8bc",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4553331,
+                            "name": "Xbox One",
+                            "slug": "xbox-one"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "2dbe3709-0ac0-4d51-a777-d8496d3254b7",
+                    "date": "2021-03-10",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5233074,
+                            "name": "Nintendo Switch",
+                            "slug": "nintendo-switch"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "05901563-7bfd-4fe6-91d4-0c9f4c4aa0a3",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711233,
+                            "name": "PlayStation 5",
+                            "slug": "ps5"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "a358a9e4-aa9d-4397-964f-f42c138fb5bb",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711232,
+                            "name": "Xbox Series X|S",
+                            "slug": "xbox-4"
+                        }
+                    ],
+                    "age_rating": null
+                }
+            ]
+        },
+        {
+            "legacy_id": 2097965,
+            "name": "",
+            "region": "US",
+            "releases": [
+                {
+                    "legacy_id": "1bb9b6dd-d1fa-4e54-9d4c-7b8ac1ae66bf",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4553331,
+                            "name": "Xbox One",
+                            "slug": "xbox-one"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                },
+                {
+                    "legacy_id": "4b54a5ef-fa44-4e21-8feb-c2b804837b44",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473466,
+                            "name": "PC",
+                            "slug": "pc"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                },
+                {
+                    "legacy_id": "f480ccd0-0680-404d-ab10-ffa04eb56cc0",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473462,
+                            "name": "PlayStation 4",
+                            "slug": "ps4"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                },
+                {
+                    "legacy_id": "6fca308f-a099-465c-96ff-14977f55be61",
+                    "date": "2021-03-10",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5233074,
+                            "name": "Nintendo Switch",
+                            "slug": "nintendo-switch"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                },
+                {
+                    "legacy_id": "90a12d24-828a-450e-a1ae-4a1e9bbd1ae6",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711233,
+                            "name": "PlayStation 5",
+                            "slug": "ps5"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                },
+                {
+                    "legacy_id": "9f9f643e-e37f-4c9f-82f1-2fef758cdf9e",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711232,
+                            "name": "Xbox Series X|S",
+                            "slug": "xbox-4"
+                        }
+                    ],
+                    "age_rating": {
+                        "legacy_id": "11",
+                        "name": "T",
+                        "slug": "t",
+                        "age_rating_type": "ESRB",
+                        "rating_descriptors": [
+                            "Blood",
+                            "Violence"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "legacy_id": 2097966,
+            "name": "",
+            "region": "UK",
+            "releases": [
+                {
+                    "legacy_id": "2973c4b1-ec9c-43d0-9179-e61dbd8b9f86",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4553331,
+                            "name": "Xbox One",
+                            "slug": "xbox-one"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "ca784d06-9946-4697-9015-3ea788c8e375",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473466,
+                            "name": "PC",
+                            "slug": "pc"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "d9bae922-dd1d-48ed-9d72-1200925f117a",
+                    "date": "2019-02-04",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 4473462,
+                            "name": "PlayStation 4",
+                            "slug": "ps4"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "d9a31500-a000-4e25-8d8b-581d142de958",
+                    "date": "2021-03-10",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5233074,
+                            "name": "Nintendo Switch",
+                            "slug": "nintendo-switch"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "7cc06a05-2f0b-41b8-8c16-cb3c10c923e2",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711233,
+                            "name": "PlayStation 5",
+                            "slug": "ps5"
+                        }
+                    ],
+                    "age_rating": null
+                },
+                {
+                    "legacy_id": "cd64a4cd-f30d-4da3-85f8-f0a2353c7628",
+                    "date": "2022-03-29",
+                    "estimated_date": false,
+                    "platform_attributes": [
+                        {
+                            "legacy_id": 5711232,
+                            "name": "Xbox Series X|S",
+                            "slug": "xbox-4"
+                        }
+                    ],
+                    "age_rating": null
+                }
+            ]
         }
     ]
 }
