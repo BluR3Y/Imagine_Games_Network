@@ -1,5 +1,5 @@
 import mysql.connector
-from imagine_games_scraper.items import Article, Video, Reporter
+from imagine_games_scraper.items import Article, Video, Reporter, Entertainment
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -33,6 +33,8 @@ class MySQLStore:
             print('******* Video *******')
         elif isinstance(item, Reporter):
             print('******* Reporter *******')
+        elif isinstance(item, Entertainment):
+            print('********** Entertainment ***************')
         else: print('******** other ************')
         return item
 
