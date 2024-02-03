@@ -67,10 +67,11 @@ class Reporter(scrapy.Item):
     socials = scrapy.Field()
 
 # Scrapy Item used to define the structure of entertainment
-class Entertainment(scrapy.Item):
+class Object(scrapy.Item):
     legacy_id = scrapy.Field()
     uri = scrapy.Field()
     slug = scrapy.Field()
+    how_long_to_beat = scrapy.Field()
     wiki = scrapy.Field()
     wiki_slug = scrapy.Field()
     type = scrapy.Field()
@@ -86,7 +87,15 @@ class Entertainment(scrapy.Item):
     regions = scrapy.Field()
     reviews = scrapy.Field()
 
-class EntertainmentWiki(scrapy.Item):
+class HowLongToBeat(scrapy.Item):
+    id = scrapy.Field()
+    steam_id = scrapy.Field()
+    platforms = scrapy.Field()
+    list = scrapy.Field()
+    time = scrapy.Field()
+    review = scrapy.Field()
+
+class ObjectWiki(scrapy.Item):
     legacy_id = scrapy.Field()
     name = scrapy.Field()
     maps = scrapy.Field()
@@ -123,6 +132,7 @@ class Rating(scrapy.Item):
     name = scrapy.Field()
     slug = scrapy.Field()
     descriptors = scrapy.Field()
+    interactive_elements = scrapy.Field()
 
 class ReporterReview(scrapy.Item):
     legacy_id = scrapy.Field()
@@ -130,6 +140,8 @@ class ReporterReview(scrapy.Item):
     score_text = scrapy.Field()
     editors_choice = scrapy.Field()
     score_summary = scrapy.Field()
+    article_url = scrapy.Field()
+    video_url = scrapy.Field()
     review_date = scrapy.Field()
 
 class UserReview(scrapy.Item):
@@ -157,4 +169,5 @@ class UserReviewTag(scrapy.Item):
     name =scrapy.Field()
     is_positive = scrapy.Field()
 
-# Possibly include Wiki Item
+# Possible items:
+    # polls

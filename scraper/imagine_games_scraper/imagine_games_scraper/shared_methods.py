@@ -1,6 +1,6 @@
 import json
 import scrapy
-from imagine_games_scraper.items import Reporter, Entertainment, Attribute, Region, Rating, ReporterReview, UserReview, UserReviewTag, User
+from imagine_games_scraper.items import *
 
 @classmethod
 def parse_contributor_page(self, response):
@@ -36,7 +36,7 @@ def parse_object_page(self, response):
     # with open('ign_scraping_game_data.json', 'w') as f:
     #     json.dump(page_json_data, f)
 
-    parsed_object = Entertainment({
+    parsed_object = Object({
         'legacy_id': page_data.get('id'),
         'uri': page_data.get('url'),
         'slug': page_data.get('slug'),
@@ -52,6 +52,34 @@ def parse_object_page(self, response):
             'long': page_data['metadata']['descriptions'].get('long'),
             'short': page_data['metadata']['descriptions'].get('short')
         },
+        'how_long_to_beat': (HowLongToBeat({
+            'id': page_data['hl2bData'].get('id'),
+            'steam_id': page_data['hl2bData'].get('steam_id'),
+            'platforms': page_data['hl2bData'].get('platforms'),
+            'list': {
+                'playing': page_data['hl2bData']['list'].get('playing'),
+                'backlogged': page_data['hl2bData']['list'].get('backlogged'),
+                'replay': page_data['hl2bData']['list'].get('replay'),
+                'custom': page_data['hl2bData']['list'].get('custom'),
+                'completed': page_data['hl2bData']['list'].get('completed'),
+                'retired': page_data['hl2bData']['list'].get('retired')
+            },
+            'time': {
+                'combined': page_data['hl2bData']['time'].get('combined'),
+                'combined_count': page_data['hl2bData']['time'].get('combined_count'),
+                'completionist': page_data['hl2bData']['time'].get('completionist'),
+                'completionist_count': page_data['hl2bData']['time'].get('completionist_count'),
+                'is_reliable': page_data['hl2bData']['time'].get('is_reliable'),
+                'main': page_data['hl2bData']['time'].get('main'),
+                'main_count': page_data['hl2bData']['time'].get('main_count'),
+                'main_plus': page_data['hl2bData']['time'].get('main_plus'),
+                'main_plus_count': page_data['hl2bData']['time'].get('main_plus_count')
+            },
+            'review': {
+                'count': page_data['hl2bData']['review'].get('count'),
+                'score': page_data['hl2bData']['review'].get('score'),
+            }
+        }) if page_data['hl2bData'] is not None else None),
         'franchises': [Attribute({
             'type': 'franchise',
             'name': franchise.get('name'),
@@ -82,6 +110,8 @@ def parse_object_page(self, response):
             'primary_review': (ReporterReview({
                 'legacy_id': page_data['primaryReview'].get('id'),
                 'editors_choice': page_data['primaryReview'].get('editorsChoice'),
+                'article_url': page_data['primaryReview'].get('articleUrl'),
+                'video_url': page_data['primaryReview'].get('videoUrl'),
                 'score': page_data['primaryReview'].get('score'),
                 'score_text': page_data['primaryReview'].get('scoreText'),
                 'score_summary': page_data['primaryReview'].get('scoreSummary'),
@@ -90,7 +120,7 @@ def parse_object_page(self, response):
             'user_reviews': []
         })
     })
-
+    # Missing: Screenshot and Image section, specifically content from main container
     gallery_key = next((key for key in object_data if 'imageGallery' in key), None)
     if gallery_key is not None:
         parsed_object['gallery'] = [{
@@ -105,18 +135,18 @@ def parse_object_page(self, response):
     if wiki_key is not None:
         wiki_ref = root_query[wiki_key]['__ref']
         wiki_data = page_json_data['props']['apolloState'][wiki_ref]
-        parsed_object['wiki'] = dict({
+        parsed_object['wiki'] = ObjectWiki({
             'legacy_id': wiki_data.get('id'),
             'name': wiki_data.get('name'),
             # Map image dimensions: 256 x 256
             # Smallest map magnification value: 254
             # Map zoom to coordinate increment: x2
-            'maps': [{
-                'map_name': map.get('mapName'),
-                'map_slug': map.get('mapSlug'),
+            'maps': [WikiMap({
+                'name': map.get('mapName'),
+                'slug': map.get('mapSlug'),
                 'width': map.get('width'),
                 'height': map.get('height'),
-                'map_type': map.get('mapType'),
+                'type': map.get('mapType'),
                 'initial_zoom': map.get('initialZoom'),
                 'min_zoom': map.get('minZoom'),
                 'max_zoom': map.get('maxZoom'),
@@ -124,7 +154,7 @@ def parse_object_page(self, response):
                 'initial_longitude': map.get('initialLng'),
                 'tile_sets': map.get('tilesets'),
                 'background_color': map.get('backgroundColor')
-            } for map in wiki_data['maps']],
+            }) for map in wiki_data['maps']],
             'navigation': [{
                 'label': nav.get('label'),
                 'url': nav.get('url')
@@ -198,7 +228,8 @@ def parse_object_region(self, page_json_data, region):
                 'name': region['ageRating'].get('name'),
                 'slug': region['ageRating'].get('slug'),
                 'type': region['ageRating'].get('ageRatingType'),
-                'descriptors': [descriptor['name'] for descriptor in region['ageRatingDescriptors']]
+                'descriptors': [descriptor['name'] for descriptor in region['ageRatingDescriptors']],
+                'interactive_elements': [element['name'] for element in region['interactiveElements']]
             }) if region['ageRating'] is not None else None)
         } for release in region['releases']]
     })

@@ -23,7 +23,7 @@ class ArticleSpiderSpider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/articles/fortnite-will-return-to-ios-but-only-in-europe', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/articles/the-finals-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting article content elements from the response

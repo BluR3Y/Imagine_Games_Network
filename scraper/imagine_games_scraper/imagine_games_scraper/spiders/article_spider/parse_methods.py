@@ -1,6 +1,7 @@
 import scrapy
 import json
 from imagine_games_scraper.items import Article, Reporter
+from . import element_methods
 
 @classmethod
 def parse_article_page(self, response, recursion_level = 0):
@@ -9,6 +10,9 @@ def parse_article_page(self, response, recursion_level = 0):
 
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
+
+    with open('ign_scraping_game_review.json', 'w') as f:
+        json.dump(page_json_data, f)
     
     # Select page metadata from json object
     page_data = page_json_data['props']['pageProps']['page']
@@ -45,23 +49,8 @@ def parse_article_page(self, response, recursion_level = 0):
     # slideshow_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'slideshow' in key]
     # article_item['slideshows'] = [self.parse_article_slideshow(page_json_data, key) for key in slideshow_keys]
 
-    # wiki_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'wiki' in key), None)
-    # article_item['object_wiki'] = self.parse_object_wiki(page_json_data, wiki_key) if wiki_key is not None else None
-
     # poll_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'poll' in key]
     # article_item['polls'] = [self.parse_object_poll(page_json_data, key) for key in poll_keys]
-
-    # review_data = page_data['review']
-    # article_item['review'] = None if review_data is None else {
-    #     'legacy_id': review_data.get('id'),
-    #     'title': page_data.get('feedTitle'),
-    #     'score': review_data.get('score'),
-    #     'score_text': review_data.get('scoreText'),
-    #     'editors_choice': review_data.get('editorsChoice'),
-    #     'score_summary': review_data.get('scoreSummary'),
-    #     'verdict': review_data.get('verdict'),
-    #     'review_date': review_data.get('reviewedOn')
-    # }
 
     if recursion_level < 1:
         for recommendation in article_item['recommendations']:
