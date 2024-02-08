@@ -1,6 +1,6 @@
 import scrapy
 import json
-from imagine_games_scraper.items import Video
+from imagine_games_scraper.items.content import Video
 
 @classmethod
 def parse_video_page(self, response, recursion_level = 0):

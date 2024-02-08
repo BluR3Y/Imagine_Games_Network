@@ -41,8 +41,10 @@ class HTML_Parser:
         attributes = {}
         attribute_str = element_str[tag_end + 1:element_str.find('>')]
         for attribute in attribute_str.split(' '):
-            if '=' in attribute:
-                key, value = attribute.split('=')
+            split_index = attribute.find('=')
+            if split_index != -1:
+                key = attribute[0:split_index]
+                value = attribute[split_index + 1:]
                 attributes[key] = value.strip('"')
 
         return HTML_ELEMENT(tag, attributes)

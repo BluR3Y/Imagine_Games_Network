@@ -1,125 +1,103 @@
 import scrapy
 import json
-from imagine_games_scraper.items import Article, Reporter
-from . import element_methods
+import re
+from . import html_methods
+from imagine_games_scraper.items.content import Article, Content, ContentCategory, Brand
+from imagine_games_scraper.items.user import User, ReporterReview
 
 @classmethod
 def parse_article_page(self, response, recursion_level = 0):
-    # Creating an Article item instance to store the scraped data
-    article_item = Article({ 'url': response.url })
-
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
-    with open('ign_scraping_game_review.json', 'w') as f:
-        json.dump(page_json_data, f)
-    
-    # Select page metadata from json object
     page_data = page_json_data['props']['pageProps']['page']
-    article_item['legacy_id'] = page_data.get('id')
-    article_item['cover'] = page_data.get('image')
-    article_item['title'] = page_data.get('pageTitle')
-    article_item['subtitle'] = page_data.get('subtitle')
-    article_item['description'] = page_data.get('description')
-    article_item['excerpt'] = page_data.get('excerpt')
-    article_item['publish_date'] = page_data.get('publishDate')
-    article_item['modify_date'] = page_data['schema'].get('dateModified')
-    article_item['slug'] = page_data.get('slug')
-    article_item['category'] = page_data.get('category')
-    article_item['vertical'] = page_data.get('vertical')
-    article_item['processedHtml'] = page_data.get('processedHtml')
-    article_item['brand'] = page_data.get('brand')
-    article_item['embeded_content'] = self.parse_html_content(page_json_data)
-    article_item['contributors'] = []
-    article_item['objects'] = []
+    apollo_state = page_json_data['props']['apolloState']
 
-    # article_item['contributors'] = [self.parse_article_contributor(page_json_data, contributor['id']) for contributor in page_json_data['props']['pageProps']['page']['contributors']]
-    for contributor in page_data['contributors']:
-        uri = "/person/" + contributor['nickname']
-        article_item['contributors'].append(contributor['id'])
-        yield scrapy.Request(url="https://www.ign.com" + uri, callback=self.parse_contributor_page)
-    
-    # article_item['objects'] = [self.parse_article_object(page_json_data, f'Object:{object['id']}') for object in page_data['objects']]
-    for object in page_data['objects']:
-        article_item['objects'].append(object['id'])
-        yield scrapy.Request(url="https://www.ign.com" + object['url'], callback=self.parse_object_page)
+    modern_article_ref = apollo_state['ROOT_QUERY'].get(f"article({{\"slug\":\"{page_data.get('slug')}\"}})")
+    modern_article_data = page_json_data['props']['apolloState'][modern_article_ref['__ref']]
+    article_content_data = apollo_state[modern_article_data['content']['__ref']]
 
-    # * Missing: Move this to shared_methods.scrape_object_page()
+    contributor_users = [User(apollo_state[contributor_ref['__ref']], { 'avatar': apollo_state[contributor_ref['__ref']]['thumbnailUrl'] }) for contributor_ref in article_content_data.get('contributorsOrBylines')] 
+    for contributor in contributor_users:
+        yield scrapy.Request(url="https://www.ign.com/person/"+contributor.get('nickname'), callback=self.parse_contributor_page)
 
-    # slideshow_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'slideshow' in key]
-    # article_item['slideshows'] = [self.parse_article_slideshow(page_json_data, key) for key in slideshow_keys]
+    object_regex = re.compile(r"objects\({.*}\)")
+    object_key = next((key for key in article_content_data if object_regex.search(key)))
+    object_items = [apollo_state[object_ref['__ref']] for object_ref in article_content_data[object_key]]
+    for obj in object_items:
+        yield scrapy.Request(url="https://www.ign.com" + obj['url'], callback=self.parse_object_page)
 
-    # poll_keys = [key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if 'poll' in key]
-    # article_item['polls'] = [self.parse_object_poll(page_json_data, key) for key in poll_keys]
+    html_data = html_methods.HTML_DOCUMENT(modern_article_data['article'].get('processedHtml'))
+    element_filter = lambda x : x.get('data-transform', None) is not None
+    embedded_elements = filter(element_filter, html_data.get_element_attributes())
+    embeds = {
+        'polls': [],
+        'videos': [],
+        'slideshows': [],
+        'captioned_images': [],
+        'commerce_deals': []
+    }
+    for element in embedded_elements:
+        data_transform = element.get('data-transform')
+        key_terms = lambda arr, str : all(sub_str in str for sub_str in arr)
+        element_root_key = next((key for key in apollo_state['ROOT_QUERY'] if data_transform in ['slideshow', 'polls', 'ignvideo', 'image-with-caption', 'commerce-deal'] and key_terms([data_transform, element.get('data-slug')], key)), None)
+
+        if element_root_key and data_transform == 'slideshow':
+            embeds['slideshows'].append(self.parse_slideshow(page_json_data, element, element_root_key))
+        elif element_root_key and data_transform == 'polls':
+            embeds['polls'].append(self.parse_poll(page_json_data, element, element_root_key))
+        elif element_root_key and data_transform == 'ignvideo':
+            embeds['videos'].append(self.parse_video(page_json_data, element, element_root_key))
+        elif element_root_key and data_transform == 'image-with-caption':
+            embeds['captioned_images'].append(self.parse_captioned_image(page_json_data, element, element_root_key))
+        elif element_root_key and data_transform == 'commerce-deal':
+            embeds['commerce_deals'].append(self.parse_slideshow(page_json_data, element, element_root_key))
+        # else: print(element)
+    # Last Here
 
     if recursion_level < 1:
-        for recommendation in article_item['recommendations']:
-            recommendation_url = 'https://www.ign.com' + recommendation['url']
-            yield scrapy.Request(url=recommendation_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })
+        recommendation_regex = re.compile(r"topPages\({.*}\)")
+        recommendation_key = next((key for key in apollo_state['ROOT_QUERY'] if recommendation_regex.search(key)))
+        recommendation_refs = [ref['__ref'] for ref in apollo_state['ROOT_QUERY'][recommendation_key]]
 
-    # Yielding the Article Item for further processing or storage
-    yield article_item
+        for modern_article in [apollo_state[ref] for ref in recommendation_refs]:
+            article_content = apollo_state[modern_article['content']['__ref']]
+            yield scrapy.Request(url="https://www.ign.com" + article_content.get('url'), callback=self.parse_article_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })
+   
 
-# Missing: Embeded HTML Content
+    yield Article({
+        'legacy_id': page_json_data.get('id'),
+        'content': Content(article_content_data, {
+            'category': ContentCategory(apollo_state[article_content_data['contentCategory']['__ref']]),
+            'brand': Brand(apollo_state[article_content_data['brand']['__ref']]),
+            'contributors': contributor_users,
+            'objects': object_items
+        }),
+        'article': {
+            'hero_video_content_id': modern_article_data['article'].get('heroVideoContentId'),
+            'hero_video_content_slug': modern_article_data['article'].get('heroVideoContentSlug'),
+            'processed_html': modern_article_data['article'].get('processedHtml')
+        },
+        'embeds': embeds,
+        'review': (ReporterReview(apollo_state[f'Review:{page_data['review']['id']}']) if page_data.get('review', None) is not None else None)
+    })
+
 @classmethod
-def parse_html_content(self, page_json_data):
+def parse_slideshow(self, page_json_data, element, element_root_key):
     pass
 
 @classmethod
-def parse_article_slideshow(self, page_json_data, slideshow_key):
-    slideshow_object = page_json_data['props']['apolloState']['ROOT_QUERY'][slideshow_key]
-    slideshow_content = page_json_data['props']['apolloState'][slideshow_object['content']['__ref']]
-    gallery_key = next((key for key in slideshow_object if 'slideshowImages' in key), None)
-    image_keys = [image['__ref'] for image in slideshow_object[gallery_key]['images']]
-    image_objects = [page_json_data['props']['apolloState'][key] for key in image_keys]
-
-    return dict({
-        'legacy_id': slideshow_content['id'],
-        'url': slideshow_content['url'],
-        'slug': slideshow_content['slug'],
-        'title': slideshow_content['title'],
-        'subtitle': slideshow_content['subtitle'],
-        'publish_date': slideshow_content['publishDate'],
-        'vertical': slideshow_content['vertical'],
-        'brand': slideshow_content['brand'],
-        'category': slideshow_content['contentCategory']['name'],
-        'images': [{
-            'legacy_id': image['id'],
-            'url': image['url'],
-            'caption': image['caption']
-        } for image in image_objects]
-    })
+def parse_poll(self, page_json_data, element):
+    pass
 
 @classmethod
-def parse_object_wiki(self, page_json_data, wiki_key):
-    key_params_str = wiki_key[wiki_key.find('{'):wiki_key.find('}') + 1]
-    key_params_json = json.loads(key_params_str)
-    wiki_items = page_json_data['props']['apolloState']['ROOT_QUERY'][wiki_key]['navigation']
-    return dict({
-        **key_params_json,
-        'navigation': [{
-            'label': item.get('label'),
-            'url': item.get('url')
-        } for item in wiki_items]
-    })
+def parse_video(self, page_json_data, element):
+    pass
 
 @classmethod
-def parse_object_poll(self, page_json_data, poll_key):
-    poll_ref = page_json_data['props']['apolloState']['ROOT_QUERY'][poll_key]['__ref']
-    poll_object = page_json_data['props']['apolloState'][poll_ref]
-    poll_content = page_json_data['props']['apolloState'][poll_object['content']['__ref']]
-    content_category = page_json_data['props']['apolloState'][poll_content['contentCategory']['__ref']]
-    poll_answers = [page_json_data['props']['apolloState'][key['__ref']] for key in poll_object['answers']]
+def parse_captioned_image(self, page_json_data, element):
+    pass
 
-    return dict({
-        'legacy_id': poll_content['id'],
-        'url': poll_content['url'],
-        'title': poll_content['title'],
-        'subtitle': poll_content['subtitle'],
-        'slug': poll_content['slug'],
-        'publish_date': poll_content['publishDate'],
-        'category': content_category['name'],
-        'vertical': poll_content['vertical'],
-        'brand': poll_content['brand'],
-        'answers': [answer['answer'] for answer in poll_answers]
-    })
+@classmethod
+def parse_commerce_deal(self, page_json_data, element, element_root_key):
+    pass

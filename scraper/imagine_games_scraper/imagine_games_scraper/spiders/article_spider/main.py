@@ -23,7 +23,7 @@ class ArticleSpiderSpider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/articles/the-finals-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/articles/nvidia-geforce-rtx-4070-super-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting article content elements from the response
@@ -45,10 +45,11 @@ class ArticleSpiderSpider(scrapy.Spider):
             yield scrapy.Request(url=article_url, callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
 
 ArticleSpiderSpider.parse_article_page = parse_methods.parse_article_page
-ArticleSpiderSpider.parse_html_content = parse_methods.parse_html_content
-ArticleSpiderSpider.parse_article_slideshow = parse_methods.parse_article_slideshow
-ArticleSpiderSpider.parse_object_wiki = parse_methods.parse_object_wiki
-ArticleSpiderSpider.parse_object_poll = parse_methods.parse_object_poll
+ArticleSpiderSpider.parse_slideshow = parse_methods.parse_slideshow
+ArticleSpiderSpider.parse_poll = parse_methods.parse_poll
+ArticleSpiderSpider.parse_captioned_image = parse_methods.parse_captioned_image
+ArticleSpiderSpider.parse_video = parse_methods.parse_video
+ArticleSpiderSpider.parse_commerce_deal = parse_methods.parse_commerce_deal
 ArticleSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
 ArticleSpiderSpider.parse_object_page = shared_methods.parse_object_page
 ArticleSpiderSpider.parse_object_region = shared_methods.parse_object_region
