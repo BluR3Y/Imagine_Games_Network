@@ -1,6 +1,6 @@
 import scrapy
 from . import parse_methods
-from imagine_games_scraper import shared_methods
+from imagine_games_scraper.methods import shared_methods
 
 class ArticleSpiderSpider(scrapy.Spider):
     name = "article_spider"

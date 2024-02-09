@@ -18,19 +18,19 @@ class Image(scrapy.Item):
         self['caption'] = manual_assignments.get('caption', image_data.get('caption'))
         self['embargo_date'] = manual_assignments.get('embargoDate', image_data.get('embargoDate'))
 
-class Brand(scrapy.Item):
-    id = scrapy.Field()
-    legacy_id = scrapy.Field()
-    name = scrapy.Field()
-    slug = scrapy.Field()
+# class Brand(scrapy.Item):
+#     id = scrapy.Field()
+#     legacy_id = scrapy.Field()
+#     name = scrapy.Field()
+#     slug = scrapy.Field()
 
-    def __init__(self, brand_data = {}, manual_assignments = {}, *args, **kwargs):
-        super(Brand, self).__init__(*args, **kwargs)
+#     def __init__(self, brand_data = {}, manual_assignments = {}, *args, **kwargs):
+#         super(Brand, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-        self['legacy_id'] = manual_assignments.get('id', brand_data.get('id'))
-        self['name'] = manual_assignments.get('name', brand_data.get('name'))
-        self['slug'] = manual_assignments.get('slug', brand_data.get('slug'))
+#         self['id'] = str(uuid4())
+#         self['legacy_id'] = manual_assignments.get('id', brand_data.get('id'))
+#         self['name'] = manual_assignments.get('name', brand_data.get('name'))
+#         self['slug'] = manual_assignments.get('slug', brand_data.get('slug'))
 
 class Slideshow(scrapy.Item):
     id = scrapy.Field()
