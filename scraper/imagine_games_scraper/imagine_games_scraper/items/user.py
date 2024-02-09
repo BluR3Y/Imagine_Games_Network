@@ -1,6 +1,8 @@
 import scrapy
+from uuid import uuid4
 
 class User(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     avatar = scrapy.Field()
     name = scrapy.Field()
@@ -11,6 +13,7 @@ class User(scrapy.Item):
     def __init__(self, user_data = {}, manual_assignments = {}, *args, **kwargs):
         super(User, self).__init__(*args, **kwargs)
         
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', user_data.get('id'))
         self['avatar'] = manual_assignments.get('avatar', user_data.get('avatarImageUrl'))
         self['name'] = manual_assignments.get('name', user_data.get('name'))
@@ -19,6 +22,7 @@ class User(scrapy.Item):
         self['reporter_metadata'] = manual_assignments.get('reporter_metadata')
         
 class Reporter(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     legacy_author_id = scrapy.Field()
     url = scrapy.Field()
@@ -31,6 +35,7 @@ class Reporter(scrapy.Item):
     def __init__(self, reporter_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Reporter, self).__init__(*args, **kwargs)
         
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', reporter_data.get('id'))
         self['legacy_author_id'] = manual_assignments.get('authorId', reporter_data.get('authorId'))
         self['url'] = manual_assignments.get('url', reporter_data.get('url'))
@@ -41,6 +46,7 @@ class Reporter(scrapy.Item):
         self['socials'] = manual_assignments.get('socials', reporter_data.get('socials'))
 
 class ReporterReview(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     score = scrapy.Field()
     score_text = scrapy.Field()
@@ -53,6 +59,7 @@ class ReporterReview(scrapy.Item):
     def __init__(self, review_data = {}, manual_assignments = {}, *args, **kwargs):
         super(ReporterReview, self).__init__(*args, **kwargs)
 
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', review_data.get('id'))
         self['score'] = manual_assignments.get('score', review_data.get('score'))
         self['score_text'] = manual_assignments.get('scoreText', review_data.get('scoreText'))
@@ -63,6 +70,7 @@ class ReporterReview(scrapy.Item):
         self['review_date'] = manual_assignments.get('reviewedOn', review_data.get('reviewedOn'))
 
 class UserReview(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     legacy_user_id = scrapy.Field()
     legacy_object_id = scrapy.Field()
@@ -82,6 +90,7 @@ class UserReview(scrapy.Item):
     def __init__(self, review_data = None, manual_assignments = {}, *args, **kwargs):
         super(UserReview, self).__init__(*args, **kwargs)
 
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', review_data.get('id'))
         self['legacy_user_id'] = manual_assignments.get('userId', review_data.get('userId'))
         self['legacy_object_id'] = manual_assignments.get('objectId', review_data.get('objectId'))
@@ -95,6 +104,7 @@ class UserReview(scrapy.Item):
         self['tags'] = manual_assignments.get('tags')     
 
 class UserReviewTag(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
     is_positive = scrapy.Field()
@@ -102,6 +112,7 @@ class UserReviewTag(scrapy.Item):
     def __init__(self, tag_data = {}, manual_assignments = {}, *args, **kwargs):
         super(UserReviewTag, self).__init__(*args, **kwargs)
 
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', tag_data.get('id'))
         self['name'] = manual_assignments.get('name', tag_data.get('name'))
         self['is_positive'] = manual_assignments.get('isPositive', tag_data.get('isPositive'))

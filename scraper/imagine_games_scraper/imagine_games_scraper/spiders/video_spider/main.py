@@ -47,6 +47,5 @@ class VideoSpiderSpider(scrapy.Spider):
 
 VideoSpiderSpider.parse_video_page = parse_methods.parse_video_page
 VideoSpiderSpider.parse_object_page = shared_methods.parse_object_page
-# VideoSpiderSpider.parse_object_region = shared_methods.parse_object_region
 VideoSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
 VideoSpiderSpider.parse_object_page = shared_methods.parse_object_page

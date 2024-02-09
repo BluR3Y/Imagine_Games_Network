@@ -2,7 +2,8 @@ import scrapy
 import json
 import re
 from . import html_methods
-from imagine_games_scraper.items.content import Article, Content, ContentCategory, Brand
+from imagine_games_scraper.items.content import Content, ContentCategory, Brand
+from imagine_games_scraper.items.article import Article
 from imagine_games_scraper.items.user import User, ReporterReview
 from imagine_games_scraper.items.misc import Catalog, CommerceDeal, Image, Slideshow, Poll, PollAnswer, PollConfiguration
 

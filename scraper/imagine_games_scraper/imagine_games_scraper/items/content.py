@@ -1,53 +1,14 @@
 import scrapy
+from uuid import uuid4
 
 class ImagineGamesScraperItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass
 
-# Scrapy Item used to define the structure of article content
-# AKA MordernArticle
-class Article(scrapy.Item):
-    legacy_id = scrapy.Field()
-    content = scrapy.Field()    # id referencing ModernContent
-    article = scrapy.Field()    # Embedded HTML
-    embeds = scrapy.Field()
-    review = scrapy.Field()     # Reference to official Review
-
-    def __init__(self, article_data = {}, manual_assignments = {}, *args, **kwargs):
-        super(Article, self).__init__(*args, **kwargs)
-
-        self['legacy_id'] = manual_assignments.get('id', article_data.get('id'))
-        self['content'] = manual_assignments.get('content', article_data.get('content'))
-        self['article'] = manual_assignments.get('article', article_data.get('article'))
-        self['embeds'] = manual_assignments.get('embeds', article_data.get('embeds'))
-        self['review'] = manual_assignments.get('review', article_data.get('review'))
-
-class ArticleContent(scrapy.Item):
-    legacy_id = scrapy.Field()
-    hero_video_content_id = scrapy.Field()
-    hero_video_content_slug = scrapy.Field()
-    processed_html = scrapy.Field()
-# Missing: Embed connection
-
-# Scrapy Item used to define the structure of video content
-# AKA ModernVideo
-class Video(scrapy.Item):
-    legacy_id = scrapy.Field()
-    content = scrapy.Field()    # id referencing ModernContent
-    metadata = scrapy.Field()   # id referencing VideoMetadata
-    assets = scrapy.Field()     # id referncing VideoAsset
-
-    def __init__(self, video_data = {}, manual_assignments = {}, *args, **kwargs):
-        super(Video, self).__init__(*args, **kwargs)
-
-        self['legacy_id'] = manual_assignments.get('id', video_data.get('id'))
-        self['content'] = manual_assignments.get('content')
-        self['metadata'] = manual_assignments.get('metadata', video_data.get('metadata'))
-        self['assets'] = manual_assignments.get('assets', video_data.get('reviassetsew'))
-
 # AKA ModernContent
 class Content(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     url = scrapy.Field()
     slug = scrapy.Field()
@@ -73,6 +34,7 @@ class Content(scrapy.Item):
     def __init__(self, content_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Content, self).__init__(*args, **kwargs)
 
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', content_data.get('id'))
         self['url'] = manual_assignments.get('url', content_data.get('url'))
         self['slug'] = manual_assignments.get('slug', content_data.get('slug'))
@@ -96,6 +58,7 @@ class Content(scrapy.Item):
         self['objects'] = manual_assignments.get('objects')
 
 class ContentCategory(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
 
@@ -115,6 +78,7 @@ class Brand(scrapy.Item):
     def __init__(self, brand_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Brand, self).__init__(*args, **kwargs)
 
+        self['id'] = uuid4()
         self['legacy_id'] = manual_assignments.get('id', brand_data.get('id'))
         self['slug'] = manual_assignments.get('slug', brand_data.get('slug'))
         self['name'] = manual_assignments.get('name', brand_data.get('name'))

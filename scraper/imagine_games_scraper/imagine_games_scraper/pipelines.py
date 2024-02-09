@@ -1,5 +1,6 @@
 import mysql.connector
-from imagine_games_scraper.items.content import Article, Video
+from imagine_games_scraper.items.article import Article
+from imagine_games_scraper.items.video import Video
 from imagine_games_scraper.items.user import Reporter
 from imagine_games_scraper.items.object import Object
 

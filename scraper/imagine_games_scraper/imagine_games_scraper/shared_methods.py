@@ -88,3 +88,4 @@ def parse_object_page(self, response):
         parsed_object['gallery'] = [Image(image) for image in [apollo_state[img_ref['__ref']] for img_ref in object_data[object_gallery_key]['images']]]
 
     yield parsed_object
+    

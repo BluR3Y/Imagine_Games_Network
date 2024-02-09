@@ -1,7 +1,8 @@
 import scrapy
 import json
 from . import html_methods
-from imagine_games_scraper.items.content import Article, Content, ContentCategory
+from imagine_games_scraper.items.content import Content, ContentCategory
+from imagine_games_scraper.items.article import Article
 from imagine_games_scraper.items.misc import Catalog, CommerceDeal, Slideshow, Image
 from imagine_games_scraper.items.user import User
 
