@@ -13,11 +13,11 @@ class Video(scrapy.Item):
     def __init__(self, video_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Video, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', video_data.get('id'))
         self['content'] = manual_assignments.get('content')
         self['metadata'] = manual_assignments.get('metadata', video_data.get('metadata'))
-        self['assets'] = manual_assignments.get('assets', video_data.get('reviassetsew'))
+        self['assets'] = manual_assignments.get('assets', [])
 
 class VideoMetadata(scrapy.Item):
     id = scrapy.Field()
@@ -32,7 +32,7 @@ class VideoMetadata(scrapy.Item):
     def __init__(self, meta_data = {}, manual_assignments = {}, *args, **kwargs):
         super(VideoMetadata, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['ad_breaks'] = manual_assignments.get('ad_breaks', meta_data.get('adBreaks'))
         self['captions'] = manual_assignments.get('captions', meta_data.get('captions'))
         self['chat_enabled'] = manual_assignments.get('chat_enabled', meta_data.get('chatEnabled'))
@@ -51,7 +51,7 @@ class VideoAsset(scrapy.Item):
     def __init__(self, meta_data = {}, manual_assignments = {}, *args, **kwargs):
         super(VideoAsset, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['url'] = manual_assignments.get('url', meta_data.get('url'))
         self['width'] = manual_assignments.get('width', meta_data.get('width'))
         self['height'] = manual_assignments.get('height', meta_data.get('height'))

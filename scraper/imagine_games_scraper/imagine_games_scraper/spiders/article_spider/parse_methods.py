@@ -4,7 +4,7 @@ import re
 from . import html_methods
 from imagine_games_scraper.items.content import Content, ContentCategory, Brand
 from imagine_games_scraper.items.article import Article
-from imagine_games_scraper.items.user import User, ReporterReview
+from imagine_games_scraper.items.user import User, OfficialReview
 from imagine_games_scraper.items.misc import Catalog, CommerceDeal, Image, Slideshow, Poll, PollAnswer, PollConfiguration
 
 @classmethod
@@ -19,9 +19,9 @@ def parse_article_page(self, response, recursion_level = 0):
     modern_article_data = page_json_data['props']['apolloState'][modern_article_ref['__ref']]
     article_content_data = apollo_state[modern_article_data['content']['__ref']]
 
-    contributor_users = [User(apollo_state[contributor_ref['__ref']], { 'avatar': apollo_state[contributor_ref['__ref']]['thumbnailUrl'] }) for contributor_ref in article_content_data.get('contributorsOrBylines')] 
-    for contributor in contributor_users:
-        yield scrapy.Request(url="https://www.ign.com/person/"+contributor.get('nickname'), callback=self.parse_contributor_page)
+    # contributor_users = [User(apollo_state[contributor_ref['__ref']], { 'avatar': apollo_state[contributor_ref['__ref']]['thumbnailUrl'] }) for contributor_ref in article_content_data.get('contributorsOrBylines')] 
+    # for contributor in contributor_users:
+    #     yield scrapy.Request(url="https://www.ign.com/person/"+contributor.get('nickname'), callback=self.parse_contributor_page)
 
     object_regex = re.compile(r"objects\({.*}\)")
     object_key = next((key for key in article_content_data if object_regex.search(key)))
@@ -53,6 +53,11 @@ def parse_article_page(self, response, recursion_level = 0):
         elif data_transform == 'commerce-deal':
             embeds['commerce_deals'].append(self.parse_commerce_deal(page_json_data, element))
         # else: print(element)
+
+    # object_regex = re.compile(r"objects({.*})")
+    # object_key = next((key for key in video_content_data if object_regex.search(key)), None)
+    # print(video_content_data.keys())
+
 
     if recursion_level < 1:
         recommendation_regex = re.compile(r"topPages\({.*}\)")

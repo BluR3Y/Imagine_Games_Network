@@ -19,6 +19,7 @@ class Content(scrapy.Item):
     subtitle = scrapy.Field()
     feed_title = scrapy.Field()
     feed_cover = scrapy.Field()
+    primary_object = scrapy.Field()
     excerpt = scrapy.Field()
     description = scrapy.Field()
     state = scrapy.Field()
@@ -34,7 +35,7 @@ class Content(scrapy.Item):
     def __init__(self, content_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Content, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', content_data.get('id'))
         self['url'] = manual_assignments.get('url', content_data.get('url'))
         self['slug'] = manual_assignments.get('slug', content_data.get('slug'))
@@ -43,6 +44,7 @@ class Content(scrapy.Item):
         self['cover'] = manual_assignments.get('cover', content_data.get('headerImageUrl'))
         self['title'] = manual_assignments.get('title', content_data.get('title'))
         self['subtitle'] = manual_assignments.get('subtitle', content_data.get('subtitle'))
+        self['primary_object'] = manual_assignments.get('primary_object', content_data.get('primary_object'))
         self['feed_title'] = manual_assignments.get('feedTitle', content_data.get('feedTitle'))
         self['feed_cover'] = manual_assignments.get('feed_cover', content_data['feedImage']['url'] if content_data.get('feedImage') else None)
         self['excerpt'] = manual_assignments.get('excerpt', content_data.get('excerpt'))
@@ -52,10 +54,10 @@ class Content(scrapy.Item):
         self['modify_date'] = manual_assignments.get('updatedAt', content_data.get('updatedAt'))
         self['events'] = manual_assignments.get('events', content_data.get('events'))
         self['brand'] = manual_assignments.get('brand', content_data.get('brand'))
-        self['category'] = manual_assignments.get('category')
-        self['contributors'] = manual_assignments.get('contributors')
-        self['attributes'] = manual_assignments.get('attributes')
-        self['objects'] = manual_assignments.get('objects')
+        self['category'] = manual_assignments.get('category', None)
+        self['contributors'] = manual_assignments.get('contributors', [])
+        self['attributes'] = manual_assignments.get('attributes', [])
+        self['objects'] = manual_assignments.get('objects', [])
 
 class ContentCategory(scrapy.Item):
     id = scrapy.Field()
@@ -65,10 +67,39 @@ class ContentCategory(scrapy.Item):
     def __init__(self, category_data = {}, manual_assignments = {}, *args, **kwargs):
         super(ContentCategory, self).__init__(*args, **kwargs)    
 
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', category_data.get('id'))
         self['name'] = manual_assignments.get('name', category_data.get('name'))
 
+# Used by Article/Video items, excludes Objects
+class TypedAttribute(scrapy.Item):
+    id = scrapy.Field()
+    type = scrapy.Field()
+    attribute = scrapy.Field()  # id referencing Attribute
+
+    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
+        super(TypedAttribute, self).__init__(*args, *kwargs)
+
+        self['id'] = str(uuid4())
+        self['type'] = manual_assignments.get('type', attribute_data.get('type'))
+        self['attribute'] = manual_assignments.get('attribute', attribute_data.get('attribute'))
+
+class Attribute(scrapy.Item):
+    id = scrapy.Field()
+    name = scrapy.Field()
+    short_name = scrapy.Field()
+    slug = scrapy.Field()
+
+    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
+        super(Attribute, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+        self['name'] = manual_assignments.get('name', attribute_data.get('name'))
+        self['short_name'] = manual_assignments.get('short_name', attribute_data.get('shortName'))
+        self['slug'] = manual_assignments.get('slug', attribute_data.get('slug'))
+
 class Brand(scrapy.Item):
+    id = scrapy.Field()
     legacy_id = scrapy.Field()
     slug = scrapy.Field()
     name = scrapy.Field()
@@ -78,7 +109,7 @@ class Brand(scrapy.Item):
     def __init__(self, brand_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Brand, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', brand_data.get('id'))
         self['slug'] = manual_assignments.get('slug', brand_data.get('slug'))
         self['name'] = manual_assignments.get('name', brand_data.get('name'))

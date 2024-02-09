@@ -14,7 +14,7 @@ class Article(scrapy.Item):
     def __init__(self, article_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Article, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', article_data.get('id'))
         self['content'] = manual_assignments.get('content', article_data.get('content'))
         self['article'] = manual_assignments.get('article', article_data.get('article'))

@@ -45,8 +45,8 @@ def parse_article_page(self, response, recursion_level = 0):
 
     for contributor in page_data['contributors']:
         uri = "/person/" + contributor['nickname']
-        article_item['contributors'].append(contributor['id'])
-        yield scrapy.Request(url="https://www.ign.com" + uri, callback=self.parse_contributor_page, cb_kwargs={ 'contributor_item': User(contributor) })
+        # article_item['contributors'].append(contributor['id'])
+        # yield scrapy.Request(url="https://www.ign.com" + uri, callback=self.parse_contributor_page, cb_kwargs={ 'contributor_item': User(contributor) })
     
     for object in page_data['objects']:
         article_item['objects'].append(object['id'])

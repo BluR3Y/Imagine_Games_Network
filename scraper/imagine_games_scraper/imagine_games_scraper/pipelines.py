@@ -1,7 +1,7 @@
 import mysql.connector
 from imagine_games_scraper.items.article import Article
 from imagine_games_scraper.items.video import Video
-from imagine_games_scraper.items.user import Reporter
+from imagine_games_scraper.items.user import Contributor
 from imagine_games_scraper.items.object import Object
 
 # useful for handling different item types with a single interface
@@ -14,8 +14,8 @@ class ImagineGamesScraperPipeline:
             print('****** Article ******')
         elif isinstance(item, Video):
             print('******* Video *******')
-        elif isinstance(item, Reporter):
-            print('******* Reporter *******')
+        elif isinstance(item, Contributor):
+            print('******* Contributor *******')
         elif isinstance(item, Object):
             print('********** Object ***************')
         else: print(f'******** {type(item)} ************')
@@ -43,10 +43,8 @@ class MySQLStore:
             print('****** Article ******')
         elif isinstance(item, Video):
             print('******* Video *******')
-        elif isinstance(item, Reporter):
+        elif isinstance(item, Contributor):
             print('******* Reporter *******')
-        elif isinstance(item, Entertainment):
-            print('********** Entertainment ***************')
         else: print('******** other ************')
         return item
 

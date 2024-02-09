@@ -26,7 +26,7 @@ class Object(scrapy.Item):
     def __init__(self, object_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Object, self).__init__(*args, **kwargs)
         
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', object_data.get('id'))
         self['url'] = manual_assignments.get('url', object_data.get('url'))
         self['slug'] = manual_assignments.get('slug', object_data.get('slug'))
@@ -35,16 +35,16 @@ class Object(scrapy.Item):
         self['wiki_slug'] = manual_assignments.get('wiki_slug', object_data.get('wikiSlug'))
         self['type'] = manual_assignments.get('type', object_data.get('type'))
         self['cover'] = manual_assignments.get('cover', object_data['primaryImage']['url'] if object_data.get('primaryImage') else None)
-        self['gallery'] = manual_assignments.get('gallery', object_data.get('gallery'))
+        self['gallery'] = manual_assignments.get('gallery', [])
         self['names'] = manual_assignments.get('names', object_data.get('names'))
         self['descriptions'] = manual_assignments.get('descriptions', object_data.get('descriptions'))
-        self['franchises'] = manual_assignments.get('franchises', object_data.get('franchises'))
-        self['genres'] = manual_assignments.get('genres', object_data.get('genres'))
-        self['features'] = manual_assignments.get('features', object_data.get('features'))
-        self['producers'] = manual_assignments.get('producers', object_data.get('producers'))
-        self['publishers'] = manual_assignments.get('publishers', object_data.get('publishers'))
-        self['regions'] = manual_assignments.get('regions', object_data.get('regions'))
-        self['reviews'] = manual_assignments.get('reviews', object_data.get('reviews'))
+        self['franchises'] = manual_assignments.get('franchises', [])
+        self['genres'] = manual_assignments.get('genres', [])
+        self['features'] = manual_assignments.get('features', [])
+        self['producers'] = manual_assignments.get('producers', [])
+        self['publishers'] = manual_assignments.get('publishers', [])
+        self['regions'] = manual_assignments.get('regions', [])
+        self['reviews'] = manual_assignments.get('reviews', [])
 
 class Region(scrapy.Item):
     id = scrapy.Field()
@@ -57,12 +57,12 @@ class Region(scrapy.Item):
     def __init__(self, region_data= {}, manual_assignments={}, *args, **kwargs):
         super(Region, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', region_data.get('id'))
         self['name'] = manual_assignments.get('name', region_data.get('name'))
         self['region'] = manual_assignments.get('region', region_data.get('region'))
         self['age_rating'] = manual_assignments.get('age_rating', region_data.get('ageRating'))
-        self['releases'] = manual_assignments.get('releases', region_data.get('releases'))
+        self['releases'] = manual_assignments.get('releases', [])
 
 class Release(scrapy.Item):
     id = scrapy.Field()
@@ -75,12 +75,12 @@ class Release(scrapy.Item):
     def __init__(self, release_data={}, manual_assignments = {}, *args, **kwargs):
         super(Release, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', release_data.get('id'))
         self['date'] = manual_assignments.get('date', release_data.get('date'))
         self['estimated_date'] = manual_assignments.get('estimated_date', release_data.get('estimatedDate'))
         self['time_frame_year'] = manual_assignments.get('time_frame_year', release_data.get('timeframeYear'))
-        self['platforms'] = manual_assignments.get('platforms', release_data.get('platformAttributes'))
+        self['platforms'] = manual_assignments.get('platforms', [])
 
 class Rating(scrapy.Item):
     id = scrapy.Field()
@@ -94,34 +94,18 @@ class Rating(scrapy.Item):
     def __init__(self, rating_data={}, manual_assignments={}, *args, **kwargs):
         super(Rating, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', rating_data.get('id'))
         self['type'] = manual_assignments.get('type', rating_data.get('type'))
         self['name'] = manual_assignments.get('name', rating_data.get('name'))
         self['slug'] = manual_assignments.get('slug', rating_data.get('slug'))
-        self['descriptors'] = manual_assignments.get('descriptors', rating_data.get('descriptors'))
-        self['interactive_elements'] = manual_assignments.get('interactive_elements', rating_data.get('interactive_elements'))
-
-class Attribute(scrapy.Item):
-    id = scrapy.Field()
-    type = scrapy.Field()
-    name = scrapy.Field()
-    short_name = scrapy.Field()
-    slug = scrapy.Field()
-
-    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
-        super(Attribute, self).__init__(*args, **kwargs)
-
-        self['id'] = uuid4()
-        self['type'] = manual_assignments.get('type', attribute_data.get('type'))
-        self['name'] = manual_assignments.get('name', attribute_data.get('name'))
-        self['short_name'] = manual_assignments.get('short_name', attribute_data.get('shortName'))
-        self['slug'] = manual_assignments.get('slug', attribute_data.get('slug'))
+        self['descriptors'] = manual_assignments.get('descriptors', [])
+        self['interactive_elements'] = manual_assignments.get('interactive_elements', [])
 
 class HowLongToBeat(scrapy.Item):
     id = scrapy.Field()
     legacy_ign_object_id = scrapy.Field()
-    id = scrapy.Field()
+    legacy_id = scrapy.Field()
     steam_id = scrapy.Field()
     platforms = scrapy.Field()
     list = scrapy.Field()
@@ -131,9 +115,9 @@ class HowLongToBeat(scrapy.Item):
     def __init__(self, hltb_data = {}, manual_assignments={}, *args, **kwargs):
         super(HowLongToBeat, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_ign_object_id'] = manual_assignments.get('ign_object_id', hltb_data.get('ign_object_id'))
-        self['id'] = manual_assignments.get('id', hltb_data.get('id'))
+        self['legacy_id'] = manual_assignments.get('id', hltb_data.get('id'))
         self['steam_id'] = manual_assignments.get('steam_id', hltb_data.get('steam_id'))
         self['platforms'] = manual_assignments.get('platforms', hltb_data.get('platforms'))
         self['list'] = manual_assignments.get('list', hltb_data.get('list'))
@@ -144,17 +128,17 @@ class ObjectWiki(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
-    map_objects = scrapy.Field()
-    navigation = scrapy.Field()
+    map_objects = scrapy.Field() #id referencing MapObject
+    navigation = scrapy.Field() #id referencing WikiNavigation
 
     def __init__(self, wiki_data={}, manual_assignments={}, *args, **kwargs):
         super(ObjectWiki, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', wiki_data.get('id'))
         self['name'] = manual_assignments.get('name', wiki_data.get('name'))
-        self['map_objects'] = manual_assignments.get('map_objects', wiki_data.get('mapObjects'))
-        self['navigation'] = manual_assignments.get('navigation', wiki_data.get('navigation'))
+        self['map_objects'] = manual_assignments.get('map_objects', [])
+        self['navigation'] = manual_assignments.get('navigation', [])
 
 class WikiNavigation(scrapy.Item):
     id = scrapy.Field()
@@ -164,7 +148,7 @@ class WikiNavigation(scrapy.Item):
     def __init__(self, navigation_data={}, manual_assignments={}, *args, **kwargs):
         super(WikiNavigation, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['label'] = manual_assignments.get('label', navigation_data.get('label'))
         self['url'] = manual_assignments.get('url', navigation_data.get('url'))
 
@@ -177,7 +161,7 @@ class MapObject(scrapy.Item):
     def __init__(self, object_data={}, manual_assignments={}, *args, **kwargs):
         super(MapObject, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', object_data.get('id'))
         self['object_name'] = manual_assignments.get('object_name', object_data.get('objectName'))
         self['maps'] = manual_assignments.get('maps', object_data.get('maps'))
@@ -206,7 +190,7 @@ class Map(scrapy.Item):
     def __init__(self, map_data={}, manual_assignments={}, *args, **kwargs):
         super(Map, self).__init__(*args, **kwargs)
 
-        self['id'] = uuid4()
+        self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', map_data.get('id'))
         self['object_name'] = manual_assignments.get('object_name', map_data.get('objectName'))
         self['object_slug'] = manual_assignments.get('object_slug', map_data.get('objectSlug'))
