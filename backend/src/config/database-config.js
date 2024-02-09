@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { Sequelize } = require('sequelize');
 
 // Mongo Connection
 const mongoConnect = () => {
@@ -32,14 +31,11 @@ const mysqlConnection = () => {
 }
 
 const ready = Promise.all([
-    mongoConnect(),
-    mysqlConnection().authenticate()
+    mongoConnect()
 ]);
 
 module.exports = {
     ready,
     // Returns the current mongoose instance
     getMongoose: () => mongoose,
-    // Returns the current sequelize instance
-    sequelizeInstance: mysqlConnection
 }
