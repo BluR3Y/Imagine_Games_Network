@@ -1,4 +1,5 @@
-import mysql.connector
+import pymongo
+import urllib.parse
 from imagine_games_scraper.items.article import Article
 from imagine_games_scraper.items.video import Video
 from imagine_games_scraper.items.user import Contributor
@@ -21,22 +22,25 @@ class ImagineGamesScraperPipeline:
         else: print(f'******** {type(item)} ************')
         return item
 
-class MySQLStore:
+class MongoStore:
     # Method used to retrieve settings from Scrapy project settings
     @classmethod
     def from_crawler(cls, crawler):
         return cls(crawler.settings)
 
     def __init__(self, settings):
-        # Establish a connection to the MySQL database
-        self.conn = mysql.connector.connect(
-            host = settings.get('MYSQL_HOST'),
-            user = settings.get('MYSQL_USER'),
-            password = settings.get('MYSQL_PASSWORD'),
-            database = settings.get('MYSQL_DATABASE')
-        )
-        # Create cursor, used to execute commands
-        self.cur = self.conn.cursor()
+        # Establish a connection to the MongoDB database
+        self.mongo_uri = f"mongodb://{settings.get('MONGO_USER')}:{urllib.parse.quote_plus(settings.get('MONGO_PASSWORD'))}@{settings.get('MONGO_HOST')}:{settings.get('MONGO_PORT')}"
+        self.mongo_db = settings.get('MONGO_DATABASE')
+        print(self.mongo_uri)
+
+    def open_spider(self, spider):
+        self.client = pymongo.MongoClient(self.mongo_uri)
+        self.db = self.client[self.mongo_db]
+
+    def close_spider(self, spider):
+        # Close connection to database when the spider is closed
+        self.client.close()
 
     def process_item(self, item, spider):
         if isinstance(item, Article):
@@ -47,8 +51,3 @@ class MySQLStore:
             print('******* Reporter *******')
         else: print('******** other ************')
         return item
-
-    def close_spider(self, spider):
-        # Close cursor & connection to database when the spider is closed
-        self.cur.close()
-        self.conn.close()
