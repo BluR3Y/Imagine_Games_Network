@@ -83,17 +83,8 @@ def parse_object_page(self, response):
         })
     
     gallery_regex = re.compile(r"imageGallery:{.*}")
-    object_gallery_key = next((key for key in object_data if gallery_regex.search(key)))
+    object_gallery_key = next((key for key in object_data if gallery_regex.search(key)), None)
     if object_gallery_key is not None:
         parsed_object['gallery'] = [Image(image) for image in [apollo_state[img_ref['__ref']] for img_ref in object_data[object_gallery_key]['images']]]
 
     yield parsed_object
-
-
-@classmethod
-def parse_object_region(self):
-    pass
-
-
-        # recommendation_regex = re.compile(r"topPages\({.*}\)")
-        # recommendation_key = next((key for key in apollo_state['ROOT_QUERY'] if recommendation_regex.search(key)))

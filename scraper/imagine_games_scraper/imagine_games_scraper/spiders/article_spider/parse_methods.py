@@ -4,6 +4,7 @@ import re
 from . import html_methods
 from imagine_games_scraper.items.content import Article, Content, ContentCategory, Brand
 from imagine_games_scraper.items.user import User, ReporterReview
+from imagine_games_scraper.items.misc import Catalog, CommerceDeal, Image, Slideshow, Poll, PollAnswer, PollConfiguration
 
 @classmethod
 def parse_article_page(self, response, recursion_level = 0):
@@ -39,21 +40,18 @@ def parse_article_page(self, response, recursion_level = 0):
     }
     for element in embedded_elements:
         data_transform = element.get('data-transform')
-        key_terms = lambda arr, str : all(sub_str in str for sub_str in arr)
-        element_root_key = next((key for key in apollo_state['ROOT_QUERY'] if data_transform in ['slideshow', 'polls', 'ignvideo', 'image-with-caption', 'commerce-deal'] and key_terms([data_transform, element.get('data-slug')], key)), None)
 
-        if element_root_key and data_transform == 'slideshow':
-            embeds['slideshows'].append(self.parse_slideshow(page_json_data, element, element_root_key))
-        elif element_root_key and data_transform == 'polls':
-            embeds['polls'].append(self.parse_poll(page_json_data, element, element_root_key))
-        elif element_root_key and data_transform == 'ignvideo':
-            embeds['videos'].append(self.parse_video(page_json_data, element, element_root_key))
-        elif element_root_key and data_transform == 'image-with-caption':
-            embeds['captioned_images'].append(self.parse_captioned_image(page_json_data, element, element_root_key))
-        elif element_root_key and data_transform == 'commerce-deal':
-            embeds['commerce_deals'].append(self.parse_slideshow(page_json_data, element, element_root_key))
+        if data_transform == 'slideshow':
+            embeds['slideshows'].append(self.parse_slideshow(page_json_data, element))
+        elif data_transform == 'poll':
+            embeds['polls'].append(self.parse_poll(page_json_data, element))
+        elif data_transform == 'ignvideo':
+            embeds['videos'].append(self.parse_video(page_json_data, element))
+        elif data_transform == 'image-with-caption':
+            embeds['captioned_images'].append(self.parse_captioned_image(page_json_data, element))
+        elif data_transform == 'commerce-deal':
+            embeds['commerce_deals'].append(self.parse_commerce_deal(page_json_data, element))
         # else: print(element)
-    # Last Here
 
     if recursion_level < 1:
         recommendation_regex = re.compile(r"topPages\({.*}\)")
@@ -63,13 +61,12 @@ def parse_article_page(self, response, recursion_level = 0):
         for modern_article in [apollo_state[ref] for ref in recommendation_refs]:
             article_content = apollo_state[modern_article['content']['__ref']]
             yield scrapy.Request(url="https://www.ign.com" + article_content.get('url'), callback=self.parse_article_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })
-   
 
     yield Article({
         'legacy_id': page_json_data.get('id'),
         'content': Content(article_content_data, {
             'category': ContentCategory(apollo_state[article_content_data['contentCategory']['__ref']]),
-            'brand': Brand(apollo_state[article_content_data['brand']['__ref']]),
+            'brand': (Brand(apollo_state[article_content_data['brand']['__ref']]) if article_content_data.get('brand') else None),
             'contributors': contributor_users,
             'objects': object_items
         }),
@@ -83,21 +80,51 @@ def parse_article_page(self, response, recursion_level = 0):
     })
 
 @classmethod
-def parse_slideshow(self, page_json_data, element, element_root_key):
-    pass
+def parse_slideshow(self, page_json_data, element):
+    element_root_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if (":\"%s\"})" % element.get('data-slug')) in key), None)
+    element_root_data = page_json_data['props']['apolloState']['ROOT_QUERY'][element_root_key]
+    element_content_data = page_json_data['props']['apolloState'][element_root_data['content']['__ref']]
+    element_image_key = next((key for key in element_root_data if 'slideshowImages' in key), None)
+    return Slideshow({ 'slug': element.get('data-slug') }, {
+        'content': Content(element_content_data, {
+            'feed_image': (Image(element_content_data['feedImage']) if element_content_data.get('feedImage') else None),
+            'category': ContentCategory(element_content_data.get('contentCategory'))
+        }),     
+        'images': [Image(image) for image in [page_json_data['props']['apolloState'][image_ref.get('__ref')] for image_ref in element_root_data[element_image_key]['images']]]   
+    })
 
 @classmethod
 def parse_poll(self, page_json_data, element):
-    pass
+    element_root_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if ("poll({\"id\":\"%s\"})" % element.get('data-id')) in key), None)
+    element_root_data = page_json_data['props']['apolloState']['ROOT_QUERY'][element_root_key]
+    poll_data = page_json_data['props']['apolloState'][element_root_data['__ref']]
+    poll_content = page_json_data['props']['apolloState'][poll_data['content']['__ref']]
+    return Poll(poll_data, {
+        'content': Content(poll_content, {
+            'category': ContentCategory(poll_content.get('contentCategory'))
+        }),
+        'answers': [PollAnswer(answer) for answer in [page_json_data['props']['apolloState'][answer_ref['__ref']] for answer_ref in poll_data.get('answers')]],
+        'configuration': PollConfiguration(poll_data.get('config')),
+        'image': (Image(poll_data.get('image')) if poll_data.get('image') else None)
+    })
 
 @classmethod
 def parse_video(self, page_json_data, element):
+    # Missing
     pass
 
 @classmethod
 def parse_captioned_image(self, page_json_data, element):
+    # Missing
     pass
 
 @classmethod
-def parse_commerce_deal(self, page_json_data, element, element_root_key):
-    pass
+def parse_commerce_deal(self, page_json_data, element):
+    element_root_key = next((key for key in page_json_data['props']['apolloState']['ROOT_QUERY'] if ("catalogBySlug({\"slug\":\"%s\"})" % element.get('data-slug')) in key), None)
+    element_root_data = page_json_data['props']['apolloState']['ROOT_QUERY'][element_root_key]
+    return Catalog({ 'slug': element.get('data-slug') }, {
+        'content': Content(page_json_data['props']['apolloState'][element_root_data['content']['__ref']]),
+        'items': [CommerceDeal(item, {
+            'cover': (Image(item.get('image')) if item.get('image') else None)
+        }) for item in [page_json_data['props']['apolloState'][item['__ref']] for item in element_root_data['items']]]
+    })

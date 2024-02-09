@@ -94,7 +94,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
+    "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
     # "imagine_games_scraper.pipelines.MySQLStore": 400
 }
 

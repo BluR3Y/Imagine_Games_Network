@@ -23,7 +23,7 @@ class ArticleSpiderSpider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/articles/nvidia-geforce-rtx-4070-super-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/articles/the-last-of-us-part-2-review', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         # Extracting article content elements from the response
@@ -52,4 +52,3 @@ ArticleSpiderSpider.parse_video = parse_methods.parse_video
 ArticleSpiderSpider.parse_commerce_deal = parse_methods.parse_commerce_deal
 ArticleSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
 ArticleSpiderSpider.parse_object_page = shared_methods.parse_object_page
-ArticleSpiderSpider.parse_object_region = shared_methods.parse_object_region

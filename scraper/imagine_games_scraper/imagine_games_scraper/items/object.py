@@ -31,7 +31,7 @@ class Object(scrapy.Item):
         self['wiki'] = manual_assignments.get('wiki', object_data.get('wiki'))
         self['wiki_slug'] = manual_assignments.get('wiki_slug', object_data.get('wikiSlug'))
         self['type'] = manual_assignments.get('type', object_data.get('type'))
-        self['cover'] = manual_assignments.get('cover', object_data.get('primaryImage', {}).get('url', None))
+        self['cover'] = manual_assignments.get('cover', object_data['primaryImage']['url'] if object_data.get('primaryImage') else None)
         self['gallery'] = manual_assignments.get('gallery', object_data.get('gallery'))
         self['names'] = manual_assignments.get('names', object_data.get('names'))
         self['descriptions'] = manual_assignments.get('descriptions', object_data.get('descriptions'))
