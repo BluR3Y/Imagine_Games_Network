@@ -1,4 +1,4 @@
-import pymongo
+import psycopg2
 import json
 import uuid
 
@@ -9,10 +9,7 @@ def store_article_content(self, item):
     pass
 
 def store_video(self, item):
-    db_collection = self.db.videos
-
-    inserted = db_collection.insert_one({ "id": str(uuid.uuid4()) ,"name": "jon" }).inserted_id
-    print(inserted)
+    pass
 
 def store_video_metadata(self, item):
     pass

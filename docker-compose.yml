@@ -29,21 +29,29 @@ services:
     env_file:
       - ./env/backend/.env.test
 
-  mongo:
-    container_name: mongo
-    image: mongo:latest
-    env_file:
-      - ./env/database/mongo/.env.test
-    volumes:
-      - ./database/mongo/init:/docker-entrypoint-initdb.d:ro
+  # mongo:
+  #   container_name: mongo
+  #   image: mongo:latest
+  #   env_file:
+  #     - ./env/database/mongo/.env.test
+  #   volumes:
+  #     - ./database/mongo/init:/docker-entrypoint-initdb.d:ro
 
-  mysql:
-    container_name: mysql
-    image: mysql:latest
+  postgres:
+    container_name: postgres
+    image: postgres:latest
     env_file:
-      - ./env/database/mysql/.env.test
+      - ./env/database/postgres/.env.test
     volumes:
-      - ./database/mysql/init:/docker-entrypoint-initdb.d:ro
+      - ./database/postgres/init:/docker-entrypoint-initdb.d:ro
+
+  # mysql:
+  #   container_name: mysql
+  #   image: mysql:latest
+  #   env_file:
+  #     - ./env/database/mysql/.env.test
+  #   volumes:
+  #     - ./database/mysql/init:/docker-entrypoint-initdb.d:ro
 
   # redis:
   #   container_name: redis

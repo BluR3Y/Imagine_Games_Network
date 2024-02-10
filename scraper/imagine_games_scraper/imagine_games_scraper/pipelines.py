@@ -1,7 +1,7 @@
-import pymongo
+import psycopg2
 import urllib.parse
 
-from imagine_games_scraper.methods import mongo_store_methods
+from imagine_games_scraper.methods import postgres_store_methods
 from imagine_games_scraper.items import article as Article
 from imagine_games_scraper.items import video as Video
 from imagine_games_scraper.items import user as User
@@ -26,24 +26,30 @@ class ImagineGamesScraperPipeline:
         else: print(f'******** {type(item)} ************')
         return item
 
-class MongoStore:
+class PostgresStore:
     # Method used to retrieve settings from Scrapy project settings
     @classmethod
     def from_crawler(cls, crawler):
         return cls(crawler.settings)
 
     def __init__(self, settings):
-        # Establish a connection to the MongoDB database
-        self.mongo_uri = f"mongodb://{settings.get('MONGO_USER')}:{urllib.parse.quote_plus(settings.get('MONGO_PASSWORD'))}@{settings.get('MONGO_HOST')}:{settings.get('MONGO_PORT')}/{settings.get('MONGO_DATABASE')}"
-        self.mongo_db = settings.get('MONGO_DATABASE')
+        # Establish a connection to the Postgres database
+        self.conn = psycopg2.connect(
+            database = settings.get('POSTGRES_DATABASE'),
+            user = settings.get('POSTGRES_ACCESS_USER'),
+            password = settings.get('POSTGRES_ACCESS_PASSWORD'),
+            host = settings.get('POSTGRES_HOST'),
+            port = settings.get('POSTGRES_PORT')
+        )
 
     def open_spider(self, spider):
-        self.client = pymongo.MongoClient(self.mongo_uri)
-        self.db = self.client[self.mongo_db]
+        # Create cursor, used to execute commands
+        self.cur = self.conn.cursor()
 
     def close_spider(self, spider):
-        # Close connection to database when the spider is closed
-        self.client.close()
+        # Close cursor & connection to database when the spider is closed
+        self.cur.close()
+        self.conn.close()
 
     def process_item(self, item, spider):
         if isinstance(item, Article.Article):
@@ -113,34 +119,34 @@ class MongoStore:
 
         return item
 
-MongoStore.store_article = mongo_store_methods.store_article
-MongoStore.store_article_content = mongo_store_methods.store_article_content
-MongoStore.store_video = mongo_store_methods.store_video
-MongoStore.store_video_metadata = mongo_store_methods.store_video_metadata
-MongoStore.store_video_asset = mongo_store_methods.store_video_asset
-MongoStore.store_user = mongo_store_methods.store_user
-MongoStore.store_contributor = mongo_store_methods.store_contributor
-MongoStore.store_official_review = mongo_store_methods.store_official_review
-MongoStore.store_user_review = mongo_store_methods.store_user_review
-MongoStore.store_user_review_tag = mongo_store_methods.store_user_review_tag
-MongoStore.store_object = mongo_store_methods.store_object
-MongoStore.store_object_region = mongo_store_methods.store_object_region
-MongoStore.store_region_release = mongo_store_methods.store_region_release
-MongoStore.store_region_rating = mongo_store_methods.store_region_rating
-MongoStore.store_how_long_to_beat = mongo_store_methods.store_how_long_to_beat
-MongoStore.store_object_wiki = mongo_store_methods.store_object_wiki
-MongoStore.store_wiki_navigation = mongo_store_methods.store_wiki_navigation
-MongoStore.store_map_object = mongo_store_methods.store_map_object
-MongoStore.store_map_item = mongo_store_methods.store_map_item
-MongoStore.store_content = mongo_store_methods.store_content
-MongoStore.store_content_category = mongo_store_methods.store_content_category
-MongoStore.store_typed_attribute = mongo_store_methods.store_typed_attribute
-MongoStore.store_attribute = mongo_store_methods.store_attribute
-MongoStore.store_brand = mongo_store_methods.store_brand
-MongoStore.store_image = mongo_store_methods.store_image
-MongoStore.store_slideshow = mongo_store_methods.store_slideshow
-MongoStore.store_catalog = mongo_store_methods.store_catalog
-MongoStore.store_poll = mongo_store_methods.store_poll
-MongoStore.store_poll_answer = mongo_store_methods.store_poll_answer
-MongoStore.store_poll_configuration = mongo_store_methods.store_poll_configuration
-MongoStore.store_commerce_deal = mongo_store_methods.store_commerce_deal
+PostgresStore.store_article = postgres_store_methods.store_article
+PostgresStore.store_article_content = postgres_store_methods.store_article_content
+PostgresStore.store_video = postgres_store_methods.store_video
+PostgresStore.store_video_metadata = postgres_store_methods.store_video_metadata
+PostgresStore.store_video_asset = postgres_store_methods.store_video_asset
+PostgresStore.store_user = postgres_store_methods.store_user
+PostgresStore.store_contributor = postgres_store_methods.store_contributor
+PostgresStore.store_official_review = postgres_store_methods.store_official_review
+PostgresStore.store_user_review = postgres_store_methods.store_user_review
+PostgresStore.store_user_review_tag = postgres_store_methods.store_user_review_tag
+PostgresStore.store_object = postgres_store_methods.store_object
+PostgresStore.store_object_region = postgres_store_methods.store_object_region
+PostgresStore.store_region_release = postgres_store_methods.store_region_release
+PostgresStore.store_region_rating = postgres_store_methods.store_region_rating
+PostgresStore.store_how_long_to_beat = postgres_store_methods.store_how_long_to_beat
+PostgresStore.store_object_wiki = postgres_store_methods.store_object_wiki
+PostgresStore.store_wiki_navigation = postgres_store_methods.store_wiki_navigation
+PostgresStore.store_map_object = postgres_store_methods.store_map_object
+PostgresStore.store_map_item = postgres_store_methods.store_map_item
+PostgresStore.store_content = postgres_store_methods.store_content
+PostgresStore.store_content_category = postgres_store_methods.store_content_category
+PostgresStore.store_typed_attribute = postgres_store_methods.store_typed_attribute
+PostgresStore.store_attribute = postgres_store_methods.store_attribute
+PostgresStore.store_brand = postgres_store_methods.store_brand
+PostgresStore.store_image = postgres_store_methods.store_image
+PostgresStore.store_slideshow = postgres_store_methods.store_slideshow
+PostgresStore.store_catalog = postgres_store_methods.store_catalog
+PostgresStore.store_poll = postgres_store_methods.store_poll
+PostgresStore.store_poll_answer = postgres_store_methods.store_poll_answer
+PostgresStore.store_poll_configuration = postgres_store_methods.store_poll_configuration
+PostgresStore.store_commerce_deal = postgres_store_methods.store_commerce_deal
