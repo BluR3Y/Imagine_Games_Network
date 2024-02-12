@@ -35,7 +35,7 @@ POSTGRES_ACCESS_PASSWORD = environment_variables.get("POSTGRES_ACCESS_PASSWORD")
 
 BOT_NAME = "imagine_games_scraper"
 
-SPIDER_MODULES = ["imagine_games_scraper.spiders", "imagine_games_scraper.spiders.article_spider", "imagine_games_scraper.spiders.video_spider"]
+SPIDER_MODULES = ["imagine_games_scraper.spiders"]
 NEWSPIDER_MODULE = "imagine_games_scraper.spiders"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -94,8 +94,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
-    "imagine_games_scraper.pipelines.PostgresStore": 400
+    "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
+    # "imagine_games_scraper.pipelines.PostgresStore": 400
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -21,7 +21,7 @@ class User(scrapy.Item):
         self['privacy'] = manual_assignments.get('privacy', (user_data['playlistSettings'].get('privacy') if user_data.get('playlistSettings') else "Private"))
         self['contributor'] = manual_assignments.get('contributor')
         
-class Contributor(scrapy.Item):
+class Author (scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     legacy_author_id = scrapy.Field()
@@ -33,7 +33,7 @@ class Contributor(scrapy.Item):
     socials = scrapy.Field()
 
     def __init__(self, contributor_data = {}, manual_assignments = {}, *args, **kwargs):
-        super(Contributor, self).__init__(*args, **kwargs)
+        super(Author, self).__init__(*args, **kwargs)
         
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', contributor_data.get('id'))

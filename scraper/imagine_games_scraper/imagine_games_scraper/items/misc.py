@@ -17,6 +17,26 @@ class Image(scrapy.Item):
         self['caption'] = manual_assignments.get('caption', image_data.get('caption'))
         self['embargo_date'] = manual_assignments.get('embargoDate', image_data.get('embargoDate'))
 
+class Gallery (scrapy.Item):
+    id = scrapy.Field()
+
+    def __init__(self, slideshow_data={}, manual_assignments={}, *args, **kwargs):
+        super(Gallery, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class ImageConnection (scrapy.Item):
+    id = scrapy.Field()
+    gallery_id = scrapy.Field()
+    image_id = scrapy.Field()
+
+    def __init__(self, connection_data = {}, manual_assignments={}, *args, **kwargs):
+        super(ImageConnection, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+        self['gallery_id'] = manual_assignments.get('')
+        self['image_id'] = manual_assignments.get('')
+
 # Gallery
 # class Slideshow(scrapy.Item):
 #     id = scrapy.Field()
@@ -44,7 +64,7 @@ class Catalog(scrapy.Item):
         self['id'] = str(uuid4())
         self['slug'] = manual_assignments.get('slug', catalog_data.get('slug'))
         self['content'] = manual_assignments.get('content', catalog_data.get('content'))
-        self['items'] = manual_assignments.get('items', catalog_data.get('items'))
+        self['items'] = manual_assignments.get('items', [])
 
 class CommerceDeal(scrapy.Item):
     id = scrapy.Field()
@@ -90,7 +110,6 @@ class Poll(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     content = scrapy.Field()
-    answers = scrapy.Field()
     configuration = scrapy.Field()
     image = scrapy.Field()
     voters = scrapy.Field()
@@ -101,7 +120,6 @@ class Poll(scrapy.Item):
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('legacy_id', poll_data.get('id'))
         self['content'] = manual_assignments.get('content', poll_data.get('content'))
-        self['answers'] = manual_assignments.get('answers', poll_data.get('answers'))
         self['configuration'] = manual_assignments.get('configuration', poll_data.get('config'))
         self['image'] = manual_assignments.get('image', poll_data.get('image'))
         self['voters'] = manual_assignments.get('voters', poll_data.get('voters'))
@@ -109,6 +127,7 @@ class Poll(scrapy.Item):
 class PollAnswer(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
+    poll_id = scrapy.Field()
     answer = scrapy.Field()
     votes = scrapy.Field()
 
@@ -117,6 +136,7 @@ class PollAnswer(scrapy.Item):
 
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('legacy_id', answer_data.get('id'))
+        self['poll_id'] = manual_assignments.get('poll_id')
         self['answer'] = manual_assignments.get('', answer_data.get('answer'))
         self['votes'] = manual_assignments.get('', answer_data.get('votes'))
 

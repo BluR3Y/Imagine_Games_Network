@@ -15,15 +15,8 @@ from itemadapter import ItemAdapter
 
 class ImagineGamesScraperPipeline:
     def process_item(self, item, spider):
-        if isinstance(item, Article.Article):
-            print('****** Article ******')
-        elif isinstance(item, Video.Video):
-            print('******* Video *******')
-        elif isinstance(item, User.Contributor):
-            print('******* Contributor *******')
-        elif isinstance(item, Object.Object):
-            print('********** Object ***************')
-        else: print(f'******** {type(item)} ************')
+        print('marker')
+        print(type(item))
         return item
 
 class PostgresStore:
@@ -64,7 +57,7 @@ class PostgresStore:
             self.store_video_asset(item)
         elif isinstance(item, User.User):
             self.store_user(item)
-        elif isinstance(item, User.Contributor):
+        elif isinstance(item, User.Author):
             self.store_contributor(item)
         elif isinstance(item, User.OfficialReview):
             self.store_official_review(item)
@@ -102,8 +95,8 @@ class PostgresStore:
             self.store_brand(item)
         elif isinstance(item, Misc.Image):
             self.store_image(item)
-        elif isinstance(item, Misc.Slideshow):
-            self.store_slideshow(item)
+        # elif isinstance(item, Misc.Slideshow):
+        #     self.store_slideshow(item)
         elif isinstance(item, Misc.Catalog):
             self.store_catalog(item)
         elif isinstance(item, Misc.Poll):
@@ -118,6 +111,7 @@ class PostgresStore:
             print(type(item))
 
         return item
+# Last Here
 
 PostgresStore.store_article = postgres_store_methods.store_article
 PostgresStore.store_article_content = postgres_store_methods.store_article_content
@@ -144,7 +138,7 @@ PostgresStore.store_typed_attribute = postgres_store_methods.store_typed_attribu
 PostgresStore.store_attribute = postgres_store_methods.store_attribute
 PostgresStore.store_brand = postgres_store_methods.store_brand
 PostgresStore.store_image = postgres_store_methods.store_image
-PostgresStore.store_slideshow = postgres_store_methods.store_slideshow
+# PostgresStore.store_slideshow = postgres_store_methods.store_slideshow
 PostgresStore.store_catalog = postgres_store_methods.store_catalog
 PostgresStore.store_poll = postgres_store_methods.store_poll
 PostgresStore.store_poll_answer = postgres_store_methods.store_poll_answer

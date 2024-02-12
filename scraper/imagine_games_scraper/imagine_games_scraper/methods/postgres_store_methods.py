@@ -18,7 +18,7 @@ def store_video_asset(self, item):
     pass
 
 def store_user(self, item):
-    pass
+    print(item)
 
 def store_contributor(self, item):
     pass
@@ -77,8 +77,8 @@ def store_brand(self, item):
 def store_image(self, item):
     pass
 
-def store_slideshow(self, item):
-    pass
+# def store_slideshow(self, item):
+#     pass
 
 def store_catalog(self, item):
     pass

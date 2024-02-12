@@ -1,3 +1,5 @@
+import re
+
 class HTML_ELEMENT:
     def __init__(self, tag, attributes=None):
         self.tag = tag
@@ -9,9 +11,14 @@ class HTML_ELEMENT:
         self.children.append(child)
 
     def __str__(self):
-        return self.render()
+        return self.render_document()
 
-    def render(self, indent=0):
+    def render_element(self, indent=0):
+        attributes_str = ' '.join([f'{key}="{value}"' for key, value in self.attributes.items()])
+        html_element_str = f'<{self.tag} {attributes_str}></{self.tag}>'
+        return html_element_str
+    
+    def render_document(self, indent=0):
         result = ''
         indent_str = ' ' * indent
         for child in self.children:
@@ -19,7 +26,7 @@ class HTML_ELEMENT:
             for key, value in child.attributes.items():
                 result += f' {key}="{value}"'
             result += '>\n'
-            result += child.render(indent + 2)
+            result += child.render_document(indent + 2)
             result += f"{indent_str}</{child.tag}>\n"
         return result
     
@@ -31,6 +38,14 @@ class HTML_ELEMENT:
             result = [*result, *child.get_element_attributes()]
         return result
     
+    def get_elements_by_tag(self, tag):
+        elements = []
+        for child in self.children:
+            if child.tag == tag:
+                elements.append(child)
+            elements = [*elements, *child.get_elements_by_tag(tag)]
+        return elements
+
 class HTML_Parser:
     @staticmethod
     def parse_element(element_str):
@@ -40,12 +55,10 @@ class HTML_Parser:
 
         attributes = {}
         attribute_str = element_str[tag_end + 1:element_str.find('>')]
-        for attribute in attribute_str.split(' '):
-            split_index = attribute.find('=')
-            if split_index != -1:
-                key = attribute[0:split_index]
-                value = attribute[split_index + 1:]
-                attributes[key] = value.strip('"')
+        attribute_regex = re.compile(r'([a-zA-Z0-9\-]+)\s*=\s*(".*?"|\'.*?\'|[^\s>]+)')
+        matches = attribute_regex.findall(attribute_str)
+        for key, value in matches:
+            attributes[key] = value.strip('"\'')
 
         return HTML_ELEMENT(tag, attributes)
 
@@ -60,24 +73,23 @@ class HTML_DOCUMENT(HTML_ELEMENT):
         parser = HTML_Parser()
 
         for char in document:
-            if char == '<':
-                if current:
+            if isinstance(current, HTML_ELEMENT):
+                if char == '<':
                     stack.append(current)
-                current = char
-            elif char == '>':
-                current += char
-                if current.startswith('</'):
-                    parent = stack.pop()
-                    current = parent
+                    current = char
                 else:
-                    element = parser.parse_element(current)
-                    if stack:
-                        stack[-1].add_child(element)
-                    else:
-                        self.add_child(element)
-                    current = element
-            else:
-                if isinstance(current, HTML_ELEMENT):
                     current.content += char
-                else:
-                    current += char
+            elif isinstance(current, str):
+                current += char
+                if char == '>':
+                    if current.startswith('</'):
+                        current = stack.pop()
+                    else:
+                        element = parser.parse_element(current)
+                        if stack:
+                            stack[-1].add_child(element)
+                        else:
+                            self.add_child(element)
+                        current = element
+            else:
+                current = char

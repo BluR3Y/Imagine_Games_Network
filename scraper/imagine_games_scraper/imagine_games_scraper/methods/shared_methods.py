@@ -1,13 +1,14 @@
 import scrapy
 import json
 import re
-from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Contributor
+from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author
 from imagine_games_scraper.items.object import Object, Region, Rating, HowLongToBeat, ObjectWiki, Release, MapObject, Map, WikiNavigation
 from imagine_games_scraper.items.misc import Image
 from imagine_games_scraper.items.content import Attribute
+from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
 
 @classmethod
-def parse_contributor_page(self, response, contributor_item):
+def parse_contributor_page(self, response, author_item = Author(), recursion_level = 0):
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
@@ -15,18 +16,18 @@ def parse_contributor_page(self, response, contributor_item):
     author_data = page_data['author']
     # Missing: Contributor related Articles
 
-    contributor_item['legacy_id'] = author_data.get('id')
-    contributor_item['legacy_author_id'] = author_data.get('authorId')
-    contributor_item['cover'] = author_data.get('backgroundImageUrl')
-    contributor_item['position'] = author_data.get('position')
-    contributor_item['bio'] = author_data.get('bio')
-    contributor_item['location'] = author_data.get('location')
-    contributor_item['socials'] = author_data.get('socials')
+    author_item['legacy_id'] = author_data.get('id')
+    author_item['legacy_author_id'] = author_data.get('authorId')
+    author_item['cover'] = author_data.get('backgroundImageUrl')
+    author_item['position'] = author_data.get('position')
+    author_item['bio'] = author_data.get('bio')
+    author_item['location'] = author_data.get('location')
+    author_item['socials'] = author_data.get('socials')
 
-    yield contributor_item
+    yield author_item
 
 @classmethod
-def parse_object_page(self, response, object_item):
+def parse_object_page(self, response, object_item = Object(), recursion_level = 0):
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
@@ -174,3 +175,66 @@ def parse_object_page(self, response, object_item):
             yield image_item
 
     yield object_item
+
+@classmethod
+def parse_modern_content(self, page_json_data, modern_content_key, content_item = Content(), recursion_level = 0):
+    apollo_state = page_json_data['props']['apolloState']
+
+    modern_content_data = apollo_state[modern_content_key]
+
+    feed_image = modern_content_data.get('feedImage')
+    if feed_image:
+        feed_image_item = Image(feed_image)
+        content_item['feed_cover'] = feed_image_item.get('id')
+        yield feed_image_item
+
+    for contributor in [apollo_state[contributor_ref.get('__ref')] for contributor_ref in modern_content_data.get('contributorsOrBylines', [])]:
+        contributor_item = Author()
+        user_item = User(contributor, { 'author_id': content_item.get('id') })
+        content_item['contributors'].append(user_item.get('id'))
+
+        yield user_item
+        yield scrapy.Request(url="https://www.ign.com/person/" + contributor.get('nickname'), callback=self.parse_contributor_page, cb_kwargs={ 'author_item': contributor_item, 'recursion_level': recursion_level })
+
+    brand_ref = modern_content_data.get('brand')
+    if brand_ref:
+        brand_item = Brand(apollo_state[brand_ref.get('__ref')])
+        content_item['brand'] = brand_item.get('id')
+        print(brand_item)
+        yield brand_item
+
+    primary_object_ref = modern_content_data.get('primaryObject')
+    article_objects = []
+    if primary_object_ref:
+        object_item = Object(apollo_state[primary_object_ref.get('__ref')])
+        content_item['primary_object'] = object_item.get('id')
+        article_objects.append(object_item.get('id'))
+
+        yield scrapy.Request(url="https://www.ign.com" + object_item.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
+
+    object_regex = re.compile(r"objects\({.*}\)")
+    object_key = next((key for key in modern_content_data if object_regex.search(key)), None)
+    if object_key:
+        for object in [apollo_state[object_ref.get('__ref')] for object_ref in modern_content_data.get(object_key)[1:]]:
+            object_item = Object(object)
+            article_objects.append(object_item.get('id'))
+
+            yield scrapy.Request(url="https://www.ign.com" + object_item.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
+        content_item['objects'] = article_objects
+
+    content_category_ref = modern_content_data.get('contentCategory')
+    if content_category_ref:
+        content_category_item = ContentCategory(apollo_state[content_category_ref.get('__ref')])
+        content_item['category'] = content_category_item.get('id')
+
+        yield content_category_item
+
+    for attribute in modern_content_data.get('attributes', []):
+        attribute_item = Attribute(attribute.get('attribute'))
+        typed_attribute = TypedAttribute(attribute, { 'attribute': attribute_item.get('id') })
+        content_item['attributes'].append(typed_attribute.get('id'))
+
+        yield attribute_item
+        yield typed_attribute
+
+    yield content_item
