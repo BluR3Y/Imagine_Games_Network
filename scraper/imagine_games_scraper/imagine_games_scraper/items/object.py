@@ -46,6 +46,16 @@ class Object(scrapy.Item):
         self['regions'] = manual_assignments.get('regions', [])
         self['reviews'] = manual_assignments.get('reviews', [])
 
+class ObjectConnection(scrapy.Item):
+    id = scrapy.Field()
+    object = scrapy.Field()
+    content = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(ObjectConnection, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
 class Region(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()

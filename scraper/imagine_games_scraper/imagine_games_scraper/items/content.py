@@ -14,12 +14,12 @@ class Content(scrapy.Item):
     slug = scrapy.Field()
     type = scrapy.Field()   # Article, Catalog, Slideshow, Video, Poll
     vertical = scrapy.Field() # News, Review
-    cover = scrapy.Field()
+    cover = scrapy.Field()  # id referencing Image
     title = scrapy.Field()
     subtitle = scrapy.Field()
     feed_title = scrapy.Field()
-    feed_cover = scrapy.Field()
-    primary_object = scrapy.Field()
+    feed_cover = scrapy.Field() # id referencing Image
+    primary_object = scrapy.Field() # id referencing object
     href_languages = scrapy.Field()
     excerpt = scrapy.Field()
     description = scrapy.Field()
@@ -27,7 +27,7 @@ class Content(scrapy.Item):
     publish_date = scrapy.Field()
     modify_date = scrapy.Field()
     events = scrapy.Field()
-    brand = scrapy.Field()
+    brand = scrapy.Field()  # id referencing Brand
     category = scrapy.Field() # id referencing ContentCategory
     contributors = scrapy.Field() # id referencing Reporters
     attributes = scrapy.Field()     # id referencing Attributes: platform, genre, producer, franchise, etc
@@ -57,9 +57,9 @@ class Content(scrapy.Item):
         self['events'] = manual_assignments.get('events', content_data.get('events'))
         self['brand'] = manual_assignments.get('brand', content_data.get('brand'))
         self['category'] = manual_assignments.get('category', None)
-        self['contributors'] = manual_assignments.get('contributors', [])
-        self['attributes'] = manual_assignments.get('attributes', [])
-        self['objects'] = manual_assignments.get('objects', [])
+        # self['contributors'] = manual_assignments.get('contributors', [])
+        # self['attributes'] = manual_assignments.get('attributes', [])
+        # self['objects'] = manual_assignments.get('objects', [])
 
 class ContentCategory(scrapy.Item):
     id = scrapy.Field()
@@ -72,6 +72,15 @@ class ContentCategory(scrapy.Item):
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', category_data.get('id'))
         self['name'] = manual_assignments.get('name', category_data.get('name'))
+
+class AttributeConnection(scrapy.Item):
+    id = scrapy.Field()
+    typed_attribute = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(AttributeConnection, self).__init__(*args, *kwargs)
+
+        self['id'] = str(uuid4())
 
 # Used by Article/Video items, excludes Objects
 class TypedAttribute(scrapy.Item):

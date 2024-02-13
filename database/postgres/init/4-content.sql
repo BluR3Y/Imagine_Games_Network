@@ -57,10 +57,10 @@ CREATE TABLE object_connections (
 CREATE TABLE contributor_connections (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     content_id UUID NOT NULL,
-    contributor_id UUID NOT NULL,
+    user_id UUID NOT NULL,
 
     FOREIGN KEY (content_id) REFERENCES contents (id),
-    FOREIGN KEY (contributor_id) REFERENCES users (id)
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
 -- Attribute Item
@@ -80,6 +80,7 @@ CREATE TABLE typed_attributes (
     FOREIGN KEY (attribute_id) REFERENCES attributes (id)
 );
 
+-- Attribute Connection
 CREATE TABLE attribute_connections (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     content_id UUID NOT NULL,

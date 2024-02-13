@@ -4,8 +4,8 @@ CREATE TYPE social_media_entry AS (
     handler VARCHAR(100)
 );
 
--- Contributor
-CREATE TABLE contributors (
+-- Author
+CREATE TABLE authors (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
     legacy_author_id INT,
@@ -29,13 +29,13 @@ CREATE TABLE user_configurations (
 CREATE TABLE users (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
-    contributor_id UUID,
+    author_id UUID,
     avatar UUID,
     name VARCHAR(128),
     nickname VARCHAR(128),
     privacy_configuration UUID,
 
-    FOREIGN KEY (contributor_id) REFERENCES contributors (id),
+    FOREIGN KEY (author_id) REFERENCES authors (id),
     FOREIGN KEY (avatar) REFERENCES images (id),
     FOREIGN KEY (privacy_configuration) REFERENCES user_configurations (id)
 );

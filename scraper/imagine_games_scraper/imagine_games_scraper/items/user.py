@@ -45,6 +45,10 @@ class Author (scrapy.Item):
         self['location'] = manual_assignments.get('location', contributor_data.get('location'))
         self['socials'] = manual_assignments.get('socials', contributor_data.get('socials'))
 
+class Contributor (scrapy.Item):
+    user = scrapy.Field()   #id referencing User
+    content = scrapy.Field()    # id referencing Content
+
 class OfficialReview(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()

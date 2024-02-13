@@ -18,9 +18,9 @@ def store_video_asset(self, item):
     pass
 
 def store_user(self, item):
-    print(item)
+    pass
 
-def store_contributor(self, item):
+def store_author(self, item):
     pass
 
 def store_official_review(self, item):
@@ -33,6 +33,9 @@ def store_user_review_tag(self, item):
     pass
 
 def store_object(self, item):
+    pass
+
+def store_object_connection(self, item):
     pass
 
 def store_object_region(self, item):
@@ -62,10 +65,16 @@ def store_map_item(self, item):
 def store_content(self, item):
     pass
 
+def store_contributor(self, item):
+    pass
+
 def store_content_category(self, item):
     pass
 
 def store_typed_attribute(self, item):
+    pass
+
+def store_attribute_connection(self, item):
     pass
 
 def store_attribute(self, item):
@@ -77,10 +86,19 @@ def store_brand(self, item):
 def store_image(self, item):
     pass
 
-# def store_slideshow(self, item):
-#     pass
+def store_slideshow(self, item):
+    pass
+
+def store_gallery(self, item):
+    pass
+
+def store_image_connection(self, item):
+    pass
 
 def store_catalog(self, item):
+    pass
+
+def store_commerce_deal(self, item):
     pass
 
 def store_poll(self, item):
@@ -92,5 +110,5 @@ def store_poll_answer(self, item):
 def store_poll_configuration(self, item):
     pass
 
-def store_commerce_deal(self, item):
+def store_slideshow(self, item):
     pass

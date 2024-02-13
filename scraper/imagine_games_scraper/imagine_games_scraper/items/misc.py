@@ -52,19 +52,25 @@ class ImageConnection (scrapy.Item):
 #         self['content'] = manual_assignments.get('content', slideshow_data.get('content'))
 #         self['images'] = manual_assignments.get('images', slideshow_data.get('images'))
 
+class DealConnection(scrapy.Item):
+    id = scrapy.Field()
+    deal = scrapy.Field()
+    catalog = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(DealConnection, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
 class Catalog(scrapy.Item):
     id = scrapy.Field()
-    slug = scrapy.Field()
     content = scrapy.Field()
-    items = scrapy.Field()
 
     def __init__(self, catalog_data={}, manual_assignments={}, *args, **kwargs):
         super(Catalog, self).__init__(*args, **kwargs)
-
+        
         self['id'] = str(uuid4())
-        self['slug'] = manual_assignments.get('slug', catalog_data.get('slug'))
         self['content'] = manual_assignments.get('content', catalog_data.get('content'))
-        self['items'] = manual_assignments.get('items', [])
 
 class CommerceDeal(scrapy.Item):
     id = scrapy.Field()

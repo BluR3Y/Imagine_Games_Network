@@ -8,6 +8,7 @@ from imagine_games_scraper.items import user as User
 from imagine_games_scraper.items import object as Object
 from imagine_games_scraper.items import misc as Misc
 from imagine_games_scraper.items import content as Content
+from imagine_games_scraper.items import slideshow as Slideshow
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -58,6 +59,8 @@ class PostgresStore:
         elif isinstance(item, User.User):
             self.store_user(item)
         elif isinstance(item, User.Author):
+            self.store_author(item)
+        elif isinstance(item, User.Contributor):
             self.store_contributor(item)
         elif isinstance(item, User.OfficialReview):
             self.store_official_review(item)
@@ -67,6 +70,8 @@ class PostgresStore:
             self.store_user_review_tag(item)
         elif isinstance(item, Object.Object):
             self.store_object(item)
+        elif isinstance(item, Object.ObjectConnection):
+            self.store_object_connection(item)
         elif isinstance(item, Object.Region):
             self.store_object_region(item)
         elif isinstance(item, Object.Release):
@@ -91,12 +96,14 @@ class PostgresStore:
             self.store_typed_attribute(item)
         elif isinstance(item, Content.Attribute):
             self.store_attribute(item)
+        elif isinstance(item, Content.AttributeConnection):
+            self.store_attribute_connection(item)
         elif isinstance(item, Content.Brand):
             self.store_brand(item)
         elif isinstance(item, Misc.Image):
             self.store_image(item)
-        # elif isinstance(item, Misc.Slideshow):
-        #     self.store_slideshow(item)
+        elif isinstance(item, Slideshow.Slideshow):
+            self.store_slideshow(item)
         elif isinstance(item, Misc.Catalog):
             self.store_catalog(item)
         elif isinstance(item, Misc.Poll):
@@ -107,8 +114,8 @@ class PostgresStore:
             self.store_poll_configuration(item)
         elif isinstance(item, Misc.CommerceDeal):
             self.store_commerce_deal(item)
-        else:
-            print(type(item))
+        # else:
+        #     print(type(item))
 
         return item
 # Last Here
@@ -119,11 +126,13 @@ PostgresStore.store_video = postgres_store_methods.store_video
 PostgresStore.store_video_metadata = postgres_store_methods.store_video_metadata
 PostgresStore.store_video_asset = postgres_store_methods.store_video_asset
 PostgresStore.store_user = postgres_store_methods.store_user
+PostgresStore.store_author = postgres_store_methods.store_author
 PostgresStore.store_contributor = postgres_store_methods.store_contributor
 PostgresStore.store_official_review = postgres_store_methods.store_official_review
 PostgresStore.store_user_review = postgres_store_methods.store_user_review
 PostgresStore.store_user_review_tag = postgres_store_methods.store_user_review_tag
 PostgresStore.store_object = postgres_store_methods.store_object
+PostgresStore.store_object_connection = postgres_store_methods.store_object_connection
 PostgresStore.store_object_region = postgres_store_methods.store_object_region
 PostgresStore.store_region_release = postgres_store_methods.store_region_release
 PostgresStore.store_region_rating = postgres_store_methods.store_region_rating
@@ -136,11 +145,14 @@ PostgresStore.store_content = postgres_store_methods.store_content
 PostgresStore.store_content_category = postgres_store_methods.store_content_category
 PostgresStore.store_typed_attribute = postgres_store_methods.store_typed_attribute
 PostgresStore.store_attribute = postgres_store_methods.store_attribute
+PostgresStore.store_attribute_connection = postgres_store_methods.store_attribute_connection
 PostgresStore.store_brand = postgres_store_methods.store_brand
 PostgresStore.store_image = postgres_store_methods.store_image
-# PostgresStore.store_slideshow = postgres_store_methods.store_slideshow
 PostgresStore.store_catalog = postgres_store_methods.store_catalog
 PostgresStore.store_poll = postgres_store_methods.store_poll
 PostgresStore.store_poll_answer = postgres_store_methods.store_poll_answer
 PostgresStore.store_poll_configuration = postgres_store_methods.store_poll_configuration
 PostgresStore.store_commerce_deal = postgres_store_methods.store_commerce_deal
+PostgresStore.store_gallery = postgres_store_methods.store_gallery
+PostgresStore.store_image_connection = postgres_store_methods.store_image_connection
+PostgresStore.store_slideshow = postgres_store_methods.store_slideshow

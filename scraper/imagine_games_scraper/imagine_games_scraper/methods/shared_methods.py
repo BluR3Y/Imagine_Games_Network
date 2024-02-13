@@ -1,10 +1,10 @@
 import scrapy
 import json
 import re
-from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author
-from imagine_games_scraper.items.object import Object, Region, Rating, HowLongToBeat, ObjectWiki, Release, MapObject, Map, WikiNavigation
+from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author, Contributor
+from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, ObjectWiki, Release, MapObject, Map, WikiNavigation
 from imagine_games_scraper.items.misc import Image
-from imagine_games_scraper.items.content import Attribute
+from imagine_games_scraper.items.content import Attribute, AttributeConnection
 from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
 
 @classmethod
@@ -18,6 +18,8 @@ def parse_contributor_page(self, response, author_item = Author(), recursion_lev
 
     author_item['legacy_id'] = author_data.get('id')
     author_item['legacy_author_id'] = author_data.get('authorId')
+    author_url = author_data.get('profileUrl')
+    author_item['url'] = author_url.replace("https://www.ign.com", "")
     author_item['cover'] = author_data.get('backgroundImageUrl')
     author_item['position'] = author_data.get('position')
     author_item['bio'] = author_data.get('bio')
@@ -35,6 +37,12 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
     apollo_state = page_json_data['props']['apolloState']
     object_data = apollo_state[f'Object:{page_data.get('id')}']
 
+    object_item['legacy_id'] = object_data.get('id')
+    object_item['url'] = object_data.get('url')
+    object_item['slug'] = object_data.get('slug')
+    object_item['wiki_slug'] = object_data.get('wikiSlug')
+    object_item['type'] = object_data.get('type')
+
     object_item['names'] = {
         'primary': object_data['metadata']['names'].get('name'),
         'alt': object_data['metadata']['names'].get('alt'),
@@ -44,6 +52,13 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
         'long': object_data['metadata']['descriptions'].get('long'),
         'short': object_data['metadata']['descriptions'].get('short')
     }
+
+    object_image_data = object_data.get('primaryImage')
+    if object_image_data:
+        object_cover = Image(object_image_data)
+        object_item['cover'] = object_cover.get('id')
+
+        yield object_cover
 
     hl2b_data = object_data.get('hl2bData')
     if hl2b_data:
@@ -182,25 +197,55 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
 
     modern_content_data = apollo_state[modern_content_key]
 
+    content_item['legacy_id'] = modern_content_data.get('id')
+    content_item['url'] = modern_content_data.get('url')
+    content_item['slug'] = modern_content_data.get('slug')
+    content_item['type'] = modern_content_data.get('type')
+    content_item['vertical'] = modern_content_data.get('vertical')
+    content_item['cover'] = modern_content_data.get('headerImageUrl')
+    content_item['title'] = modern_content_data.get('title')
+    content_item['subtitle'] = modern_content_data.get('subtitle')
+    content_item['feed_title'] = modern_content_data.get('feedTitle')
+    content_item['href_languages'] = modern_content_data.get('hrefLangs')
+    content_item['excerpt'] = modern_content_data.get('excerpt')
+    content_item['description'] = modern_content_data.get('description') # possibly unnecessary
+    content_item['state'] = modern_content_data.get('state')
+    content_item['publish_date'] = modern_content_data.get('publishDate')
+    content_item['modify_date'] = modern_content_data.get('updatedAt')
+    content_item['events'] = modern_content_data.get('events')
+
     feed_image = modern_content_data.get('feedImage')
     if feed_image:
         feed_image_item = Image(feed_image)
         content_item['feed_cover'] = feed_image_item.get('id')
         yield feed_image_item
 
-    for contributor in [apollo_state[contributor_ref.get('__ref')] for contributor_ref in modern_content_data.get('contributorsOrBylines', [])]:
-        contributor_item = Author()
-        user_item = User(contributor, { 'author_id': content_item.get('id') })
-        content_item['contributors'].append(user_item.get('id'))
+    article_contributors = []
+    for user_data in [apollo_state[contributor_ref.get('__ref')] for contributor_ref in modern_content_data.get('contributorsOrBylines', [])]:
+        user_item = User()
+        user_item['legacy_id'] = user_data.get('id')
+        user_item['avatar'] = user_data.get('avatarImageUrl')
+        user_item['name'] = user_data.get('name')
+        user_item['nickname'] = user_data.get('nickname')
+
+        author_item = Author()
+        article_contributors.append(user_item.get('id'))
 
         yield user_item
-        yield scrapy.Request(url="https://www.ign.com/person/" + contributor.get('nickname'), callback=self.parse_contributor_page, cb_kwargs={ 'author_item': contributor_item, 'recursion_level': recursion_level })
+        yield scrapy.Request(url="https://www.ign.com/person/" + user_data.get('nickname'), callback=self.parse_contributor_page, cb_kwargs={ 'author_item': author_item, 'recursion_level': recursion_level })
+
+    for contributor_ref in article_contributors:
+        contributor_item = Contributor()
+        contributor_item['user'] = contributor_ref
+        contributor_item['content'] = content_item.get('id')
+
+        yield contributor_item
 
     brand_ref = modern_content_data.get('brand')
     if brand_ref:
         brand_item = Brand(apollo_state[brand_ref.get('__ref')])
         content_item['brand'] = brand_item.get('id')
-        print(brand_item)
+
         yield brand_item
 
     primary_object_ref = modern_content_data.get('primaryObject')
@@ -220,7 +265,13 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
             article_objects.append(object_item.get('id'))
 
             yield scrapy.Request(url="https://www.ign.com" + object_item.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
-        content_item['objects'] = article_objects
+
+    for object_ref in article_objects:
+        object_connection_item = ObjectConnection()
+        object_connection_item['object'] = object_ref
+        object_connection_item['content'] = content_item.get('id')
+
+        yield object_connection_item
 
     content_category_ref = modern_content_data.get('contentCategory')
     if content_category_ref:
@@ -228,13 +279,21 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
         content_item['category'] = content_category_item.get('id')
 
         yield content_category_item
-
+            
     for attribute in modern_content_data.get('attributes', []):
-        attribute_item = Attribute(attribute.get('attribute'))
-        typed_attribute = TypedAttribute(attribute, { 'attribute': attribute_item.get('id') })
-        content_item['attributes'].append(typed_attribute.get('id'))
-
+        attribute_item = Attribute()
+        attribute_item['name'] = attribute.get('name')
+        attribute_item['short_name'] = attribute.get('short_name')
+        attribute_item['slug'] = attribute.get('slug')
         yield attribute_item
-        yield typed_attribute
+
+        typed_attribute_item = TypedAttribute()
+        typed_attribute_item['type'] = attribute.get('type')
+        typed_attribute_item['attribute'] = attribute_item.get('id')
+        yield typed_attribute_item
+
+        attribute_connection = AttributeConnection()
+        attribute_connection['typed_attribute'] = typed_attribute_item.get('id')
+        yield attribute_connection
 
     yield content_item

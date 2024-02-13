@@ -1,3 +1,15 @@
+-- How Long To Beat
+CREATE TABLE how_long_to_beat (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    legacy_ign_object_id UUID,
+    steam_id INT,
+    itch_id VARCHAR(8),
+    platforms TEXT,
+    list JSON,
+    review JSON,
+    time JSON
+);
+
 -- Object Name Entry
 CREATE TYPE name_entry AS (
     main VARCHAR(128),
@@ -18,7 +30,7 @@ CREATE TABLE objects (
     url VARCHAR(64),
     slug VARCHAR(64),
     wiki_slug VARCHAR(64),
-    how_long_to_beat JSON,
+    how_long_to_beat_id UUID,
     type VARCHAR(16),
     cover UUID,
     gallery_id UUID,
@@ -26,6 +38,7 @@ CREATE TABLE objects (
     descriptions description_entry,
     -- Missing franchises, genres, etc
 
+    FOREIGN KEY (how_long_to_beat_id) REFERENCES how_long_to_beat(id),
     FOREIGN KEY (cover) REFERENCES images(id),
     FOREIGN KEY (gallery_id) REFERENCES albums(id)
 );

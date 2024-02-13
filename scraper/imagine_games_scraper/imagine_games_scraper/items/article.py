@@ -5,7 +5,6 @@ from uuid import uuid4
 # AKA MordernArticle
 class Article(scrapy.Item):
     id = scrapy.Field()
-    legacy_id = scrapy.Field()
     content = scrapy.Field()    # id referencing ModernContent
     article = scrapy.Field()    # Embedded HTML
     embeds = scrapy.Field()
@@ -15,7 +14,6 @@ class Article(scrapy.Item):
         super(Article, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
-        self['legacy_id'] = manual_assignments.get('id', article_data.get('id'))
         self['content'] = manual_assignments.get('content', article_data.get('content'))
         self['article'] = manual_assignments.get('article', article_data.get('article'))
         self['embeds'] = manual_assignments.get('embeds', {

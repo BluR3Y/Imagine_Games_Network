@@ -31,8 +31,8 @@ class IgnContentSpiderSpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        # yield scrapy.Request(url='https://www.ign.com/articles/best-gaming-pc-deals', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
+        # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
+        yield scrapy.Request(url='https://www.ign.com/articles/best-ipad-deals', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
         # yield scrapy.Request(url='https://www.ign.com/videos/the-finals-official-season-1-update-150-trailer', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
         # yield scrapy.Request(url='https://www.ign.com/slideshows/the-finals-review-screenshots', callback=self.parse_slideshow_page, cb_kwargs={ 'recursion_level': 1 })
 

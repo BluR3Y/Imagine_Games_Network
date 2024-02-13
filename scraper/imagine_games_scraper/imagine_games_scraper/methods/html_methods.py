@@ -18,16 +18,15 @@ class HTML_ELEMENT:
         html_element_str = f'<{self.tag} {attributes_str}></{self.tag}>'
         return html_element_str
     
-    def render_document(self, indent=0):
+    def render_document(self):
         result = ''
-        indent_str = ' ' * indent
         for child in self.children:
-            result += f"{indent_str}<{child.tag}"
+            result += "<" + child.tag
             for key, value in child.attributes.items():
-                result += f' {key}="{value}"'
-            result += '>\n'
-            result += child.render_document(indent + 2)
-            result += f"{indent_str}</{child.tag}>\n"
+                result += f" {key}=\"{value}\""
+            result += '>' + child.content
+            result += child.render_document()
+            result += f"</{child.tag}>"
         return result
     
     def get_element_attributes(self):
