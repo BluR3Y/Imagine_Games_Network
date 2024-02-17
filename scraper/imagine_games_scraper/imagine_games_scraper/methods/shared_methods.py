@@ -2,10 +2,12 @@ import scrapy
 import json
 import re
 from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author, Contributor
-from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, ObjectWiki, Release, MapObject, Map, WikiNavigation
+from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, Release 
 from imagine_games_scraper.items.misc import Image
 from imagine_games_scraper.items.content import Attribute, AttributeConnection
 from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
+from imagine_games_scraper.items.wiki import Wiki
+# MapObject, Map, WikiNavigation, ObjectWiki
 
 @classmethod
 def parse_contributor_page(self, response, author_item = Author(), recursion_level = 0):
@@ -152,34 +154,40 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
 
     legacy_wiki_key = next((key for key in apollo_state['ROOT_QUERY'] if 'wiki' in key), None)
     if legacy_wiki_key:
-        wiki_data = apollo_state[apollo_state['ROOT_QUERY'][legacy_wiki_key]['__ref']]
-        wiki_item = ObjectWiki(wiki_data)
+        wiki_item = Wiki()
 
-        # Map image dimensions: 256 x 256
-        # Smallest map magnification value: 254
-        # Map zoom to coordinate increment: x2
-        map_objects = {}
-        for map in wiki_data.get('maps'):
-            object_key = 'MapObject:' + map.get('objectSlug')
-            if object_key not in map_objects:
-                map_objects[object_key] = MapObject(apollo_state[object_key], { 'maps': [] })
-
-            map_item = Map({ **map, **apollo_state[f'Map:{map.get('objectSlug')}:{map.get('mapSlug')}'] })
-            map_objects[object_key]['maps'].append(map_item.get('id'))
-            yield map_item
-
-        for object_key in map_objects:
-            map_object_item = map_objects[object_key]
-            wiki_item['map_objects'].append(map_object_item.get('id'))
-            yield map_object_item
-
-        for nav in wiki_data.get('navigation'):
-            nav_item = WikiNavigation(nav)
-            wiki_item['navigation'].append(nav_item.get('id'))
-            yield nav_item
-
+        yield scrapy.Request(url="https://www.ign.com/wikis/" + object_data.get('wikiSlug'), callback=self.parse_wiki_page, cb_kwargs={ 'wiki_item': wiki_item, 'recursion_level': recursion_level })
+        
         object_item['wiki'] = wiki_item.get('id')
-        yield wiki_item
+    # if legacy_wiki_key:
+    #     wiki_data = apollo_state[apollo_state['ROOT_QUERY'][legacy_wiki_key]['__ref']]
+    #     wiki_item = ObjectWiki(wiki_data)
+
+    #     # Map image dimensions: 256 x 256
+    #     # Smallest map magnification value: 254
+    #     # Map zoom to coordinate increment: x2
+    #     map_objects = {}
+    #     for map in wiki_data.get('maps'):
+    #         object_key = 'MapObject:' + map.get('objectSlug')
+    #         if object_key not in map_objects:
+    #             map_objects[object_key] = MapObject(apollo_state[object_key], { 'maps': [] })
+
+    #         map_item = Map({ **map, **apollo_state[f'Map:{map.get('objectSlug')}:{map.get('mapSlug')}'] })
+    #         map_objects[object_key]['maps'].append(map_item.get('id'))
+    #         yield map_item
+
+    #     for object_key in map_objects:
+    #         map_object_item = map_objects[object_key]
+    #         wiki_item['map_objects'].append(map_object_item.get('id'))
+    #         yield map_object_item
+
+    #     for nav in wiki_data.get('navigation'):
+    #         nav_item = WikiNavigation(nav)
+    #         wiki_item['navigation'].append(nav_item.get('id'))
+    #         yield nav_item
+
+    #     object_item['wiki'] = wiki_item.get('id')
+    #     yield wiki_item
 
     gallery_regex = re.compile(r"imageGallery:{.*}")
     object_gallery_key = next((key for key in object_data if gallery_regex.search(key)), None)

@@ -1,94 +1,69 @@
+from html.parser import HTMLParser
+import html
+import json
 import re
 
-class HTML_ELEMENT:
-    def __init__(self, tag, attributes=None):
+self_closing_elements = ["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]
+
+class HTMLNode:
+    def __init__(self, tag):
         self.tag = tag
-        self.attributes = attributes if attributes else {}
-        self.children = []
-        self.content = ''
-    
+        self.attributes = {}
+        self.children = []  # Stores with inner-text and child elements
+
     def add_child(self, child):
         self.children.append(child)
 
-    def __str__(self):
-        return self.render_document()
+    def set_attribute(self, attr, value):
+        self.attributes[attr] = value
 
-    def render_element(self, indent=0):
-        attributes_str = ' '.join([f'{key}="{value}"' for key, value in self.attributes.items()])
-        html_element_str = f'<{self.tag} {attributes_str}></{self.tag}>'
-        return html_element_str
-    
-    def render_document(self):
-        result = ''
-        for child in self.children:
-            result += "<" + child.tag
-            for key, value in child.attributes.items():
-                result += f" {key}=\"{value}\""
-            result += '>' + child.content
-            result += child.render_document()
-            result += f"</{child.tag}>"
-        return result
-    
-    def get_element_attributes(self):
-        result = []
-        for child in self.children:
-            if child.attributes:
-                result.append(child.attributes)
-            result = [*result, *child.get_element_attributes()]
-        return result
-    
-    def get_elements_by_tag(self, tag):
-        elements = []
-        for child in self.children:
-            if child.tag == tag:
-                elements.append(child)
-            elements = [*elements, *child.get_elements_by_tag(tag)]
-        return elements
-
-class HTML_Parser:
-    @staticmethod
-    def parse_element(element_str):
-        tag_start = element_str.find('<') + 1
-        tag_end = element_str.find(' ') if ' ' in element_str else len(element_str) - 1
-        tag = element_str[tag_start:tag_end]
-
-        attributes = {}
-        attribute_str = element_str[tag_end + 1:element_str.find('>')]
-        attribute_regex = re.compile(r'([a-zA-Z0-9\-]+)\s*=\s*(".*?"|\'.*?\'|[^\s>]+)')
-        matches = attribute_regex.findall(attribute_str)
-        for key, value in matches:
-            attributes[key] = value.strip('"\'')
-
-        return HTML_ELEMENT(tag, attributes)
-
-class HTML_DOCUMENT(HTML_ELEMENT):
-    def __init__(self, document):
-        super().__init__('document')
-        self.parse(document)
-
-    def parse(self, document):
-        stack = []
-        current = None
-        parser = HTML_Parser()
-
-        for char in document:
-            if isinstance(current, HTML_ELEMENT):
-                if char == '<':
-                    stack.append(current)
-                    current = char
-                else:
-                    current.content += char
-            elif isinstance(current, str):
-                current += char
-                if char == '>':
-                    if current.startswith('</'):
-                        current = stack.pop()
+    def render_element(self, with_children = False):
+        result = f"<{self.tag}"
+        for key, value in self.attributes.items():
+            result += f" {key}=\"{value}\""
+        if not self.children and self.tag in self_closing_elements:
+            result += " />"
+        else:
+            result += '>'
+            if with_children:
+                for child in self.children:
+                    if isinstance(child, HTMLNode):
+                        result += child.render_element(with_children)
                     else:
-                        element = parser.parse_element(current)
-                        if stack:
-                            stack[-1].add_child(element)
-                        else:
-                            self.add_child(element)
-                        current = element
-            else:
-                current = char
+                        result += html.escape(child)
+            result += f"</{self.tag}>"
+        return result
+
+class HTMLDocument(HTMLParser):
+    def __init__(self, document):
+        super().__init__()
+        self.active_stack = []
+        self.inactive_stack = []
+        self.root_node = None
+        self.document = document
+        self.feed(document)
+
+    def handle_starttag(self, tag, attrs):
+        node = HTMLNode(tag)
+        for attr, value in attrs:
+            node.set_attribute(attr, value)
+        if not self.root_node:
+            self.root_node = node
+        else:
+            self.active_stack[-1].add_child(node)
+        self.active_stack.append(node)
+
+    def handle_data(self, data):
+        if self.active_stack:
+            self.active_stack[-1].add_child(data)
+
+    def handle_endtag(self, tag):
+        if self.active_stack and self.active_stack[-1].tag in self_closing_elements and self.active_stack[-1].tag != tag:
+            self.inactive_stack.append(self.active_stack.pop())
+ 
+        if len(self.active_stack) == 1 and self.active_stack[0].tag == tag and self.getpos()[1] < len(self.document) - 10 and self.inactive_stack and self.inactive_stack[-1].tag == tag:
+            print(f"Warning Invalid Closing Tag {tag}")
+        elif not self.active_stack and self.root_node:
+            self.active_stack.append(self.root_node)
+        elif self.active_stack:
+            self.inactive_stack.append(self.active_stack.pop())

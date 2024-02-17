@@ -8,6 +8,7 @@ from imagine_games_scraper.items.video import Video
 from imagine_games_scraper.methods import parse_article_methods
 from imagine_games_scraper.methods import parse_video_methods
 from imagine_games_scraper.methods import parse_slideshow_methods
+from imagine_games_scraper.methods import parse_wiki_methods
 from imagine_games_scraper.methods import shared_methods
 
 
@@ -32,9 +33,10 @@ class IgnContentSpiderSpider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
-        yield scrapy.Request(url='https://www.ign.com/articles/best-ipad-deals', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
+        yield scrapy.Request(url='https://www.ign.com/articles/best-gaming-pc-deals', callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 1 })
         # yield scrapy.Request(url='https://www.ign.com/videos/the-finals-official-season-1-update-150-trailer', callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 1 })
         # yield scrapy.Request(url='https://www.ign.com/slideshows/the-finals-review-screenshots', callback=self.parse_slideshow_page, cb_kwargs={ 'recursion_level': 1 })
+        # yield scrapy.Request(url="https://www.ign.com/wikis/fortnite", callback=self.parse_wiki_page, cb_kwargs={ 'recursion_level': 1 })
 
     def parse(self, response):
         page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
@@ -70,10 +72,13 @@ IgnContentSpiderSpider.parse_article_page = parse_article_methods.parse_article_
 IgnContentSpiderSpider.parse_poll = parse_article_methods.parse_poll
 IgnContentSpiderSpider.parse_captioned_image = parse_article_methods.parse_captioned_image
 IgnContentSpiderSpider.parse_commerce_deal = parse_article_methods.parse_commerce_deal
+IgnContentSpiderSpider.parse_article_content = parse_article_methods.parse_article_content
 
 IgnContentSpiderSpider.parse_video_page = parse_video_methods.parse_video_page
 
 IgnContentSpiderSpider.parse_slideshow_page = parse_slideshow_methods.parse_slideshow_page
+
+IgnContentSpiderSpider.parse_wiki_page = parse_wiki_methods.parse_wiki_page
 
 IgnContentSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
 IgnContentSpiderSpider.parse_object_page = shared_methods.parse_object_page

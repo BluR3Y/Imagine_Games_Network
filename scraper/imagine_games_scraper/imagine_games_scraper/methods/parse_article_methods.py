@@ -10,14 +10,12 @@ from imagine_games_scraper.items.user import User, Author, OfficialReview
 from imagine_games_scraper.items.object import Object
 from imagine_games_scraper.items.video import Video
 from imagine_games_scraper.items.slideshow import Slideshow
+from imagine_games_scraper.items.wiki import Wiki
 
 @classmethod
 def parse_article_page(self, response, article_item = Article(), recursion_level = 0):
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
-
-    with open('debug_commerce_data.json', 'w') as f:
-        json.dump(page_json_data, f)
 
     page_data = page_json_data['props']['pageProps']['page']
     apollo_state = page_json_data['props']['apolloState']
@@ -35,15 +33,11 @@ def parse_article_page(self, response, article_item = Article(), recursion_level
 
     # ************************* Parse Article Content *****************************
     article_content_data = modern_article_data.get('article')
-    article_content_item = ArticleContent()
-    article_content_item['legacy_id'] = article_content_data.get('id')
-    article_content_item['hero_video_content_id'] = article_content_data.get('heroVideoContentId')
-    article_content_item['hero_video_content_slug'] = article_content_data.get('heroVideoContentSlug')
-    article_content_item['processed_html'] = article_content_data.get('processedHtml')
+    if article_content_data:
+        article_content_item = ArticleContent()
+        yield from self.parse_article_content(page_json_data, article_content_data, article_content_item)
 
-    article_item['article'] = article_content_item.get('id')
-
-    yield article_content_item
+        article_item['article'] = article_content_item.get('id')
 
     # ************************ Parse Article Review *****************************
     review_ref = page_data.get('review')
@@ -62,44 +56,6 @@ def parse_article_page(self, response, article_item = Article(), recursion_level
 
         yield review_item
 
-    # *********************** Parse Article Embeds ******************************
-
-    html_data = html_methods.HTML_DOCUMENT(modern_article_data['article'].get('processedHtml'))
-    element_filter = lambda x : x.attributes.get('data-transform') is not None
-    embedded_elements = filter(element_filter, html_data.get_elements_by_tag('section'))
-
-    # for element in embedded_elements:
-    #     data_transform = element.attributes.get('data-transform')
-
-    #     if data_transform == 'slideshow':
-    #         slideshow_item = Slideshow()
-    #         article_item['embeds']['slideshows'].append(slideshow_item.get('id'))
-            
-    #         # yield scrapy.Request(url="https://www.ign.com/slideshows/" + element.attributes.get('data-slug'), callback=self.parse_slideshow_page, cb_kwargs={ 'slideshow_item': slideshow_item, 'recursion_level': recursion_level })
-    #     elif data_transform == 'poll':
-    #         poll_item = Poll()
-    #         article_item['embeds']['polls'].append(poll_item.get('id'))
-
-    #         # yield from self.parse_poll(page_json_data, element, poll_item)
-    #     elif data_transform == 'ignvideo':
-    #         video_item = Video()
-    #         article_item['embeds']['videos'].append(video_item.get('id'))
-
-    #         # yield scrapy.Request(url="https://www.ign.com/videos/" + element.attributes.get('data-slug'), callback=self.parse_video_page, cb_kwargs={ 'video_item': video_item, 'recursion_level': recursion_level })
-    #     elif data_transform == 'image-with-caption':
-    #         captioned_image_item = Image()
-    #         article_item['embeds']['captioned_images'].append(captioned_image_item.get('id'))
-
-    #         yield from self.parse_captioned_image(page_json_data, element, captioned_image_item)
-    #     elif data_transform == 'commerce-deal':
-    #         commerce_item = Catalog()
-    #         article_item['embeds']['commerce_deals'].append(commerce_item.get('id'))
-
-    #         yield from self.parse_commerce_deal(page_json_data, element, commerce_item)
-        # else: print(element)
-    
-    # Lasts here
-
     # *********************** Scraping recommendation Content *******************************
     if recursion_level < 1:
         recommendation_regex = re.compile(r"topPages\({.*}\)")
@@ -113,10 +69,11 @@ def parse_article_page(self, response, article_item = Article(), recursion_level
     yield article_item
 
 @classmethod
-def parse_poll(self, page_json_data, element, poll_item = Poll()):
+def parse_poll(self, page_json_data, poll_item : Poll):
     apollo_state = page_json_data['props']['apolloState']
 
-    poll_regex = re.compile(r"poll\({\"id\":\"%s\"}\)" % element.attributes.get('data-id'))
+    # poll_regex = re.compile(r"poll\({\"id\":\"%s\"}\)" % element.attributes.get('data-id'))
+    poll_regex = re.compile(r"poll\({\"id\":\"%s\"}\)" % poll_item.get('legacy_id'))
     poll_root_key = next((key for key in apollo_state['ROOT_QUERY'] if poll_regex.search(key)), None)
     poll_data = apollo_state[apollo_state['ROOT_QUERY'][poll_root_key].get('__ref')]
 
@@ -154,11 +111,11 @@ def parse_captioned_image(self, page_json_data, element, captioned_image_item):
     yield captioned_image_item
 
 @classmethod
-def parse_commerce_deal(self, page_json_data, element, commerce_deal_item = Catalog(), recursion_level = 0):
+def parse_commerce_deal(self, page_json_data, data_slug, commerce_deal_item = Catalog(), recursion_level = 0):
     # Persisting issue: Some catalogs cannot be found in root_query; Temporary solution: In postgresStore handler
 
     apollo_state = page_json_data['props']['apolloState']
-    deal_regex = re.compile(r"catalogBySlug\({\"slug\":\"%s\"}\)" % element.attributes.get('data-slug'))
+    deal_regex = re.compile(r"catalogBySlug\({\"slug\":\"%s\"}\)" % data_slug)
 
     deal_root_key = next((key for key in apollo_state['ROOT_QUERY'] if deal_regex.search(key)), None)
     deal_root_data = apollo_state['ROOT_QUERY'].get(deal_root_key, {})
@@ -168,7 +125,7 @@ def parse_commerce_deal(self, page_json_data, element, commerce_deal_item = Cata
         modern_content_item = Content()
         modern_content_item['type'] = 'Catalog'
         # modern_content_item['vertical'] = page_json_data.get('vertical')
-        modern_content_item['slug'] = element.attributes.get('data-slug')
+        modern_content_item['slug'] = data_slug
 
         commerce_deal_item['content'] = modern_content_item.get('id')
         yield from self.parse_modern_content(page_json_data, modern_content_ref.get('__ref'), modern_content_item, recursion_level)
@@ -207,5 +164,136 @@ def parse_commerce_deal(self, page_json_data, element, commerce_deal_item = Cata
             yield deal_image_item
             
         yield deal_item
-
+    print(commerce_deal_item)
     yield commerce_deal_item
+
+@classmethod
+def parse_article_content(self, page_json_data, article_content_data, article_content_item):
+    article_content_item['legacy_id'] = article_content_data.get('id')
+    article_content_item['hero_video_content_id'] = article_content_data.get('heroVideoContentId')
+    article_content_item['hero_video_content_slug'] = article_content_data.get('heroVideoContentSlug')
+
+    html_object = html_methods.HTMLDocument(article_content_data.get('processedHtml'))
+    parsed_html, parsed_content = parse_embedded_html_element(html_object.root_node)
+    article_content_item['processed_html'] = parsed_html
+
+    for content_item in parsed_content:
+        item_data_transform = content_item['data_transform']
+
+        if item_data_transform == 'slideshow':
+            yield scrapy.Request(url="https://www.ign.com/slideshows/" + content_item.get("data_slug"), callback=self.parse_slideshow_page, cb_kwargs={ 'slideshow_item': content_item.get("item") })
+        elif item_data_transform == 'ignvideo':
+            yield scrapy.Request(url="https://www.ign.com/videos/" + content_item.get("data_slug"), callback=self.parse_video_page, cb_kwargs={ 'video_item': content_item.get("item") })
+        elif item_data_transform == 'commerce-deal':
+            yield from self.parse_commerce_deal(page_json_data, content_item.get('data_slug'), content_item.get('item'))
+        elif item_data_transform == 'poll':
+            yield from self.parse_poll(page_json_data, content_item.get('item'))
+        elif item_data_transform == 'image-with-caption':
+            yield content_item.get("item")
+        elif item_data_transform == 'ignobject':
+            yield scrapy.Request(url=f"https://www.ign.com/{content_item.get("object_type")}/{content_item.get("data_slug")}", callback=self.parse_object_page, cb_kwargs={ 'object_item': content_item.get("item") })
+        elif item_data_transform == 'ignwiki':
+            yield scrapy.Request(url="https://www.ign.com/wikis/" + content_item.get("data_slug"), callback=self.parse_wiki_page, cb_kwargs={ 'wiki_item': content_item.get("item") })
+        elif item_data_transform == 'ignarticle':
+            yield scrapy.Request(url="https://www.ign.com/articles/" + content_item.get("data_slug"), callback=self.parse_article_page, cb_kwargs={ 'article_item': content_item.get("item") })
+    
+    yield article_content_item
+
+def parse_embedded_html_element(element):
+    parsed_content = []
+    if 'data-transform' in element.attributes:
+        data_transform = element.attributes.get('data-transform')
+
+        if data_transform == 'slideshow':
+            parsed_content.append({
+                "item": Slideshow(),
+                "data_transform": data_transform,
+                "data_slug": element.attributes.get('data-slug')
+            })
+        elif data_transform == 'ignvideo':
+            parsed_content.append({
+                "item": Video(),
+                "data_transform": data_transform,
+                "data_slug": element.attributes.get('data-slug')
+            })
+        elif data_transform == 'commerce-deal':
+            parsed_content.append({
+                "item": Poll(),
+                'data_transform': data_transform,
+                'data_slug': element.attributes.get('data-slug')
+            })
+        elif data_transform == 'poll':
+            poll_item = Poll()
+            poll_item['legacy_id'] = element.attributes.pop('data-id')
+            element.attributes['data-id'] = poll_item.get('id')
+
+            parsed_content.append({
+                "item": poll_item,
+                "data_transform": data_transform
+            })
+        elif data_transform == 'image-with-caption':
+            captioned_image_item = Image()
+            captioned_image_item['url'] = element.attributes.pop('data-image-url')
+            element.attributes.pop('data-image-title')
+            element.attributes.pop('data-image-link')
+            captioned_image_item['caption'] = element.attributes.pop('data-caption')
+
+            element.attributes['data-id'] = captioned_image_item.get('id')
+
+            parsed_content.append({
+                "item": Image(),
+                "data_transform": data_transform
+            })
+    elif element.tag == 'a' and 'href' in element.attributes and re.compile(r"https://www.ign.com/.*").search(element.attributes.get('href')):
+        object_types = ['games','tech','movies','shows','comics']
+        element_href = element.attributes.get('href')
+        domain_len = len("https://www.ign.com/")
+        data_transform, resource_path = element_href[domain_len:].split('/', 1)
+        
+        if data_transform in object_types:
+            element.tag = "section"
+            element.attributes['data-transform'] = 'ignobject'
+            element.attributes['data-slug'] = resource_path
+            parsed_content.append({
+                "item": Object(),
+                "data_transform": 'ignobject',
+                "object_type": data_transform,
+                "data_slug": resource_path
+            })
+        elif data_transform == 'wikis':
+            element.tag = "section"
+            element.attributes['data-transform'] = 'ignwiki'
+            element.attributes['data-slug'] = resource_path
+            parsed_content.append({
+                "item": Wiki(),
+                "data_transform": 'ignwiki',
+                "data_slug": resource_path
+            })
+        elif data_transform == 'articles':
+            element.tag = "section"
+            element.attributes['data-transform'] = 'ignarticle'
+            element.attributes['data-slug'] = resource_path
+            parsed_content.append({
+                "item": Article(),
+                "data_transform": 'ignarticle',
+                "data_slug": resource_path
+            })
+
+    parsed_html = f"<{element.tag}"
+
+    for key, value in element.attributes.items():
+        parsed_html += f" {key}=\"{value}\""
+
+    if not element.children and element.tag in html_methods.self_closing_elements:
+        parsed_html += " />"
+    else:
+        parsed_html += '>'
+        for child in element.children:
+            if isinstance(child, html_methods.HTMLNode):
+                child_parsed_html, child_parsed_content = parse_embedded_html_element(child)
+                parsed_html += child_parsed_html
+                parsed_content = [*parsed_content, *child_parsed_content]
+            else:
+                parsed_html += child
+        parsed_html += f"</{element.tag}>"
+    return parsed_html, parsed_content

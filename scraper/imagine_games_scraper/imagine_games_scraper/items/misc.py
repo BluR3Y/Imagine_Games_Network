@@ -5,6 +5,7 @@ class Image(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     url = scrapy.Field()
+    link = scrapy.Field()
     caption = scrapy.Field()
     embargo_date = scrapy.Field()
 

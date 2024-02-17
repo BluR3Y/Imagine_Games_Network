@@ -1,5 +1,4 @@
 import psycopg2
-import urllib.parse
 
 from imagine_games_scraper.methods import postgres_store_methods
 from imagine_games_scraper.items import article as Article
