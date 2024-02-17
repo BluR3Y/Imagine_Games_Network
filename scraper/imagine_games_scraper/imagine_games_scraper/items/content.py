@@ -61,6 +61,10 @@ class Content(scrapy.Item):
         # self['attributes'] = manual_assignments.get('attributes', [])
         # self['objects'] = manual_assignments.get('objects', [])
 
+class Contributor (scrapy.Item):
+    user = scrapy.Field()   #id referencing User
+    content = scrapy.Field()    # id referencing Content
+
 class ContentCategory(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()

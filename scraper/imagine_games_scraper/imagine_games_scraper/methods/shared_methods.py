@@ -1,12 +1,12 @@
 import scrapy
 import json
 import re
-from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author, Contributor
+from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author
 from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, Release 
 from imagine_games_scraper.items.misc import Image
-from imagine_games_scraper.items.content import Attribute, AttributeConnection
+from imagine_games_scraper.items.content import Attribute, AttributeConnection, Contributor
 from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
-from imagine_games_scraper.items.wiki import Wiki
+from imagine_games_scraper.items.wiki import ObjectWiki
 # MapObject, Map, WikiNavigation, ObjectWiki
 
 @classmethod
@@ -154,7 +154,7 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
 
     legacy_wiki_key = next((key for key in apollo_state['ROOT_QUERY'] if 'wiki' in key), None)
     if legacy_wiki_key:
-        wiki_item = Wiki()
+        wiki_item = ObjectWiki()
 
         yield scrapy.Request(url="https://www.ign.com/wikis/" + object_data.get('wikiSlug'), callback=self.parse_wiki_page, cb_kwargs={ 'wiki_item': wiki_item, 'recursion_level': recursion_level })
         

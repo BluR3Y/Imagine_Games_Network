@@ -39,19 +39,19 @@ class ImageConnection (scrapy.Item):
         self['image_id'] = manual_assignments.get('')
 
 # Gallery
-# class Slideshow(scrapy.Item):
-#     id = scrapy.Field()
-#     slug = scrapy.Field()
-#     content = scrapy.Field()
-#     images = scrapy.Field()
+class Slideshow(scrapy.Item):
+    id = scrapy.Field()
+    legacy_id = scrapy.Field()
+    content = scrapy.Field()
+    album = scrapy.Field()
 
-#     def __init__(self, slideshow_data={}, manual_assignments={}, *args, **kwargs):
-#         super(Slideshow, self).__init__(*args, **kwargs)
+    def __init__(self, slideshow_data = {}, manual_assignments = {}, *args, **kwargs):
+        super(Slideshow, self).__init__(*args, **kwargs)
 
-#         self['id'] = str(uuid4())
-#         self['slug'] = manual_assignments.get('slug', slideshow_data.get('slug'))
-#         self['content'] = manual_assignments.get('content', slideshow_data.get('content'))
-#         self['images'] = manual_assignments.get('images', slideshow_data.get('images'))
+        self['id'] = str(uuid4())
+        self['legacy_id'] = manual_assignments.get('legacy_id', slideshow_data.get('id'))
+        self['content'] = manual_assignments.get('content', slideshow_data.get('content'))
+        self['album'] = manual_assignments.get('album')
 
 class DealConnection(scrapy.Item):
     id = scrapy.Field()

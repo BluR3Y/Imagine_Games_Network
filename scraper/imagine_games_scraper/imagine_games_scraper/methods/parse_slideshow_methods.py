@@ -2,17 +2,13 @@ import scrapy
 import json
 import re
 
-from imagine_games_scraper.items.slideshow import Slideshow
-from imagine_games_scraper.items.misc import Gallery, Image, ImageConnection
+from imagine_games_scraper.items.misc import Gallery, Image, ImageConnection, Slideshow
 from imagine_games_scraper.items.content import Content
 
 @classmethod
 def parse_slideshow_page(self, response, slideshow_item = Slideshow(), recursion_level = 0):
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
-
-    # with open('slideshow_data.json', 'w') as f:
-    #     json.dump(page_json_data, f)
 
     page_data = page_json_data['props']['pageProps']['page']
     apollo_state = page_json_data['props']['apolloState']

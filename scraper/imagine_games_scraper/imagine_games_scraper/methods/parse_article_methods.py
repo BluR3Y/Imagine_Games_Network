@@ -5,12 +5,11 @@ import re
 from . import html_methods
 from imagine_games_scraper.items.article import Article, ArticleContent
 from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
-from imagine_games_scraper.items.misc import Image, Catalog, CommerceDeal, Poll, PollAnswer, PollConfiguration, DealConnection
+from imagine_games_scraper.items.misc import Image, Catalog, CommerceDeal, Poll, PollAnswer, PollConfiguration, DealConnection, Slideshow
 from imagine_games_scraper.items.user import User, Author, OfficialReview
 from imagine_games_scraper.items.object import Object
 from imagine_games_scraper.items.video import Video
-from imagine_games_scraper.items.slideshow import Slideshow
-from imagine_games_scraper.items.wiki import Wiki
+from imagine_games_scraper.items.wiki import ObjectWiki
 
 @classmethod
 def parse_article_page(self, response, article_item = Article(), recursion_level = 0):
@@ -265,7 +264,7 @@ def parse_embedded_html_element(element):
             element.attributes['data-transform'] = 'ignwiki'
             element.attributes['data-slug'] = resource_path
             parsed_content.append({
-                "item": Wiki(),
+                "item": ObjectWiki(),
                 "data_transform": 'ignwiki',
                 "data_slug": resource_path
             })
