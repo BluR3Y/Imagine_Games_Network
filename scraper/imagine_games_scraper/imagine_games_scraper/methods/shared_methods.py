@@ -3,9 +3,8 @@ import json
 import re
 from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author
 from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, Release 
-from imagine_games_scraper.items.misc import Image
-from imagine_games_scraper.items.content import Attribute, AttributeConnection, Contributor
-from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
+from imagine_games_scraper.items.misc import Image, Attribute, TypedAttribute
+from imagine_games_scraper.items.content import ContentAttributeConnection, Contributor, Content, ContentCategory, Brand
 from imagine_games_scraper.items.wiki import ObjectWiki
 # MapObject, Map, WikiNavigation, ObjectWiki
 
@@ -18,8 +17,7 @@ def parse_contributor_page(self, response, author_item = Author(), recursion_lev
     author_data = page_data['author']
     # Missing: Contributor related Articles
 
-    author_item['legacy_id'] = author_data.get('id')
-    author_item['legacy_author_id'] = author_data.get('authorId')
+    author_item['legacy_id'] = author_data.get('authorId')
     author_url = author_data.get('profileUrl')
     author_item['url'] = author_url.replace("https://www.ign.com", "")
     author_item['cover'] = author_data.get('backgroundImageUrl')
@@ -237,6 +235,7 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
         user_item['nickname'] = user_data.get('nickname')
 
         author_item = Author()
+        author_item['user'] = user_item.get('id')
         article_contributors.append(user_item.get('id'))
 
         yield user_item
@@ -300,7 +299,7 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
         typed_attribute_item['attribute'] = attribute_item.get('id')
         yield typed_attribute_item
 
-        attribute_connection = AttributeConnection()
+        attribute_connection = ContentAttributeConnection()
         attribute_connection['typed_attribute'] = typed_attribute_item.get('id')
         yield attribute_connection
 

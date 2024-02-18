@@ -3,9 +3,9 @@ import json
 import re
 
 from imagine_games_scraper.items.video import Video, VideoMetadata, VideoAsset
-from imagine_games_scraper.items.misc import Image
+from imagine_games_scraper.items.misc import Image, TypedAttribute, Attribute
 from imagine_games_scraper.items.user import User, Author
-from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
+from imagine_games_scraper.items.content import Content, ContentCategory, Brand
 from imagine_games_scraper.items.object import Object
 
 

@@ -19,3 +19,6 @@ def store_region_rating(self, item):
 
 def store_how_long_to_beat(self, item):
     pass
+
+def store_object_attribute_connection(self, item):
+    pass

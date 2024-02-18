@@ -77,41 +77,14 @@ class ContentCategory(scrapy.Item):
         self['legacy_id'] = manual_assignments.get('id', category_data.get('id'))
         self['name'] = manual_assignments.get('name', category_data.get('name'))
 
-class AttributeConnection(scrapy.Item):
+class ContentAttributeConnection(scrapy.Item):
     id = scrapy.Field()
     typed_attribute = scrapy.Field()
 
     def __init__(self, *args, **kwargs):
-        super(AttributeConnection, self).__init__(*args, *kwargs)
+        super(ContentAttributeConnection, self).__init__(*args, *kwargs)
 
         self['id'] = str(uuid4())
-
-# Used by Article/Video items, excludes Objects
-class TypedAttribute(scrapy.Item):
-    id = scrapy.Field()
-    type = scrapy.Field()
-    attribute = scrapy.Field()  # id referencing Attribute
-
-    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
-        super(TypedAttribute, self).__init__(*args, *kwargs)
-
-        self['id'] = str(uuid4())
-        self['type'] = manual_assignments.get('type', attribute_data.get('type'))
-        self['attribute'] = manual_assignments.get('attribute', attribute_data.get('attribute'))
-
-class Attribute(scrapy.Item):
-    id = scrapy.Field()
-    name = scrapy.Field()
-    short_name = scrapy.Field()
-    slug = scrapy.Field()
-
-    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
-        super(Attribute, self).__init__(*args, **kwargs)
-
-        self['id'] = str(uuid4())
-        self['name'] = manual_assignments.get('name', attribute_data.get('name'))
-        self['short_name'] = manual_assignments.get('short_name', attribute_data.get('shortName'))
-        self['slug'] = manual_assignments.get('slug', attribute_data.get('slug'))
 
 class Brand(scrapy.Item):
     id = scrapy.Field()

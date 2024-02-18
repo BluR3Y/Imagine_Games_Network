@@ -56,6 +56,15 @@ class ObjectConnection(scrapy.Item):
 
         self['id'] = str(uuid4())
 
+class ObjectAttributeConnection(scrapy.Item):
+    id = scrapy.Field()
+    attribute = scrapy.Field()  # id referencing typed attribute
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
 class Region(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()

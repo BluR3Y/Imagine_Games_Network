@@ -3,7 +3,7 @@ import json
 import uuid
 
 def store_image(self, item):
-    pass
+    print('lmao')
 
 def store_gallery(self, item):
     pass
@@ -30,4 +30,10 @@ def store_poll_answer(self, item):
     pass
 
 def store_poll_configuration(self, item):
+    pass
+
+def store_typed_attribute(self, item):
+    pass
+
+def store_attribute(self, item):
     pass

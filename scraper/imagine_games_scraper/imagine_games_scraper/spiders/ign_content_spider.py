@@ -65,8 +65,8 @@ class IgnContentSpiderSpider(scrapy.Spider):
                 yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_video_page, cb_kwargs={ 'video_item': video_item, 'recursion_level': 0 })
             elif item_type == "Promotion":
                 pass
-            else:
-                print(item)
+            # else:
+            #     print(item)
 
 IgnContentSpiderSpider.parse_article_page = parse_article_methods.parse_article_page
 IgnContentSpiderSpider.parse_poll = parse_article_methods.parse_poll

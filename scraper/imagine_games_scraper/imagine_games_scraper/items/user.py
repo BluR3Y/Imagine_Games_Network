@@ -7,8 +7,8 @@ class User(scrapy.Item):
     avatar = scrapy.Field()
     name = scrapy.Field()
     nickname = scrapy.Field()
-    privacy = scrapy.Field()
-    contributor = scrapy.Field() # id referencing Contributor
+    # privacy = scrapy.Field()
+    # contributor = scrapy.Field() # id referencing Contributor
 
     def __init__(self, user_data = {}, manual_assignments = {}, *args, **kwargs):
         super(User, self).__init__(*args, **kwargs)
@@ -18,13 +18,25 @@ class User(scrapy.Item):
         self['avatar'] = manual_assignments.get('avatar', user_data.get('avatarImageUrl'))
         self['name'] = manual_assignments.get('name', user_data.get('name'))
         self['nickname'] = manual_assignments.get('nickname', user_data.get('nickname'))
-        self['privacy'] = manual_assignments.get('privacy', (user_data['playlistSettings'].get('privacy') if user_data.get('playlistSettings') else "Private"))
-        self['contributor'] = manual_assignments.get('contributor')
+        # self['privacy'] = manual_assignments.get('privacy', (user_data['playlistSettings'].get('privacy') if user_data.get('playlistSettings') else "Private"))
+        # self['contributor'] = manual_assignments.get('contributor')
         
+class UserConfiguration(scrapy.Item):
+    id = scrapy.Field()
+    user = scrapy.Field() # id references users
+    privacy = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+
 class Author (scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
-    legacy_author_id = scrapy.Field()
+    user = scrapy.Field()
+    # legacy_author_id = scrapy.Field()
     url = scrapy.Field()
     cover = scrapy.Field()
     position = scrapy.Field()
@@ -37,7 +49,7 @@ class Author (scrapy.Item):
         
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('id', contributor_data.get('id'))
-        self['legacy_author_id'] = manual_assignments.get('authorId', contributor_data.get('authorId'))
+        # self['legacy_author_id'] = manual_assignments.get('authorId', contributor_data.get('authorId'))
         self['url'] = manual_assignments.get('url', contributor_data.get('url'))
         self['cover'] = manual_assignments.get('backgroundImageUrl', contributor_data.get('backgroundImageUrl'))
         self['position'] = manual_assignments.get('position', contributor_data.get('position'))
@@ -118,3 +130,6 @@ class UserReviewTag(scrapy.Item):
         self['legacy_id'] = manual_assignments.get('id', tag_data.get('id'))
         self['name'] = manual_assignments.get('name', tag_data.get('name'))
         self['is_positive'] = manual_assignments.get('isPositive', tag_data.get('isPositive'))
+
+class UserConfiguration(scrapy.Item):
+    id = scrapy.Field()

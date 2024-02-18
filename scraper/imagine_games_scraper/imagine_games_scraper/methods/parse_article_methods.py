@@ -4,8 +4,8 @@ import re
 
 from . import html_methods
 from imagine_games_scraper.items.article import Article, ArticleContent
-from imagine_games_scraper.items.content import Content, ContentCategory, Attribute, TypedAttribute, Brand
-from imagine_games_scraper.items.misc import Image, Catalog, CommerceDeal, Poll, PollAnswer, PollConfiguration, DealConnection, Slideshow
+from imagine_games_scraper.items.content import Content, ContentCategory, Brand
+from imagine_games_scraper.items.misc import Image, Catalog, CommerceDeal, Poll, PollAnswer, PollConfiguration, DealConnection, Slideshow, Attribute, TypedAttribute
 from imagine_games_scraper.items.user import User, Author, OfficialReview
 from imagine_games_scraper.items.object import Object
 from imagine_games_scraper.items.video import Video
@@ -135,6 +135,7 @@ def parse_commerce_deal(self, page_json_data, data_slug, commerce_deal_item = Ca
         deal_item['url'] = deal.get('url')
         deal_item['title'] = deal.get('title')
         deal_item['description'] = deal.get('description')
+        deal_item['brand'] = deal.get('brand')
         deal_item['model'] = deal.get('model')
         deal_item['vendor'] = deal.get('vendor')
         deal_item['price'] = deal.get('price')
@@ -151,11 +152,6 @@ def parse_commerce_deal(self, page_json_data, data_slug, commerce_deal_item = Ca
         deal_connection_item['catalog'] = commerce_deal_item.get('id')
         yield deal_connection_item
 
-        brand_ref = deal.get('brand')
-        if brand_ref:
-            brand_item = Brand(apollo_state[brand_ref.get('__ref')])
-            deal_item['brand'] = brand_item.get('id')
-
         deal_image_data = deal.get('image')
         if deal_image_data:
             deal_image_item = Image(deal_image_data)
@@ -163,7 +159,7 @@ def parse_commerce_deal(self, page_json_data, data_slug, commerce_deal_item = Ca
             yield deal_image_item
             
         yield deal_item
-    print(commerce_deal_item)
+
     yield commerce_deal_item
 
 @classmethod

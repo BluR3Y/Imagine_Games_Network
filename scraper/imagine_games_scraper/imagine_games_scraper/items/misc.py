@@ -38,12 +38,11 @@ class ImageConnection (scrapy.Item):
         self['gallery_id'] = manual_assignments.get('')
         self['image_id'] = manual_assignments.get('')
 
-# Gallery
 class Slideshow(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     content = scrapy.Field()
-    album = scrapy.Field()
+    gallery = scrapy.Field()
 
     def __init__(self, slideshow_data = {}, manual_assignments = {}, *args, **kwargs):
         super(Slideshow, self).__init__(*args, **kwargs)
@@ -51,7 +50,34 @@ class Slideshow(scrapy.Item):
         self['id'] = str(uuid4())
         self['legacy_id'] = manual_assignments.get('legacy_id', slideshow_data.get('id'))
         self['content'] = manual_assignments.get('content', slideshow_data.get('content'))
-        self['album'] = manual_assignments.get('album')
+        self['gallery'] = manual_assignments.get('gallery')
+
+# Used by Article/Video items, excludes Objects
+class TypedAttribute(scrapy.Item):
+    id = scrapy.Field()
+    type = scrapy.Field()
+    attribute = scrapy.Field()  # id referencing Attribute
+
+    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
+        super(TypedAttribute, self).__init__(*args, *kwargs)
+
+        self['id'] = str(uuid4())
+        self['type'] = manual_assignments.get('type', attribute_data.get('type'))
+        self['attribute'] = manual_assignments.get('attribute', attribute_data.get('attribute'))
+
+class Attribute(scrapy.Item):
+    id = scrapy.Field()
+    name = scrapy.Field()
+    short_name = scrapy.Field()
+    slug = scrapy.Field()
+
+    def __init__(self, attribute_data={}, manual_assignments={}, *args, **kwargs):
+        super(Attribute, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+        self['name'] = manual_assignments.get('name', attribute_data.get('name'))
+        self['short_name'] = manual_assignments.get('short_name', attribute_data.get('shortName'))
+        self['slug'] = manual_assignments.get('slug', attribute_data.get('slug'))
 
 class DealConnection(scrapy.Item):
     id = scrapy.Field()

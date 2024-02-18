@@ -74,9 +74,13 @@ class PostgresStore:
             self.store_user_review(item)
         elif isinstance(item, User.UserReviewTag):
             self.store_user_review_tag(item)
+        elif isinstance(item, User.UserConfiguration):
+            self.store_user_configuration(item)
 
         elif isinstance(item, Object.Object):
             self.store_object(item)
+        elif isinstance(item, Object.ObjectAttributeConnection):
+            self.store_object_attribute_connection(item)
         elif isinstance(item, Object.ObjectConnection):
             self.store_object_connection(item)
         elif isinstance(item, Object.Region):
@@ -103,12 +107,8 @@ class PostgresStore:
             self.store_contributor(item)
         elif isinstance(item, Content.ContentCategory):
             self.store_content_category(item)
-        elif isinstance(item, Content.TypedAttribute):
-            self.store_typed_attribute(item)
-        elif isinstance(item, Content.Attribute):
-            self.store_attribute(item)
-        elif isinstance(item, Content.AttributeConnection):
-            self.store_attribute_connection(item)
+        elif isinstance(item, Content.ContentAttributeConnection):
+            self.store_content_attribute_connection(item)
         elif isinstance(item, Content.Brand):
             self.store_brand(item)
 
@@ -132,7 +132,11 @@ class PostgresStore:
             self.store_poll_answer(item)
         elif isinstance(item, Misc.PollConfiguration):
             self.store_poll_configuration(item)
-        print('pipeline marker')
+        elif isinstance(item, Misc.TypedAttribute):
+            self.store_typed_attribute(item)
+        elif isinstance(item, Misc.Attribute):
+            self.store_attribute(item)
+
         return item
 
 PostgresStore.store_article = ArticleStore.store_article
@@ -141,14 +145,17 @@ PostgresStore.store_article_content = ArticleStore.store_article_content
 PostgresStore.store_video = VideoStore.store_vide
 PostgresStore.store_video_metadata = VideoStore.store_video_metadata
 PostgresStore.store_video_asset = VideoStore.store_video_asset
+# PostgresStore.store_video_caption = VideoStore.store_video_caption
 
 PostgresStore.store_user = UserStore.store_user
 PostgresStore.store_author = UserStore.store_author
 PostgresStore.store_official_review = UserStore.store_official_review
 PostgresStore.store_user_review = UserStore.store_user_review
 PostgresStore.store_user_review_tag = UserStore.store_user_review_tag
+PostgresStore.store_user_configuration = UserStore.store_user_configuration
 
 PostgresStore.store_object = ObjectStore.store_object
+PostgresStore.store_object_attribute_connection = ObjectStore.store_object_attribute_connection
 PostgresStore.store_object_connection = ObjectStore.store_object_connection
 PostgresStore.store_object_region = ObjectStore.store_object_region
 PostgresStore.store_region_release = ObjectStore.store_region_release
@@ -163,9 +170,7 @@ PostgresStore.store_map_item = WikiStore.store_map_item
 PostgresStore.store_content = ContentStore.store_content
 PostgresStore.store_contributor = ContentStore.store_contributor
 PostgresStore.store_content_category = ContentStore.store_content_category
-PostgresStore.store_typed_attribute = ContentStore.store_typed_attribute
-PostgresStore.store_attribute = ContentStore.store_attribute
-PostgresStore.store_attribute_connection = ContentStore.store_attribute_connection
+PostgresStore.store_content_attribute_connection = ContentStore.store_content_attribute_connection
 PostgresStore.store_brand = ContentStore.store_brand
 
 PostgresStore.store_image = MiscStore.store_image
@@ -178,3 +183,5 @@ PostgresStore.store_commerce_deal = MiscStore.store_commerce_deal
 PostgresStore.store_poll = MiscStore.store_poll
 PostgresStore.store_poll_answer = MiscStore.store_poll_answer
 PostgresStore.store_poll_configuration = MiscStore.store_poll_configuration
+PostgresStore.store_typed_attribute = MiscStore.store_typed_attribute
+PostgresStore.store_attribute = MiscStore.store_attribute

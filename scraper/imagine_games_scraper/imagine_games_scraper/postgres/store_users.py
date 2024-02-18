@@ -16,3 +16,6 @@ def store_user_review(self, item):
 
 def store_user_review_tag(self, item):
     pass
+
+def store_user_configuration(self, item):
+    pass

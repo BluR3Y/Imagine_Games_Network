@@ -13,7 +13,6 @@ CREATE TABLE articles (
     legacy_id UUID,
     content_id UUID NOT NULL,
     article_content_id UUID NOT NULL,
-    -- embeds Missing
     review_id UUID,
 
     FOREIGN KEY (content_id) REFERENCES contents (id),
