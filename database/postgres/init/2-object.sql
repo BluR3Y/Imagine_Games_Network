@@ -32,14 +32,14 @@ CREATE TABLE objects (
     wiki_slug VARCHAR(64),
     how_long_to_beat_id UUID,
     type VARCHAR(16),
-    cover UUID,
+    cover_id UUID,
     gallery_id UUID,
     names name_entry,
     descriptions description_entry,
     -- Missing franchises, genres, etc
 
     FOREIGN KEY (how_long_to_beat_id) REFERENCES how_long_to_beat(id),
-    FOREIGN KEY (cover) REFERENCES images(id),
+    FOREIGN KEY (cover_id) REFERENCES images(id),
     FOREIGN KEY (gallery_id) REFERENCES galleries(id)
 );
 -- franchises, genres, features, producers, publishers will be Type_Attribute entries

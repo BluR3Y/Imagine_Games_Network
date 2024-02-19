@@ -31,7 +31,7 @@ CREATE TABLE maps (
     map_object_id UUID NOT NULL,
     name VARCHAR(256),
     slug VARCHAR(256),
-    cover UUID,
+    cover_id UUID,
     width INT,
     height INT,
     map_type VARCHAR(128),
@@ -46,5 +46,5 @@ CREATE TABLE maps (
     background_color VARCHAR(64),
 
     FOREIGN KEY (map_object_id) REFERENCES map_objects (id),
-    FOREIGN KEY (cover) REFERENCES images (id)
+    FOREIGN KEY (cover_id) REFERENCES images (id)
 );

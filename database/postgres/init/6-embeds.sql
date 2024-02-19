@@ -13,12 +13,12 @@ CREATE TABLE polls (
     legacy_id UUID,
     content_id UUID,
     configuration_id UUID,
-    image UUID,
+    image_id UUID,
     voters INT,
 
     FOREIGN KEY (content_id) REFERENCES contents (id),
     FOREIGN KEY (configuration_id) REFERENCES poll_configurations (id),
-    FOREIGN KEY (image) REFERENCES images (id)
+    FOREIGN KEY (image_id) REFERENCES images (id)
 );
 
 -- Poll Answer

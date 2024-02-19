@@ -11,8 +11,8 @@ CREATE TABLE users (
 
 -- Socials Type
 CREATE TYPE social_media_entry AS (
-    name VARCHAR(50),
-    handler VARCHAR(100)
+    platform VARCHAR(50) NOT NULL,
+    username VARCHAR(100) NOT NULL
 );
 
 -- Author
