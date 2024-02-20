@@ -10,6 +10,9 @@ from sqlalchemy.types import TypeDecorator, VARCHAR, UserDefinedType
 class ArticleContent(Base):
     __tablename__ = 'article_contents'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -23,6 +26,9 @@ class ArticleContent(Base):
 
 class Article(Base):
     __tablename__ = 'articles'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

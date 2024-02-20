@@ -1,24 +1,28 @@
 import scrapy
+from scrapy.utils.project import get_project_settings
 import json
 import re
 
 from urllib import parse
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 from imagine_games_scraper.alchemy.models.article import Article
 from imagine_games_scraper.alchemy.models.content import Content
+from imagine_games_scraper.alchemy.models.video import Video
 
 from imagine_games_scraper.methods import parse_article_methods
 from imagine_games_scraper.methods import parse_video_methods
 from imagine_games_scraper.methods import parse_slideshow_methods
 from imagine_games_scraper.methods import parse_wiki_methods
 from imagine_games_scraper.methods import shared_methods
+from imagine_games_scraper.methods import media_methods
 
 
 class IgnContentSpiderSpider(scrapy.Spider):
     name = "ign_content_spider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com?endIndex=0"]
+    start_urls = ["https://ign.com?endIndex=20"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {
@@ -34,14 +38,10 @@ class IgnContentSpiderSpider(scrapy.Spider):
         'DOWNLOAD_DELAY': 3
     }
 
-    # Method used to retrieve settings from Scrapy project settings
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(crawler.settings)
-
     # Initialize the spider
-    def __init__(self, settings, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(IgnContentSpiderSpider, self).__init__(*args, **kwargs)
+        settings = get_project_settings()
         # Establish a connection to the Postgres database
         engine = create_engine(
             url="postgresql+psycopg2://{0}:{1}@{2}:{3}/{4}".format(
@@ -75,40 +75,23 @@ class IgnContentSpiderSpider(scrapy.Spider):
         content_feed_key = next((key for key in homepage_data if content_regex.search(key)), None)
         feed_refs = homepage_data[content_feed_key]['feedItems']
 
-        # for item in [apollo_state[item_ref.get('__ref')] for item_ref in feed_refs]:
-        #     item_type = item.get('__typename')
-
-        #     if item_type == "ModernArticle":
-        #         item_content = apollo_state[item['content']['__ref']]
-        #         article_item = Article(item)
-        #         yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_article_page, cb_kwargs={ 'article_item': article_item , 'recursion_level': 0 })
-        #     elif item_type == "ModernVideo":
-        #         item_content = apollo_state[item['content']['__ref']]
-        #         video_item = Video(item)
-        #         yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_video_page, cb_kwargs={ 'video_item': video_item, 'recursion_level': 0 })
-        #     elif item_type == "Promotion":
-        #         pass
-        #     # else:
-        #     #     print(item)
         for item in [apollo_state[item_ref.get('__ref')] for item_ref in feed_refs]:
             item_type = item.get('__typename')
 
             if item_type == "ModernArticle":
+                # Working on video
+                continue
                 item_content = apollo_state[item['content']['__ref']]
-                article_content_item = Content()
-                article_content_item.legacy_id = item_content.get('id')
-                article_content_item.type = item_content.get('type')
-                article_content_item.title = item_content.get('title')
-                article_content_item.subtitle = item_content.get('subtitle')
-                article_content_item.publish_date = item_content.get('publishDate')
-                article_content_item.slug = item_content.get('slug')
-                article_content_item.feed_title = item_content.get('feedTitle')
-                article_content_item.url = item_content.get('url')
-                article_content_item.brand = item_content.get('brand')
-                
+
+                article_exists = self.session.query(Article).join(Content).filter(Content.legacy_id == item_content.get('id')).first() is not None
+                if not article_exists:
+                    yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
             elif item_type == "ModernVideo":
                 item_content = apollo_state[item['content']['__ref']]
-                pass
+
+                video_exists = self.session.query(Video).join(Content).filter(Content.legacy_id == item_content.get('id')).first() is not None
+                if not video_exists:
+                    yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 0 })
             elif item_type == "Promotion":
                 pass
             else:
@@ -126,6 +109,8 @@ IgnContentSpiderSpider.parse_slideshow_page = parse_slideshow_methods.parse_slid
 
 IgnContentSpiderSpider.parse_wiki_page = parse_wiki_methods.parse_wiki_page
 
-IgnContentSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
-IgnContentSpiderSpider.parse_object_page = shared_methods.parse_object_page
+# IgnContentSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
+# IgnContentSpiderSpider.parse_object_page = shared_methods.parse_object_page
 IgnContentSpiderSpider.parse_modern_content = shared_methods.parse_modern_content
+
+IgnContentSpiderSpider.parse_image = media_methods.parse_image

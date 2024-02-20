@@ -11,6 +11,9 @@ from sqlalchemy.types import TypeDecorator, VARCHAR
 class Gallery(Base):
     __tablename__ = 'galleries'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -19,6 +22,9 @@ class Gallery(Base):
 
 class Image(Base):
     __tablename__ = 'images'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -49,6 +55,9 @@ class Image(Base):
 class ImageConnection(Base):
     __tablename__ = 'image_connections'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -71,6 +80,9 @@ class ImageConnection(Base):
 class Attribute(Base):
     __tablename__ = 'attributes'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -88,6 +100,9 @@ class Attribute(Base):
 
 class TypedAttribute(Base):
     __tablename__ = 'typed_attributes'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -109,6 +124,9 @@ class TypedAttribute(Base):
 class PollConfiguration(Base):
     __tablename__ = 'poll_configurations'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -121,6 +139,9 @@ class PollConfiguration(Base):
 
 class Poll(Base):
     __tablename__ = 'polls'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -150,6 +171,9 @@ class Poll(Base):
 class PollAnswer(Base):
     __tablename__ = 'poll_answer'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -169,6 +193,9 @@ class PollAnswer(Base):
 class Catalog(Base):
     __tablename__ = 'catalogs'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -184,6 +211,9 @@ class Catalog(Base):
 
 class CommerceDeal(Base):
     __tablename__ = 'commerce_deals'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -214,6 +244,9 @@ class CommerceDeal(Base):
 
 class DealConnection(Base):
     __tablename__ = 'deal_connections'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

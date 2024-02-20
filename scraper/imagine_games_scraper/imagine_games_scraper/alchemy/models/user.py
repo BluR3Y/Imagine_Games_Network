@@ -10,6 +10,9 @@ from sqlalchemy.types import UserDefinedType, TypeDecorator
 class User(Base):
     __tablename__ = 'users'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True), 
         primary_key=True, 
@@ -42,6 +45,9 @@ class SocialMediaEntry(TypeDecorator):
 class Author(Base):
     __tablename__ = 'authors'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True), 
         primary_key=True, 
@@ -67,6 +73,9 @@ class Author(Base):
 
 class UserConfiguration(Base):
     __tablename__ = 'user_configurations'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True), 

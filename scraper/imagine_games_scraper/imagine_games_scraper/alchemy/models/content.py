@@ -8,6 +8,9 @@ from sqlalchemy.orm import relationship
 
 class Content(Base):
     __tablename__ = 'contents'
+    
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -19,14 +22,14 @@ class Content(Base):
     slug = Column(String)
     type = Column(String)
     vertical = Column(String)
-    cover_id = Column(
+    header_image_id = Column(
         UUID(as_uuid=True),
         ForeignKey("images.id")
     )
     title = Column(String)
     subtitle = Column(String)
     feed_title = Column(String)
-    feed_cover_id = Column(
+    feed_image_id = Column(
         UUID(as_uuid=True),
         ForeignKey("images.id")
     )
@@ -50,14 +53,17 @@ class Content(Base):
         ForeignKey("content_categories.id")
     )
 
-    cover = relationship("Image", foreign_keys=[cover_id])
-    feed_cover = relationship("Image", foreign_keys=[feed_cover_id])
+    header_image = relationship("Image", foreign_keys=[header_image_id])
+    feed_image = relationship("Image", foreign_keys=[feed_image_id])
     primary_object = relationship("Object", foreign_keys=[primary_object_id])
     brand = relationship("Brand", foreign_keys=[brand_id])
     category = relationship("ContentCategory", foreign_keys=[category_id])
 
 class Brand(Base):
     __tablename__ = 'brands'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -74,6 +80,9 @@ class Brand(Base):
 class ContentCategory(Base):
     __tablename__ = 'content_categories'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -84,6 +93,9 @@ class ContentCategory(Base):
 
 class ObjectConnection(Base):
     __tablename__ = 'object_connections'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -107,6 +119,9 @@ class ObjectConnection(Base):
 class Contributor(Base):
     __tablename__ = 'contributors'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -128,6 +143,9 @@ class Contributor(Base):
 
 class ContentAttributeConnection(Base):
     __tablename__ = 'content_attribute_connections'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -151,6 +169,9 @@ class ContentAttributeConnection(Base):
 class Slideshow(Base):
     __tablename__ = 'slideshows'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -173,6 +194,9 @@ class Slideshow(Base):
 class OfficialReview(Base):
     __tablename__ = 'official_reviews'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -189,6 +213,9 @@ class OfficialReview(Base):
 
 class UserReview(Base):
     __tablename__ = 'user_reviews'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -226,6 +253,9 @@ class UserReview(Base):
 
 class UserReviewTag(Base):
     __tablename__ = 'user_review_tags'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

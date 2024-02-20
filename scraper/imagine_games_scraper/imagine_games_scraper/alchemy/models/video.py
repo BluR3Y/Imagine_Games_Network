@@ -8,6 +8,9 @@ from sqlalchemy.orm import relationship
 class Video(Base):
     __tablename__ = 'videos'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -31,6 +34,9 @@ class Video(Base):
 class VideoMetadata(Base):
     __tablename__ = 'video_metadatas'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -46,14 +52,17 @@ class VideoMetadata(Base):
 class VideoAsset(Base):
     __tablename__ = 'video_assets'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
         default=uuid.uuid4
     )
-    metadata_id = Column(
+    video_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("video_metadatas.id"),
+        ForeignKey("videos.id"),
         nullable=False
     )
     url = Column(String)
@@ -61,10 +70,13 @@ class VideoAsset(Base):
     height = Column(Integer)
     fps = Column(Integer)
 
-    video_metadata = relationship("VideoMetadata", foreign_keys=[metadata_id])
+    video = relationship("Video", foreign_keys=[video_id])
 
 class VideoCaption(Base):
     __tablename__ = 'video_captions'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

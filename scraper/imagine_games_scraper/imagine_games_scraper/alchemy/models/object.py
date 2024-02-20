@@ -34,6 +34,9 @@ class DescriptionEntry(TypeDecorator):
 class Object(Base):
     __tablename__ = 'objects'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -76,6 +79,9 @@ class Object(Base):
 class ObjectAttributeConnection(Base):
     __tablename__ = 'object_attribute_connections'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -98,6 +104,9 @@ class ObjectAttributeConnection(Base):
 class HowLongToBeat(Base):
     __tablename__ = 'how_long_to_beat'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -114,6 +123,9 @@ class HowLongToBeat(Base):
 class AgeRating(Base):
     __tablename__ = 'age_ratings'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -128,6 +140,9 @@ class AgeRating(Base):
 
 class Region(Base):
     __tablename__ = 'regions'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -150,6 +165,9 @@ class Region(Base):
 class Release(Base):
     __tablename__ = 'releases'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -162,6 +180,9 @@ class Release(Base):
 
 class ReleasePlatformAttribute(Base):
     __tablename__ = 'release_platform_attributes'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

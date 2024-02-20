@@ -10,6 +10,9 @@ from sqlalchemy.types import TypeDecorator, VARCHAR, UserDefinedType
 class WikiObject(Base):
     __tablename__ = 'wiki_objects'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -20,6 +23,9 @@ class WikiObject(Base):
 
 class WikiNavigation(Base):
     __tablename__ = 'wiki_navigations'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),
@@ -39,6 +45,9 @@ class WikiNavigation(Base):
 class MapObject(Base):
     __tablename__ = 'map_objects'
 
+    def __init__(self):
+        self.id = uuid.uuid4()
+
     id = Column(
         UUID(as_uuid=True),
         primary_key=True,
@@ -55,6 +64,9 @@ class MapObject(Base):
 
 class Map(Base):
     __tablename__ = 'maps'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
 
     id = Column(
         UUID(as_uuid=True),

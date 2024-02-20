@@ -24,6 +24,13 @@ POSTGRES_DATABASE = environment_variables.get("POSTGRES_DATABASE")
 POSTGRES_ACCESS_USER = environment_variables.get("POSTGRES_ACCESS_USER")
 POSTGRES_ACCESS_PASSWORD = environment_variables.get("POSTGRES_ACCESS_PASSWORD")
 
+# AWS Credentials
+AWS_ACCESS_KEY = environment_variables.get("AWS_ACCESS_KEY")
+AWS_SECRET_KEY = environment_variables.get("AWS_SECRET_KEY")
+AWS_BUCKET = environment_variables.get("AWS_BUCKET")
+AWS_REGION = environment_variables.get("AWS_REGION")
+AWS_ENDPOINT = environment_variables.get("AWS_ENDPOINT")
+
 # Scrapy settings for imagine_games_scraper project
 #
 # For simplicity, this file contains only settings considered important or
