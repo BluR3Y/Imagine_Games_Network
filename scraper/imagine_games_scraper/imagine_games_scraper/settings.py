@@ -2,7 +2,7 @@ import os
 from dotenv import dotenv_values
 
 env = os.environ.get("PYTHON_ENV")
-environment_variables = os.environ if env == "production" else dotenv_values("../../env/scraper/.env.development")
+environment_variables = os.environ if env == "production" else dotenv_values("../../../env/scraper/.env.development")
 
 # ScrapeOps Credentials (Fake Browser Header API)
 SCRAPEOPS_API_KEY = environment_variables.get("SCRAPEOPS_API_KEY")

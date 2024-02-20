@@ -1,5 +1,5 @@
 import uuid
-from config import Base
+from imagine_games_scraper.alchemy.config import Base
 
 from sqlalchemy import Column, String, ForeignKey, Integer, NUMERIC, BOOLEAN
 from sqlalchemy.dialects.postgresql import UUID

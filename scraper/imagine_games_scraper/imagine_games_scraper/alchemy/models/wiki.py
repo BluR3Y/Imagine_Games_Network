@@ -1,6 +1,6 @@
 import json
 import uuid
-from config import Base
+from imagine_games_scraper.alchemy.config import Base
 
 from sqlalchemy import Column, String, ForeignKey, Enum, Integer, ARRAY, JSON, TIMESTAMP, DECIMAL
 from sqlalchemy.dialects.postgresql import UUID

@@ -1,4 +1,4 @@
-from config import create_session, Base
+from imagine_games_scraper.alchemy.config import create_session, Base
 from models.user import User, UserConfiguration, Author
 from models.misc import Image
 
