@@ -34,7 +34,7 @@ class WikiNavigation(Base):
     label = Column(String)
     url = Column(String)
 
-    wiki_object = relationship("WikiObject")
+    wiki_object = relationship("WikiObject", foreign_keys=[wiki_object_id])
 
 class MapObject(Base):
     __tablename__ = 'map_objects'
@@ -51,7 +51,7 @@ class MapObject(Base):
         nullable=True
     )
 
-    wiki_object = relationship("WikiObject")
+    wiki_object = relationship("WikiObject", foreign_keys=[wiki_object_id])
 
 class Map(Base):
     __tablename__ = 'maps'
@@ -86,5 +86,5 @@ class Map(Base):
     tile_sets = Column(ARRAY(String))
     background_color = Column(String)
 
-    map_object = relationship("MapObject")
-    cover = relationship("Image")
+    map_object = relationship("MapObject", foreign_keys=[map_object_id])
+    cover = relationship("Image", foreign_keys=[cover_id])

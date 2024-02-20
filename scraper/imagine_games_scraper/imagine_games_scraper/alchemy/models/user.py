@@ -25,7 +25,7 @@ class User(Base):
     name = Column(String)
     nickname = Column(String)
 
-    avatar = relationship("Image") # Define the relationship
+    avatar = relationship("Image", foreign_keys=[avatar_id]) # Define the relationship
     
 class SocialMediaType(UserDefinedType):
     cache_ok = True
@@ -62,8 +62,8 @@ class Author(Base):
     location = Column(String)
     socials = Column(ARRAY(SocialMediaEntry), default=[])
 
-    user = relationship("User")
-    cover = relationship("Image")
+    user = relationship("User", foreign_keys=[user_id])
+    cover = relationship("Image", foreign_keys=[cover_id])
 
 class UserConfiguration(Base):
     __tablename__ = 'user_configurations'
@@ -82,4 +82,4 @@ class UserConfiguration(Base):
         nullable=False # Field can't be null
     )
 
-    user = relationship("User")
+    user = relationship("User", foreign_keys=[user_id])

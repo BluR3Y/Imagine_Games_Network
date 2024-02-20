@@ -45,6 +45,6 @@ class Article(Base):
         ForeignKey("official_reviews.id")
     )
 
-    content = relationship("Content")
-    article = relationship("Article")
-    review = relationship("OfficialReview")
+    content = relationship("Content", foreign_keys=[content_id])
+    article_content = relationship("ArticleContent", foreign_keys=[article_content_id])
+    review = relationship("OfficialReview", foreign_keys=[review_id])

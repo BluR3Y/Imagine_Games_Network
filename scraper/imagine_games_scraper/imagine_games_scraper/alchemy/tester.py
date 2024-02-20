@@ -1,5 +1,5 @@
-from config import create_session
-from models.user import User, UserConfiguration, Author, SocialMediaEntry
+from config import create_session, Base
+from models.user import User, UserConfiguration, Author
 from models.misc import Image
 
 session = create_session()
@@ -12,10 +12,10 @@ new_user = User(
 session.add(new_user)
 session.commit()
 
-user_configuration = UserConfiguration(
-    user_id = new_user.id,
-    privacy = 'private'
-)
+user_configuration = UserConfiguration()
+user_configuration.user_id = new_user.id
+user_configuration.privacy = 'public'
+
 session.add(user_configuration)
 session.commit()
 

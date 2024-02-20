@@ -65,8 +65,8 @@ class ImageConnection(Base):
         nullable=False
     )
 
-    image = relationship("Image")
-    gallery = relationship("Gallery")
+    image = relationship("Image", foreign_keys=[image_id])
+    gallery = relationship("Gallery", foreign_keys=[gallery_id])
 
 class Attribute(Base):
     __tablename__ = 'attributes'
@@ -104,7 +104,7 @@ class TypedAttribute(Base):
         nullable=False
     )
 
-    attribute = relationship("Attribute")
+    attribute = relationship("Attribute", foreign_keys=[attribute_id])
 
 class PollConfiguration(Base):
     __tablename__ = 'poll_configurations'
@@ -143,9 +143,9 @@ class Poll(Base):
     )
     voters = Column(Integer)
 
-    content = relationship("Content")
-    configuration = relationship("PollConfiguration")
-    image = relationship("Image")
+    content = relationship("Content", foreign_keys=[content_id])
+    configuration = relationship("PollConfiguration", foreign_keys=[configuration_id])
+    image = relationship("Image", foreign_keys=[image_id])
 
 class PollAnswer(Base):
     __tablename__ = 'poll_answer'
@@ -164,7 +164,7 @@ class PollAnswer(Base):
     answer = Column(String)
     votes = Column(Integer)
 
-    poll = relationship("Poll")
+    poll = relationship("Poll", foreign_keys=[poll_id])
 
 class Catalog(Base):
     __tablename__ = 'catalogs'
@@ -180,7 +180,7 @@ class Catalog(Base):
         nullable=False
     )
 
-    content = relationship("Content")
+    content = relationship("Content", foreign_keys=[content_id])
 
 class CommerceDeal(Base):
     __tablename__ = 'commerce_deals'
@@ -210,7 +210,7 @@ class CommerceDeal(Base):
         ForeignKey("images.id")
     )
 
-    cover = relationship("Image")
+    cover = relationship("Image", foreign_keys=[cover_id])
 
 class DealConnection(Base):
     __tablename__ = 'deal_connections'
@@ -231,5 +231,5 @@ class DealConnection(Base):
         nullable=False
     )
 
-    deal = relationship("CommerceDeal")
-    catalog = relationship("Catalog")
+    deal = relationship("CommerceDeal", foreign_keys=[deal_id])
+    catalog = relationship("Catalog", foreign_keys=[catalog_id])

@@ -1,11 +1,9 @@
-import json
 import uuid
 from config import Base
 
-from sqlalchemy import Column, String, ForeignKey, Enum, Integer, ARRAY, JSON, TIMESTAMP, NUMERIC, BOOLEAN
+from sqlalchemy import Column, String, ForeignKey, Integer, NUMERIC, BOOLEAN
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-from sqlalchemy.types import TypeDecorator, VARCHAR, UserDefinedType
 
 class Video(Base):
     __tablename__ = 'videos'
@@ -27,8 +25,8 @@ class Video(Base):
         nullable=False
     )
 
-    content = relationship("Content")
-    metadata = relationship("VideoMetadata")
+    content = relationship("Content", foreign_keys=[content_id])
+    video_metadata = relationship("VideoMetadata", foreign_keys=[metadata_id])
 
 class VideoMetadata(Base):
     __tablename__ = 'video_metadatas'
@@ -63,7 +61,7 @@ class VideoAsset(Base):
     height = Column(Integer)
     fps = Column(Integer)
 
-    metadata = relationship("VideoMetadata")
+    video_metadata = relationship("VideoMetadata", foreign_keys=[metadata_id])
 
 class VideoCaption(Base):
     __tablename__ = 'video_captions'
@@ -81,4 +79,4 @@ class VideoCaption(Base):
     language = Column(String)
     text = Column(String)
 
-    metadata = relationship("VideoMetadata")
+    video_metadata = relationship("VideoMetadata", foreign_keys=[metadata_id])

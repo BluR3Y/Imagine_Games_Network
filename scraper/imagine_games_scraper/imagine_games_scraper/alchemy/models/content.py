@@ -5,7 +5,6 @@ from config import Base
 from sqlalchemy import Column, String, ForeignKey, Enum, Integer, ARRAY, JSON, TIMESTAMP, DECIMAL, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-from sqlalchemy.types import TypeDecorator, VARCHAR, UserDefinedType
 
 class Content(Base):
     __tablename__ = 'contents'
@@ -51,11 +50,11 @@ class Content(Base):
         ForeignKey("content_categories.id")
     )
 
-    cover = relationship("Image")
-    feed_cover = relationship("Image")
-    primary_object = relationship("Object")
-    brand = relationship("Brand")
-    category = relationship("ContentCategory")
+    cover = relationship("Image", foreign_keys=[cover_id])
+    feed_cover = relationship("Image", foreign_keys=[feed_cover_id])
+    primary_object = relationship("Object", foreign_keys=[primary_object_id])
+    brand = relationship("Brand", foreign_keys=[brand_id])
+    category = relationship("ContentCategory", foreign_keys=[category_id])
 
 class Brand(Base):
     __tablename__ = 'brands'
@@ -102,8 +101,8 @@ class ObjectConnection(Base):
         nullable=False
     )
 
-    content = relationship("Content")
-    object = relationship("Object")
+    content = relationship("Content", foreign_keys=[content_id])
+    object = relationship("Object", foreign_keys=[object_id])
 
 class Contributor(Base):
     __tablename__ = 'contributors'
@@ -124,8 +123,8 @@ class Contributor(Base):
         nullable=False
     )
 
-    content = relationship("Content")
-    user = relationship("User")
+    content = relationship("Content", foreign_keys=[content_id])
+    user = relationship("User", foreign_keys=[user_id])
 
 class ContentAttributeConnection(Base):
     __tablename__ = 'content_attribute_connections'
@@ -146,8 +145,8 @@ class ContentAttributeConnection(Base):
         nullable=False
     )
 
-    content = relationship("Content")
-    attribute = relationship("Attribute")
+    content = relationship("Content", foreign_keys=[content_id])
+    attribute = relationship("TypedAttribute", foreign_keys=[attribute_id])
 
 class Slideshow(Base):
     __tablename__ = 'slideshows'
@@ -168,8 +167,8 @@ class Slideshow(Base):
         nullable=False
     )
 
-    content = relationship("Content")
-    gallery = relationship("Gallery")
+    content = relationship("Content", foreign_keys=[content_id])
+    gallery = relationship("Gallery", foreign_keys=[gallery_id])
 
 class OfficialReview(Base):
     __tablename__ = 'official_reviews'
@@ -199,7 +198,7 @@ class UserReview(Base):
     legacy_id = Column(UUID(as_uuid=True))
     user_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("users.id")
+        ForeignKey("users.id"),
         nullable=False
     )
     legacy_user_id = Column(UUID(as_uuid=True))
@@ -221,9 +220,9 @@ class UserReview(Base):
         ForeignKey("attributes.id")
     )
 
-    user = relationship("User")
-    object = relationship("User")
-    platform = relationship("Attribute")
+    user = relationship("User", foreign_keys=[user_id])
+    object = relationship("Object", foreign_keys=[object_id])
+    platform = relationship("Attribute", foreign_keys=[platform_id])
 
 class UserReviewTag(Base):
     __tablename__ = 'user_review_tags'
@@ -242,4 +241,4 @@ class UserReviewTag(Base):
     name = Column(String)
     is_positive = Column(Boolean)
 
-    review = relationship("UserReview")
+    review = relationship("UserReview", foreign_keys=[review_id])

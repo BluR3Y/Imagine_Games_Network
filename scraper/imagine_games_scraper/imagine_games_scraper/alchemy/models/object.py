@@ -69,9 +69,9 @@ class Object(Base):
     names = Column(NameEntry)
     descriptions = Column(DescriptionEntry)
 
-    how_long_to_beat = relationship("HowLongToBeat")
-    cover = relationship("Image")
-    gallery = relationship("Gallery")
+    how_long_to_beat = relationship("HowLongToBeat", foreign_keys=[how_long_to_beat_id])
+    cover = relationship("Image", foreign_keys=[cover_id])
+    gallery = relationship("Gallery", foreign_keys=[gallery_id])
 
 class ObjectAttributeConnection(Base):
     __tablename__ = 'object_attribute_connections'
@@ -92,8 +92,8 @@ class ObjectAttributeConnection(Base):
         nullable=False
     )
 
-    object = relationship("Object")
-    attribute = relationship("TypedAttribute")
+    object = relationship("Object", foreign_keys=[object_id])
+    attribute = relationship("TypedAttribute", foreign_keys=[attribute_id])
 
 class HowLongToBeat(Base):
     __tablename__ = 'how_long_to_beat'
@@ -145,7 +145,7 @@ class Region(Base):
         nullable=True
     )
 
-    age_rating = relationship("AgeRating")
+    age_rating = relationship("AgeRating", foreign_keys=[age_rating_id])
 
 class Release(Base):
     __tablename__ = 'releases'
@@ -179,5 +179,5 @@ class ReleasePlatformAttribute(Base):
         nullable=False
     )
 
-    release = relationship("Release")
-    attribute = relationship("Attribute")
+    release = relationship("Release", foreign_keys=[release_id])
+    attribute = relationship("Attribute", foreign_keys=[attribute_id])
