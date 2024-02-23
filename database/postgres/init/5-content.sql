@@ -23,25 +23,25 @@ CREATE TABLE contents (
     slug VARCHAR(64),
     type VARCHAR(16),
     vertical VARCHAR(16),
-    cover UUID,
+    header_image_id UUID,
     title TEXT,
     subtitle TEXT,
     feed_title TEXT,
-    feed_cover UUID,
-    primary_object UUID NOT NULL,
+    feed_image_id UUID,
+    primary_object_id UUID NOT NULL,
     excerpt TEXT,
     description TEXT,
     state VARCHAR(16),
     publish_date TIMESTAMP,
     modify_date TIMESTAMP,
     events VARCHAR(32)[],
-    brand UUID,
+    brand_id UUID,
     category_id UUID,
 
-    FOREIGN KEY (cover) REFERENCES images (id),
-    FOREIGN KEY (feed_cover) REFERENCES images (id),
-    FOREIGN KEY (primary_object) REFERENCES objects (id),
-    FOREIGN KEY (brand) REFERENCES brands (id),
+    FOREIGN KEY (header_image_id) REFERENCES images (id),
+    FOREIGN KEY (feed_image_id) REFERENCES images (id),
+    FOREIGN KEY (primary_object_id) REFERENCES objects (id),
+    FOREIGN KEY (brand_id) REFERENCES brands (id),
     FOREIGN KEY (category_id) REFERENCES content_categories (id)
 );
 
@@ -54,39 +54,34 @@ CREATE TABLE object_connections (
     FOREIGN KEY (object_id) REFERENCES objects (id)
 );
 
-CREATE TABLE contributor_connections (
+-- Author connections to content
+CREATE TABLE contributors (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     content_id UUID NOT NULL,
-    contributor_id UUID NOT NULL,
+    user_id UUID NOT NULL,
 
     FOREIGN KEY (content_id) REFERENCES contents (id),
-    FOREIGN KEY (contributor_id) REFERENCES users (id)
+    FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
--- Attribute Item
-CREATE TABLE attributes (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name VARCHAR(64),
-    short_name VARCHAR(32),
-    slug VARCHAR(32)
-);
-
--- Typed Attribute
-CREATE TABLE typed_attributes (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    type VARCHAR(16) NOT NULL,
-    attribute_id UUID NOT NULL,
-    
-    FOREIGN KEY (attribute_id) REFERENCES attributes (id)
-);
-
-CREATE TABLE attribute_connections (
+-- Attribute Connection
+CREATE TABLE content_attribute_connections (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     content_id UUID NOT NULL,
     attribute_id UUID NOT NULL,
 
     FOREIGN KEY (content_id) REFERENCES contents (id),
     FOREIGN KEY (attribute_id) REFERENCES typed_attributes (id)
+);
+
+-- Slideshow
+CREATE TABLE slideshows (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    content_id UUID NOT NULL,
+    gallery_id UUID NOT NULL,
+
+    FOREIGN KEY (content_id) REFERENCES contents(id),
+    FOREIGN KEY (gallery_id) REFERENCES galleries(id)
 );
 
 -- Official Review

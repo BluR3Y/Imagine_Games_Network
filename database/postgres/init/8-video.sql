@@ -5,8 +5,8 @@ CREATE TABLE video_metadatas (
     chat_enabled BOOLEAN,
     description_html TEXT,
     downloadable BOOLEAN,
-    duration INT,
-    m3u_url VARCHAR(256)
+    duration NUMERIC(10, 2),
+    m3u_url VARCHAR(512)
 );
 
 -- Video
@@ -23,13 +23,13 @@ CREATE TABLE videos (
 -- Video Asset
 CREATE TABLE video_assets (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    metadata_id UUID NOT NULL,
-    url VARCHAR(256),
+    video_id UUID NOT NULL,
+    url VARCHAR(1024),
     width INT,
     height INT,
     fps INT,
 
-    FOREIGN KEY (metadata_id) REFERENCES video_metadatas (id)
+    FOREIGN KEY (video_id) REFERENCES videos (id)
 );
 
 -- Video Caption
