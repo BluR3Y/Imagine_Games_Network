@@ -1,6 +1,7 @@
 -- How Long To Beat
 CREATE TABLE how_long_to_beat (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    legacy_id UUID,
     legacy_ign_object_id UUID,
     steam_id INT,
     itch_id VARCHAR(8),
@@ -62,18 +63,38 @@ CREATE TABLE age_ratings (
     name VARCHAR(64),
     slug VARCHAR(64)
 );
--- rating descriptors/interactive elements need to include Age_Rating id as foreign key
--- rating descriptors/interactive elements will be Typed_Attribute entries
 
 -- Region Object
 CREATE TABLE regions (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
+    object_id UUID NOT NULL,
     name VARCHAR(64),
     region VARCHAR(32),
     age_rating_id UUID,
 
+    FOREIGN KEY (object_id) REFERENCES objects (id),
     FOREIGN KEY (age_rating_id) REFERENCES age_ratings (id)
+);
+
+-- Age Rating Descriptors
+CREATE TABLE age_rating_descriptors (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    region_id UUID NOT NULL,
+    attribute_id UUID NOT NULL,
+
+    FOREIGN KEY (region_id) REFERENCES regions (id),
+    FOREIGN KEY (attribute_id) REFERENCES attributes (id)
+);
+
+-- Age Rating Interactive Elements
+CREATE TABLE age_rating_interactive_elements (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    region_id UUID NOT NULL,
+    attribute_id UUID NOT NULL,
+
+    FOREIGN KEY (region_id) REFERENCES regions (id),
+    FOREIGN KEY (attribute_id) REFERENCES attributes (id)
 );
 
 -- Region Release

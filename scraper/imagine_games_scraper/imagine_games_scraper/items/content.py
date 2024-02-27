@@ -23,6 +23,8 @@ class Content(scrapy.Item):
     brand_id = scrapy.Field()
     category_id = scrapy.Field()
 
+    __tablename__ = "contents"
+
     def __init__(self, *args, **kwargs):
         super(Content, self).__init__(*args, **kwargs)
 
@@ -36,6 +38,8 @@ class Brand(scrapy.Item):
     logo_light = scrapy.Field()
     logo_dark = scrapy.Field()
 
+    __tablename__ = "brands"
+
     def __init__(self, *args, **kwargs):
         super(Brand, self).__init__(*args, **kwargs)
 
@@ -45,6 +49,8 @@ class ContentCategory(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
+
+    __tablename__ = "content_categories"
 
     def __init__(self, *args, **kwargs):
         super(ContentCategory, self).__init__(*args, **kwargs)
@@ -56,6 +62,8 @@ class ObjectConnection(scrapy.Item):
     content_id = scrapy.Field()
     object_id = scrapy.Field()
 
+    __tablename__ = "object_connections"
+
     def __init__(self, *args, **kwargs):
         super(ObjectConnection, self).__init__(*args, **kwargs)
 
@@ -65,6 +73,8 @@ class Contributor(scrapy.Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     user_id = scrapy.Field()
+
+    __tablename__ = "contributors"
 
     def __init__(self, *args, **kwargs):
         super(Contributor, self).__init__(*args, **kwargs)
@@ -76,6 +86,8 @@ class ContentAttributeConnection(scrapy.Item):
     content_id = scrapy.Field()
     attribute_id = scrapy.Field()
 
+    __tablename__ = "content_attribute_connections"
+    # Last Here * Adding tablename to items
     def __init__(self, *args, **kwargs):
         super(ContentAttributeConnection, self).__init__(*args, **kwargs)
 
@@ -118,14 +130,23 @@ class UserReview(scrapy.Item):
 
         self['id'] = str(uuid4())
 
-class UserReviewTag(scrapy.Item):
+class TagObject(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
-    review_id = scrapy.Field()
     name = scrapy.Field()
-    is_positive = scrapy.Field()
 
     def __init__(self, *args, **kwargs):
-        super(UserReviewTag, self).__init__(*args, **kwargs)
+        super(TagObject, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class ReviewTag(scrapy.Item):
+    id = scrapy.Field()
+    review_id = scrapy.Field()
+    is_positive = scrapy.Field()
+    tag_object_id = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(ReviewTag, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())

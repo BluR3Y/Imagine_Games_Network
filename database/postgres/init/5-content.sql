@@ -119,10 +119,20 @@ CREATE TABLE user_reviews (
     FOREIGN KEY (platform_id) REFERENCES attributes (id)
 );
 
--- User Review Tag
-CREATE TABLE user_review_tags (
+-- Tag Object
+CREATE TABLE tag_objects (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
-    name VARCHAR(128),
-    is_positive BOOLEAN
+    name VARCHAR(128) NOT NULL
+);
+
+-- Review Tag
+CREATE TABLE review_tags (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    review_id UUID NOT NULL,
+    tag_object_id UUID NOT NULL,
+    is_positive BOOLEAN,
+
+    FOREIGN KEY (review_id) REFERENCES user_reviews (id),
+    FOREIGN KEY (tag_object_id) REFERENCES tag_objects (id)
 );

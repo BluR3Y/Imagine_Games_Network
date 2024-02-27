@@ -3,6 +3,7 @@ from uuid import uuid4
 
 class Attribute(scrapy.Item):
     id = scrapy.Field()
+    legacy_id = scrapy.Field()
     name = scrapy.Field()
     short_name = scrapy.Field()
     slug = scrapy.Field()
@@ -14,6 +15,7 @@ class Attribute(scrapy.Item):
 
 class TypedAttribute(scrapy.Item):
     id = scrapy.Field()
+    legacy_id = scrapy.Field()
     type = scrapy.Field()
     attribute_id = scrapy.Field()
 

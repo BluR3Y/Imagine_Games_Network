@@ -1,5 +1,6 @@
 import psycopg2
 import redis
+import json
 
 from urllib import parse
 from sqlalchemy import create_engine
@@ -10,7 +11,7 @@ from .alchemy.models.video import Video
 
 class ImagineGamesScraperPipeline:
     def process_item(self, item, spider):
-        print(item)
+        print(dict(item))
         return item
 
 # Pipeline that stores data temporarily in memory
@@ -33,7 +34,7 @@ class RedisStore:
         except:
             print('Error occured while attempting to connect to redis database.')
     def process_item(self, item, spider):
-        print(self.redis_connection.get('name'))
+        pass
 
 # Pipeline that stores data in postgres database
 class PostgresStore:
@@ -64,3 +65,8 @@ class PostgresStore:
     def process_item(self, item, spider):
         existing_item = self.alchemy_connection.query(Video).filter_by(content_id="53399408-02f8-467e-bc4a-bb79aa610055").first()
         print("existing_item: ", existing_item)
+
+# Recommended library: rq
+# * Items that don't have references should be pushed immediately to database
+# * Items that do have references should be delayed in appending to database until all items they are referencing are added to the database. If referencing items aren't in database by the time the referer is checked, referer will get added to redis-queue.
+# * Items in redis-queue will periodically be checked if they are qualified for insertion to database. If they are found to be qualified, they will be added to database and the queue job is done, else, the item will be reinserted to the queue for later verification.

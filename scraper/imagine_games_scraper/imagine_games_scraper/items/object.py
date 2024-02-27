@@ -31,6 +31,7 @@ class ObjectAttributeConnection(scrapy.Item):
 
 class HowLongToBeat(scrapy.Item):
     id = scrapy.Field()
+    legacy_id = scrapy.Field()
     legacy_ign_object_id = scrapy.Field()
     steam_id = scrapy.Field()
     itch_id = scrapy.Field()
@@ -62,9 +63,30 @@ class Region(scrapy.Item):
     name = scrapy.Field()
     region = scrapy.Field()
     age_rating_id = scrapy.Field()
+    object_id = scrapy.Field()
 
     def __init__(self, *args, **kwargs):
         super(Region, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class AgeRatingDescriptor(scrapy.Item):
+    id = scrapy.Field()
+    region_id = scrapy.Field()
+    attribute_id = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(AgeRatingDescriptor, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class AgeRatingInteractiveElement(scrapy.Item):
+    id = scrapy.Field()
+    region_id = scrapy.Field()
+    attribute_id = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(AgeRatingInteractiveElement, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
 
@@ -76,7 +98,7 @@ class Release(scrapy.Item):
     time_frame_year = scrapy.Field()
 
     def __init__(self, *args, **kwargs):
-        super(AgeRating, self).__init__(*args, **kwargs)
+        super(Release, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
 
