@@ -1,187 +1,73 @@
 import psycopg2
+import redis
+import json
 
-from imagine_games_scraper.items import article as Article
-from imagine_games_scraper.items import video as Video
-from imagine_games_scraper.items import user as User
-from imagine_games_scraper.items import object as Object
-from imagine_games_scraper.items import misc as Misc
-from imagine_games_scraper.items import content as Content
-from imagine_games_scraper.items import wiki as Wiki
+from urllib import parse
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
-from imagine_games_scraper.postgres import store_articles as ArticleStore
-from imagine_games_scraper.postgres import store_content as ContentStore
-from imagine_games_scraper.postgres import store_misc as MiscStore
-from imagine_games_scraper.postgres import store_objects as ObjectStore
-from imagine_games_scraper.postgres import store_users as UserStore
-from imagine_games_scraper.postgres import store_videos as VideoStore
-from imagine_games_scraper.postgres import store_wiki as WikiStore
-
-# useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
-
+# from imagine_games_scraper.alchemy.models.video import Video
+from .alchemy.models.video import Video
 
 class ImagineGamesScraperPipeline:
     def process_item(self, item, spider):
-        print('marker')
-        print(type(item))
+        print(dict(item))
         return item
 
+# Pipeline that stores data temporarily in memory
+# Used to delay storage of data in database until all aspects of data has been gathered
+class RedisStore:
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler.settings)
+    
+    def __init__(self, settings):
+        # Establish a connection to the redis database
+        self.redis_connection = redis.Redis(
+            host=settings.get('REDIS_HOST'),
+            port=settings.get('REDIS_PORT'),
+            password=settings.get('REDIS_ACCESS_PASSWORD'),
+            db=0
+        )
+        try:
+            print('Connection to redis database established successfully.')
+        except:
+            print('Error occured while attempting to connect to redis database.')
+    def process_item(self, item, spider):
+        pass
+
+# Pipeline that stores data in postgres database
 class PostgresStore:
     # Method used to retrieve settings from Scrapy project settings
     @classmethod
     def from_crawler(cls, crawler):
         return cls(crawler.settings)
-
+    
     def __init__(self, settings):
         # Establish a connection to the Postgres database
-        self.conn = psycopg2.connect(
-            database = settings.get('POSTGRES_DATABASE'),
-            user = settings.get('POSTGRES_ACCESS_USER'),
-            password = settings.get('POSTGRES_ACCESS_PASSWORD'),
-            host = settings.get('POSTGRES_HOST'),
-            port = settings.get('POSTGRES_PORT')
+        engine = create_engine(
+            url="postgresql+psycopg2://{0}:{1}@{2}:{3}/{4}".format(
+                settings.get('POSTGRES_ACCESS_USER'),
+                parse.quote(settings.get('POSTGRES_ACCESS_PASSWORD')),
+                settings.get('POSTGRES_HOST'),
+                settings.get('POSTGRES_PORT'),
+                settings.get('POSTGRES_DATABASE')
+            )
         )
+        self.sessionmaker = sessionmaker(bind=engine)
 
     def open_spider(self, spider):
-        # Create cursor, used to execute commands
-        self.cur = self.conn.cursor()
-
+        self.alchemy_connection = self.sessionmaker()
+    
     def close_spider(self, spider):
-        # Close cursor & connection to database when the spider is closed
-        self.cur.close()
-        self.conn.close()
+        self.alchemy_connection.close()
 
     def process_item(self, item, spider):
-        if isinstance(item, Article.Article):
-            self.store_article(item)
-        elif isinstance(item, Article.ArticleContent):
-            self.store_article_content(item)
+        existing_item = self.alchemy_connection.query(Video).filter_by(content_id="53399408-02f8-467e-bc4a-bb79aa610055").first()
+        print("existing_item: ", existing_item)
 
-        elif isinstance(item, Video.Video):
-            self.store_video(item)
-        elif isinstance(item, Video.VideoMetadata):
-            self.store_video_metadata(item)
-        elif isinstance(item, Video.VideoAsset):
-            self.store_video_asset(item)
-            
-        elif isinstance(item, User.User):
-            self.store_user(item)
-        elif isinstance(item, User.Author):
-            self.store_author(item)
-        elif isinstance(item, User.OfficialReview):
-            self.store_official_review(item)
-        elif isinstance(item, User.UserReview):
-            self.store_user_review(item)
-        elif isinstance(item, User.UserReviewTag):
-            self.store_user_review_tag(item)
-        elif isinstance(item, User.UserConfiguration):
-            self.store_user_configuration(item)
-
-        elif isinstance(item, Object.Object):
-            self.store_object(item)
-        elif isinstance(item, Object.ObjectAttributeConnection):
-            self.store_object_attribute_connection(item)
-        elif isinstance(item, Object.ObjectConnection):
-            self.store_object_connection(item)
-        elif isinstance(item, Object.Region):
-            self.store_object_region(item)
-        elif isinstance(item, Object.Release):
-            self.store_region_release(item)
-        elif isinstance(item, Object.Rating):
-            self.store_region_rating(item)
-        elif isinstance(item, Object.HowLongToBeat):
-            self.store_how_long_to_beat(item)
-
-        elif isinstance(item, Wiki.ObjectWiki):
-            self.store_object_wiki(item)
-        elif isinstance(item, Wiki.WikiNavigation):
-            self.store_wiki_navigation(item)
-        elif isinstance(item, Wiki.MapObject):
-            self.store_map_object(item)
-        elif isinstance(item, Wiki.Map):
-            self.store_map_item(item)
-
-        elif isinstance(item, Content.Content):
-            self.store_content(item)
-        elif isinstance(item, Content.Contributor):
-            self.store_contributor(item)
-        elif isinstance(item, Content.ContentCategory):
-            self.store_content_category(item)
-        elif isinstance(item, Content.ContentAttributeConnection):
-            self.store_content_attribute_connection(item)
-        elif isinstance(item, Content.Brand):
-            self.store_brand(item)
-
-        elif isinstance(item, Misc.Image):
-            self.store_image(item)
-        elif isinstance(item, Misc.Gallery):
-            self.store_gallery(item)
-        elif isinstance(item, Misc.Slideshow):
-            self.store_slideshow(item)
-        elif isinstance(item, Misc.ImageConnection):
-            self.store_image_connection(item)
-        elif isinstance(item, Misc.Catalog):
-            self.store_catalog(item)
-        elif isinstance(item, Misc.DealConnection):
-            self.store_deal_connection(item)
-        elif isinstance(item, Misc.CommerceDeal):
-            self.store_commerce_deal(item)
-        elif isinstance(item, Misc.Poll):
-            self.store_poll(item)
-        elif isinstance(item, Misc.PollAnswer):
-            self.store_poll_answer(item)
-        elif isinstance(item, Misc.PollConfiguration):
-            self.store_poll_configuration(item)
-        elif isinstance(item, Misc.TypedAttribute):
-            self.store_typed_attribute(item)
-        elif isinstance(item, Misc.Attribute):
-            self.store_attribute(item)
-
-        return item
-
-PostgresStore.store_article = ArticleStore.store_article
-PostgresStore.store_article_content = ArticleStore.store_article_content
-
-PostgresStore.store_video = VideoStore.store_vide
-PostgresStore.store_video_metadata = VideoStore.store_video_metadata
-PostgresStore.store_video_asset = VideoStore.store_video_asset
-# PostgresStore.store_video_caption = VideoStore.store_video_caption
-
-PostgresStore.store_user = UserStore.store_user
-PostgresStore.store_author = UserStore.store_author
-PostgresStore.store_official_review = UserStore.store_official_review
-PostgresStore.store_user_review = UserStore.store_user_review
-PostgresStore.store_user_review_tag = UserStore.store_user_review_tag
-PostgresStore.store_user_configuration = UserStore.store_user_configuration
-
-PostgresStore.store_object = ObjectStore.store_object
-PostgresStore.store_object_attribute_connection = ObjectStore.store_object_attribute_connection
-PostgresStore.store_object_connection = ObjectStore.store_object_connection
-PostgresStore.store_object_region = ObjectStore.store_object_region
-PostgresStore.store_region_release = ObjectStore.store_region_release
-PostgresStore.store_region_rating = ObjectStore.store_region_rating
-PostgresStore.store_how_long_to_beat = ObjectStore.store_how_long_to_beat
-
-PostgresStore.store_object_wiki = WikiStore.store_object_wiki
-PostgresStore.store_wiki_navigation = WikiStore.store_wiki_navigation
-PostgresStore.store_map_object = WikiStore.store_map_object
-PostgresStore.store_map_item = WikiStore.store_map_item
-
-PostgresStore.store_content = ContentStore.store_content
-PostgresStore.store_contributor = ContentStore.store_contributor
-PostgresStore.store_content_category = ContentStore.store_content_category
-PostgresStore.store_content_attribute_connection = ContentStore.store_content_attribute_connection
-PostgresStore.store_brand = ContentStore.store_brand
-
-PostgresStore.store_image = MiscStore.store_image
-PostgresStore.store_gallery = MiscStore.store_gallery
-PostgresStore.store_slideshow = MiscStore.store_slideshow
-PostgresStore.store_image_connection = MiscStore.store_image_connection
-PostgresStore.store_catalog = MiscStore.store_catalog
-PostgresStore.store_deal_connection = MiscStore.store_deal_connection
-PostgresStore.store_commerce_deal = MiscStore.store_commerce_deal
-PostgresStore.store_poll = MiscStore.store_poll
-PostgresStore.store_poll_answer = MiscStore.store_poll_answer
-PostgresStore.store_poll_configuration = MiscStore.store_poll_configuration
-PostgresStore.store_typed_attribute = MiscStore.store_typed_attribute
-PostgresStore.store_attribute = MiscStore.store_attribute
+# Recommended library: rq
+# * Items that don't have references should be pushed immediately to database
+# * Items that do have references should be delayed in appending to database until all items they are referencing are added to the database. If referencing items aren't in database by the time the referer is checked, referer will get added to redis-queue.
+# * Items in redis-queue will periodically be checked if they are qualified for insertion to database. If they are found to be qualified, they will be added to database and the queue job is done, else, the item will be reinserted to the queue for later verification.
+        

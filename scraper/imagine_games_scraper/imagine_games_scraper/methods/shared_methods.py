@@ -229,7 +229,7 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
 
             user_review_platform_ref = user_review.get('platformId')
             if user_review_platform_ref:
-                attribute_data = apollo_state["Attribute:" + user_review_platform_ref]
+                attribute_data = apollo_state["Attribute:" + str(user_review_platform_ref)]
                 if attribute_data:
                     attribute_item = Attribute()
                     attribute_item['legacy_id'] = attribute_data.get('id')
