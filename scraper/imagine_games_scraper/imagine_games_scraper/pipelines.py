@@ -22,7 +22,18 @@ class RedisStore:
     
     def __init__(self, settings):
         # Establish a connection to the redis database
-        self.redis_connection = redis.Redis()
+        self.redis_connection = redis.Redis(
+            host=settings.get('REDIS_HOST'),
+            port=settings.get('REDIS_PORT'),
+            password=settings.get('REDIS_ACCESS_PASSWORD'),
+            db=0
+        )
+        try:
+            print('Connection to redis database established successfully.')
+        except:
+            print('Error occured while attempting to connect to redis database.')
+    def process_item(self, item, spider):
+        print(self.redis_connection.get('name'))
 
 # Pipeline that stores data in postgres database
 class PostgresStore:

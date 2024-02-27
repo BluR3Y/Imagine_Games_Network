@@ -24,6 +24,11 @@ POSTGRES_DATABASE = environment_variables.get("POSTGRES_DATABASE")
 POSTGRES_ACCESS_USER = environment_variables.get("POSTGRES_ACCESS_USER")
 POSTGRES_ACCESS_PASSWORD = environment_variables.get("POSTGRES_ACCESS_PASSWORD")
 
+# Redis Database Credentials
+REDIS_HOST = environment_variables.get('REDIS_HOST')
+REDIS_PORT = environment_variables.get('REDIS_PORT')
+REDIS_ACCESS_PASSWORD = environment_variables.get('REDIS_ACCESS_PASSWORD')
+
 # AWS Credentials
 AWS_ACCESS_KEY = environment_variables.get("AWS_ACCESS_KEY")
 AWS_SECRET_KEY = environment_variables.get("AWS_SECRET_KEY")
