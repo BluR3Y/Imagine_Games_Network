@@ -1,0 +1,40 @@
+import scrapy
+from uuid import uuid4
+
+class User(scrapy.Item):
+    id = scrapy.Field()
+    legacy_id = scrapy.Field()
+    avatar_id = scrapy.Field()
+    name = scrapy.Field()
+    nickname = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(User, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class Author(scrapy.Item):
+    id = scrapy.Field()
+    legacy_id = scrapy.Field()
+    user_id = scrapy.Field()
+    url = scrapy.Field()
+    cover_id = scrapy.Field()
+    position = scrapy.Field()
+    bio = scrapy.Field()
+    location = scrapy.Field()
+    socials = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(Author, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())
+
+class UserConfiguration(scrapy.Item):
+    id = scrapy.Field()
+    user_id = scrapy.Field()
+    privacy = scrapy.Field()
+
+    def __init__(self, *args, **kwargs):
+        super(UserConfiguration, self).__init__(*args, **kwargs)
+
+        self['id'] = str(uuid4())

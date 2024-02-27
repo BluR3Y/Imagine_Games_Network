@@ -4,7 +4,7 @@ import re
 from imagine_games_scraper.items.user import User, UserReview, UserReviewTag, Author
 from imagine_games_scraper.items.object import Object, ObjectConnection, Region, Rating, HowLongToBeat, Release 
 from imagine_games_scraper.items.misc import Image, Attribute, TypedAttribute
-# from imagine_games_scraper.items.content import ContentAttributeConnection, Contributor, Content, ContentCategory, Brand
+from imagine_games_scraper.items.content import ContentAttributeConnection, Contributor, Content, ContentCategory, Brand
 from imagine_games_scraper.items.wiki import ObjectWiki
 
 from imagine_games_scraper.alchemy.models.content import Content
@@ -197,34 +197,6 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
             yield image_item
 
     yield object_item
-
-def parse_modern_content(self, page_json_data, modern_content_key, content_item = Content(), recursion_level = 0):
-    apollo_state = page_json_data['props']['apolloState']
-    modern_content_data = apollo_state[modern_content_key]
-
-    content_item['legacy_id'] = modern_content_data.get('id')
-    content_item['url'] = modern_content_data.get('url')
-    content_item['slug'] = modern_content_data.get('slug')
-    content_item['type'] = modern_content_data.get('type')
-    content_item['vertical'] = modern_content_data.get('vertical')
-    content_item['title'] = modern_content_data.get('title')
-    content_item['subtitle'] = modern_content_data.get('subtitle')
-    content_item['feed_title'] = modern_content_data.get('feedTitle')
-    content_item['excerpt'] = modern_content_data.get('excerpt')
-    content_item['description'] = modern_content_data.get('description') # possibly unnecessary
-    content_item['state'] = modern_content_data.get('state')
-    content_item['publish_date'] = modern_content_data.get('publishDate')
-    content_item['modify_date'] = modern_content_data.get('updatedAt')
-    content_item['events'] = modern_content_data.get('events')
-
-    header_image = modern_content_data.get('headerImageUrl')
-    if header_image:
-        pass
-
-    feed_image = modern_content_data.get('feedImage')
-    if feed_image:
-        pass
-    # Last Here
 
 # @classmethod
 # def parse_modern_content(self, page_json_data, modern_content_key, content_item = Content(), recursion_level = 0):

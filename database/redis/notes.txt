@@ -1,0 +1,1 @@
+Link to Redis Configuration Example: https://redis.io/docs/management/config-file/

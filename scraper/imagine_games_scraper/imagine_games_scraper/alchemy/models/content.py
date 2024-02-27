@@ -209,7 +209,7 @@ class OfficialReview(Base):
     score_summary = Column(String)
     article_url = Column(String)
     video_url = Column(String)
-    review_data = Column(TIMESTAMP)
+    review_date = Column(TIMESTAMP)
 
 class UserReview(Base):
     __tablename__ = 'user_reviews'

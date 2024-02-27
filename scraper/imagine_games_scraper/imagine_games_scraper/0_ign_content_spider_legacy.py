@@ -1,12 +1,26 @@
 import scrapy
+from scrapy.utils.project import get_project_settings
 import json
 import re
-import psycopg2
-from scrapy.utils.project import get_project_settings
-from urllib import parse
 
+from urllib import parse
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+from imagine_games_scraper.items.article import Article
+from imagine_games_scraper.items.video import Video
+
+# from imagine_games_scraper.alchemy.models.article import Article
+# from imagine_games_scraper.alchemy.models.content import Content
+# from imagine_games_scraper.alchemy.models.video import Video
+
+from imagine_games_scraper.methods import parse_article_methods
 from imagine_games_scraper.methods import parse_video_methods
+from imagine_games_scraper.methods import parse_slideshow_methods
+from imagine_games_scraper.methods import parse_wiki_methods
 from imagine_games_scraper.methods import shared_methods
+from imagine_games_scraper.methods import media_methods
+
 
 class IgnContentSpiderSpider(scrapy.Spider):
     name = "ign_content_spider"
@@ -31,15 +45,19 @@ class IgnContentSpiderSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super(IgnContentSpiderSpider, self).__init__(*args, **kwargs)
         settings = get_project_settings()
-        # Establish a connection to Postgres Database
-        self.connection = psycopg2.connect(
-            database = settings.get('POSTGRES_DATABASE'),
-            user = settings.get('POSTGRES_ACCESS_USER'),
-            password = settings.get('POSTGRES_ACCESS_PASSWORD'),
-            host = settings.get('POSTGRES_HOST'),
-            port = settings.get('POSTGRES_PORT')
+        # Establish a connection to the Postgres database
+        engine = create_engine(
+            url="postgresql+psycopg2://{0}:{1}@{2}:{3}/{4}".format(
+                settings.get('POSTGRES_ACCESS_USER'),
+                parse.quote(settings.get('POSTGRES_ACCESS_PASSWORD')),
+                settings.get('POSTGRES_HOST'),
+                settings.get('POSTGRES_PORT'),
+                settings.get('POSTGRES_DATABASE')
+            )
         )
-        self.cursor = self.connection.cursor()
+        self.engine = engine
+        self.sessionmaker = sessionmaker(bind=engine)
+        # self.session = sessionmaker(bind=engine)()
 
     def start_requests(self):
         yield scrapy.Request(url=self.start_urls[0], callback=self.parse)
@@ -65,37 +83,39 @@ class IgnContentSpiderSpider(scrapy.Spider):
         for item in [apollo_state[item_ref.get('__ref')] for item_ref in feed_refs]:
             item_type = item.get('__typename')
 
-            if item_type == "ModernVideo":
-                item_content = apollo_state[item['content']['__ref']]
-
-                existing_video = self.cursor.execute("""
-                    SELECT videos.*
-                    FROM videos
-                    INNER JOIN contents
-                        ON videos.content_id = contents.id
-                    WHERE contents.id = %s
-                """, (item_content.get('id'),))
-                
-                if existing_video is None:
-                    yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 0 })
-            elif item_type == "ModernArticle":
+            if item_type == "ModernArticle":
+                # Working on video
                 continue
                 item_content = apollo_state[item['content']['__ref']]
-                existing_article = self.cursor.execute("""
-                    SELECT article.*
-                    FROM articles
-                    INNER JOIN contents
-                        ON articles.content_id = contents.id
-                    WHERE contents.id = %s
-                """, (item_content.get('id'),))
 
-                if existing_article is None:
+                article_exists = self.session.query(Article).join(Content).filter(Content.legacy_id == item_content.get('id')).first() is not None
+                if not article_exists:
                     yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_article_page, cb_kwargs={ 'recursion_level': 0 })
+            elif item_type == "ModernVideo":
+                item_content = apollo_state[item['content']['__ref']]
+
+                video_exists = self.session.query(Video).join(Content).filter(Content.legacy_id == item_content.get('id')).first() is not None
+                if not video_exists:
+                    yield scrapy.Request(url="https://www.ign.com" + item_content.get('url'), callback=self.parse_video_page, cb_kwargs={ 'recursion_level': 0 })
             elif item_type == "Promotion":
                 pass
+            else:
+                print(item)
+
+IgnContentSpiderSpider.parse_article_page = parse_article_methods.parse_article_page
+IgnContentSpiderSpider.parse_poll = parse_article_methods.parse_poll
+IgnContentSpiderSpider.parse_captioned_image = parse_article_methods.parse_captioned_image
+IgnContentSpiderSpider.parse_commerce_deal = parse_article_methods.parse_commerce_deal
+IgnContentSpiderSpider.parse_article_content = parse_article_methods.parse_article_content
 
 IgnContentSpiderSpider.parse_video_page = parse_video_methods.parse_video_page
 
+IgnContentSpiderSpider.parse_slideshow_page = parse_slideshow_methods.parse_slideshow_page
+
+IgnContentSpiderSpider.parse_wiki_page = parse_wiki_methods.parse_wiki_page
+
+# IgnContentSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
+# IgnContentSpiderSpider.parse_object_page = shared_methods.parse_object_page
 IgnContentSpiderSpider.parse_modern_content = shared_methods.parse_modern_content
-IgnContentSpiderSpider.parse_contributor_page = shared_methods.parse_contributor_page
-IgnContentSpiderSpider.parse_object_page = shared_methods.parse_object_page
+
+IgnContentSpiderSpider.parse_image = media_methods.parse_image
