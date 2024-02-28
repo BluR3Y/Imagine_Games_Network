@@ -27,23 +27,14 @@ def run_queue(queue_instance):
 
 if __name__ == "__main__":
     # Create separate processes for running spider and RQ worker
-    queue_instance = StoreQueue({
-        'REDIS_HOST': '127.0.0.1',
-        'REDIS_PORT': '6379',
-        'REDIS_ACCESS_PASSWORD': 'AdminPassword@1234',
-        'POSTGRES_DATABASE': 'imagine_games_network',
-        'POSTGRES_ACCESS_USER': 'admin',
-        'POSTGRES_ACCESS_PASSWORD': 'AdminPassword@1234',
-        'POSTGRES_HOST': '127.0.0.1',
-        'POSTGRES_PORT': '5432'
-    })
-    queue_process = multiprocessing.Process(target=run_queue, kwargs={ 'queue_instance': queue_instance })
+    queue_instance = StoreQueue(settings=get_project_settings())
+    # queue_process = multiprocessing.Process(target=run_queue, kwargs={ 'queue_instance': queue_instance })
     spider_process = multiprocessing.Process(target=run_spider, kwargs={'custom_settings': { 'enqueue_task': queue_instance.enqueue_task }})
 
     # Start both processes
-    queue_process.start()
+    # queue_process.start()
     spider_process.start()
 
     # Wait for both processes to finish
-    queue_process.join()
+    # queue_process.join()
     spider_process.join()
