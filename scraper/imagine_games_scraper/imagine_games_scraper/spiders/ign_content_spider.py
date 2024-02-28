@@ -11,7 +11,7 @@ from imagine_games_scraper.methods import shared_methods
 class IgnContentSpiderSpider(scrapy.Spider):
     name = "ign_content_spider"
     allowed_domains = ["ign.com"]
-    start_urls = ["https://ign.com?endIndex=10"]
+    start_urls = ["https://ign.com?endIndex=20"]
     # Custom settings for the spider
     custom_settings = {
         'FEEDS': {

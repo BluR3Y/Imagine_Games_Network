@@ -3,13 +3,7 @@ from redis import Redis
 import psycopg2
 import os
 import signal
-import json
 
-def task_function(item):
-    print('************ lolz')
-    with open('task_dump.txt', 'a') as file:
-        file.write(item)
-        
 class StoreQueue:
 
     def __init__(self, settings):
@@ -77,11 +71,17 @@ class StoreQueue:
         if queue in self.queues:
             self.queues.remove(queue)
 
+    def job_function(self, item):
+        print(item)
+
     def enqueue_task(self, item, priority = 1):
+        print(item, priority)
         # 0 - high : 1 - default : 2 - low
         queue = self.queues[priority]
-        queue.enqueue(task_function, item)
+        queue.enqueue("storeQueue.job_function", item)
 
+def job_function(item):
+    print('lol')
     
 if __name__ == '__main__':
     # Testing/Debuggin Purposes

@@ -1,7 +1,0 @@
-Database: imagine_games_network
-
-Tables:
-    * people (reporters, users, etc)
-    * objects (games, movies, tv, comics, etc)
-    * articles (reviews, news, sponsored, daily-deals, shopping, etc)
-    * videos (gameplay, news, etc)

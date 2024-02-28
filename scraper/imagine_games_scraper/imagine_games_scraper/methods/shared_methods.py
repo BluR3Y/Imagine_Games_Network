@@ -41,7 +41,7 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
 
     page_data = page_json_data['props']['pageProps']['page']
     apollo_state = page_json_data['props']['apolloState']
-    object_data = apollo_state[f'Object:{page_data.get('id')}']
+    object_data = apollo_state["Object:" + page_data.get('id')]
 
     object_item['legacy_id'] = object_data.get('id')
     object_item['url'] = object_data.get('url')

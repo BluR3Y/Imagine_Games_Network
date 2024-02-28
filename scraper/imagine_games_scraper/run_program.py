@@ -21,6 +21,7 @@ def run_queue():
         'POSTGRES_HOST': '127.0.0.1',
         'POSTGRES_PORT': '5432'
     })
+
     store_queue.enqueue_task("hello there", 1)
     timeout = 20
     start_time = time.time()
@@ -40,9 +41,9 @@ if __name__ == "__main__":
     queue_process = multiprocessing.Process(target=run_queue)
 
     # Start both processes
-    # spider_process.start()
+    spider_process.start()
     queue_process.start()
 
     # Wait for both processes to finish
-    # spider_process.join()
+    spider_process.join()
     queue_process.join()

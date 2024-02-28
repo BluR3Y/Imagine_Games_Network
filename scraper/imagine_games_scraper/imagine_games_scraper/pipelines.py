@@ -14,12 +14,12 @@ class PostgresStore:
         return cls(crawler.settings)
 
     def __init__(self, settings):
-        self.queue = StoreQueue(settings)
+        pass
 
     def close_spider(self, spider):
-        self.queue.close()
+        pass
 
     def process_item(self, item, spider):
-        self.queue.enqueue_task(item)
-
+        # self.queue.enqueue_task(item)
+        print(item)
         return item
