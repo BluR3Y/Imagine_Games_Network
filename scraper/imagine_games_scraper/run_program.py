@@ -28,13 +28,13 @@ def run_queue(queue_instance):
 if __name__ == "__main__":
     # Create separate processes for running spider and RQ worker
     queue_instance = StoreQueue(settings=get_project_settings())
-    # queue_process = multiprocessing.Process(target=run_queue, kwargs={ 'queue_instance': queue_instance })
-    spider_process = multiprocessing.Process(target=run_spider, kwargs={'custom_settings': { 'enqueue_task': queue_instance.enqueue_task }})
+    queue_process = multiprocessing.Process(target=run_queue, args=(queue_instance,))
+    spider_process = multiprocessing.Process(target=run_spider, kwargs={ 'enqueue_task': queue_instance.enqueue_task })
 
     # Start both processes
-    # queue_process.start()
+    queue_process.start()
     spider_process.start()
 
     # Wait for both processes to finish
-    # queue_process.join()
+    queue_process.join()
     spider_process.join()

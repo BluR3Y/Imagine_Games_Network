@@ -4,11 +4,6 @@ import psycopg2
 import os
 import signal
 
-def job_function(item):
-    print('lol')
-    # with open('queue_data.txt', 'a') as file:
-    #     file.write(item + '\n')
-
 class StoreQueue:
 
     def __init__(self, settings):
@@ -79,8 +74,14 @@ class StoreQueue:
     def enqueue_task(self, item, priority = 1):
         # 0 - high : 1 - default : 2 - low
         queue = self.queues[priority]
-        queue.enqueue(print, item)
-    
+        queue.enqueue("imagine_games_scraper.storeQueue.job_function", item)
+
+def job_function(item):
+    with open('queue_dump.txt', 'a') as file:
+        file.write(str(dict(item)))
+    print('it is done')
+
+
 if __name__ == '__main__':
     # Testing/Debuggin Purposes
     store_queue = StoreQueue({})

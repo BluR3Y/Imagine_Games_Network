@@ -107,7 +107,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
-    # "imagine_games_scraper.pipelines.RedisStore": 400,
+    "imagine_games_scraper.pipelines.RedisQueue": 400,
     # "imagine_games_scraper.pipelines.PostgresStore": 500
 }
 
