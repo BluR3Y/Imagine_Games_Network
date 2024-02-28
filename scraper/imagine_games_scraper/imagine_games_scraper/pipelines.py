@@ -9,17 +9,15 @@ class ImagineGamesScraperPipeline:
 # Pipeline to enqueue the storing of data to postgres
 class PostgresStore:
     # Method used to retrieve settings from Scrapy project settings
-    @classmethod
-    def from_crawler(cls, crawler):
-        return cls(crawler.settings)
-
-    def __init__(self, settings):
-        pass
-
-    def close_spider(self, spider):
-        pass
+    # @classmethod
+    # def from_crawler(cls, crawler):
+    #     return cls(enqueue_task=crawler.settings.get('enqueue_task'))
+    
+    # def __init__(self, enqueue_task):
+    #     print('******* marker')
+    #     self.enqueue_task = enqueue_task
 
     def process_item(self, item, spider):
-        # self.queue.enqueue_task(item)
-        print(item)
+        print('*********** marker')
+        # self.enqueue_task(item)
         return item

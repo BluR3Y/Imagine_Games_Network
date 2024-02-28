@@ -81,7 +81,8 @@ class StoreQueue:
         queue.enqueue("storeQueue.job_function", item)
 
 def job_function(item):
-    print('lol')
+    with open('queue_data.txt', 'a') as file:
+        file.write(item + '\n')
     
 if __name__ == '__main__':
     # Testing/Debuggin Purposes

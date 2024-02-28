@@ -108,7 +108,7 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
     # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
     # "imagine_games_scraper.pipelines.RedisStore": 400,
-    "imagine_games_scraper.pipelines.PostgresStore": 500
+    # "imagine_games_scraper.pipelines.PostgresStore": 500
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

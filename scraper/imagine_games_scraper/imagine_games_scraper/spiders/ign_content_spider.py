@@ -2,8 +2,6 @@ import scrapy
 import json
 import re
 import psycopg2
-from scrapy.utils.project import get_project_settings
-from urllib import parse
 
 from imagine_games_scraper.methods import parse_video_methods
 from imagine_games_scraper.methods import shared_methods
@@ -28,16 +26,25 @@ class IgnContentSpiderSpider(scrapy.Spider):
     }
 
     # Initialize the spider
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = cls(
+            *args,
+            settings = crawler.settings,
+            **kwargs
+        )
+        spider._set_crawler(crawler)
+        return spider
+    
     def __init__(self, *args, **kwargs):
         super(IgnContentSpiderSpider, self).__init__(*args, **kwargs)
-        settings = get_project_settings()
         # Establish a connection to Postgres Database
         self.connection = psycopg2.connect(
-            database = settings.get('POSTGRES_DATABASE'),
-            user = settings.get('POSTGRES_ACCESS_USER'),
-            password = settings.get('POSTGRES_ACCESS_PASSWORD'),
-            host = settings.get('POSTGRES_HOST'),
-            port = settings.get('POSTGRES_PORT')
+            database = self.settings.get('POSTGRES_DATABASE'),
+            user = self.settings.get('POSTGRES_ACCESS_USER'),
+            password = self.settings.get('POSTGRES_ACCESS_PASSWORD'),
+            host = self.settings.get('POSTGRES_HOST'),
+            port = self.settings.get('POSTGRES_PORT')
         )
         self.cursor = self.connection.cursor()
 
