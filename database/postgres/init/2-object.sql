@@ -106,3 +106,12 @@ CREATE TABLE releases (
     time_frame_year TIMESTAMP
 );
 -- Platform attributes will be Typed_Attribute entries
+
+-- Release Platform Attributes
+CREATE TABLE release_platform_attributes (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    release_id UUID NOT NULL,
+    attribute_id UUID NOT NULL,
+    FOREIGN KEY (release_id) REFERENCES releases (id),
+    FOREIGN KEY (attribute_id) REFERENCES attributes (id)
+);

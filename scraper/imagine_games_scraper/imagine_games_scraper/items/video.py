@@ -7,6 +7,8 @@ class Video(scrapy.Item):
     content_id = scrapy.Field()
     metadata_id = scrapy.Field()
 
+    __tablename__ = 'videos'
+
     def __init__(self, *args, **kwargs):
         super(Video, self).__init__(*args, **kwargs)
 
@@ -21,6 +23,8 @@ class VideoMetadata(scrapy.Item):
     duration = scrapy.Field()
     m3u_url = scrapy.Field()
 
+    __tablename__ = 'video_metadatas'
+
     def __init__(self, *args, **kwargs):
         super(VideoMetadata, self).__init__(*args, **kwargs)
 
@@ -34,6 +38,8 @@ class VideoAsset(scrapy.Item):
     height = scrapy.Field()
     fps = scrapy.Field()
 
+    __tablename__ = 'video_assets'
+
     def __init__(self, *args, **kwargs):
         super(VideoAsset, self).__init__(*args, **kwargs)
 
@@ -44,6 +50,8 @@ class VideoCaption(scrapy.Item):
     video_id = scrapy.Field()
     language = scrapy.Field()
     text = scrapy.Field()
+
+    __tablename__ = 'video_captions'
 
     def __init__(self, *args, **kwargs):
         super(VideoCaption, self).__init__(*args, **kwargs)

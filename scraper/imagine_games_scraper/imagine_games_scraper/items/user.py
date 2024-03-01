@@ -8,10 +8,13 @@ class User(scrapy.Item):
     name = scrapy.Field()
     nickname = scrapy.Field()
 
+    __tablename__ = 'users'
+
     def __init__(self, *args, **kwargs):
         super(User, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
 
 class Author(scrapy.Item):
     id = scrapy.Field()
@@ -24,6 +27,8 @@ class Author(scrapy.Item):
     location = scrapy.Field()
     socials = scrapy.Field()
 
+    __tablename__ = 'authors'
+
     def __init__(self, *args, **kwargs):
         super(Author, self).__init__(*args, **kwargs)
 
@@ -33,6 +38,8 @@ class UserConfiguration(scrapy.Item):
     id = scrapy.Field()
     user_id = scrapy.Field()
     privacy = scrapy.Field()
+
+    __tablename__ = 'user_configurations'
 
     def __init__(self, *args, **kwargs):
         super(UserConfiguration, self).__init__(*args, **kwargs)

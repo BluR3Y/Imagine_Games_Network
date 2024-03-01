@@ -94,7 +94,7 @@ ROBOTSTXT_OBEY = False
 DOWNLOADER_MIDDLEWARES = {
    "imagine_games_scraper.middlewares.ImagineGamesScraperDownloaderMiddleware": 543,
    "imagine_games_scraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
-#    "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
+   "imagine_games_scraper.middlewares.MyProxyMiddleware": 350
 }
 
 # Enable or disable extensions

@@ -30,6 +30,7 @@ class Content(scrapy.Item):
 
         self['id'] = str(uuid4())
 
+
 class Brand(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
@@ -44,6 +45,8 @@ class Brand(scrapy.Item):
         super(Brand, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
+
 
 class ContentCategory(scrapy.Item):
     id = scrapy.Field()
@@ -87,11 +90,12 @@ class ContentAttributeConnection(scrapy.Item):
     attribute_id = scrapy.Field()
 
     __tablename__ = "content_attribute_connections"
-    # Last Here * Adding tablename to items
+
     def __init__(self, *args, **kwargs):
         super(ContentAttributeConnection, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
 
 class OfficialReview(scrapy.Item):
     id = scrapy.Field()
@@ -104,10 +108,14 @@ class OfficialReview(scrapy.Item):
     video_url = scrapy.Field()
     review_date = scrapy.Field()
 
+    __tablename__ = 'official_reviews'
+
     def __init__(self, *args, **kwargs):
         super(OfficialReview, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
+
 
 class UserReview(scrapy.Item):
     id = scrapy.Field()
@@ -125,6 +133,8 @@ class UserReview(scrapy.Item):
     modify_date = scrapy.Field()
     platform_id = scrapy.Field()
 
+    __tablename__ = 'user_reviews'
+
     def __init__(self, *args, **kwargs):
         super(UserReview, self).__init__(*args, **kwargs)
 
@@ -134,6 +144,8 @@ class TagObject(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
+
+    __tablename__ = 'tag_object'
 
     def __init__(self, *args, **kwargs):
         super(TagObject, self).__init__(*args, **kwargs)
@@ -145,6 +157,8 @@ class ReviewTag(scrapy.Item):
     review_id = scrapy.Field()
     is_positive = scrapy.Field()
     tag_object_id = scrapy.Field()
+
+    __tablename__ = 'review_tag'
 
     def __init__(self, *args, **kwargs):
         super(ReviewTag, self).__init__(*args, **kwargs)

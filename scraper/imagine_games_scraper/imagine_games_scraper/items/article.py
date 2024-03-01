@@ -15,15 +15,6 @@ class Article(scrapy.Item):
 
         self['id'] = str(uuid4())
 
-    # def required_fields_filled(self):
-    #     required_fields = ['content_id','article_content_id']
-
-    #     for attr in required_fields:
-    #         if self[attr] == None:
-    #             return False
-    #     return True
-    # Last Here: Adding methods to scrapy items
-
 class ArticleContent(scrapy.Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()

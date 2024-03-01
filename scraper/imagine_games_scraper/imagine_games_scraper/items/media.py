@@ -10,6 +10,8 @@ class Image(scrapy.Item):
     caption = scrapy.Field()
     embargo_date = scrapy.Field()
 
+    __tablename__ = 'images'
+
     def __init__(self, *args, **kwargs):
         super(Image, self).__init__(*args, **kwargs)
 
@@ -20,26 +22,36 @@ class ImageConnection(scrapy.Item):
     image_id = scrapy.Field()
     gallery_id = scrapy.Field()
 
+    __tablename__ = 'image_connections'
+
     def __init__(self, *args, **kwargs):
         super(ImageConnection, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
 
+
 class Gallery(scrapy.Item):
     id = scrapy.Field()
+
+    __tablename__ = 'galleries'
 
     def __init__(self, *args, **kwargs):
         super(Gallery, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
 
+
+
 class Slideshow(scrapy.Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     gallery_id = scrapy.Field()
 
+    __tablename__ = 'slideshows'
+
     def __init__(self, *args, **kwargs):
         super(Slideshow, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
 

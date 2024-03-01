@@ -1,17 +1,16 @@
-from rq import Queue, Worker, Connection
+from rq import Queue, Worker, Connection, Retry
 from redis import Redis
-import psycopg2
-import os
-import signal
+from datetime import timedelta
 
 class StoreQueue:
 
     def __init__(self, settings):
+        self.settings = settings
         # Establish a connection to the redis database
         self.redis_connection = Redis(
-            host=settings.get('REDIS_HOST'),
-            port=settings.get('REDIS_PORT'),
-            password=settings.get('REDIS_ACCESS_PASSWORD'),
+            host=self.settings.get('REDIS_HOST'),
+            port=self.settings.get('REDIS_PORT'),
+            password=self.settings.get('REDIS_ACCESS_PASSWORD'),
             db=0
         )
         try:
@@ -26,35 +25,19 @@ class StoreQueue:
         except:
             print('Error occured while attempting to connect to redis database.')
 
-        # Establish a connection to the Postgres database
-        self.postgres_connection = psycopg2.connect(
-            database = settings.get('POSTGRES_DATABASE'),
-            user = settings.get('POSTGRES_ACCESS_USER'),
-            password = settings.get('POSTGRES_ACCESS_PASSWORD'),
-            host = settings.get('POSTGRES_HOST'),
-            port = settings.get('POSTGRES_PORT')
-        )
-        if not self.postgres_connection.closed:
-            print('Connection to postgres database established successfully.')
-            self.cursor = self.postgres_connection.cursor()
-        else:
-            print('Error occured while attempting to connect to postgres database.')
-
     def start(self):
         with Connection(self.redis_connection):
             self.worker = Worker(self.queues, connection=self.redis_connection)
-            self.worker.work()
+            self.worker.work(with_scheduler=True)
 
     def stop(self):
         if self.worker:
             try:
+                # Close connections to databases
                 self.redis_connection.close()
-                self.postgres_connection.close()
-                print("Successfully closed connection to databases.")
-                # Terminate the running program
-                os.kill(self.worker.pid, signal.SIGTERM)
+                print("RQ successfully closed connection to databases.")
             except:
-                print("Error occured when attempting to close connection to databases.")
+                print("RQ faced an error while attempting to close connection to databases.")
 
     def is_idle(self):
         all_queues_idle = True
@@ -71,15 +54,11 @@ class StoreQueue:
         if queue in self.queues:
             self.queues.remove(queue)
 
-    def enqueue_task(self, item, priority = 1):
+    def enqueue_task(self, item, priority = 1, delay = 0, attempts=5, intervals = [5]):
         # 0 - high : 1 - default : 2 - low
         queue = self.queues[priority]
-        queue.enqueue("imagine_games_scraper.storeQueue.job_function", item)
-
-def job_function(item):
-    with open('queue_dump.txt', 'a') as file:
-        file.write(str(dict(item)))
-    print('it is done')
+        # queue.enqueue("imagine_games_scraper.queue.queue_function.queue_function", item, retry=Retry(max=6, interval=5))
+        queue.enqueue_in(timedelta(seconds=delay), "imagine_games_scraper.queue.queue_function.queue_function", item, retry=Retry(max=attempts, interval=intervals))
 
 
 if __name__ == '__main__':

@@ -8,6 +8,7 @@
 # import models.content
 # import models.article
 # import models.video
+import imagine_games_scraper.alchemy.models.media
 import imagine_games_scraper.alchemy.models.misc
 import imagine_games_scraper.alchemy.models.object
 import imagine_games_scraper.alchemy.models.wiki

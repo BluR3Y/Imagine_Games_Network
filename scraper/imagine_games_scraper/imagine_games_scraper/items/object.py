@@ -14,20 +14,27 @@ class Object(scrapy.Item):
     names = scrapy.Field()
     descriptions = scrapy.Field()
 
+    __tablename__ = 'objects'
+
     def __init__(self, *args, **kwargs):
         super(Object, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
+
 
 class ObjectAttributeConnection(scrapy.Item):
     id = scrapy.Field()
     object_id = scrapy.Field()
     attribute_id = scrapy.Field()
 
+    __tablename__ = 'object_attribute_connections'
+
     def __init__(self, *args, **kwargs):
         super(ObjectAttributeConnection, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
 
 class HowLongToBeat(scrapy.Item):
     id = scrapy.Field()
@@ -40,10 +47,14 @@ class HowLongToBeat(scrapy.Item):
     review = scrapy.Field()
     time = scrapy.Field()
 
+    __tablename__ = 'how_long_to_beat'
+
     def __init__(self, *args, **kwargs):
         super(HowLongToBeat, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
+
 
 class AgeRating(scrapy.Item):
     id = scrapy.Field()
@@ -52,10 +63,14 @@ class AgeRating(scrapy.Item):
     name = scrapy.Field()
     slug = scrapy.Field()
 
+    __tablename__ = 'age_ratings'
+
     def __init__(self, *args, **kwargs):
         super(AgeRating, self).__init__(*args, **kwargs)
 
         self['id'] = str(uuid4())
+
+
 
 class Region(scrapy.Item):
     id = scrapy.Field()
@@ -64,6 +79,8 @@ class Region(scrapy.Item):
     region = scrapy.Field()
     age_rating_id = scrapy.Field()
     object_id = scrapy.Field()
+
+    __tablename__ = 'regions'
 
     def __init__(self, *args, **kwargs):
         super(Region, self).__init__(*args, **kwargs)
