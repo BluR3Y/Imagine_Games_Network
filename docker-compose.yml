@@ -37,14 +37,20 @@ services:
     volumes:
       - ./database/postgres/init:/docker-entrypoint-initdb.d:ro
 
-  # redis:
-  #   container_name: redis
-  #   image: redis:latest
+  redis:
+    container_name: redis
+    image: redis:latest
+    env_file:
+      - ./env/database/redis/.env.test
+    volumes:
+      - ./database/redis/init:/usr/local/etc/redis
+    command: ["redis-server", "/usr/local/etc/redis/setup.sh"]
 
   scraper:
     container_name: scraper
     depends_on:
       - postgres
+      - redis
     build:
       dockerfile: Dockerfile
       context: ./scraper

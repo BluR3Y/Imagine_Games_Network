@@ -56,7 +56,8 @@ class Author(Base):
     legacy_id = Column(Integer)
     user_id = Column(
         UUID(as_uuid=True), 
-        ForeignKey('users.id')
+        ForeignKey('users.id'),
+        nullable=False
     )
     url = Column(String)
     cover_id = Column(

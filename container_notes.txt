@@ -6,3 +6,5 @@ docker run -d -p 27017:27017 --name ign_mongo_container --hostname mongo --env-f
 
 Create a Postgres docker container
 docker run -d -p 5432:5432 --name ign_postgres_container --hostname postgres --env-file C:/Users/reyhe/Documents/Imagine_Games_Network/env/database/postgres/.env.development -v C:/Users/reyhe/Documents/Imagine_Games_Network/database/postgres/init:/docker-entrypoint-initdb.d:ro postgres:latest
+
+docker run -d -p 6379:6379 --name ign_redis_container --hostname redis --env-file C:/Users/reyhe/Documents/Imagine_Games_Network/env/database/redis/.env.development -v C:/Users/reyhe/Documents/Imagine_Games_Network/database/redis/init:/usr/local/etc/redis redis:latest sh -c 'exec redis-server /usr/local/etc/redis/redis.conf --requirepass ${REDIS_PASSWORD}'

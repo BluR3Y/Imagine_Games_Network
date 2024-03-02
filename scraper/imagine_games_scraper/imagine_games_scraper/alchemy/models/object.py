@@ -112,6 +112,7 @@ class HowLongToBeat(Base):
         primary_key=True,
         default=uuid.uuid4
     )
+    legacy_id = Column(Integer)
     legacy_ign_object_id = Column(UUID(as_uuid=True))
     steam_id = Column(Integer)
     itch_id = Column(String)
@@ -152,6 +153,11 @@ class Region(Base):
     legacy_id = Column(
         UUID(as_uuid=True)
     )
+    object_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("objects.id"),
+        nullable=False
+    )
     name = Column(String),
     region = Column(String),
     age_rating_id = Column(
@@ -160,6 +166,7 @@ class Region(Base):
         nullable=True
     )
 
+    object = relationship("Object", foreign_keys=[object_id])
     age_rating = relationship("AgeRating", foreign_keys=[age_rating_id])
 
 class Release(Base):
@@ -177,6 +184,56 @@ class Release(Base):
     date = Column(TIMESTAMP)
     estimated_date = Column(TIMESTAMP)
     time_frame_year = Column(TIMESTAMP)
+
+class AgeRatingDescriptor(Base):
+    __tablename__ = 'age_rating_descriptors'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4
+    )
+    region_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("regions.id"),
+        nullable=False
+    )
+    attribute_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("attributes.id"),
+        nullable=False
+    )
+
+    region = relationship("Region", foreign_keys=[region_id])
+    attribute = relationship("Attribute", foreign_keys=[attribute_id])
+
+class AgeRatingInteractiveElement(Base):
+    __tablename__ = 'age_rating_interactive_elements'
+
+    def __init__(self):
+        self.id = uuid.uuid4()
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4
+    )
+    region_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("regions.id"),
+        nullable=False
+    )
+    attribute_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("attributes.id"),
+        nullable=False
+    )
+
+    region = relationship("Region", foreign_keys=[region_id])
+    attribute = relationship("Attribute", foreign_keys=[attribute_id])
 
 class ReleasePlatformAttribute(Base):
     __tablename__ = 'release_platform_attributes'

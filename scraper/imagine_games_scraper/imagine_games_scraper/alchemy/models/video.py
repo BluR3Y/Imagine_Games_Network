@@ -83,12 +83,12 @@ class VideoCaption(Base):
         primary_key=True,
         default=uuid.uuid4
     )
-    metadata_id = Column(
+    video_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("video_metadatas.id"),
+        ForeignKey("videos.id"),
         nullable=False
     )
     language = Column(String)
     text = Column(String)
 
-    video_metadata = relationship("VideoMetadata", foreign_keys=[metadata_id])
+    video = relationship("Video", foreign_keys=[video_id])

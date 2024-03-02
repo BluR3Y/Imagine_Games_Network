@@ -2,7 +2,7 @@ import os
 from dotenv import dotenv_values
 
 env = os.environ.get("PYTHON_ENV")
-environment_variables = os.environ if env == "production" else dotenv_values("../../../env/scraper/.env.development")
+environment_variables = os.environ if env == "production" else dotenv_values("../../env/scraper/.env.development")
 
 # ScrapeOps Credentials (Fake Browser Header API)
 SCRAPEOPS_API_KEY = environment_variables.get("SCRAPEOPS_API_KEY")
@@ -23,6 +23,11 @@ POSTGRES_PORT = environment_variables.get("POSTGRES_PORT")
 POSTGRES_DATABASE = environment_variables.get("POSTGRES_DATABASE")
 POSTGRES_ACCESS_USER = environment_variables.get("POSTGRES_ACCESS_USER")
 POSTGRES_ACCESS_PASSWORD = environment_variables.get("POSTGRES_ACCESS_PASSWORD")
+
+# Redis Database Credentials
+REDIS_HOST = environment_variables.get('REDIS_HOST')
+REDIS_PORT = environment_variables.get('REDIS_PORT')
+REDIS_ACCESS_PASSWORD = environment_variables.get('REDIS_ACCESS_PASSWORD')
 
 # AWS Credentials
 AWS_ACCESS_KEY = environment_variables.get("AWS_ACCESS_KEY")
@@ -102,7 +107,8 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # "imagine_games_scraper.pipelines.ImagineGamesScraperPipeline": 300,
-    # "imagine_games_scraper.pipelines.PostgresStore": 400
+    "imagine_games_scraper.pipelines.RedisQueue": 400,
+    # "imagine_games_scraper.pipelines.PostgresStore": 500
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
