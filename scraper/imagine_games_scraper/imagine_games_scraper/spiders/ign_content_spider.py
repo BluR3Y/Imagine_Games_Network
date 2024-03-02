@@ -11,19 +11,19 @@ class IgnContentSpiderSpider(scrapy.Spider):
     allowed_domains = ["ign.com"]
     start_urls = ["https://ign.com?endIndex=20"]
     # Custom settings for the spider
-    # custom_settings = {
-    #     'FEEDS': {
-    #         'video_data.json': {
-    #             'format': 'json',
-    #             'encoding': 'utf8',
-    #             'overwrite': True,
-    #             'store_empty': False,
-    #             'indent': 4
-    #         }
-    #     },
-    #     # Delay between consecutive requests to same domain (seconds)
-    #     'DOWNLOAD_DELAY': 3
-    # }
+    custom_settings = {
+        'FEEDS': {
+            'video_data.json': {
+                'format': 'json',
+                'encoding': 'utf8',
+                'overwrite': True,
+                'store_empty': False,
+                'indent': 4
+            }
+        },
+        # Delay between consecutive requests to same domain (seconds)
+        'DOWNLOAD_DELAY': 3
+    }
 
     # Initialize the spider
     @classmethod

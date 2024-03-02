@@ -1,73 +1,50 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from urllib.parse import quote_plus
-from scrapy.utils.project import get_project_settings
+import psycopg2
+from redis import Redis
+import json
+from imagine_games_scraper.queue import activeQueue
 
-# def queue_function(item):
-#     settings = get_project_settings()
-#     # Establish a connection to the Postgres database
-#     db_conn = psycopg2.connect(
-#         database = settings.get('POSTGRES_DATABASE'),
-#         user = settings.get('POSTGRES_ACCESS_USER'),
-#         password = settings.get('POSTGRES_ACCESS_PASSWORD'),
-#         host = settings.get('POSTGRES_HOST'),
-#         port = settings.get('POSTGRES_PORT')
-#     )
-#     if not db_conn.closed:
-#         print('Connection to postgres database established successfully.')
-#     else:
-#         raise Retry('Error occured while attempting to connect to postgres database.')
-#     db_cursor = db_conn.cursor()
-    
-#     dict_item = dict(item)
-#     attribute_keys = []
-#     attribute_values = []
-#     print('************************* tablename: ', item.__tablename__)
-#     for key, value in dict_item.items():
-#         attribute_keys.append(key)
-#         if type(value) == dict:
-#             print('************************* value: ', value)
-#             table_name = value.get('__tablename__')
-#             ref = value.get('__ref')
+def queue_function(item_key):
 
-#             search_query = "SELECT COUNT(*) FROM %s WHERE id = '%s' LIMIT 1;" % (table_name, ref)
-#             db_cursor.execute(search_query)
-#             user_exists = db_cursor.fetchone()[0]
+    dict_item = dict(json.loads(activeQueue.redis_connection.get(item_key)))
+    obj = dict_item.get('obj')
 
-#             if not user_exists:
-#                 raise Retry("Referenced item with an id of %s from table %s does not exist" % (ref, table_name))
+    attribute_keys = []
+    attribute_values = []
+    print('******************************** ', dict_item.get('referrers'), obj)
+    for key, value in obj.items():
+        attribute_keys.append(key)
+        if isinstance(value, dict) and value.get('__ref', None):
+            key_parts = value.get('__ref').split(':')
+            activeQueue.postgres_cursor.execute("SELECT COUNT(*) FROM %s WHERE id = '%s' LIMIT 1;" % (key_parts[0], key_parts[1]))
+            if not activeQueue.postgres_cursor.fetchone()[0]:
+                return
             
-#             attribute_values.append(f"'{ref}'")
-#         else:
-#             attribute_values.append(f"'{value}'" if type(value) == str else value)
+            attribute_values.append(f"'{key_parts[1]}'")
+        else:
+            # attribute_values.append(str(value))
+            attribute_values.append(postgres_type_format(value))
 
-#     insert_query = "INSERT INTO %s (%s) VALUES (%s);" % (item.__tablename__ ,','.join(attribute_keys), ','.join(attribute_values))
-#     db_cursor.execute(insert_query)
+    item_key_parts = item_key.split(':')
+    # print('********************* ', item_key_parts, attribute_keys, attribute_values)
+    insert_query = "INSERT INTO %s (%s) VALUES (%s);" % (item_key_parts[0] ,','.join(attribute_keys), ','.join(attribute_values))
+    activeQueue.postgres_cursor.execute(insert_query)
+    activeQueue.postgres_connection.commit()
 
-#     db_conn.commit()
-#     db_cursor.close()
+    referrers = dict_item.get('referrers')
+    if referrers:
+        for referrer in referrers:
+            activeQueue.enqueue_task(referrer)
 
-def queue_function(item):
-    print('************************** marker')
-
-    settings = get_project_settings()
-    # Define the SQLAlchemy engine
-    engine = create_engine('postgresql://%s:%s@%s:%s/%s' % (settings.get('POSTGRES_ACCESS_USER'), quote_plus(settings.get('POSTGRES_ACCESS_PASSWORD')), settings.get('POSTGRES_HOST'), settings.get('POSTGRES_PORT'), settings.get('POSTGRES_DATABASE')))
-
-    # Create a sessionmaker bound to the engine
-    session = sessionmaker(bind=engine)
-
-    # Create a session
-    session = session()
-
-    try:
-        session.add(item)
-    except:
-        raise Exception('Error occured while attempting to insert entry to postgres.')
-
-    # Commit the session to persist the changes to the database
-    session.commit()
-
-    # Close the session
-    session.close()
-    
+    activeQueue.redis_connection.delete(item_key)
+# Last Here
+def postgres_type_format(value):
+    if isinstance(value, str):
+        return f"'{value}'"
+    elif isinstance(value, bool):
+        return str(value).lower()
+    elif isinstance(value, list):
+        return "{%s}" % (','.join(map(postgres_type_format, value)))
+    elif value is None:
+        return "null"
+    else:
+        return str(value)

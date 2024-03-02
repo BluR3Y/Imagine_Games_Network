@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class WikiObject(scrapy.Item):
+class WikiObject(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
@@ -9,9 +9,7 @@ class WikiObject(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(WikiObject, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-
-class WikiNavigation(scrapy.Item):
+class WikiNavigation(Item):
     id = scrapy.Field()
     wiki_object_id = scrapy.Field()
     label = scrapy.Field()
@@ -20,9 +18,8 @@ class WikiNavigation(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(WikiNavigation, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
 
-class MapObject(scrapy.Item):
+class MapObject(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     wiki_object_id = scrapy.Field()
@@ -30,9 +27,7 @@ class MapObject(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(MapObject, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-
-class Map(scrapy.Item):
+class Map(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     map_object_id = scrapy.Field()
@@ -54,5 +49,3 @@ class Map(scrapy.Item):
 
     def __init__(self, *args, **kwargs):
         super(Map, self).__init__(*args, **kwargs)
-
-        self['id'] = str(uuid4())

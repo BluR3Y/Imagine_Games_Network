@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class Content(scrapy.Item):
+class Content(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     url = scrapy.Field()
@@ -28,10 +28,10 @@ class Content(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Content, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
-class Brand(scrapy.Item):
+class Brand(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     slug = scrapy.Field()
@@ -44,11 +44,11 @@ class Brand(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Brand, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class ContentCategory(scrapy.Item):
+class ContentCategory(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
@@ -58,9 +58,9 @@ class ContentCategory(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(ContentCategory, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class ObjectConnection(scrapy.Item):
+class ObjectConnection(Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     object_id = scrapy.Field()
@@ -70,9 +70,9 @@ class ObjectConnection(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(ObjectConnection, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class Contributor(scrapy.Item):
+class Contributor(Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     user_id = scrapy.Field()
@@ -82,9 +82,9 @@ class Contributor(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Contributor, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class ContentAttributeConnection(scrapy.Item):
+class ContentAttributeConnection(Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     attribute_id = scrapy.Field()
@@ -94,10 +94,10 @@ class ContentAttributeConnection(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(ContentAttributeConnection, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
-class OfficialReview(scrapy.Item):
+class OfficialReview(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     score = scrapy.Field()
@@ -113,11 +113,11 @@ class OfficialReview(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(OfficialReview, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class UserReview(scrapy.Item):
+class UserReview(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     user_id = scrapy.Field()
@@ -138,9 +138,9 @@ class UserReview(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(UserReview, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class TagObject(scrapy.Item):
+class TagObject(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
@@ -150,9 +150,9 @@ class TagObject(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(TagObject, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class ReviewTag(scrapy.Item):
+class ReviewTag(Item):
     id = scrapy.Field()
     review_id = scrapy.Field()
     is_positive = scrapy.Field()
@@ -163,4 +163,4 @@ class ReviewTag(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(ReviewTag, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        

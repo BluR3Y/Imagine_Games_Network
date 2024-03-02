@@ -11,7 +11,7 @@ CREATE TABLE brands (
 -- Content Category
 CREATE TABLE content_categories (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     name VARCHAR(32)
 );
 

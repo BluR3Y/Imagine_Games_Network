@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class Image(scrapy.Item):
+class Image(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     legacy_url = scrapy.Field()
@@ -15,9 +15,9 @@ class Image(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Image, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class ImageConnection(scrapy.Item):
+class ImageConnection(Item):
     id = scrapy.Field()
     image_id = scrapy.Field()
     gallery_id = scrapy.Field()
@@ -27,10 +27,10 @@ class ImageConnection(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(ImageConnection, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
-class Gallery(scrapy.Item):
+class Gallery(Item):
     id = scrapy.Field()
 
     __tablename__ = 'galleries'
@@ -38,11 +38,11 @@ class Gallery(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Gallery, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class Slideshow(scrapy.Item):
+class Slideshow(Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
     gallery_id = scrapy.Field()
@@ -52,6 +52,6 @@ class Slideshow(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Slideshow, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 

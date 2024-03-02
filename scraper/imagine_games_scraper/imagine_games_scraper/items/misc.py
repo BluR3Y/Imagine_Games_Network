@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class Attribute(scrapy.Item):
+class Attribute(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     name = scrapy.Field()
@@ -13,11 +13,11 @@ class Attribute(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Attribute, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class TypedAttribute(scrapy.Item):
+class TypedAttribute(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     type = scrapy.Field()
@@ -28,10 +28,10 @@ class TypedAttribute(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(TypedAttribute, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
-class PollConfiguration(scrapy.Item):
+class PollConfiguration(Item):
     id = scrapy.Field()
     require_authentication = scrapy.Field()
     require_authentication_for_results = scrapy.Field()
@@ -43,11 +43,11 @@ class PollConfiguration(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(PollConfiguration, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class Poll(scrapy.Item):
+class Poll(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     content_id = scrapy.Field()
@@ -60,9 +60,9 @@ class Poll(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Poll, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class PollAnswer(scrapy.Item):
+class PollAnswer(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     poll_id = scrapy.Field()
@@ -74,9 +74,9 @@ class PollAnswer(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(PollAnswer, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
-class Catalog(scrapy.Item):
+class Catalog(Item):
     id = scrapy.Field()
     content_id = scrapy.Field()
 
@@ -85,10 +85,10 @@ class Catalog(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Catalog, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
-class CommerceDeal(scrapy.Item):
+class CommerceDeal(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     url = scrapy.Field()
@@ -112,11 +112,11 @@ class CommerceDeal(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(CommerceDeal, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
 
 
 
-class DealConnection(scrapy.Item):
+class DealConnection(Item):
     id = scrapy.Field()
     deal_id = scrapy.Field()
     catalog_id = scrapy.Field()
@@ -126,4 +126,4 @@ class DealConnection(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Catalog, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        
