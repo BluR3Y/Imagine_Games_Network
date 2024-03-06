@@ -1,7 +1,6 @@
 import scrapy
 from uuid import uuid4
 
-
 class Item(scrapy.Item):
     id = scrapy.Field()
     referrers = scrapy.Field()
@@ -10,7 +9,7 @@ class Item(scrapy.Item):
         super(Item, self).__init__(self, *args, **kwargs)
 
         self['id'] = str(uuid4())
-        self['referrers'] = []
+        self['referrers'] = kwargs.get('referrers', [])
 
     def to_dict(self):
         result = { 'referrers': self['referrers'], 'obj': {} }

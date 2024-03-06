@@ -18,8 +18,8 @@ low_priority = [Article, Video, WikiObject, Contributor, ObjectConnection, Conte
 
 class ImagineGamesScraperPipeline:
     def process_item(self, item, spider):
-        print(dict(item))
-        return item
+        print(item.to_dict())
+        return item.to_dict()
     
 # Pipeline used to enqueue scraped data to redis-based queue
 class RedisQueue:

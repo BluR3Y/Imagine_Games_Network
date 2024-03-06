@@ -5,10 +5,6 @@ import re
 from imagine_games_scraper.items.video import Video, VideoMetadata, VideoAsset
 from imagine_games_scraper.items.content import Content
 
-# from imagine_games_scraper.items import Item
-# from imagine_games_scraper.alchemy.models.video import Video, VideoMetadata, VideoAsset
-# from imagine_games_scraper.alchemy.models.content import Content
-
 def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
@@ -22,14 +18,14 @@ def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
     # *********************** Parse Video Content **************************
     modern_content_ref = modern_video_data.get('content')
     if modern_content_ref:
-        modern_content_item = Content(referrers=(f"{video_item.__tablename__}:{video_item.get('id')}"),)
+        modern_content_item = Content(referrers=[f"{video_item.__tablename__}:{video_item.get('id')}"])
 
         yield from self.parse_modern_content(page_json_data, modern_content_ref.get('__ref'), modern_content_item)
         video_item['content_id'] = { '__ref': f"{modern_content_item.__tablename__}:{modern_content_item.get('id')}" }
     # ****************************** Parse Video Metadata *********************************
     video_metadata = modern_video_data.get('videoMetadata')
     if video_metadata:
-        video_metadata_item = VideoMetadata(referrers=(f"{video_item.__tablename__}:{video_item.get('id')}",))
+        video_metadata_item = VideoMetadata(referrers=[f"{video_item.__tablename__}:{video_item.get('id')}"])
         # video_metadata_item['ad_breaks'] = video_metadata.get('adBreaks')
         video_metadata_item['chat_enabled'] = video_metadata.get('chatEnabled')
         video_metadata_item['description_html'] = video_metadata.get('descriptionHtml')
@@ -47,7 +43,9 @@ def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
         asset_item['width'] = asset.get('width')
         asset_item['height'] = asset.get('height')
         asset_item['fps'] = asset.get('fps')
+
         asset_item['video_id'] = { '__ref':  f"{video_item.__tablename__}:{video_item.get('id')}" }
+        video_item['referrers'].append(f"{asset_item.__tablename__}:{asset_item.get('id')}")
 
         yield asset_item
 

@@ -26,43 +26,10 @@ CREATE TABLE image_connections (
     FOREIGN KEY (gallery_id) REFERENCES galleries(id)
 );
 
--- -- Poll Object
--- CREATE TABLE Poll (
---     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
---     legacy_id UUID,
---     content_id UUID,
---     configuration_id UUID,
---     image UUID,
---     voters INT,
-
---     FOREIGN KEY (content_id) REFERENCES Content(id),
---     FOREIGN KEY (configuration_id) REFERENCES Poll_Configuration(id),
---     FOREIGN KEY (image) REFERENCES Image(id)
--- );
-
--- -- Poll Answer
--- CREATE TABLE Poll_Answer(
---     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
---     poll_id UUID NOT NULL,
---     legacy_id INT,
---     answer TEXT,
---     votes INT,
-
---     FOREIGN KEY (poll_id) REFERENCES Poll(id)
--- );
-
--- -- Poll Configuration
--- CREATE TABLE Poll_Configuration(
---     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
---     require_authentication BOOLEAN,
---     require_authentication_for_results BOOLEAN,
---     multi_choice BOOLEAN,
---     auto_display_results BOOLEAN
--- );
-
 -- Attribute Item
 CREATE TABLE attributes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    legacy_id INT,
     name VARCHAR(64),
     short_name VARCHAR(32),
     slug VARCHAR(32)

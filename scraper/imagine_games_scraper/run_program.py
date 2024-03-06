@@ -2,7 +2,6 @@ import multiprocessing
 import time
 from scrapy.crawler import CrawlerProcess
 from imagine_games_scraper.spiders.ign_content_spider import IgnContentSpiderSpider
-# from imagine_games_scraper.queue.queue_class import StoreQueue
 from imagine_games_scraper.queue import activeQueue
 from scrapy.utils.project import get_project_settings
 
@@ -33,7 +32,6 @@ def run_queue():
 
 if __name__ == "__main__":
     # Create separate processes for running spider and RQ worker
-    # queue_instance = StoreQueue()
     queue_process = multiprocessing.Process(target=run_queue)
     spider_process = multiprocessing.Process(target=run_spider)
 

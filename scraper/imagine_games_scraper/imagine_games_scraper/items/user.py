@@ -13,9 +13,6 @@ class User(Item):
     def __init__(self, *args, **kwargs):
         super(User, self).__init__(*args, **kwargs)
 
-        
-
-
 class Author(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
@@ -31,8 +28,6 @@ class Author(Item):
 
     def __init__(self, *args, **kwargs):
         super(Author, self).__init__(*args, **kwargs)
-
-        
 
 class UserConfiguration(Item):
     id = scrapy.Field()

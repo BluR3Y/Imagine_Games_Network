@@ -35,8 +35,7 @@ class Content(Base):
     )
     primary_object_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("objects.id"),
-        nullable=False
+        ForeignKey("objects.id")
     )
     excerpt = Column(String)
     description = Column(String)
@@ -222,7 +221,7 @@ class UserReview(Base):
         primary_key=True,
         default=uuid.uuid4
     )
-    legacy_id = Column(UUID(as_uuid=True))
+    legacy_id = Column(Integer)
     user_id = Column(
         UUID(as_uuid=True),
         ForeignKey("users.id"),
@@ -262,7 +261,7 @@ class TagObject(Base):
         primary_key=True,
         default=uuid.uuid4
     )
-    legacy_id = Column(UUID(as_uuid=True))
+    legacy_id = Column(Integer)
     name = Column(String)
 
 class ReviewTag(Base):

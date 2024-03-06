@@ -19,9 +19,6 @@ class Object(Item):
     def __init__(self, *args, **kwargs):
         super(Object, self).__init__(*args, **kwargs)
 
-        
-
-
 
 class ObjectAttributeConnection(Item):
     id = scrapy.Field()
@@ -31,9 +28,7 @@ class ObjectAttributeConnection(Item):
     __tablename__ = 'object_attribute_connections'
 
     def __init__(self, *args, **kwargs):
-        super(ObjectAttributeConnection, self).__init__(*args, **kwargs)
-
-        
+        super(ObjectAttributeConnection, self).__init__(*args, **kwargs)     
 
 
 class HowLongToBeat(Item):
@@ -51,9 +46,6 @@ class HowLongToBeat(Item):
 
     def __init__(self, *args, **kwargs):
         super(HowLongToBeat, self).__init__(*args, **kwargs)
-
-        
-
 
 
 class AgeRating(Item):
@@ -92,6 +84,8 @@ class AgeRatingDescriptor(Item):
     region_id = scrapy.Field()
     attribute_id = scrapy.Field()
 
+    __tablename__ = 'age_rating_descriptors'
+
     def __init__(self, *args, **kwargs):
         super(AgeRatingDescriptor, self).__init__(*args, **kwargs)
 
@@ -101,6 +95,8 @@ class AgeRatingInteractiveElement(Item):
     id = scrapy.Field()
     region_id = scrapy.Field()
     attribute_id = scrapy.Field()
+
+    __tablename__ = 'age_rating_interactive_elements'
 
     def __init__(self, *args, **kwargs):
         super(AgeRatingInteractiveElement, self).__init__(*args, **kwargs)
@@ -114,6 +110,8 @@ class Release(Item):
     estimated_date = scrapy.Field()
     time_frame_year = scrapy.Field()
 
+    __tablename__ = 'releases'
+
     def __init__(self, *args, **kwargs):
         super(Release, self).__init__(*args, **kwargs)
 
@@ -123,6 +121,8 @@ class ReleasePlatformAttribute(Item):
     id = scrapy.Field()
     release_id = scrapy.Field()
     attribute_id = scrapy.Field()
+
+    __tablename__ = 'release_platform_attributes'
 
     def __init__(self, *args, **kwargs):
         super(ReleasePlatformAttribute, self).__init__(*args, **kwargs)

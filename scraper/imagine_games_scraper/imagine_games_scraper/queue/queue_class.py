@@ -72,18 +72,6 @@ class StoreQueue:
         if queue in self.queues:
             self.queues.remove(queue)
 
-    # def enqueue_task(self, item, priority = 1, delay = 0, attempts=5, intervals = [5]):
-    #     # Generate key for redis stored value
-    #     item_key = "%s:%s" % (item.__tablename__, item.get('id'))
-
-    #     # Store item in redis database
-    #     self.redis_connection.set(item_key, json.dumps(item.to_dict()))
-
-    #     # 0 - high : 1 - default : 2 - low
-    #     queue = self.queues[priority]
-    #     # queue.enqueue("imagine_games_scraper.queue.queue_function.queue_function", item, retry=Retry(max=6, interval=5))
-    #     queue.enqueue_in(timedelta(seconds=delay), "imagine_games_scraper.queue.queue_function.queue_function", item_key, retry=Retry(max=attempts, interval=intervals))
-
     def enqueue_task(self, item_key, priority = 1, delay = 0, attempts = 1, intervals = [5]):
         
         # 0 - high : 1 - default : 2 - low

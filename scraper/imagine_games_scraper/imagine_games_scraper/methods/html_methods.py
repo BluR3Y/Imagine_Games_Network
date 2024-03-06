@@ -1,7 +1,5 @@
 from html.parser import HTMLParser
 import html
-import json
-import re
 
 self_closing_elements = ["area","base","br","col","embed","hr","img","input","link","meta","param","source","track","wbr"]
 
