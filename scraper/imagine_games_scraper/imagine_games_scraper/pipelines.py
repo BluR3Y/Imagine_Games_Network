@@ -12,9 +12,9 @@ from imagine_games_scraper.items.wiki import WikiObject, WikiNavigation, MapObje
 
 # Missing items: Slideshow
 
-high_priority = [ArticleContent, Brand, ContentCategory, Image, Gallery, Attribute, User, OfficialReview, TagObject, TypedAttribute, PollConfiguration, CommerceDeal, HowLongToBeat, AgeRating, Release, VideoMetadata, VideoMetadata]
-medium_priority = [Content, UserReview, ReviewTag, ImageConnection, Poll, PollAnswer, Catalog, Region, AgeRatingDescriptor, AgeRatingInteractiveElement, ReleasePlatformAttribute, Author, UserConfiguration]
-low_priority = [Article, Video, WikiObject, Contributor, ObjectConnection, ContentAttributeConnection, DealConnection, Object, ObjectAttributeConnection, VideoCaption, VideoAsset]
+high_priority = [ArticleContent, Brand, ContentCategory, Image, Gallery, Attribute, User, OfficialReview, TagObject, TypedAttribute, PollConfiguration, CommerceDeal, HowLongToBeat, AgeRating, Release, VideoMetadata]
+medium_priority = [UserReview, ReviewTag, ImageConnection, Poll, PollAnswer, Catalog, Region, AgeRatingDescriptor, AgeRatingInteractiveElement, ReleasePlatformAttribute, Author, UserConfiguration, ObjectConnection]
+low_priority = [Article, Video, WikiObject, Contributor, ContentAttributeConnection, DealConnection, Object, ObjectAttributeConnection, VideoCaption, VideoAsset, Content]
 
 class ImagineGamesScraperPipeline:
     def process_item(self, item, spider):

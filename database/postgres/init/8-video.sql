@@ -1,7 +1,6 @@
 -- Video Metadata
 CREATE TABLE video_metadatas (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    ad_breaks BOOLEAN,
     chat_enabled BOOLEAN,
     description_html TEXT,
     downloadable BOOLEAN,

@@ -58,7 +58,7 @@ CREATE TABLE object_attribute_connections (
 -- Object Age Rating
 CREATE TABLE age_ratings (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     type VARCHAR(16),
     name VARCHAR(64),
     slug VARCHAR(64)
@@ -103,7 +103,7 @@ CREATE TABLE releases (
     legacy_id UUID,
     date TIMESTAMP,
     estimated_date BOOLEAN,
-    time_frame_year TIMESTAMP
+    time_frame_year VARCHAR(32)
 );
 -- Platform attributes will be Typed_Attribute entries
 

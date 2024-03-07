@@ -9,7 +9,10 @@ from imagine_games_scraper.items.content import ContentAttributeConnection, Obje
 from imagine_games_scraper.items.wiki import WikiObject
 from imagine_games_scraper.items.media import Image, Gallery, ImageConnection
 
-def parse_contributor_page(self, response, author_item = Author(), recursion_level = 0):
+def parse_contributor_page(self, response, author_item = None, recursion_level = 0):
+    if author_item is None:
+        author_item = Author()
+
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
@@ -36,8 +39,11 @@ def parse_contributor_page(self, response, author_item = Author(), recursion_lev
         author_item['cover_id'] = { '__ref': f"{cover_image_item.__tablename__}:{cover_image_item.get('id')}" }
 
     yield author_item
-# Missing: Fix method
-def parse_object_page(self, response, object_item = Object(), recursion_level = 0):
+
+def parse_object_page(self, response, object_item = None, recursion_level = 0):
+    if object_item is None:
+        object_item = Object()
+
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
@@ -76,11 +82,11 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
 
     object_names = object_data['metadata'].get('names')
     if object_names:
-        long = object_names.get('long')
+        long = object_names.get('name')
         alt = object_names.get('alt')
         short = object_names.get('short')
         object_item['names'] = {
-            '__static': "(%s,ARRAY%s::VARCHAR[],%s)::name_entry" % ((long if long else 'null'),(alt if alt else []),(short if short else 'null'))
+            '__static': "(%s,ARRAY%s::VARCHAR[],%s)::name_entry" % (("quote_literal('" + long.replace("'", "''") + "')" if long else 'null'),(alt if alt else []),("quote_literal('" + short.replace("'", "''") + "')" if short else 'null'))
         }
 
     object_descriptions = object_data['metadata'].get('descriptions')
@@ -88,7 +94,7 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
         long = object_descriptions.get('long')
         short = object_descriptions.get('short')
         object_item['descriptions'] = {
-            '__static': "(%s,%s)::description_entry" % (("quote_literal('" + long.replace("'", "''") + "')" if long else 'null'), ("quote_literal('" + short.replace("'", "''") + "')"))
+            '__static': "(%s,%s)::description_entry" % (("quote_literal('" + long.replace("'", "''") + "')" if long else 'null'), ("quote_literal('" + short.replace("'", "''") + "')" if short else 'null'))
         }
 
     all_attributes = []
@@ -124,195 +130,215 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
     } for attr in object_data.get('publishers')])
 
     for attr in all_attributes:
-        attribute_item = Attribute()
-        attribute_item['name'] = attr.get('name')
-        attribute_item['short_name'] = attr.get('shortName')
-        attribute_item['slug'] = attr.get('slug')
-
-        typed_attribute_item = TypedAttribute()
-        typed_attribute_item['type'] = attr.get('type')
-        typed_attribute_item['attribute_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
-
-        attribute_item['referrers'].append(f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}")
-        yield attribute_item
-
         object_attribute_connection = ObjectAttributeConnection()
-        object_attribute_connection['attribute_id'] = { '__ref': f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}" }
         object_attribute_connection['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-
-        typed_attribute_item['referrers'].append(f"{object_attribute_connection.__tablename__}:{object_attribute_connection.get('id')}")
-        yield typed_attribute_item
-
         object_item['referrers'].append(f"{object_attribute_connection.__tablename__}:{object_attribute_connection.get('id')}")
+
+        self.cursor.execute("""
+            SELECT typed_attributes.id
+            FROM typed_attributes
+            INNER JOIN attributes
+                ON typed_attributes.attribute_id = attributes.id
+            WHERE typed_attributes.type = %s AND attributes.name = %s
+            LIMIT 1                    
+        """, (attr.get('type'), attr.get('name'),))
+        existing_attribute = self.cursor.fetchone()
+        if existing_attribute:
+            object_attribute_connection['attribute_id'] = existing_attribute[0]
+        else:
+            typed_attribute_item = TypedAttribute(referrers=[f"{object_attribute_connection.__tablename__}:{object_attribute_connection.get('id')}"])
+            typed_attribute_item['type'] = attr.get('type')
+
+            attribute_item = Attribute(referrers=[f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}"])
+            attribute_item['name'] = attr.get('name')
+            attribute_item['short_name'] = attr.get('short_name')
+            attribute_item['slug'] = attr.get('slug')
+
+            attribute_obj_search = (lambda obj, target : obj.get('name') == target)
+            attribute_obj = next((apollo_state[key] for key in apollo_state.keys() if key.startswith('Attribute:') and attribute_obj_search(apollo_state[key], attr.get('name'))), None)
+            if attribute_obj:
+                attribute_item['legacy_id'] = attribute_obj.get('id')
+                attribute_item['short_name'] = attribute_item['short_name'] or attribute_obj.get('shortName')
+                attribute_item['slug'] = attribute_item['slug'] or attribute_obj.get('slug')
+
+            yield attribute_item
+            typed_attribute_item['attribute_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
+
+            yield typed_attribute_item
+            object_attribute_connection['attribute_id'] = { '__ref': f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}" }
+
         yield object_attribute_connection
+    # Last Here: Modifying to avoid storing duplicates
         
-    for region in [apollo_state[region_ref['__ref']] for region_ref in filter((lambda x : x.get('__ref') is not None), object_data.get('objectRegions'))]:
-        region_item = Region()
-        region_item['legacy_id'] = region.get('id')
-        region_item['name'] = region.get('name')
-        region_item['region'] = region.get('region')
+    # for region in [apollo_state[region_ref['__ref']] for region_ref in filter((lambda x : x.get('__ref') is not None), object_data.get('objectRegions'))]:
+    #     region_item = Region()
+    #     region_item['legacy_id'] = region.get('id')
+    #     region_item['name'] = region.get('name')
+    #     region_item['region'] = region.get('region')
 
-        region_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-        object_item['referrers'].append(f"{region_item.__tablename__}:{region_item.get('id')}")
+    #     region_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+    #     object_item['referrers'].append(f"{region_item.__tablename__}:{region_item.get('id')}")
 
-        age_rating_ref = region.get('ageRating')
-        if age_rating_ref:
-            age_rating_data = apollo_state[age_rating_ref.get('__ref')]
-            age_rating_item = AgeRating(referrers=[f"{region_item.__tablename__}:{region_item.get('id')}"])
-            age_rating_item['legacy_id'] = age_rating_data.get('id')
-            age_rating_item['name'] = age_rating_data.get('name')
-            age_rating_item['slug'] = age_rating_data.get('slug')
-            age_rating_item['type'] = age_rating_data.get('ageRatingType')
+    #     age_rating_ref = region.get('ageRating')
+    #     if age_rating_ref:
+    #         age_rating_data = apollo_state[age_rating_ref.get('__ref')]
+    #         age_rating_item = AgeRating(referrers=[f"{region_item.__tablename__}:{region_item.get('id')}"])
+    #         age_rating_item['legacy_id'] = age_rating_data.get('id')
+    #         age_rating_item['name'] = age_rating_data.get('name')
+    #         age_rating_item['slug'] = age_rating_data.get('slug')
+    #         age_rating_item['type'] = age_rating_data.get('ageRatingType')
 
-            yield age_rating_item
-            region_item['age_rating_id'] = { '__ref': f"{age_rating_item.__tablename__}:{age_rating_item.get('id')}" }
+    #         yield age_rating_item
+    #         region_item['age_rating_id'] = { '__ref': f"{age_rating_item.__tablename__}:{age_rating_item.get('id')}" }
 
-        for descriptor in region.get('ageRatingDescriptors'):
-            descriptor_item = AgeRatingDescriptor()
+    #     for descriptor in region.get('ageRatingDescriptors'):
+    #         descriptor_item = AgeRatingDescriptor()
             
-            descriptor_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
-            region_item['referrers'].append(f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}")
+    #         descriptor_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
+    #         region_item['referrers'].append(f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}")
 
-            descriptor_attribute_item = Attribute(referrers=[f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}"])
-            descriptor_attribute_item['name'] = descriptor.get('name')
-            yield descriptor_attribute_item
+    #         descriptor_attribute_item = Attribute(referrers=[f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}"])
+    #         descriptor_attribute_item['name'] = descriptor.get('name')
+    #         yield descriptor_attribute_item
             
-            descriptor_item['attribute_id'] = { '__ref': f"{descriptor_attribute_item.__tablename__}:{descriptor_attribute_item.get('id')}" }
-            yield descriptor_item
+    #         descriptor_item['attribute_id'] = { '__ref': f"{descriptor_attribute_item.__tablename__}:{descriptor_attribute_item.get('id')}" }
+    #         yield descriptor_item
 
-        for element in region.get('interactiveElements'):
-            element_item = AgeRatingInteractiveElement()
+    #     for element in region.get('interactiveElements'):
+    #         element_item = AgeRatingInteractiveElement()
 
-            element_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
-            region_item['referrers'].append(f"{element_item.__tablename__}:{element_item.get('id')}")
+    #         element_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
+    #         region_item['referrers'].append(f"{element_item.__tablename__}:{element_item.get('id')}")
 
-            element_attribute_item = Attribute(referrers=[f"{element_item.__tablename__}:{element_item.get('id')}"])
-            element_attribute_item['name'] = element.get('name')
-            yield element_attribute_item
+    #         element_attribute_item = Attribute(referrers=[f"{element_item.__tablename__}:{element_item.get('id')}"])
+    #         element_attribute_item['name'] = element.get('name')
+    #         yield element_attribute_item
 
-            element_item['attribute_id'] = { '__ref': f"{element_attribute_item.__tablename__}:{element_attribute_item.get('id')}" }
-            yield element_item
+    #         element_item['attribute_id'] = { '__ref': f"{element_attribute_item.__tablename__}:{element_attribute_item.get('id')}" }
+    #         yield element_item
 
-        for release in [apollo_state[release_ref['__ref']] for release_ref in region.get('releases')]:
-            release_item = Release()
-            release_item['legacy_id'] = release.get('id')
-            release_item['date'] = release.get('date')
-            release_item['estimated_date'] = release.get('estimatedDate')
-            release_item['time_frame_year'] = release.get('timeframeYear')
+    #     for release in [apollo_state[release_ref['__ref']] for release_ref in region.get('releases')]:
+    #         release_item = Release()
+    #         release_item['legacy_id'] = release.get('id')
+    #         release_item['date'] = release.get('date')
+    #         release_item['estimated_date'] = release.get('estimatedDate')
+    #         release_item['time_frame_year'] = release.get('timeframeYear')
 
-            for platform in [apollo_state[platform_ref['__ref']] for platform_ref in release.get('platformAttributes')]:
-                platform_item = ReleasePlatformAttribute()
+    #         for platform in [apollo_state[platform_ref['__ref']] for platform_ref in release.get('platformAttributes')]:
+    #             platform_item = ReleasePlatformAttribute()
 
-                platform_item['release_id'] = { '__ref': f"{release_item.__tablename__}:{release_item.get('id')}" }
-                release_item['referrers'].append(f"{platform_item.__tablename__}:{platform_item.get('id')}")
+    #             platform_item['release_id'] = { '__ref': f"{release_item.__tablename__}:{release_item.get('id')}" }
+    #             release_item['referrers'].append(f"{platform_item.__tablename__}:{platform_item.get('id')}")
 
-                platform_attribute_item = Attribute(referrers=[f"{platform_item.__tablename__}:{platform_item.get('id')}"])
-                platform_attribute_item['legacy_id'] = platform.get('id')
-                platform_attribute_item['name'] = platform.get('name')
-                platform_attribute_item['slug'] = platform.get('slug')
-                yield platform_attribute_item
+    #             platform_attribute_item = Attribute(referrers=[f"{platform_item.__tablename__}:{platform_item.get('id')}"])
+    #             platform_attribute_item['legacy_id'] = platform.get('id')
+    #             platform_attribute_item['name'] = platform.get('name')
+    #             platform_attribute_item['slug'] = platform.get('slug')
+    #             yield platform_attribute_item
 
-                platform_item['attribute_id'] = { '__ref': f"{platform_attribute_item.__tablename__}:{platform_attribute_item.get('id')}" }
-                yield platform_item
-            yield release_item
-        yield region_item
+    #             platform_item['attribute_id'] = { '__ref': f"{platform_attribute_item.__tablename__}:{platform_attribute_item.get('id')}" }
+    #             yield platform_item
+    #         yield release_item
+    #     yield region_item
 
-    user_review_key = next((key for key in apollo_state['ROOT_QUERY'] if 'userReviewSearch' in key), None)
-    if user_review_key:
-        for user_review in [apollo_state[review_ref['__ref']] for review_ref in apollo_state['ROOT_QUERY'][user_review_key]['userReviews']]:
-            user_data = apollo_state[user_review['user']['__ref']]
-            user_item = User()
-            user_item['legacy_id'] = user_data.get('id')
-            user_item['name'] = user_data.get('name')
-            user_item['nickname'] = user_data.get('nickname')
+    # user_review_key = next((key for key in apollo_state['ROOT_QUERY'] if 'userReviewSearch' in key), None)
+    # if user_review_key:
+    #     for user_review in [apollo_state[review_ref['__ref']] for review_ref in apollo_state['ROOT_QUERY'][user_review_key]['userReviews']]:
+    #         user_data = apollo_state[user_review['user']['__ref']]
+    #         user_item = User()
+    #         user_item['legacy_id'] = user_data.get('id')
+    #         user_item['name'] = user_data.get('name')
+    #         user_item['nickname'] = user_data.get('nickname')
 
-            user_avatar_ref = user_data.get('avatarImageUrl')
-            if user_avatar_ref:
-                user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
-                user_avatar_item['url'] = user_avatar_ref
+    #         user_avatar_ref = user_data.get('avatarImageUrl')
+    #         if user_avatar_ref:
+    #             user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
+    #             user_avatar_item['url'] = user_avatar_ref
 
-                yield user_avatar_item
-                user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
+    #             yield user_avatar_item
+    #             user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
 
-            user_configuration_ref = user_data.get('playlistSettings')
-            if user_configuration_ref:
-                user_configuration_item = UserConfiguration()
-                user_configuration_item['privacy'] = user_configuration_ref.get('privacy', '').lower()
-                user_configuration_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
+    #         user_configuration_ref = user_data.get('playlistSettings')
+    #         if user_configuration_ref:
+    #             user_configuration_item = UserConfiguration()
+    #             user_configuration_item['privacy'] = user_configuration_ref.get('privacy', '').lower()
+    #             user_configuration_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
 
-                yield user_configuration_item
-                user_item['referrers'].append(f"{user_configuration_item.__tablename__}:{user_configuration_item.get('id')}")
+    #             yield user_configuration_item
+    #             user_item['referrers'].append(f"{user_configuration_item.__tablename__}:{user_configuration_item.get('id')}")
 
-            user_review_item = UserReview()
-            user_review_item['legacy_id'] = user_review.get('id')
-            user_review_item['is_liked'] = user_review.get('liked')
-            user_review_item['score'] = user_review.get('score')
-            user_review_item['text'] = user_review.get('text')
-            user_review_item['is_spoiler'] = user_review.get('isSpoiler')
-            user_review_item['is_private'] = user_review.get('isPrivate')
-            user_review_item['publish_date'] = user_review.get('createdAt')
-            user_review_item['modify_date'] = user_review.get('updatedAt')
+    #         user_review_item = UserReview()
+    #         user_review_item['legacy_id'] = user_review.get('id')
+    #         user_review_item['is_liked'] = user_review.get('liked')
+    #         user_review_item['score'] = user_review.get('score')
+    #         user_review_item['text'] = user_review.get('text')
+    #         user_review_item['is_spoiler'] = user_review.get('isSpoiler')
+    #         user_review_item['is_private'] = user_review.get('isPrivate')
+    #         user_review_item['publish_date'] = user_review.get('createdAt')
+    #         user_review_item['modify_date'] = user_review.get('updatedAt')
 
-            user_review_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
-            user_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
-            user_review_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-            object_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
-            yield user_item
+    #         user_review_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
+    #         user_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
+    #         user_review_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+    #         object_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
+    #         yield user_item
 
-            user_review_platform_ref = user_review.get('platformId')
-            if user_review_platform_ref:
-                attribute_data = apollo_state["Attribute:" + str(user_review_platform_ref)]
-                if attribute_data:
-                    attribute_item = Attribute(referrers=[f"{user_review_item.__tablename__}:{user_review_item.get('id')}"])
-                    attribute_item['legacy_id'] = attribute_data.get('id')
-                    attribute_item['name'] = attribute_data.get('name')
-                    attribute_item['slug'] = attribute_data.get('slug')
-                    attribute_item['short_name'] = attribute_data.get('shortName')
+    #         user_review_platform_ref = user_review.get('platformId')
+    #         if user_review_platform_ref:
+    #             attribute_data = apollo_state["Attribute:" + str(user_review_platform_ref)]
+    #             if attribute_data:
+    #                 attribute_item = Attribute(referrers=[f"{user_review_item.__tablename__}:{user_review_item.get('id')}"])
+    #                 attribute_item['legacy_id'] = attribute_data.get('id')
+    #                 attribute_item['name'] = attribute_data.get('name')
+    #                 attribute_item['slug'] = attribute_data.get('slug')
+    #                 attribute_item['short_name'] = attribute_data.get('shortName')
 
-                    yield attribute_item
-                    user_review_item['platform_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
+    #                 yield attribute_item
+    #                 user_review_item['platform_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
 
-            for tag in [apollo_state[tag_ref['__ref']] for tag_ref in user_review.get(next((key for key in user_review if 'userReviewObjectFeedback' in key), None))]:
-                tag_object_item = TagObject()
-                tag_object_item['legacy_id'] = tag.get('id')
-                tag_object_item['name'] = tag.get('name')
+    #         for tag in [apollo_state[tag_ref['__ref']] for tag_ref in user_review.get(next((key for key in user_review if 'userReviewObjectFeedback' in key), None))]:
+    #             tag_object_item = TagObject()
+    #             tag_object_item['legacy_id'] = tag.get('id')
+    #             tag_object_item['name'] = tag.get('name')
 
-                review_tag_item = ReviewTag()
-                review_tag_item['is_positive'] = tag.get('isPositive')
+    #             review_tag_item = ReviewTag()
+    #             review_tag_item['is_positive'] = tag.get('isPositive')
 
-                review_tag_item['tag_object_id'] = { '__ref': f"{tag_object_item.__tablename__}:{tag_object_item.get('id')}" }
-                tag_object_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
+    #             review_tag_item['tag_object_id'] = { '__ref': f"{tag_object_item.__tablename__}:{tag_object_item.get('id')}" }
+    #             tag_object_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
 
-                review_tag_item['review_id'] = { '__ref': f"{user_review_item.__tablename__}:{user_review_item.get('id')}" }
-                user_review_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
+    #             review_tag_item['review_id'] = { '__ref': f"{user_review_item.__tablename__}:{user_review_item.get('id')}" }
+    #             user_review_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
 
-                yield tag_object_item
-                yield review_tag_item
+    #             yield tag_object_item
+    #             yield review_tag_item
 
-            yield user_review_item
+    #         yield user_review_item
             
     gallery_regex = re.compile(r"imageGallery:{.*}")
     object_gallery_key = next((key for key in object_data if gallery_regex.search(key)), None)
     if object_gallery_key:
         gallery_item = Gallery(referrers=[f"{object_item.__tablename__}:{object_item.get('id')}"])
+
         for image in [apollo_state[img_ref['__ref']] for img_ref in object_data[object_gallery_key]['images']]:
-            image_item = Image()
-            image_item['legacy_id'] = image.get('id')
-            image_item['caption'] = image.get('caption')
-            image_item['url'] = image.get('url')
-
             image_connection_item = ImageConnection()
-            image_connection_item['image_id'] = { '__ref': f"{image_item.__tablename__}:{image_item.get('id')}" }
             image_connection_item['gallery_id'] = { '__ref': f"{gallery_item.__tablename__}:{gallery_item.get('id')}" }
-
-            image_item['referrers'].append(f"{image_connection_item.__tablename__}:{image_connection_item.get('id')}")
-            yield image_item
-
             gallery_item['referrers'].append(f"{image_connection_item.__tablename__}:{image_connection_item.get('id')}")
-            yield image_connection_item
 
-        object_item['gallery_id'] = { '__ref': f"{gallery_item.__tablename__}:{gallery_item.get('id')}" }
+            existing_image = self.postgres_find_by_legacy_id(table=Image.__tablename__, id=image.get('id'), fields=['id'], only_first=True)
+            if existing_image:
+                image_connection_item['image_id'] = existing_image[0]
+            else:
+                image_item = Image(referrers=[f"{image_connection_item.__tablename__}:{image_connection_item.get('id')}"])
+                image_item['legacy_id'] = image.get('id')
+                image_item['caption'] = image.get('caption')
+                image_item['url'] = image.get('url')
+
+                yield image_item
+                image_connection_item['image_id'] = { '__ref': f"{image_item.__tablename__}:{image_item.get('id')}" }
+            yield image_connection_item
         yield gallery_item
+        object_item['gallery_id'] = { '__ref': f"{gallery_item.__tablename__}:{gallery_item.get('id')}" }
 
     # legacy_wiki_key = next((key for key in apollo_state['ROOT_QUERY'] if 'wiki' in key), None)
     # if legacy_wiki_key:
@@ -353,7 +379,10 @@ def parse_object_page(self, response, object_item = Object(), recursion_level = 
     #     object_item['wiki'] = wiki_item.get('id')
     #     yield wiki_item
 
-def parse_modern_content(self, page_json_data, modern_content_key, content_item = Content(), recursion_level = 0):
+def parse_modern_content(self, page_json_data, modern_content_key, content_item = None, recursion_level = 0):
+    if content_item is None:
+        content_item = Content()
+
     apollo_state = page_json_data['props']['apolloState']
     modern_content_data = apollo_state[modern_content_key]
 
@@ -376,7 +405,8 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     if header_image:
         header_image_item = Image(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
         header_image_item['url'] = header_image.get('url')
-        content_item.header_image_id = { '__ref': f"{header_image_item.__tablename__}:{header_image_item.get('id')}" }
+        yield header_image_item
+        content_item['header_image_id'] = { '__ref': f"{header_image_item.__tablename__}:{header_image_item.get('id')}" }
 
     feed_image = modern_content_data.get('feedImage')
     if feed_image:
@@ -384,57 +414,58 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
         feed_image_item['url'] = feed_image.get('url')
         yield feed_image_item
         content_item['feed_image_id'] = { '__ref': f"{feed_image_item.__tablename__}:{feed_image_item.get('id')}" }
-
         
     for user_data in [apollo_state[contributor_ref.get('__ref')] for contributor_ref in modern_content_data.get('contributorsOrBylines', [])]:
         contributor_item = Contributor()
+        
         contributor_item['content_id'] = { '__ref': f"{content_item.__tablename__}:{content_item.get('id')}" }
         content_item['referrers'].append(f"{contributor_item.__tablename__}:{contributor_item.get('id')}")
 
-        author_item = Author()
+        existing_user = self.postgres_find_by_legacy_id(table=User.__tablename__, id=user_data.get('id'), fields=['id'], only_first=True)
+        if existing_user:
+            contributor_item['user_id'] = existing_user[0]
+        else:
+            author_item = Author()
 
-        user_item = User(referrers=[f"{author_item.__tablename__}:{author_item.get('id')}", f"{contributor_item.__tablename__}:{contributor_item.get('id')}"])
-        user_item['legacy_id'] = user_data.get('id')
-        user_item['name'] = user_data.get('name')
-        user_item['nickname'] = user_data.get('nickname')
+            user_item = User(referrers=[f"{author_item.__tablename__}:{author_item.get('id')}", f"{contributor_item.__tablename__}:{contributor_item.get('id')}"])
+            user_item['legacy_id'] = user_data.get('id')
+            user_item['name'] = user_data.get('name')
+            user_item['nickname'] = user_data.get('nickname')
 
-        user_avatar = user_data.get('avatarImageUrl')
-        if user_avatar:
-            user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
-            user_avatar_item['url'] = user_avatar
+            user_avatar = user_data.get('avatarImageUrl')
+            if user_avatar:
+                user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
+                user_avatar_item['url'] = user_avatar
 
-            yield user_avatar_item
-            user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
-        yield user_item
+                yield user_avatar_item
+                user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
+            yield user_item
 
-        author_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
+            author_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
 
-        yield scrapy.Request(url="https://www.ign.com/person/" + user_data.get('nickname'), callback=self.parse_contributor_page, cb_kwargs={ 'author_item': author_item, 'recursion_level': recursion_level })
+            yield scrapy.Request(url="https://www.ign.com/person/" + user_data.get('nickname'), callback=self.parse_contributor_page, cb_kwargs={ 'author_item': author_item, 'recursion_level': recursion_level })
 
-        contributor_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
+            contributor_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
 
         yield contributor_item
         
     brand_ref = modern_content_data.get('brand')
     if brand_ref:
-        brand_item = Brand(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
-
-        if brand_ref.get('__ref') is not None:
-            brand_data = apollo_state[brand_ref.get('__ref')]
+        brand_data = (apollo_state[brand_ref.get('__ref')] if brand_ref.get('__ref') else brand_ref)
+        
+        existing_brand = self.postgres_find_by_legacy_id(table=Brand.__tablename__, id=brand_data.get('id'), fields=['id'], only_first=True)
+        if existing_brand:
+            content_item['brand_id'] = existing_brand[0]
+        else:
+            brand_item = Brand(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
             brand_item['legacy_id'] = brand_data.get('id')
             brand_item['slug'] = brand_data.get('slug')
             brand_item['name'] = brand_data.get('name')
             brand_item['logo_light'] = brand_data.get('logoLight')
             brand_item['logo_dark'] = brand_data.get('logoDark')
-        else:
-            brand_item['legacy_id'] = brand_ref.get('id')
-            brand_item['slug'] = brand_ref.get('slug')
-            brand_item['name'] = brand_ref.get('name')
-            brand_item['logo_light'] = brand_ref.get('logoLight')
-            brand_item['logo_dark'] = brand_ref.get('logoDark')
 
-        yield brand_item
-        content_item['brand_id'] = { '__ref': f"{brand_item.__tablename__}:{brand_item.get('id')}" }
+            yield brand_item
+            content_item['brand_id'] = { '__ref': f"{brand_item.__tablename__}:{brand_item.get('id')}" }
 
     object_keys = []
     primary_object_ref = modern_content_data.get('primaryObject')
@@ -445,50 +476,83 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     object_key = next((key for key in modern_content_data if object_regex.search(key)), None)
     if object_key:
         object_keys.append(modern_content_data.get(object_key)[1:])
-
+        
     for key, object_ref in enumerate(object_keys):
         object_connection_item = ObjectConnection()
         object_connection_item['content_id'] = { '__ref': f"{content_item.__tablename__}:{content_item.get('id')}" }
-    
+        content_item['referrers'].append(f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}")
+
         object_data = apollo_state[object_ref.get('__ref')]
-        object_item = Object(referrers=[f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}"])
-        if key == 0:
-            content_item['primary_object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-            object_item['referrers'].append(f"{content_item.__tablename__}:{content_item.get('id')}")
-        
-        yield scrapy.Request(url="https://www.ign.com" + object_data.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
-        object_connection_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+        existing_object = self.postgres_find_by_legacy_id(table=Object.__tablename__, id=object_data.get('id'), fields=['id'], only_first=True)
+
+        if existing_object:
+            object_connection_item['object_id'] = existing_object[0]
+            if not key:
+                content_item['primary_object_id'] = existing_object[0]
+        else:
+            object_item = Object(referrers=[f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}"])
+            # Bug: Some entries fail to get stored if they have a primary_object_id
+            if not key:
+                content_item['primary_object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+                object_item['referrers'].append(f"{content_item.__tablename__}:{content_item.get('id')}")
+
+            yield scrapy.Request(url="https://www.ign.com" + object_data.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
+            object_connection_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
 
         yield object_connection_item
 
     content_category_ref = modern_content_data.get('contentCategory')
     if content_category_ref:
         content_category_data = apollo_state[content_category_ref.get('__ref')]
-        content_category_item = ContentCategory(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
-        content_category_item['legacy_id'] = content_category_data.get('id')
-        content_category_item['name'] = content_category_data.get('name')
-
-        yield content_category_item
-        content_item['category_id'] = { '__ref': f"{content_category_item.__tablename__}:{content_category_item.get('id')}" }
         
-    for attribute in modern_content_data.get('attributes', []):
+        existing_content_category = self.postgres_find_by_legacy_id(table=ContentCategory.__tablename__, id=content_category_data.get('id'), fields=['id'], only_first=True)
+        if existing_content_category:
+            content_item['category_id'] = existing_content_category[0]
+        else:
+            content_category_item = ContentCategory(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
+            content_category_item['legacy_id'] = content_category_data.get('id')
+            content_category_item['name'] = content_category_data.get('name')
+
+            yield content_category_item
+            content_item['category_id'] = { '__ref': f"{content_category_item.__tablename__}:{content_category_item.get('id')}" }
+            
+    for nested_attribute in modern_content_data.get('attributes', []):
+        attribute_data = nested_attribute.get('attribute')
+
         attribute_connection = ContentAttributeConnection()
         attribute_connection['content_id'] = { '__ref': f"{content_item.__tablename__}:{content_item.get('id')}" }
         content_item['referrers'].append(f"{attribute_connection.__tablename__}:{attribute_connection.get('id')}")
 
-        typed_attribute_item = TypedAttribute(referrers=[f"{attribute_connection.__tablename__}:{attribute_connection.get('id')}"])
-        typed_attribute_item['type'] = attribute.get('type')
+        self.cursor.execute("""
+            SELECT typed_attributes.id
+            FROM typed_attributes
+            INNER JOIN attributes
+                ON typed_attributes.attribute_id = attributes.id
+            WHERE typed_attributes.type = %s AND attributes.name = %s
+            LIMIT 1;
+        """, (nested_attribute.get('type'), attribute_data.get('name'),))
+        existing_attribute = self.cursor.fetchone()
+        if existing_attribute:
+            attribute_connection['attribute_id'] = existing_attribute[0]
+        else:
+            typed_attribute_item = TypedAttribute(referrers=[f"{attribute_connection.__tablename__}:{attribute_connection.get('id')}"])
+            typed_attribute_item['type'] = nested_attribute.get('type')
 
-        attribute_item = Attribute(referrers=[f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}"])
-        attribute_item['name'] = attribute.get('name')
-        attribute_item['short_name'] = attribute.get('shortName')
-        attribute_item['slug'] = attribute.get('slug')
-        yield attribute_item
+            attribute_item = Attribute(referrers=[f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}"])
+            attribute_item['name'] = attribute_data.get('name')
 
-        typed_attribute_item['attribute_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
-        yield typed_attribute_item
+            attribute_obj_search = (lambda obj, target : obj.get('name') == target)
+            attribute_obj = next((apollo_state[key] for key in apollo_state.keys() if key.startswith('Attribute:') and attribute_obj_search(apollo_state[key], attribute_data.get('name'))), None)
+            if attribute_obj:
+                attribute_item['short_name'] = attribute_obj.get('shortName')
+                attribute_item['slug'] = attribute_obj.get('slug')
+                attribute_item['legacy_id'] = attribute_obj.get('id')
+            yield attribute_item
 
-        attribute_connection['attribute_id'] = { '__ref': f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}" }
+            typed_attribute_item['attribute_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
+            yield typed_attribute_item
+
+            attribute_connection['attribute_id'] = { '__ref': f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}" }
         yield attribute_connection
 
     yield content_item

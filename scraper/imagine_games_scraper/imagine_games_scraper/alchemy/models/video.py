@@ -42,7 +42,6 @@ class VideoMetadata(Base):
         primary_key=True,
         default=uuid.uuid4
     )
-    ad_breaks = Column(BOOLEAN)
     chat_enabled = Column(BOOLEAN)
     description_html = Column(String)
     downloadable = Column(BOOLEAN)

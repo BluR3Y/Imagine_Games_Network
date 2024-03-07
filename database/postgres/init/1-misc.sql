@@ -10,7 +10,7 @@ CREATE TABLE images (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
     legacy_url VARCHAR(128),
-    url VARCHAR(128),
+    url VARCHAR(256),
     link VARCHAR(128),
     caption TEXT,
     embargo_date TIMESTAMP

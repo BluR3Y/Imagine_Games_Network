@@ -1,11 +1,13 @@
 import scrapy
 import json
-import re
 
 from imagine_games_scraper.items.video import Video, VideoMetadata, VideoAsset
 from imagine_games_scraper.items.content import Content
 
-def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
+def parse_video_page(self, response, video_item = None, recursion_level = 0):
+    if video_item is None:
+        video_item = Video()
+        
     page_script_data = response.xpath("//script[@id='__NEXT_DATA__' and @type='application/json']/text()").get()
     page_json_data = json.loads(page_script_data)
 
@@ -26,7 +28,6 @@ def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
     video_metadata = modern_video_data.get('videoMetadata')
     if video_metadata:
         video_metadata_item = VideoMetadata(referrers=[f"{video_item.__tablename__}:{video_item.get('id')}"])
-        # video_metadata_item['ad_breaks'] = video_metadata.get('adBreaks')
         video_metadata_item['chat_enabled'] = video_metadata.get('chatEnabled')
         video_metadata_item['description_html'] = video_metadata.get('descriptionHtml')
         video_metadata_item['downloadable'] = video_metadata.get('downloadable')
@@ -50,12 +51,11 @@ def parse_video_page(self, response, video_item = Video(), recursion_level = 0):
         yield asset_item
 
     # *************************** Parsing Recommendation Content *****************************
-    # if recursion_level < 1:
-    #     for recommendation in modern_video_data.get('recommendations'):
-    #         existing_video = True   # Missing
-
-    #         if existing_video is None:
+    # recommendation_data = modern_video_data.get('recommendations')
+    # if recommendation_data and recursion_level < 1:
+    #     for recommendation in recommendation_data:
+    #         item_exists = self.postgres_find_by_legacy_id(table="contents", id=recommendation.get('videoId'), only_first=True)[0]
+    #         if not item_exists:
     #             recommendation_url = 'https://www.ign.com' + recommendation['url']
-    #             yield scrapy.Request(url=recommendation_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': recursion_level })
-
+    #             yield scrapy.Request(url=recommendation_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })  
     yield video_item

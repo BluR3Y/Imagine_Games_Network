@@ -3,6 +3,9 @@ from imagine_games_scraper.queue import activeQueue
 from psycopg2.extras import Json
 from psycopg2.extensions import AsIs
 
+# Future patch: When attempting to add an entry that already exists, i.e: Attribute, Release, etc.
+    # Modify sql tables to accept only unique fields
+    # If error is thrown bc of duplicate, loop through "referrers" in redis db and modify their reference to the existing postgres entry
 def queue_function(item_key):
     stored_item = activeQueue.redis_connection.get(item_key)
     if not stored_item:

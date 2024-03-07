@@ -15,8 +15,6 @@ class Image(Item):
     def __init__(self, *args, **kwargs):
         super(Image, self).__init__(*args, **kwargs)
 
-        
-
 class ImageConnection(Item):
     id = scrapy.Field()
     image_id = scrapy.Field()
@@ -27,9 +25,6 @@ class ImageConnection(Item):
     def __init__(self, *args, **kwargs):
         super(ImageConnection, self).__init__(*args, **kwargs)
 
-        
-
-
 class Gallery(Item):
     id = scrapy.Field()
 
@@ -37,10 +32,6 @@ class Gallery(Item):
 
     def __init__(self, *args, **kwargs):
         super(Gallery, self).__init__(*args, **kwargs)
-
-        
-
-
 
 class Slideshow(Item):
     id = scrapy.Field()
