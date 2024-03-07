@@ -140,15 +140,15 @@ class UserReview(Item):
 
         
 
-class TagObject(Item):
-    id = scrapy.Field()
-    legacy_id = scrapy.Field()
-    name = scrapy.Field()
+# class TagObject(Item):
+#     id = scrapy.Field()
+#     legacy_id = scrapy.Field()
+#     name = scrapy.Field()
 
-    __tablename__ = 'tag_objects'
+#     __tablename__ = 'tag_objects'
 
-    def __init__(self, *args, **kwargs):
-        super(TagObject, self).__init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(TagObject, self).__init__(*args, **kwargs)
 
         
 
@@ -156,7 +156,7 @@ class ReviewTag(Item):
     id = scrapy.Field()
     review_id = scrapy.Field()
     is_positive = scrapy.Field()
-    tag_object_id = scrapy.Field()
+    attribute_id = scrapy.Field()
 
     __tablename__ = 'review_tags'
 

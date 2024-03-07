@@ -2,7 +2,7 @@ from imagine_games_scraper.queue import activeQueue
 import json
 
 from imagine_games_scraper.items.article import Article, ArticleContent
-from imagine_games_scraper.items.content import Content, Brand, ContentCategory, ObjectConnection, Contributor, ContentAttributeConnection, OfficialReview, UserReview, TagObject, ReviewTag
+from imagine_games_scraper.items.content import Content, Brand, ContentCategory, ObjectConnection, Contributor, ContentAttributeConnection, OfficialReview, UserReview, ReviewTag
 from imagine_games_scraper.items.media import Gallery, Image, ImageConnection
 from imagine_games_scraper.items.misc import Attribute, TypedAttribute, PollConfiguration, Poll, PollAnswer, Catalog, CommerceDeal, DealConnection
 from imagine_games_scraper.items.object import Object, ObjectAttributeConnection, HowLongToBeat, AgeRating, Region, Release, AgeRatingDescriptor, AgeRatingInteractiveElement, ReleasePlatformAttribute
@@ -12,7 +12,7 @@ from imagine_games_scraper.items.wiki import WikiObject, WikiNavigation, MapObje
 
 # Missing items: Slideshow
 
-high_priority = [ArticleContent, Brand, ContentCategory, Image, Gallery, Attribute, User, OfficialReview, TagObject, TypedAttribute, PollConfiguration, CommerceDeal, HowLongToBeat, AgeRating, Release, VideoMetadata]
+high_priority = [ArticleContent, Brand, ContentCategory, Image, Gallery, Attribute, User, OfficialReview, TypedAttribute, PollConfiguration, CommerceDeal, HowLongToBeat, AgeRating, Release, VideoMetadata]
 medium_priority = [UserReview, ReviewTag, ImageConnection, Poll, PollAnswer, Catalog, Region, AgeRatingDescriptor, AgeRatingInteractiveElement, ReleasePlatformAttribute, Author, UserConfiguration, ObjectConnection]
 low_priority = [Article, Video, WikiObject, Contributor, ContentAttributeConnection, DealConnection, Object, ObjectAttributeConnection, VideoCaption, VideoAsset, Content]
 

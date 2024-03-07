@@ -5,7 +5,7 @@ import re
 from imagine_games_scraper.items.user import User, Author, UserConfiguration
 from imagine_games_scraper.items.object import Object, Region, HowLongToBeat, Release, AgeRating, ObjectAttributeConnection, AgeRatingDescriptor, AgeRatingInteractiveElement, ReleasePlatformAttribute
 from imagine_games_scraper.items.misc import Attribute, TypedAttribute
-from imagine_games_scraper.items.content import ContentAttributeConnection, ObjectConnection, Contributor, Content, ContentCategory, Brand, UserReview, ReviewTag, TagObject
+from imagine_games_scraper.items.content import ContentAttributeConnection, ObjectConnection, Contributor, Content, ContentCategory, Brand, UserReview, ReviewTag
 from imagine_games_scraper.items.wiki import WikiObject
 from imagine_games_scraper.items.media import Image, Gallery, ImageConnection
 
@@ -168,153 +168,180 @@ def parse_object_page(self, response, object_item = None, recursion_level = 0):
             object_attribute_connection['attribute_id'] = { '__ref': f"{typed_attribute_item.__tablename__}:{typed_attribute_item.get('id')}" }
 
         yield object_attribute_connection
-    # Last Here: Modifying to avoid storing duplicates
         
-    # for region in [apollo_state[region_ref['__ref']] for region_ref in filter((lambda x : x.get('__ref') is not None), object_data.get('objectRegions'))]:
-    #     region_item = Region()
-    #     region_item['legacy_id'] = region.get('id')
-    #     region_item['name'] = region.get('name')
-    #     region_item['region'] = region.get('region')
+    for region in [apollo_state[region_ref['__ref']] for region_ref in filter((lambda x : x.get('__ref') is not None), object_data.get('objectRegions'))]:
+        region_item = Region()
+        region_item['legacy_id'] = region.get('id')
+        region_item['name'] = region.get('name')
+        region_item['region'] = region.get('region')
 
-    #     region_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-    #     object_item['referrers'].append(f"{region_item.__tablename__}:{region_item.get('id')}")
+        region_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+        object_item['referrers'].append(f"{region_item.__tablename__}:{region_item.get('id')}")
 
-    #     age_rating_ref = region.get('ageRating')
-    #     if age_rating_ref:
-    #         age_rating_data = apollo_state[age_rating_ref.get('__ref')]
-    #         age_rating_item = AgeRating(referrers=[f"{region_item.__tablename__}:{region_item.get('id')}"])
-    #         age_rating_item['legacy_id'] = age_rating_data.get('id')
-    #         age_rating_item['name'] = age_rating_data.get('name')
-    #         age_rating_item['slug'] = age_rating_data.get('slug')
-    #         age_rating_item['type'] = age_rating_data.get('ageRatingType')
+        age_rating_ref = region.get('ageRating')
+        if age_rating_ref:
+            age_rating_data = apollo_state[age_rating_ref.get('__ref')]
 
-    #         yield age_rating_item
-    #         region_item['age_rating_id'] = { '__ref': f"{age_rating_item.__tablename__}:{age_rating_item.get('id')}" }
+            existing_age_rating = self.postgres_find_by_legacy_id(table=AgeRating.__tablename__, id=age_rating_data.get('id'), fields=['id'], only_first=True)
+            if existing_age_rating:
+                region_item['age_rating_id'] = existing_age_rating[0]
+            else:
+                age_rating_item = AgeRating(referrers=[f"{region_item.__tablename__}:{region_item.get('id')}"])
+                age_rating_item['legacy_id'] = age_rating_data.get('id')
+                age_rating_item['name'] = age_rating_data.get('name')
+                age_rating_item['slug'] = age_rating_data.get('slug')
+                age_rating_item['type'] = age_rating_data.get('ageRatingType')
 
-    #     for descriptor in region.get('ageRatingDescriptors'):
-    #         descriptor_item = AgeRatingDescriptor()
+                yield age_rating_item
+                region_item['age_rating_id'] = { '__ref': f"{age_rating_item.__tablename__}:{age_rating_item.get('id')}" }
+        
+        for descriptor in region.get('ageRatingDescriptors'):
+            descriptor_item = AgeRatingDescriptor()
             
-    #         descriptor_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
-    #         region_item['referrers'].append(f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}")
+            descriptor_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
+            region_item['referrers'].append(f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}")
 
-    #         descriptor_attribute_item = Attribute(referrers=[f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}"])
-    #         descriptor_attribute_item['name'] = descriptor.get('name')
-    #         yield descriptor_attribute_item
+            self.cursor.execute("SELECT id FROM attributes WHERE name = %s LIMIT 1;", (descriptor.get('name'),))
+            existing_attribute = self.cursor.fetchone()
+            if existing_attribute:
+                descriptor_item['attribute_id'] = existing_attribute[0]
+            else:
+                descriptor_attribute_item = Attribute(referrers=[f"{descriptor_item.__tablename__}:{descriptor_item.get('id')}"])
+                descriptor_attribute_item['name'] = descriptor.get('name')
+                yield descriptor_attribute_item
+                
+                descriptor_item['attribute_id'] = { '__ref': f"{descriptor_attribute_item.__tablename__}:{descriptor_attribute_item.get('id')}" }
+            yield descriptor_item
+
+        for element in region.get('interactiveElements'):
+            element_item = AgeRatingInteractiveElement()
+
+            element_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
+            region_item['referrers'].append(f"{element_item.__tablename__}:{element_item.get('id')}")
+
+            self.cursor.execute("SELECT id FROM attributes WHERE name = %s LIMIT 1;", (element.get('name'),))
+            existing_attribute = self.cursor.fetchone()
+            if existing_attribute:
+                element_item['attribute_id'] = existing_attribute[0]
+            else:
+                element_attribute_item = Attribute(referrers=[f"{element_item.__tablename__}:{element_item.get('id')}"])
+                element_attribute_item['name'] = element.get('name')
+                yield element_attribute_item
+
+                element_item['attribute_id'] = { '__ref': f"{element_attribute_item.__tablename__}:{element_attribute_item.get('id')}" }
+            yield element_item
+
+        for release in [apollo_state[release_ref['__ref']] for release_ref in region.get('releases')]:
+            release_item = Release()
+            release_item['legacy_id'] = release.get('id')
+            release_item['date'] = release.get('date')
+            release_item['estimated_date'] = release.get('estimatedDate')
+            release_item['time_frame_year'] = release.get('timeframeYear')
+
+            for platform in [apollo_state[platform_ref['__ref']] for platform_ref in release.get('platformAttributes')]:
+                platform_item = ReleasePlatformAttribute()
+
+                platform_item['release_id'] = { '__ref': f"{release_item.__tablename__}:{release_item.get('id')}" }
+                release_item['referrers'].append(f"{platform_item.__tablename__}:{platform_item.get('id')}")
+
+                existing_platform = self.postgres_find_by_legacy_id(table=Attribute.__tablename__, id=platform.get('id'), fields=['id'], only_first=True)
+                if existing_platform:
+                    platform_item['attribute_id'] = existing_platform[0]
+                else:
+                    platform_attribute_item = Attribute(referrers=[f"{platform_item.__tablename__}:{platform_item.get('id')}"])
+                    platform_attribute_item['legacy_id'] = platform.get('id')
+                    platform_attribute_item['name'] = platform.get('name')
+                    platform_attribute_item['slug'] = platform.get('slug')
+                    yield platform_attribute_item
+
+                    platform_item['attribute_id'] = { '__ref': f"{platform_attribute_item.__tablename__}:{platform_attribute_item.get('id')}" }
+                yield platform_item
+            yield release_item
+        yield region_item
             
-    #         descriptor_item['attribute_id'] = { '__ref': f"{descriptor_attribute_item.__tablename__}:{descriptor_attribute_item.get('id')}" }
-    #         yield descriptor_item
+    user_review_key = next((key for key in apollo_state['ROOT_QUERY'] if 'userReviewSearch' in key), None)
+    if user_review_key:
+        for user_review in [apollo_state[review_ref['__ref']] for review_ref in apollo_state['ROOT_QUERY'][user_review_key]['userReviews']]:
+            user_review_item = UserReview()
+            user_review_item['legacy_id'] = user_review.get('id')
+            user_review_item['is_liked'] = user_review.get('liked')
+            user_review_item['score'] = user_review.get('score')
+            user_review_item['text'] = user_review.get('text')
+            user_review_item['is_spoiler'] = user_review.get('isSpoiler')
+            user_review_item['is_private'] = user_review.get('isPrivate')
+            user_review_item['publish_date'] = user_review.get('createdAt')
+            user_review_item['modify_date'] = user_review.get('updatedAt')
 
-    #     for element in region.get('interactiveElements'):
-    #         element_item = AgeRatingInteractiveElement()
+            user_review_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+            object_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
 
-    #         element_item['region_id'] = { '__ref': f"{region_item.__tablename__}:{region_item.get('id')}" }
-    #         region_item['referrers'].append(f"{element_item.__tablename__}:{element_item.get('id')}")
+            user_review_platform_ref = user_review.get('platformId')
+            if user_review_platform_ref:
+                existing_platform = self.postgres_find_by_legacy_id(table=Attribute.__tablename__, id=user_review_platform_ref, fields=['id'], only_first=True)
+                if existing_platform:
+                    user_review_item['platform_id'] = existing_platform[0]
+                else:
+                    attribute_data = apollo_state["Attribute:" + str(user_review_platform_ref)]
+                    if attribute_data:
+                        attribute_item = Attribute(referrers=[f"{user_review_item.__tablename__}:{user_review_item.get('id')}"])
+                        attribute_item['legacy_id'] = attribute_data.get('id')
+                        attribute_item['name'] = attribute_data.get('name')
+                        attribute_item['slug'] = attribute_data.get('slug')
+                        attribute_item['short_name'] = attribute_data.get('shortName')
 
-    #         element_attribute_item = Attribute(referrers=[f"{element_item.__tablename__}:{element_item.get('id')}"])
-    #         element_attribute_item['name'] = element.get('name')
-    #         yield element_attribute_item
+                        yield attribute_item
+                        user_review_item['platform_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
 
-    #         element_item['attribute_id'] = { '__ref': f"{element_attribute_item.__tablename__}:{element_attribute_item.get('id')}" }
-    #         yield element_item
+            for tag in [apollo_state[tag_ref['__ref']] for tag_ref in user_review.get(next((key for key in user_review if 'userReviewObjectFeedback' in key), None))]:
+                review_tag_item = ReviewTag()
+                review_tag_item['is_positive'] = tag.get('isPositive')
+                
+                review_tag_item['review_id'] = { '__ref': f"{user_review_item.__tablename__}:{user_review_item.get('id')}" }
+                user_review_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
 
-    #     for release in [apollo_state[release_ref['__ref']] for release_ref in region.get('releases')]:
-    #         release_item = Release()
-    #         release_item['legacy_id'] = release.get('id')
-    #         release_item['date'] = release.get('date')
-    #         release_item['estimated_date'] = release.get('estimatedDate')
-    #         release_item['time_frame_year'] = release.get('timeframeYear')
+                existing_tag_object = self.postgres_find_by_legacy_id(table=Attribute.__tablename__, id=tag.get('id'), fields=['id'], only_first=True)
+                if existing_tag_object:
+                    review_tag_item['attribute_id'] = existing_tag_object[0]
+                else:
+                    tag_object_item = Attribute(referrers=[f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}"])
+                    tag_object_item['legacy_id'] = tag.get('id')
+                    tag_object_item['name'] = tag.get('name')
 
-    #         for platform in [apollo_state[platform_ref['__ref']] for platform_ref in release.get('platformAttributes')]:
-    #             platform_item = ReleasePlatformAttribute()
+                    yield tag_object_item
+                    review_tag_item['attribute_id'] = { '__ref': f"{tag_object_item.__tablename__}:{tag_object_item.get('id')}" }
+                yield review_tag_item
 
-    #             platform_item['release_id'] = { '__ref': f"{release_item.__tablename__}:{release_item.get('id')}" }
-    #             release_item['referrers'].append(f"{platform_item.__tablename__}:{platform_item.get('id')}")
+            user_data = apollo_state[user_review['user']['__ref']]
+            existing_user = self.postgres_find_by_legacy_id(table=User.__tablename__, id=user_data.get('id'), fields=['id'], only_first=True)
+            if existing_user:
+                user_review_item['user_id'] = existing_user[0]
+            else:
+                user_item = User(referrers=[f"{user_review_item.__tablename__}:{user_review_item.get('id')}"])
+                user_item['legacy_id'] = user_data.get('id')
+                user_item['name'] = user_data.get('name')
+                user_item['nickname'] = user_data.get('nickname')
 
-    #             platform_attribute_item = Attribute(referrers=[f"{platform_item.__tablename__}:{platform_item.get('id')}"])
-    #             platform_attribute_item['legacy_id'] = platform.get('id')
-    #             platform_attribute_item['name'] = platform.get('name')
-    #             platform_attribute_item['slug'] = platform.get('slug')
-    #             yield platform_attribute_item
+                user_avatar_ref = user_data.get('avatarImageUrl')
+                if user_avatar_ref:
+                    user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
+                    user_avatar_item['url'] = user_avatar_ref
 
-    #             platform_item['attribute_id'] = { '__ref': f"{platform_attribute_item.__tablename__}:{platform_attribute_item.get('id')}" }
-    #             yield platform_item
-    #         yield release_item
-    #     yield region_item
+                    yield user_avatar_item
+                    user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
 
-    # user_review_key = next((key for key in apollo_state['ROOT_QUERY'] if 'userReviewSearch' in key), None)
-    # if user_review_key:
-    #     for user_review in [apollo_state[review_ref['__ref']] for review_ref in apollo_state['ROOT_QUERY'][user_review_key]['userReviews']]:
-    #         user_data = apollo_state[user_review['user']['__ref']]
-    #         user_item = User()
-    #         user_item['legacy_id'] = user_data.get('id')
-    #         user_item['name'] = user_data.get('name')
-    #         user_item['nickname'] = user_data.get('nickname')
+                user_configuration_ref = user_data.get('playlistSettings')
+                if user_configuration_ref:
+                    user_configuration_item = UserConfiguration()
+                    user_configuration_item['privacy'] = user_configuration_ref.get('privacy', '').lower()
+                    user_configuration_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
 
-    #         user_avatar_ref = user_data.get('avatarImageUrl')
-    #         if user_avatar_ref:
-    #             user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
-    #             user_avatar_item['url'] = user_avatar_ref
+                    yield user_configuration_item
+                    user_item['referrers'].append(f"{user_configuration_item.__tablename__}:{user_configuration_item.get('id')}")
 
-    #             yield user_avatar_item
-    #             user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
+                yield user_item
+                user_review_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
+            yield user_review_item
 
-    #         user_configuration_ref = user_data.get('playlistSettings')
-    #         if user_configuration_ref:
-    #             user_configuration_item = UserConfiguration()
-    #             user_configuration_item['privacy'] = user_configuration_ref.get('privacy', '').lower()
-    #             user_configuration_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
-
-    #             yield user_configuration_item
-    #             user_item['referrers'].append(f"{user_configuration_item.__tablename__}:{user_configuration_item.get('id')}")
-
-    #         user_review_item = UserReview()
-    #         user_review_item['legacy_id'] = user_review.get('id')
-    #         user_review_item['is_liked'] = user_review.get('liked')
-    #         user_review_item['score'] = user_review.get('score')
-    #         user_review_item['text'] = user_review.get('text')
-    #         user_review_item['is_spoiler'] = user_review.get('isSpoiler')
-    #         user_review_item['is_private'] = user_review.get('isPrivate')
-    #         user_review_item['publish_date'] = user_review.get('createdAt')
-    #         user_review_item['modify_date'] = user_review.get('updatedAt')
-
-    #         user_review_item['user_id'] = { '__ref': f"{user_item.__tablename__}:{user_item.get('id')}" }
-    #         user_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
-    #         user_review_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-    #         object_item['referrers'].append(f"{user_review_item.__tablename__}:{user_review_item.get('id')}")
-    #         yield user_item
-
-    #         user_review_platform_ref = user_review.get('platformId')
-    #         if user_review_platform_ref:
-    #             attribute_data = apollo_state["Attribute:" + str(user_review_platform_ref)]
-    #             if attribute_data:
-    #                 attribute_item = Attribute(referrers=[f"{user_review_item.__tablename__}:{user_review_item.get('id')}"])
-    #                 attribute_item['legacy_id'] = attribute_data.get('id')
-    #                 attribute_item['name'] = attribute_data.get('name')
-    #                 attribute_item['slug'] = attribute_data.get('slug')
-    #                 attribute_item['short_name'] = attribute_data.get('shortName')
-
-    #                 yield attribute_item
-    #                 user_review_item['platform_id'] = { '__ref': f"{attribute_item.__tablename__}:{attribute_item.get('id')}" }
-
-    #         for tag in [apollo_state[tag_ref['__ref']] for tag_ref in user_review.get(next((key for key in user_review if 'userReviewObjectFeedback' in key), None))]:
-    #             tag_object_item = TagObject()
-    #             tag_object_item['legacy_id'] = tag.get('id')
-    #             tag_object_item['name'] = tag.get('name')
-
-    #             review_tag_item = ReviewTag()
-    #             review_tag_item['is_positive'] = tag.get('isPositive')
-
-    #             review_tag_item['tag_object_id'] = { '__ref': f"{tag_object_item.__tablename__}:{tag_object_item.get('id')}" }
-    #             tag_object_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
-
-    #             review_tag_item['review_id'] = { '__ref': f"{user_review_item.__tablename__}:{user_review_item.get('id')}" }
-    #             user_review_item['referrers'].append(f"{review_tag_item.__tablename__}:{review_tag_item.get('id')}")
-
-    #             yield tag_object_item
-    #             yield review_tag_item
-
-    #         yield user_review_item
-            
     gallery_regex = re.compile(r"imageGallery:{.*}")
     object_gallery_key = next((key for key in object_data if gallery_regex.search(key)), None)
     if object_gallery_key:
@@ -386,6 +413,9 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     apollo_state = page_json_data['props']['apolloState']
     modern_content_data = apollo_state[modern_content_key]
 
+    with open('debug.json', 'w') as file:
+        json.dump(page_json_data, file)
+
     content_item['legacy_id'] = modern_content_data.get('id')
     content_item['url'] = modern_content_data.get('url')
     content_item['slug'] = modern_content_data.get('slug')
@@ -450,10 +480,17 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
         yield contributor_item
         
     brand_ref = modern_content_data.get('brand')
+
     if brand_ref:
-        brand_data = (apollo_state[brand_ref.get('__ref')] if brand_ref.get('__ref') else brand_ref)
-        
-        existing_brand = self.postgres_find_by_legacy_id(table=Brand.__tablename__, id=brand_data.get('id'), fields=['id'], only_first=True)
+        brand_data = None
+        if brand_ref.get('__ref'):
+            brand_data = apollo_state[brand_ref.get('__ref')]
+        elif brand_ref.get('__typename'):
+            brand_search = (lambda obj, target : obj.get('name') == target)
+            brand_data = next((apollo_state[key] for key in apollo_state.keys() if key.startswith('Brand:') and brand_search(apollo_state[key], brand_ref.get('name'))), brand_ref)
+
+        self.cursor.execute("SELECT id FROM brands WHERE (legacy_id = %s) OR (name = %s) LIMIT 1;", (brand_data.get('id'), brand_data.get('name'),))
+        existing_brand = self.cursor.fetchone()
         if existing_brand:
             content_item['brand_id'] = existing_brand[0]
         else:

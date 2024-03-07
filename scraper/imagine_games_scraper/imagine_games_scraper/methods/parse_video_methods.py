@@ -51,11 +51,11 @@ def parse_video_page(self, response, video_item = None, recursion_level = 0):
         yield asset_item
 
     # *************************** Parsing Recommendation Content *****************************
-    # recommendation_data = modern_video_data.get('recommendations')
-    # if recommendation_data and recursion_level < 1:
-    #     for recommendation in recommendation_data:
-    #         item_exists = self.postgres_find_by_legacy_id(table="contents", id=recommendation.get('videoId'), only_first=True)[0]
-    #         if not item_exists:
-    #             recommendation_url = 'https://www.ign.com' + recommendation['url']
-    #             yield scrapy.Request(url=recommendation_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })  
+    recommendation_data = modern_video_data.get('recommendations')
+    if recommendation_data and recursion_level < 1:
+        for recommendation in recommendation_data:
+            item_exists = self.postgres_find_by_legacy_id(table=Content.__tablename__, id=recommendation.get('videoId'), only_first=True)[0]
+            if not item_exists:
+                recommendation_url = 'https://www.ign.com' + recommendation['url']
+                yield scrapy.Request(url=recommendation_url, callback=self.parse_video_page, cb_kwargs={ 'recursion_level': recursion_level + 1 })  
     yield video_item

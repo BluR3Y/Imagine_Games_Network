@@ -250,19 +250,19 @@ class UserReview(Base):
     object = relationship("Object", foreign_keys=[object_id])
     platform = relationship("Attribute", foreign_keys=[platform_id])
 
-class TagObject(Base):
-    __tablename__ = 'tag_objects'
+# class TagObject(Base):
+#     __tablename__ = 'tag_objects'
 
-    def __init__(self):
-        self.id = uuid.uuid4()
+#     def __init__(self):
+#         self.id = uuid.uuid4()
 
-    id = Column(
-        UUID(as_uuid=True),
-        primary_key=True,
-        default=uuid.uuid4
-    )
-    legacy_id = Column(Integer)
-    name = Column(String)
+#     id = Column(
+#         UUID(as_uuid=True),
+#         primary_key=True,
+#         default=uuid.uuid4
+#     )
+#     legacy_id = Column(Integer)
+#     name = Column(String)
 
 class ReviewTag(Base):
     __tablename__ = 'review_tags'
@@ -280,12 +280,17 @@ class ReviewTag(Base):
         ForeignKey("user_reviews.id"),
         nullable=False
     )
-    tag_object_id = Column(
+    # tag_object_id = Column(
+    #     UUID(as_uuid=True),
+    #     ForeignKey("tag_objects.id"),
+    #     nullable=False
+    # )
+    attribute_id = Column(
         UUID(as_uuid=True),
-        ForeignKey("tag_objects.id"),
+        ForeignKey("attributes.id"),
         nullable=False
     )
     is_positive = Column(Boolean)
 
     review = relationship("UserReview", foreign_keys=[review_id])
-    tag_object = relationship("TagObject", foreign_keys=[tag_object_id])
+    tag_object = relationship("Attribute", foreign_keys=[attribute_id])
