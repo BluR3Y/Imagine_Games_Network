@@ -30,7 +30,7 @@ CREATE TABLE image_connections (
 CREATE TABLE attributes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id INT,
-    name VARCHAR(64),
+    name VARCHAR(128),
     short_name VARCHAR(32),
     slug VARCHAR(32)
 );
@@ -38,7 +38,7 @@ CREATE TABLE attributes (
 -- Typed Attribute
 CREATE TABLE typed_attributes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    type VARCHAR(16) NOT NULL,
+    type VARCHAR(32) NOT NULL,
     attribute_id UUID NOT NULL,
     
     FOREIGN KEY (attribute_id) REFERENCES attributes (id)

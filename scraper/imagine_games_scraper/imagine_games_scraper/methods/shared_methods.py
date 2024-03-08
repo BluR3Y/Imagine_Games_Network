@@ -413,9 +413,6 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     apollo_state = page_json_data['props']['apolloState']
     modern_content_data = apollo_state[modern_content_key]
 
-    with open('debug.json', 'w') as file:
-        json.dump(page_json_data, file)
-
     content_item['legacy_id'] = modern_content_data.get('id')
     content_item['url'] = modern_content_data.get('url')
     content_item['slug'] = modern_content_data.get('slug')
@@ -434,7 +431,7 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     header_image = modern_content_data.get('headerImageUrl')
     if header_image:
         header_image_item = Image(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
-        header_image_item['url'] = header_image.get('url')
+        header_image_item['url'] = header_image
         yield header_image_item
         content_item['header_image_id'] = { '__ref': f"{header_image_item.__tablename__}:{header_image_item.get('id')}" }
 
@@ -489,7 +486,11 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
             brand_search = (lambda obj, target : obj.get('name') == target)
             brand_data = next((apollo_state[key] for key in apollo_state.keys() if key.startswith('Brand:') and brand_search(apollo_state[key], brand_ref.get('name'))), brand_ref)
 
-        self.cursor.execute("SELECT id FROM brands WHERE (legacy_id = %s) OR (name = %s) LIMIT 1;", (brand_data.get('id'), brand_data.get('name'),))
+        if brand_data.get('id'):
+            self.cursor.execute("SELECT id FROM brands WHERE legacy_id = %s LIMIT 1;", (brand_data.get('id'),))
+        else:
+            self.cursor.execute("SELECT id FROM brands WHERE name = %s LIMIT 1;", (brand_data.get('name'),))
+
         existing_brand = self.cursor.fetchone()
         if existing_brand:
             content_item['brand_id'] = existing_brand[0]
@@ -503,48 +504,52 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
 
             yield brand_item
             content_item['brand_id'] = { '__ref': f"{brand_item.__tablename__}:{brand_item.get('id')}" }
-
-    object_keys = []
+            
     primary_object_ref = modern_content_data.get('primaryObject')
-    if primary_object_ref:
-        object_keys.append(primary_object_ref)
-
     object_regex = re.compile(r"objects\({.*}\)")
     object_key = next((key for key in modern_content_data if object_regex.search(key)), None)
+
     if object_key:
-        object_keys.append(modern_content_data.get(object_key)[1:])
-        
-    for key, object_ref in enumerate(object_keys):
-        object_connection_item = ObjectConnection()
-        object_connection_item['content_id'] = { '__ref': f"{content_item.__tablename__}:{content_item.get('id')}" }
-        content_item['referrers'].append(f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}")
+        for object_ref in modern_content_data.get(object_key):
+            object_connection_item = ObjectConnection()
+            object_connection_item['content_id'] = { '__ref': f"{content_item.__tablename__}:{content_item.get('id')}" }
+            content_item['referrers'].append(f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}")
 
-        object_data = apollo_state[object_ref.get('__ref')]
-        existing_object = self.postgres_find_by_legacy_id(table=Object.__tablename__, id=object_data.get('id'), fields=['id'], only_first=True)
+            object_data = apollo_state[object_ref.get('__ref')]
+            existing_object = self.postgres_find_by_legacy_id(table=Object.__tablename__, id=object_data.get('id'), fields=['id'], only_first=True)
 
-        if existing_object:
-            object_connection_item['object_id'] = existing_object[0]
-            if not key:
-                content_item['primary_object_id'] = existing_object[0]
-        else:
-            object_item = Object(referrers=[f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}"])
-            # Bug: Some entries fail to get stored if they have a primary_object_id
-            if not key:
-                content_item['primary_object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-                object_item['referrers'].append(f"{content_item.__tablename__}:{content_item.get('id')}")
+            if existing_object:
+                object_connection_item['object_id'] = existing_object[0]
+                if primary_object_ref and primary_object_ref.get('__ref') == object_ref.get('__ref'):
+                    content_item['primary_object_id'] = existing_object[0]
+            else:
+                object_item = Object(referrers=[f"{object_connection_item.__tablename__}:{object_connection_item.get('id')}"])
+                # Bug: Some entries fail to get stored if they have a primary_object_id
+                if primary_object_ref and primary_object_ref.get('__ref') == object_ref.get('__ref'):
+                    content_item['primary_object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+                    object_item['referrers'].append(f"{content_item.__tablename__}:{content_item.get('id')}")
 
-            yield scrapy.Request(url="https://www.ign.com" + object_data.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
-            object_connection_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
-
-        yield object_connection_item
+                yield scrapy.Request(url="https://www.ign.com" + object_data.get('url'), callback=self.parse_object_page, cb_kwargs={ 'object_item': object_item, 'recursion_level': recursion_level })
+                object_connection_item['object_id'] = { '__ref': f"{object_item.__tablename__}:{object_item.get('id')}" }
+            yield object_connection_item
+                    
 
     content_category_ref = modern_content_data.get('contentCategory')
     if content_category_ref:
-        content_category_data = apollo_state[content_category_ref.get('__ref')]
-        
-        existing_content_category = self.postgres_find_by_legacy_id(table=ContentCategory.__tablename__, id=content_category_data.get('id'), fields=['id'], only_first=True)
-        if existing_content_category:
-            content_item['category_id'] = existing_content_category[0]
+        content_category_data = None
+        if content_category_ref.get('__ref'):
+            content_category_data = apollo_state[content_category_ref.get('__ref')]
+        elif content_category_ref.get('__typename'):
+            content_category_data = content_category_ref
+
+        if content_category_data.get('id'):
+            self.cursor.execute("SELECT id FROM content_categories WHERE legacy_id = %s LIMIT 1;", (content_category_data.get('id'),))
+        else:
+            self.cursor.execute("SELECT id FROM content_categories WHERE name = %s LIMIT 1;", (content_category_data.get('name'),))
+
+        existing_category = self.cursor.fetchone()
+        if existing_category:
+            content_item['category_id'] = existing_category[0]
         else:
             content_category_item = ContentCategory(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
             content_category_item['legacy_id'] = content_category_data.get('id')

@@ -85,9 +85,6 @@ class Catalog(Item):
     def __init__(self, *args, **kwargs):
         super(Catalog, self).__init__(*args, **kwargs)
 
-        
-
-
 class CommerceDeal(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
@@ -111,10 +108,6 @@ class CommerceDeal(Item):
 
     def __init__(self, *args, **kwargs):
         super(CommerceDeal, self).__init__(*args, **kwargs)
-
-        
-
-
 
 class DealConnection(Item):
     id = scrapy.Field()

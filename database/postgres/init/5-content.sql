@@ -1,7 +1,7 @@
 -- Brand
 CREATE TABLE brands (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     slug VARCHAR(32),
     name VARCHAR(64),
     logo_light VARCHAR(16),
@@ -87,7 +87,7 @@ CREATE TABLE slideshows (
 -- Official Review
 CREATE TABLE official_reviews (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     score INT,
     score_text TEXT,
     editors_choice BOOLEAN,
