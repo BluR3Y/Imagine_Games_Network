@@ -44,7 +44,7 @@ services:
       - ./env/database/redis/.env.test
     volumes:
       - ./database/redis/init:/usr/local/etc/redis
-    command: ["redis-server", "/usr/local/etc/redis/setup.sh"]
+    command: ["sh", "-c", "exec redis-server /usr/local/etc/redis/redis.conf --requirepass $${REDIS_PASSWORD}"]
 
   scraper:
     container_name: scraper

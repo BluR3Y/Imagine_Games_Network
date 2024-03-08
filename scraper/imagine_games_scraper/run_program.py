@@ -1,5 +1,8 @@
 import multiprocessing
 import time
+import signal
+import sys
+
 from scrapy.crawler import CrawlerProcess
 from imagine_games_scraper.spiders.ign_content_spider import IgnContentSpiderSpider
 from imagine_games_scraper.queue import activeQueue
@@ -30,10 +33,19 @@ def run_queue():
         else:
             start_time = time.time()
 
+def stop_processes(sig, frame):
+    print("Keyboard interrupt received. Stopping processes...")
+    queue_process.terminate()
+    spider_process.terminate()
+    sys.exit(0)
+
 if __name__ == "__main__":
     # Create separate processes for running spider and RQ worker
     queue_process = multiprocessing.Process(target=run_queue)
     spider_process = multiprocessing.Process(target=run_spider)
+
+    # Set up signal handler for keyboard interrupt
+    signal.signal(signal.SIGINT, stop_processes)
 
     # Start both processes
     queue_process.start()
