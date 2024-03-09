@@ -36,7 +36,7 @@ def parse_slideshow_page(self, response, slideshow_item = None, recursion_level 
 
             image_item = Image(referrers=[f"{image_connection.__tablename__}:{image_connection.get('id')}"])
             image_item['legacy_id'] = image.get('id')
-            image_item['url'] = image.get('url')
+            image_item['legacy_url'] = image.get('url')
             image_item['caption'] = image.get('caption')
             image_item['embargo_date'] = image.get('embargoDate')
 

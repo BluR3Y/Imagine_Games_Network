@@ -9,5 +9,7 @@ docker run -d -p 5432:5432 --name ign_postgres_container --hostname postgres --e
 
 docker run -d -p 6379:6379 --name ign_redis_container --hostname redis --env-file C:/Users/reyhe/Documents/Imagine_Games_Network/env/database/redis/.env.development -v C:/Users/reyhe/Documents/Imagine_Games_Network/database/redis/init:/usr/local/etc/redis redis:latest sh -c 'exec redis-server /usr/local/etc/redis/redis.conf --requirepass ${REDIS_PASSWORD}'
 
+docker run -d -p 4566:4566 --name ign_localstack_container --hostname localstack --env-file C:/Users/reyhe/Documents/Imagine_Games_Network/env/localstack/.env.development localstack/localstack
+
 Create a scraper docker container
 docker run -d --name ign_scraper_container --env-file C:\Users\reyhe\Documents\Imagine_Games_Network\env\scraper\.env.test scraper_image

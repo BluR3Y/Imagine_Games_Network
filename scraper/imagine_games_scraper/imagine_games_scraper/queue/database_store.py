@@ -6,7 +6,7 @@ from psycopg2.extensions import AsIs
 # Future patch: When attempting to add an entry that already exists, i.e: Attribute, Release, etc.
     # Modify sql tables to accept only unique fields
     # If error is thrown bc of duplicate, loop through "referrers" in redis db and modify their reference to the existing postgres entry
-def queue_function(item_key):
+def database_store(item_key):
     stored_item = activeQueue.redis_connection.get(item_key)
     if not stored_item:
         print(f"Item with key '{item_key}' does not exist in redis store")
@@ -36,8 +36,10 @@ def queue_function(item_key):
             attribute_values.append(value)
                 
     item_key_parts = item_key.split(':')
-    # print('********************* ', item_key_parts, attribute_keys, attribute_values)
     insert_query = "INSERT INTO %s (%s) VALUES (%s);" % (item_key_parts[0], ','.join(attribute_keys), ','.join(['%s'] * len(attribute_values)))
+
+    if item_key_parts[0] == 'videos' or item_key_parts[0] == 'images':
+        activeQueue.enqueue_bucket_store(item_key)
 
     activeQueue.postgres_cursor.execute(insert_query, attribute_values)
     activeQueue.postgres_connection.commit()
@@ -45,7 +47,7 @@ def queue_function(item_key):
     referrers = dict_item.get('referrers')
     for referrer in referrers:
         if activeQueue.redis_connection.get(referrer):
-            activeQueue.enqueue_task(referrer)
+            activeQueue.enqueue_database_store(referrer)
         else:
             print(f"Item with the key {referrer} can't be found in the redis database")
 

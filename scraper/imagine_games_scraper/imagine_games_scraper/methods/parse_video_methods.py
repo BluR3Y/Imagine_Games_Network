@@ -40,7 +40,7 @@ def parse_video_page(self, response, video_item = None, recursion_level = 0):
     # ***************************** Parsing Video Assets **********************************
     for asset in modern_video_data['assets']:
         asset_item = VideoAsset()
-        asset_item['url'] = asset.get('url')
+        asset_item['legacy_url'] = asset.get('url')
         asset_item['width'] = asset.get('width')
         asset_item['height'] = asset.get('height')
         asset_item['fps'] = asset.get('fps')

@@ -27,7 +27,8 @@ class VideoMetadata(Item):
 
 class VideoAsset(Item):
     video_id = scrapy.Field()
-    url = scrapy.Field()
+    legacy_url = scrapy.Field()
+    key = scrapy.Field()
     width = scrapy.Field()
     height = scrapy.Field()
     fps = scrapy.Field()

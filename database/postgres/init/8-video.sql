@@ -23,7 +23,8 @@ CREATE TABLE videos (
 CREATE TABLE video_assets (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     video_id UUID NOT NULL,
-    url VARCHAR(1024),
+    legacy_url VARCHAR(1024),
+    key VARCHAR(1024),
     width INT,
     height INT,
     fps INT,

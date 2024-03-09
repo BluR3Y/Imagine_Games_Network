@@ -35,7 +35,7 @@ class RedisQueue:
 
         activeQueue.redis_connection.set(item_key, json_item)
 
-        activeQueue.enqueue_task(item_key, obj_priority_and_delay[0], item.get('delay', obj_priority_and_delay[1]))
+        activeQueue.enqueue_database_store(item_key, obj_priority_and_delay[0], item.get('delay', obj_priority_and_delay[1]))
 
         return dict_item
 

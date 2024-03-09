@@ -114,7 +114,7 @@ def parse_poll(self, page_json_data, poll_item = None):
     poll_image_ref = poll_data.get('image')
     if poll_image_ref:
         image_item = Image(referrers=[f"{poll_item.__tablename__}:{poll_item.get('id')}"])
-        image_item['url'] = poll_image_ref.get('url')
+        image_item['legacy_url'] = poll_image_ref.get('url')
 
         yield image_item
         poll_item['image_id'] = { '__ref': f"{image_item.__tablename__}:{image_item.get('id')}" }
@@ -167,7 +167,7 @@ def parse_commerce_deal(self, page_json_data, data_slug, catalog_item = None, re
         deal_image_ref = deal.get('image')
         if deal_image_ref:
             image_item = Image(referrers=[f"{deal_item.__tablename__}:{deal_item.get('id')}"])
-            image_item['url'] = deal_image_ref.get('url')
+            image_item['legacy_url'] = deal_image_ref.get('url')
 
             yield image_item
             deal_item['cover_id'] = { '__ref': f"{image_item.__tablename__}:{image_item.get('id')}" }
@@ -248,7 +248,7 @@ def parse_embedded_html_element(element):
             })
         elif data_transform == 'image-with-caption':
             captioned_image_item = Image()
-            captioned_image_item['url'] = element.attributes.pop('data-image-url')
+            captioned_image_item['legacy_url'] = element.attributes.pop('data-image-url')
             element.attributes.pop('data-image-title')
             element.attributes.pop('data-image-link')
             captioned_image_item['caption'] = element.attributes.pop('data-caption')
@@ -256,7 +256,7 @@ def parse_embedded_html_element(element):
             element.attributes['data-id'] = captioned_image_item.get('id')
 
             parsed_content.append({
-                "item": Image(),
+                "item": captioned_image_item,
                 "data_transform": data_transform
             })
     elif element.tag == 'a' and 'href' in element.attributes and re.compile(r"https://www.ign.com/.*").search(element.attributes.get('href')):

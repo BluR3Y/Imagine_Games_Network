@@ -64,7 +64,8 @@ class VideoAsset(Base):
         ForeignKey("videos.id"),
         nullable=False
     )
-    url = Column(String)
+    legacy_url = Column(String)
+    key = Column(String)
     width = Column(Integer)
     height = Column(Integer)
     fps = Column(Integer)

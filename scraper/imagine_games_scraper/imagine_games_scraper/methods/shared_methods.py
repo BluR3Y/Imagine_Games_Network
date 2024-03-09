@@ -33,7 +33,7 @@ def parse_contributor_page(self, response, author_item = None, recursion_level =
     cover_ref = author_data.get('backgroundImageUrl')
     if cover_ref:
         cover_image_item = Image(referrers=[f"{author_item.__tablename__}:{author_item.get('id')}"])
-        cover_image_item['url'] = cover_ref
+        cover_image_item['legacy_url'] = cover_ref
 
         yield cover_image_item
         author_item['cover_id'] = { '__ref': f"{cover_image_item.__tablename__}:{cover_image_item.get('id')}" }
@@ -60,7 +60,7 @@ def parse_object_page(self, response, object_item = None, recursion_level = 0):
     object_image_ref = object_data.get('primaryImage')
     if object_image_ref:
         object_cover_item = Image(referrers=[f"{object_item.__tablename__}:{object_item.get('id')}"])
-        object_cover_item['url'] = object_image_ref.get('url')
+        object_cover_item['legacy_url'] = object_image_ref.get('url')
 
         yield object_cover_item
         object_item['cover_id'] = { '__ref': f"{object_cover_item.__tablename__}:{object_cover_item.get('id')}" }
@@ -324,7 +324,7 @@ def parse_object_page(self, response, object_item = None, recursion_level = 0):
                 user_avatar_ref = user_data.get('avatarImageUrl')
                 if user_avatar_ref:
                     user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
-                    user_avatar_item['url'] = user_avatar_ref
+                    user_avatar_item['legacy_url'] = user_avatar_ref
 
                     yield user_avatar_item
                     user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
@@ -359,7 +359,7 @@ def parse_object_page(self, response, object_item = None, recursion_level = 0):
                 image_item = Image(referrers=[f"{image_connection_item.__tablename__}:{image_connection_item.get('id')}"])
                 image_item['legacy_id'] = image.get('id')
                 image_item['caption'] = image.get('caption')
-                image_item['url'] = image.get('url')
+                image_item['legacy_url'] = image.get('url')
 
                 yield image_item
                 image_connection_item['image_id'] = { '__ref': f"{image_item.__tablename__}:{image_item.get('id')}" }
@@ -431,14 +431,14 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
     header_image = modern_content_data.get('headerImageUrl')
     if header_image:
         header_image_item = Image(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
-        header_image_item['url'] = header_image
+        header_image_item['legacy_url'] = header_image
         yield header_image_item
         content_item['header_image_id'] = { '__ref': f"{header_image_item.__tablename__}:{header_image_item.get('id')}" }
 
     feed_image = modern_content_data.get('feedImage')
     if feed_image:
         feed_image_item = Image(referrers=[f"{content_item.__tablename__}:{content_item.get('id')}"])
-        feed_image_item['url'] = feed_image.get('url')
+        feed_image_item['legacy_url'] = feed_image.get('url')
         yield feed_image_item
         content_item['feed_image_id'] = { '__ref': f"{feed_image_item.__tablename__}:{feed_image_item.get('id')}" }
         
@@ -462,7 +462,7 @@ def parse_modern_content(self, page_json_data, modern_content_key, content_item 
             user_avatar = user_data.get('avatarImageUrl')
             if user_avatar:
                 user_avatar_item = Image(referrers=[f"{user_item.__tablename__}:{user_item.get('id')}"])
-                user_avatar_item['url'] = user_avatar
+                user_avatar_item['legacy_url'] = user_avatar
 
                 yield user_avatar_item
                 user_item['avatar_id'] = { '__ref': f"{user_avatar_item.__tablename__}:{user_avatar_item.get('id')}" }
