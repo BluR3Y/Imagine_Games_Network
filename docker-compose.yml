@@ -59,7 +59,10 @@ services:
 
   localstack:
     container_name: localstack
-    image: localstack/localstack:latest
+    # free version
+    # image: localstack/localstack:latest
+    # paid version
+    image: localstack/localstack-pro
     env_file:
       - ./env/localstack/.env.test
     volumes:
