@@ -20,9 +20,10 @@ services:
   backend:
     container_name: backend
     depends_on:
-      - mongo
+      - postgres
       - redis
-    build:
+      - localstack
+    build: 
       dockerfile: Dockerfile
       context: ./backend
     restart: on-failure
