@@ -3,6 +3,7 @@ import boto3
 
 from urllib.parse import urlparse
 from scrapy.utils.project import get_project_settings
+from psycopg2.extensions import AsIs
 
 from imagine_games_scraper.queue import activeQueue
 
@@ -22,7 +23,7 @@ bucket_name = settings.get('AWS_BUCKET')
 
 def bucket_store(item_key):
     table, id = item_key.split(':')
-    activeQueue.postgres_cursor.execute(f"SELECT legacy_url FROM {table} WHERE id = %s", (id,))
+    activeQueue.postgres_cursor.execute("SELECT legacy_url FROM %s WHERE id = %s;", (AsIs(table), id,))
     
     url = activeQueue.postgres_cursor.fetchone()[0]
     parsed_url = urlparse(url)
@@ -42,7 +43,7 @@ def bucket_store(item_key):
 
     upload_file(media_content, media_key)
 
-    activeQueue.postgres_cursor.execute(f"UPDATE {table} SET key = %s WHERE id = %s;", (media_key, id,))
+    activeQueue.postgres_cursor.execute("UPDATE %s SET key = %s WHERE id = %s;", (AsIs(table), media_key, id,))
     activeQueue.postgres_connection.commit()
 
 def download_file(url, stream = False):

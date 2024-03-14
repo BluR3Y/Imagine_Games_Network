@@ -38,7 +38,7 @@ def database_store(item_key):
     item_key_parts = item_key.split(':')
     insert_query = "INSERT INTO %s (%s) VALUES (%s);" % (item_key_parts[0], ','.join(attribute_keys), ','.join(['%s'] * len(attribute_values)))
 
-    if item_key_parts[0] == 'videos' or item_key_parts[0] == 'images':
+    if item_key_parts[0] == 'video_assets' or item_key_parts[0] == 'images':
         activeQueue.enqueue_bucket_store(item_key)
 
     activeQueue.postgres_cursor.execute(insert_query, attribute_values)

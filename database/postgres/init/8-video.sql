@@ -4,7 +4,7 @@ CREATE TABLE video_metadatas (
     chat_enabled BOOLEAN,
     description_html TEXT,
     downloadable BOOLEAN,
-    duration NUMERIC(10, 2),
+    duration INT,
     m3u_url VARCHAR(512)
 );
 
