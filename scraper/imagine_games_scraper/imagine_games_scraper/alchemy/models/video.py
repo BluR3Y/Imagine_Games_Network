@@ -42,7 +42,6 @@ class VideoMetadata(Base):
         primary_key=True,
         default=uuid.uuid4
     )
-    ad_breaks = Column(BOOLEAN)
     chat_enabled = Column(BOOLEAN)
     description_html = Column(String)
     downloadable = Column(BOOLEAN)
@@ -65,7 +64,8 @@ class VideoAsset(Base):
         ForeignKey("videos.id"),
         nullable=False
     )
-    url = Column(String)
+    legacy_url = Column(String)
+    key = Column(String)
     width = Column(Integer)
     height = Column(Integer)
     fps = Column(Integer)

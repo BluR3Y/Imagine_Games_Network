@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class Article(scrapy.Item):
+class Article(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     content_id = scrapy.Field()
@@ -13,9 +13,7 @@ class Article(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Article, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-
-class ArticleContent(scrapy.Item):
+class ArticleContent(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     hero_video_content_id = scrapy.Field()
@@ -26,5 +24,3 @@ class ArticleContent(scrapy.Item):
 
     def __init__(self, *args, **kwargs):
         super(ArticleContent, self).__init__(*args, **kwargs)
-
-        self['id'] = str(uuid4())

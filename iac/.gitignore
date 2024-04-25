@@ -1,0 +1,19 @@
+# Ignore Terraform specific files and directories
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+*.auto.tfvars
+terraform.rc
+.terraformrc
+
+# Ignore provider plugins and lock files
+.terraform.lock.hcl
+.terraform.lock.json
+.terraform/providers/
+
+# Ignore any local editor or OS-specific files
+*.tfstate
+*.tfstate.backup
+*~
+.DS_Store

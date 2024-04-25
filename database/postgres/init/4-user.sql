@@ -23,7 +23,7 @@ CREATE TABLE authors (
     url VARCHAR(256),
     cover_id UUID,
     position VARCHAR(128),
-    bio VARCHAR(256),
+    bio VARCHAR(1024),
     location VARCHAR(128),
     socials social_media_entry[] DEFAULT '{}'::social_media_entry[],
     

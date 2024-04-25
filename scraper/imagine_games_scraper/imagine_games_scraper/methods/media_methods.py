@@ -3,9 +3,11 @@ import boto3
 
 from urllib.parse import urlparse
 from scrapy.utils.project import get_project_settings
-from imagine_games_scraper.alchemy.models.misc import Image
 
 settings = get_project_settings()
+
+image_extensions = ['jpg','jpeg','png','gif','tiff','webp','svg']
+video_extensions = ['mp4','avi','mov','wmv','flv','mkv','webm','mpeg','3gp','m4v']
 
 # Set up the S3 client
 s3 = boto3.client('s3',
@@ -16,30 +18,39 @@ s3 = boto3.client('s3',
 )
 bucket_name = settings.get('AWS_BUCKET')
 
-def parse_image(self, **kwargs):
-    # Download the image from the URL
-    response = requests.get(kwargs.get('legacy_url'))
-    if response.status_code == 200:
-        parsed_url = urlparse(kwargs.get('legacy_url'))
-        image_data = response.content
-        image_key = parsed_url.path[1:]
+def store_media(url):
+    parsed_url = urlparse(url)
+    path = parsed_url.path
+    extension = path.split('.')[-1]
 
-        s3.put_object(
-            Body=image_data,
-            Bucket=bucket_name,
-            Key=image_key
-        )
-        image_item = Image()
-        image_item.legacy_id = kwargs.get('legacy_id')
-        image_item.legacy_url = kwargs.get("legacy_url")
-        # image_item.url = settings.get('AWS_ENDPOINT') + bucket_name + parsed_url.path
-        image_item.url = f"{settings.get('AWS_ENDPOINT')}/{bucket_name}/{image_key}"
-        image_item.link = kwargs.get('link')
-        image_item.caption = kwargs.get('caption')
-        image_item.embargo_date = kwargs.get('embargo_date')
-
-        self.session.add(image_item)
-        self.session.commit()
-        return image_item.id
+    stream = None
+    if extension in image_extensions:
+        stream = False
+    elif extension in video_extensions:
+        stream = True
     else:
-        print("Failed to download image")
+        raise Exception("Invalid media type")
+    
+    media_content = download_file(url, stream)
+    media_key = path[1:]
+
+    upload_file(media_content, media_key)
+    return media_key
+
+def download_file(url, stream = False):
+    # Send a GET request to the URL
+    response = requests.get(url, stream=stream)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        return response.content
+    else:
+        raise Exception("Failed to download media:", response.status_code)
+
+def upload_file(content, key):
+    # Upload the file to S3 bucket
+    s3.put_object(
+        Body=content,
+        Bucket=bucket_name,
+        Key=key
+    )

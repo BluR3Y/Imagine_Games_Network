@@ -1,11 +1,10 @@
 -- Video Metadata
 CREATE TABLE video_metadatas (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    ad_breaks BOOLEAN,
     chat_enabled BOOLEAN,
     description_html TEXT,
     downloadable BOOLEAN,
-    duration NUMERIC(10, 2),
+    duration INT,
     m3u_url VARCHAR(512)
 );
 
@@ -24,7 +23,8 @@ CREATE TABLE videos (
 CREATE TABLE video_assets (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     video_id UUID NOT NULL,
-    url VARCHAR(1024),
+    legacy_url VARCHAR(1024),
+    key VARCHAR(1024),
     width INT,
     height INT,
     fps INT,

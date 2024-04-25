@@ -1,7 +1,7 @@
 -- How Long To Beat
 CREATE TABLE how_long_to_beat (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     legacy_ign_object_id UUID,
     steam_id INT,
     itch_id VARCHAR(8),
@@ -13,7 +13,7 @@ CREATE TABLE how_long_to_beat (
 
 -- Object Name Entry
 CREATE TYPE name_entry AS (
-    main VARCHAR(128),
+    long VARCHAR(128),
     alt VARCHAR(128)[],
     short VARCHAR(128)
 );
@@ -58,7 +58,7 @@ CREATE TABLE object_attribute_connections (
 -- Object Age Rating
 CREATE TABLE age_ratings (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     type VARCHAR(16),
     name VARCHAR(64),
     slug VARCHAR(64)
@@ -67,7 +67,7 @@ CREATE TABLE age_ratings (
 -- Region Object
 CREATE TABLE regions (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     object_id UUID NOT NULL,
     name VARCHAR(64),
     region VARCHAR(32),
@@ -102,8 +102,8 @@ CREATE TABLE releases (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
     date TIMESTAMP,
-    estimated_date TIMESTAMP,
-    time_frame_year TIMESTAMP
+    estimated_date BOOLEAN,
+    time_frame_year VARCHAR(32)
 );
 -- Platform attributes will be Typed_Attribute entries
 

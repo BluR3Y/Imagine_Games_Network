@@ -1,7 +1,7 @@
 import scrapy
-from uuid import uuid4
+from imagine_games_scraper.items.base_item import Item
 
-class User(scrapy.Item):
+class User(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     avatar_id = scrapy.Field()
@@ -13,10 +13,7 @@ class User(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(User, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-
-
-class Author(scrapy.Item):
+class Author(Item):
     id = scrapy.Field()
     legacy_id = scrapy.Field()
     user_id = scrapy.Field()
@@ -32,9 +29,7 @@ class Author(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(Author, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
-
-class UserConfiguration(scrapy.Item):
+class UserConfiguration(Item):
     id = scrapy.Field()
     user_id = scrapy.Field()
     privacy = scrapy.Field()
@@ -44,4 +39,4 @@ class UserConfiguration(scrapy.Item):
     def __init__(self, *args, **kwargs):
         super(UserConfiguration, self).__init__(*args, **kwargs)
 
-        self['id'] = str(uuid4())
+        

@@ -17,7 +17,7 @@ class NameEntry(TypeDecorator):
     impl = NameType
 
     def process_bind_param(self, value, dialect):
-        return (value.get('main'),value.get('alt'),value.get('short'))
+        return (value.get('long'),value.get('alt'),value.get('short'))
     
 class DescriptionType(UserDefinedType):
     cache_ok = True

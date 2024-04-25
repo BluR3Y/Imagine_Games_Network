@@ -1,0 +1,1424 @@
+[
+    {
+        "id": "83dd42c0-d1ca-4f35-8e99-09a62aafac19",
+        "videoId": "83dd42c0-d1ca-4f35-8e99-09a62aafac19",
+        "metadata": {
+            "adBreaks": null,
+            "slug": "the-last-of-us-part-2-review",
+            "url": "https://www.ign.com/videos/the-last-of-us-part-2-review",
+            "title": "The Last of Us Part 2 Review",
+            "networks": [
+                "ign"
+            ],
+            "duration": 480,
+            "state": "published",
+            "noads": false,
+            "ageGate": "none",
+            "ageGated": false,
+            "classification": "Review",
+            "__typename": "PlayerPropsMetadata"
+        },
+        "extra": {
+            "videoSeries": "Reviews: Games",
+            "live": false,
+            "liveOnAir": false,
+            "__typename": "PlayerPropsExtra"
+        },
+        "refs": {
+            "m3uUrl": "https://assets7.ign.com/master/videos/zencoder/2020/06/11/,416/232386579b33444329bfe3fd51382187-110000,640/232386579b33444329bfe3fd51382187-1000000,960/232386579b33444329bfe3fd51382187-1500000,1280/232386579b33444329bfe3fd51382187-2500000,1920/232386579b33444329bfe3fd51382187-6500000,-1591923863/master.m3u8",
+            "captions": null,
+            "__typename": "PlayerPropsRef"
+        },
+        "assets": [
+            {
+                "url": "https://assets14.ign.com/videos/zencoder/2020/06/11/416/232386579b33444329bfe3fd51382187-110000-1591923863.mp4",
+                "bitrate": 108000,
+                "width": 416,
+                "height": 234,
+                "fps": 30,
+                "__typename": "PlayerPropsAsset"
+            },
+            {
+                "url": "https://assets14.ign.com/videos/zencoder/2020/06/11/640/232386579b33444329bfe3fd51382187-1000000-1591923863.mp4",
+                "bitrate": 994000,
+                "width": 640,
+                "height": 360,
+                "fps": 30,
+                "__typename": "PlayerPropsAsset"
+            },
+            {
+                "url": "https://assets14.ign.com/videos/zencoder/2020/06/11/960/232386579b33444329bfe3fd51382187-1500000-1591923863.mp4",
+                "bitrate": 1495000,
+                "width": 960,
+                "height": 540,
+                "fps": 30,
+                "__typename": "PlayerPropsAsset"
+            },
+            {
+                "url": "https://assets14.ign.com/videos/zencoder/2020/06/11/1280/232386579b33444329bfe3fd51382187-2500000-1591923863.mp4",
+                "bitrate": 2494000,
+                "width": 1280,
+                "height": 720,
+                "fps": 30,
+                "__typename": "PlayerPropsAsset"
+            },
+            {
+                "url": "https://assets14.ign.com/videos/zencoder/2020/06/11/1920/232386579b33444329bfe3fd51382187-6500000-1591923863.mp4",
+                "bitrate": 6496000,
+                "width": 1920,
+                "height": 1080,
+                "fps": 30,
+                "__typename": "PlayerPropsAsset"
+            }
+        ],
+        "thumbnails": [
+            {
+                "url": "https://assets1.ignimgs.com/thumbs/userUploaded/2020/6/11/36939348thelastofuspart2yt-1591926487493.jpg",
+                "styleUrl": "https://assets1.ignimgs.com/thumbs/userUploaded/2020/6/11/36939348thelastofuspart2yt-1591926487493_{size}.jpg",
+                "__typename": "PlayerPropsThumbnail"
+            }
+        ],
+        "objectRelations": [
+            {
+                "commonName": "The Last of Us 2",
+                "legacyId": "70903702-2460-4dcb-b42c-d714adc633b0",
+                "objectType": "Game",
+                "__typename": "PlayerPropsRelation"
+            }
+        ],
+        "objects": [
+            {
+                "id": "70903702-2460-4dcb-b42c-d714adc633b0",
+                "url": "/games/the-last-of-us-2",
+                "__typename": "Object"
+            }
+        ],
+        "recommendations": [
+            {
+                "title": "LEGO 2K Drive Video Review",
+                "videoId": "15529313-47d7-4e75-b9c9-df8d360238ec",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/19/lego-2k-drive-1684481748638.png",
+                "url": "/videos/lego-2k-drive-video-review",
+                "slug": "lego-2k-drive-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "The Outlast Trials Early Access Video Review",
+                "videoId": "53d05a0a-35f3-4afc-8ce4-b52ed1179907",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/17/theoutlasttrialsearlyaccessreview-yt-1684363368320.jpg",
+                "url": "/videos/the-outlast-trials-early-access-video-review",
+                "slug": "the-outlast-trials-early-access-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Humanity Video Review",
+                "videoId": "9887d6a6-f8f3-4c7b-bdcb-5ad468f5cc9b",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/14/humanityreview-yt-1684102295611.jpg",
+                "url": "/videos/humanity-video-review",
+                "slug": "humanity-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Darkest Dungeon 2 Video Review",
+                "videoId": "c06f24b3-2f11-4b83-9955-3c2cc0a78318",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/12/darkestdungeon2-review-yt-1683850175218.jpg",
+                "url": "/videos/darkest-dungeon-2-video-review",
+                "slug": "darkest-dungeon-2-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "The Legend of Zelda: Tears of the Kingdom Video Review",
+                "videoId": "4db728bb-3b77-4b6f-a21c-8be369709095",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/11/thelegendofzeldatearsofthekingdomvideoreview-36190303-tearsofthekingdom-review-ytalt2-1683764242474.jpg",
+                "url": "/videos/the-legend-of-zelda-tears-of-the-kingdom-video-review",
+                "slug": "the-legend-of-zelda-tears-of-the-kingdom-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Honkai: Star Rail Video Review",
+                "videoId": "41b8a09c-0cb8-4941-93c5-1b4b5d1dc730",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/10/honkaistarrail-review-yt-1683681546292.jpg",
+                "url": "/videos/honkai-star-rail-video-review",
+                "slug": "honkai-star-rail-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Redfall Video Review",
+                "videoId": "c0a6bd24-cd5d-4199-863a-a4aa3564589f",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/04/redfall-final-blog-1920-1683186782344.png",
+                "url": "/videos/redfall-video-review",
+                "slug": "redfall-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "The Last Case of Benedict Fox Video Review",
+                "videoId": "67fca2d8-4e47-49f3-bb43-0d4f4d127958",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/03/thelastcaseofbenedictfox-review-blogroll-1683096631113.jpg",
+                "url": "/videos/the-last-case-of-benedict-fox-video-review",
+                "slug": "the-last-case-of-benedict-fox-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Redfall Video Review in Progress",
+                "videoId": "6c5843f9-d749-4aaa-a9a4-92ce9baf46dc",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/redfall-blog-1920-1682933165386.png",
+                "url": "/videos/redfall-video-review-in-progress",
+                "slug": "redfall-video-review-in-progress",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Stray Blade Video Review",
+                "videoId": "7888c8ee-3e52-474f-8d9a-f6faea1bbf4e",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/28/strayblade-review-yt-1682726053191.jpg",
+                "url": "/videos/stray-blade-video-review",
+                "slug": "stray-blade-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Age of Wonders 4 Video Review",
+                "videoId": "078bc0b2-f6b9-4abe-8459-5f1d4dbd1c6f",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/27/36190303-ageofwonders4review-yt-1682554084092.jpg",
+                "url": "/videos/age-of-wonders-4-video-review",
+                "slug": "age-of-wonders-4-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Star Wars Jedi: Survivor Video Review",
+                "videoId": "fced46ac-34e1-4410-bb04-c2c7af5b1982",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/26/starwarsjedisurvivor-review-blogroll-1682494510142.jpg",
+                "url": "/videos/star-wars-jedi-survivor-video-review",
+                "slug": "star-wars-jedi-survivor-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Tron: Identity Video Review",
+                "videoId": "4a0f6aec-dcc6-46a3-93be-945918678197",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/tronidentityvideoreview-36939348-tronidentityreview-yt-1682451345424.jpg",
+                "url": "/videos/tron-identity-video-review",
+                "slug": "tron-identity-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Dredge Video Review",
+                "videoId": "1f1056a6-6f84-4e30-8ebf-d04538ce9a7c",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/dredge-review-yt-1682097774045.jpg",
+                "url": "/videos/dredge-video-review",
+                "slug": "dredge-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Disney Speedstorm Early Access Video Review",
+                "videoId": "48ebce3a-c58f-4f68-a3ae-4f4a25147b4d",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/disney-speedstorm-early-access-review-blogroll-1682054814547.jpg",
+                "url": "/videos/disney-speedstorm-early-access-video-review",
+                "slug": "disney-speedstorm-early-access-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Horizon Forbidden West: Burning Shores Review",
+                "videoId": "12bafdaf-1eba-4a2a-bec3-299f960948cd",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/burning-shores-blog-1681920495225.jpg",
+                "url": "/videos/horizon-forbidden-west-burning-shores-review",
+                "slug": "horizon-forbidden-west-burning-shores-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Advance Wars 1+2 Re-Boot Camp Video Review",
+                "videoId": "506b8d5d-85e0-4bc8-a6b0-8e58a615f078",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/advancewarsrebootcampreview-yt-1681930206414.jpg",
+                "url": "/videos/advance-wars-12-re-boot-camp-video-review",
+                "slug": "advance-wars-12-re-boot-camp-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "The Mageseeker: A League of Legends Story Video Review",
+                "videoId": "ed0f481f-fb5e-49b1-8475-d89353f88efb",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/themageseekerreview-yt-1681927453283.jpg",
+                "url": "/videos/the-mageseeker-a-league-of-legends-story-video-review",
+                "slug": "the-mageseeker-a-league-of-legends-story-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Dead Island 2 Video Review",
+                "videoId": "43320ca7-a2e9-4c5b-a6d9-c1c138c6a8f6",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/17/deadisland2-review-yt-1681766711498.jpg",
+                "url": "/videos/dead-island-2-video-review",
+                "slug": "dead-island-2-video-review",
+                "__typename": "Recommendation"
+            },
+            {
+                "title": "Minecraft Legends Review",
+                "videoId": "f40bbd5e-ed43-4aa0-a78f-0ed76ff00f2f",
+                "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/13/36190303-minecraftlegendsreview-yt-1681427754844.jpg",
+                "url": "/videos/minecraft-legends-review",
+                "slug": "minecraft-legends-review",
+                "__typename": "Recommendation"
+            }
+        ],
+        "__typename": "PlayerProps"
+    },
+  {
+    "id": "f5358538-d5a8-48fe-b5a5-d7e47f452ba6",
+    "videoId": "f5358538-d5a8-48fe-b5a5-d7e47f452ba6",
+    "metadata": {
+        "adBreaks": null,
+        "slug": "diablo-4-the-story-of-sanctuary-so-far",
+        "url": "https://www.ign.com/videos/diablo-4-the-story-of-sanctuary-so-far",
+        "title": "Diablo 4: The Story of Sanctuary So Far",
+        "networks": [
+            "ign"
+        ],
+        "duration": 174,
+        "state": "published",
+        "noads": false,
+        "ageGate": "none",
+        "ageGated": false,
+        "classification": "Sponsored",
+        "__typename": "PlayerPropsMetadata"
+    },
+    "extra": {
+        "videoSeries": null,
+        "live": false,
+        "liveOnAir": false,
+        "__typename": "PlayerPropsExtra"
+    },
+    "refs": {
+        "m3uUrl": "https://assets.ign.com/master/videos/zencoder/2023/05/01/,640/f5358538-d5a8-48fe-b5a5-d7e47f452ba6,852/f5358538-d5a8-48fe-b5a5-d7e47f452ba6,960/f5358538-d5a8-48fe-b5a5-d7e47f452ba6,1280/f5358538-d5a8-48fe-b5a5-d7e47f452ba6,1920/f5358538-d5a8-48fe-b5a5-d7e47f452ba6,-1682967131/master.m3u8",
+        "captions": null,
+        "__typename": "PlayerPropsRef"
+    },
+    "assets": [
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/01/1920/f5358538-d5a8-48fe-b5a5-d7e47f452ba6-1682967131.mp4",
+            "bitrate": 3947000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 60,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/01/1280/f5358538-d5a8-48fe-b5a5-d7e47f452ba6-1682967131.mp4",
+            "bitrate": 1897000,
+            "width": 1280,
+            "height": 720,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/01/960/f5358538-d5a8-48fe-b5a5-d7e47f452ba6-1682967131.mp4",
+            "bitrate": 1115000,
+            "width": 960,
+            "height": 540,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/01/852/f5358538-d5a8-48fe-b5a5-d7e47f452ba6-1682967131.mp4",
+            "bitrate": 713000,
+            "width": 852,
+            "height": 480,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/01/640/f5358538-d5a8-48fe-b5a5-d7e47f452ba6-1682967131.mp4",
+            "bitrate": 342000,
+            "width": 640,
+            "height": 360,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        }
+    ],
+    "thumbnails": [
+        {
+            "url": "https://assets-prd.ignimgs.com/2023/05/01/d4-vod2-oo-thumb-1682967038169.png",
+            "styleUrl": "https://assets-prd.ignimgs.com/2023/05/01/d4-vod2-oo-thumb-1682967038169_{size}.png",
+            "__typename": "PlayerPropsThumbnail"
+        }
+    ],
+    "objectRelations": [
+        {
+            "commonName": "Diablo 4",
+            "legacyId": "50ec273e-cc4e-4a0d-bb1c-60c47ec7d119",
+            "objectType": "Game",
+            "__typename": "PlayerPropsRelation"
+        }
+    ],
+    "objects": [
+        {
+            "id": "50ec273e-cc4e-4a0d-bb1c-60c47ec7d119",
+            "url": "/games/diablo-iv",
+            "__typename": "Object"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "Diablo 4 - Official Gameplay Launch Trailer",
+            "videoId": "6b51c10c-d3c0-47de-8771-1fb3441813f8",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/17/diablo4gameplaylaunchtrailer-ign-blogroll-1684340281199.jpg",
+            "url": "/videos/diablo-4-official-gameplay-launch-trailer",
+            "slug": "diablo-4-official-gameplay-launch-trailer",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Official 'Inside the Game: A New Saga' Behind-The-Scenes Video",
+            "videoId": "61f08908-908d-4d57-8ae0-87df9c562517",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/15/diablo4insidethegameanewsagabehindthescenesfeaturette-ign-blogroll-1684181869060.jpg",
+            "url": "/videos/diablo-4-official-inside-the-game-a-new-saga-behind-the-scenes-video",
+            "slug": "diablo-4-official-inside-the-game-a-new-saga-behind-the-scenes-video",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Zelda Boss Has Completed Tears of the Kingdom 20 Times: Here's His Advice - IGN Daily Fix",
+            "videoId": "a3f075fb-0c21-4ecc-ae1c-fb51e415c2b6",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/11/ign-df-blogroll-5-11-23-1683847561043.png",
+            "url": "/videos/zelda-boss-has-completed-tears-of-the-kingdom-20-times-heres-his-advice-ign-daily-fix",
+            "slug": "zelda-boss-has-completed-tears-of-the-kingdom-20-times-heres-his-advice-ign-daily-fix",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4: Sanctuary Map Overview & Powerful Foes Ashava, The Butcher, and More",
+            "videoId": "b48f3dfc-7701-49db-ac94-c084d876a29c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/d4-vod1-oo-thumb-1682966723073.png",
+            "url": "/videos/diablo-4-sanctuary-map-overview-powerful-foes-ashava-the-butcher-and-more",
+            "slug": "diablo-4-sanctuary-map-overview-powerful-foes-ashava-the-butcher-and-more",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Official Beta Accolades Trailer",
+            "videoId": "f0501bc0-13f9-405b-aba3-b7d662f6fff5",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/08/diablo4betaaccoladestrailer-ign-blogroll-1683567433538.jpg",
+            "url": "/videos/diablo-4-official-beta-accolades-trailer",
+            "slug": "diablo-4-official-beta-accolades-trailer",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Tech Issues Are Plaguing Next-Gen Games - Next-Gen Console Watch",
+            "videoId": "247abadf-682e-44b1-b929-53c49eb26d32",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/04/ngcw-techissues-blogroll-1683238640836.jpeg",
+            "url": "/videos/tech-issues-are-plaguing-next-gen-games-next-gen-console-watch",
+            "slug": "tech-issues-are-plaguing-next-gen-games-next-gen-console-watch",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Official Server Slam Trailer",
+            "videoId": "1fe2c5e3-fa03-4b72-95f6-8a49b237663a",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/diablo4serverslamtrailer-ign-blogroll-1682961708709.jpg",
+            "url": "/videos/diablo-4-official-server-slam-trailer",
+            "slug": "diablo-4-official-server-slam-trailer",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4: Here Are 6 Games to Play While You Wait",
+            "videoId": "336484a1-8561-48c7-a077-294d5e21ecf3",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/27/diablo4-gamestoplay-blogroll-1682632496312.jpg",
+            "url": "/videos/diablo-4-here-are-6-games-to-play-while-you-wait",
+            "slug": "diablo-4-here-are-6-games-to-play-while-you-wait",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Xbox’s Activision-Blizzard Deal Is Blocked. Now What? – Unlocked 592",
+            "videoId": "684aea31-fda4-4ddb-9271-99aaea9daef7",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/26/unlocked-592-xboxactivisionblizzard-blogroll-1682552847590.jpg",
+            "url": "/videos/xboxs-activision-blizzard-deal-is-blocked-now-what-unlocked-592",
+            "slug": "xboxs-activision-blizzard-deal-is-blocked-now-what-unlocked-592",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Competition and Markets Authority Blocks Xbox's Activision Blizzard Deal - IGN News",
+            "videoId": "da097fbc-7d46-464c-940f-181e7ea14f91",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/image-1682415562457.png",
+            "url": "/videos/competition-and-markets-authority-blocks-xboxs-activision-blizzard-deal-ign-news",
+            "slug": "competition-and-markets-authority-blocks-xboxs-activision-blizzard-deal-ign-news",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4: The 8 Biggest Changes",
+            "videoId": "df1baad0-2da3-47fe-b7c2-cc8829bc392c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/36190303-diablo4-8changes-blogroll-1682464053147.jpg",
+            "url": "/videos/diablo-4-the-8-biggest-changes",
+            "slug": "diablo-4-the-8-biggest-changes",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dead Island 2 Sells More Than 1 Million Units in Three Days - IGN Daily Fix",
+            "videoId": "9ffe20d2-0361-4638-b733-99dbee2f27d6",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/ign-df-blogroll-4-25-23-1682462134102.png",
+            "url": "/videos/dead-island-2-sells-more-than-1-million-units-in-three-days-ign-daily-fix",
+            "slug": "dead-island-2-sells-more-than-1-million-units-in-three-days-ign-daily-fix",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4: The 7 Things We Want to See Return",
+            "videoId": "8d333e56-f1a4-4319-ab82-07698b4e822a",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/diablo4the7thingswewanttoseereturn-36190303-diablo4musthaves-blogroll-1682452008842.jpg",
+            "url": "/videos/diablo-4-the-7-things-we-want-to-see-return",
+            "slug": "diablo-4-the-7-things-we-want-to-see-return",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Official Necromancer Trailer",
+            "videoId": "34bd40ca-231f-41a5-b178-2440c82ded93",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/diablo4necromancertrailer-ign-blogroll-1682443179618.jpg",
+            "url": "/videos/diablo-4-official-necromancer-trailer",
+            "slug": "diablo-4-official-necromancer-trailer",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Next Horizon: Forbidden West Sequel Possibly Teased - IGN Daily Fix",
+            "videoId": "05cea261-ef65-4b9a-a131-845f526d9f58",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/24/gfix-042423-blogroll-1682377939496.jpg",
+            "url": "/videos/next-horizon-forbidden-west-sequel-possibly-teased-ign-daily-fix",
+            "slug": "next-horizon-forbidden-west-sequel-possibly-teased-ign-daily-fix",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 Announces Final Beta Test, Confirms It Will Include Gameplay Updates - IGN News",
+            "videoId": "f78ccb16-2187-4957-a3bc-bfe632533d2c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2022/06/06/diablo-immortal-adv-1280-1654489599239.jpg",
+            "url": "/videos/diablo-4-announces-final-beta-test-confirms-it-will-include-gameplay-updates-ign-news",
+            "slug": "diablo-4-announces-final-beta-test-confirms-it-will-include-gameplay-updates-ign-news",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Interview: Diablo 4 Developers Talk About Class Changes, Dungeons, and More Ahead of Final Beta Test",
+            "videoId": "13b9fb6e-f5e0-47ef-9d68-130e4bcbe72f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/20/diablo4-interview-blogroll-1682010154221.jpg",
+            "url": "/videos/interview-diablo-4-developers-talk-about-class-changes-dungeons-and-more-ahead-of-final-beta-test",
+            "slug": "interview-diablo-4-developers-talk-about-class-changes-dungeons-and-more-ahead-of-final-beta-test",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Nightmare Dungeons Gameplay Commentary",
+            "videoId": "c4f9675d-5aba-49df-9417-def9492c76b2",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/20/dude-1682016063942.jpg",
+            "url": "/videos/diablo-4-nightmare-dungeons-gameplay-commentary",
+            "slug": "diablo-4-nightmare-dungeons-gameplay-commentary",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Diablo 4 - Official Druid Trailer",
+            "videoId": "79623e16-eacd-4a07-bf31-f81b2d9cd75e",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/20/diablo4druidtrailer-ign-blogroll-1682011171176.jpg",
+            "url": "/videos/diablo-4-official-druid-trailer",
+            "slug": "diablo-4-official-druid-trailer",
+            "__typename": "Recommendation"
+        }
+    ],
+    "__typename": "PlayerProps"
+  },
+  {
+    "id": "da3f0116-33cd-4ebf-bfa2-50aa43ca6c57",
+    "videoId": "da3f0116-33cd-4ebf-bfa2-50aa43ca6c57",
+    "metadata": {
+        "adBreaks": null,
+        "slug": "call-of-duty-black-ops-3-review",
+        "url": "https://www.ign.com/videos/call-of-duty-black-ops-3-review",
+        "title": "Call of Duty: Black Ops 3 Review",
+        "networks": [
+            "ign"
+        ],
+        "duration": 360,
+        "state": "published",
+        "noads": false,
+        "ageGate": "17",
+        "ageGated": true,
+        "classification": "Review",
+        "__typename": "PlayerPropsMetadata"
+    },
+    "extra": {
+        "videoSeries": "Reviews: Games",
+        "live": false,
+        "liveOnAir": false,
+        "__typename": "PlayerPropsExtra"
+    },
+    "refs": {
+        "m3uUrl": "https://assets7.ign.com/master/videos/zencoder/2015/11/7/,416/9525e79feeab454cd915037fed2ed6a3-11,640/9525e79feeab454cd915037fed2ed6a3-50,853/9525e79feeab454cd915037fed2ed6a3-100,960/9525e79feeab454cd915037fed2ed6a3-150,1280/9525e79feeab454cd915037fed2ed6a3-250,1920/9525e79feeab454cd915037fed2ed6a3-500,0000-1446935644-w/master.m3u8",
+        "captions": null,
+        "__typename": "PlayerPropsRef"
+    },
+    "assets": [
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/416/9525e79feeab454cd915037fed2ed6a3-110000-1446935644-w.mp4",
+            "bitrate": 110000,
+            "width": 416,
+            "height": 234,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/640/9525e79feeab454cd915037fed2ed6a3-500000-1446935644-w.mp4",
+            "bitrate": 500000,
+            "width": 640,
+            "height": 360,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/853/9525e79feeab454cd915037fed2ed6a3-1000000-1446935644-w.mp4",
+            "bitrate": 1000000,
+            "width": 853,
+            "height": 480,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/960/9525e79feeab454cd915037fed2ed6a3-1500000-1446935644-w.mp4",
+            "bitrate": 1500000,
+            "width": 960,
+            "height": 540,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/1280/9525e79feeab454cd915037fed2ed6a3-2500000-1446935644-w.mp4",
+            "bitrate": 2500000,
+            "width": 1280,
+            "height": 720,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2015/11/7/1920/9525e79feeab454cd915037fed2ed6a3-5000000-1446935644-w.mp4",
+            "bitrate": 5000000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        }
+    ],
+    "thumbnails": [
+        {
+            "url": "https://assets1.ignimgs.com/thumbs/userUploaded/2015/11/7/blops31280-1446934154925.jpg",
+            "styleUrl": "https://assets1.ignimgs.com/thumbs/userUploaded/2015/11/7/blops31280-1446934154925_{size}.jpg",
+            "__typename": "PlayerPropsThumbnail"
+        }
+    ],
+    "objectRelations": [
+        {
+            "commonName": "Call of Duty: Black Ops 3",
+            "legacyId": "5c8fb92d-6cc4-4de0-a405-c8478b4904e5",
+            "objectType": "Game",
+            "__typename": "PlayerPropsRelation"
+        }
+    ],
+    "objects": [
+        {
+            "id": "5c8fb92d-6cc4-4de0-a405-c8478b4904e5",
+            "url": "/games/call-of-duty-black-ops-3",
+            "__typename": "Object"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "LEGO 2K Drive Video Review",
+            "videoId": "15529313-47d7-4e75-b9c9-df8d360238ec",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/19/lego-2k-drive-1684481748638.png",
+            "url": "/videos/lego-2k-drive-video-review",
+            "slug": "lego-2k-drive-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Outlast Trials Early Access Video Review",
+            "videoId": "53d05a0a-35f3-4afc-8ce4-b52ed1179907",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/17/theoutlasttrialsearlyaccessreview-yt-1684363368320.jpg",
+            "url": "/videos/the-outlast-trials-early-access-video-review",
+            "slug": "the-outlast-trials-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Humanity Video Review",
+            "videoId": "9887d6a6-f8f3-4c7b-bdcb-5ad468f5cc9b",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/14/humanityreview-yt-1684102295611.jpg",
+            "url": "/videos/humanity-video-review",
+            "slug": "humanity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Darkest Dungeon 2 Video Review",
+            "videoId": "c06f24b3-2f11-4b83-9955-3c2cc0a78318",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/12/darkestdungeon2-review-yt-1683850175218.jpg",
+            "url": "/videos/darkest-dungeon-2-video-review",
+            "slug": "darkest-dungeon-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Legend of Zelda: Tears of the Kingdom Video Review",
+            "videoId": "4db728bb-3b77-4b6f-a21c-8be369709095",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/11/thelegendofzeldatearsofthekingdomvideoreview-36190303-tearsofthekingdom-review-ytalt2-1683764242474.jpg",
+            "url": "/videos/the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "slug": "the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Honkai: Star Rail Video Review",
+            "videoId": "41b8a09c-0cb8-4941-93c5-1b4b5d1dc730",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/10/honkaistarrail-review-yt-1683681546292.jpg",
+            "url": "/videos/honkai-star-rail-video-review",
+            "slug": "honkai-star-rail-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review",
+            "videoId": "c0a6bd24-cd5d-4199-863a-a4aa3564589f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/04/redfall-final-blog-1920-1683186782344.png",
+            "url": "/videos/redfall-video-review",
+            "slug": "redfall-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Last Case of Benedict Fox Video Review",
+            "videoId": "67fca2d8-4e47-49f3-bb43-0d4f4d127958",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/03/thelastcaseofbenedictfox-review-blogroll-1683096631113.jpg",
+            "url": "/videos/the-last-case-of-benedict-fox-video-review",
+            "slug": "the-last-case-of-benedict-fox-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review in Progress",
+            "videoId": "6c5843f9-d749-4aaa-a9a4-92ce9baf46dc",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/redfall-blog-1920-1682933165386.png",
+            "url": "/videos/redfall-video-review-in-progress",
+            "slug": "redfall-video-review-in-progress",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Stray Blade Video Review",
+            "videoId": "7888c8ee-3e52-474f-8d9a-f6faea1bbf4e",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/28/strayblade-review-yt-1682726053191.jpg",
+            "url": "/videos/stray-blade-video-review",
+            "slug": "stray-blade-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Age of Wonders 4 Video Review",
+            "videoId": "078bc0b2-f6b9-4abe-8459-5f1d4dbd1c6f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/27/36190303-ageofwonders4review-yt-1682554084092.jpg",
+            "url": "/videos/age-of-wonders-4-video-review",
+            "slug": "age-of-wonders-4-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Star Wars Jedi: Survivor Video Review",
+            "videoId": "fced46ac-34e1-4410-bb04-c2c7af5b1982",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/26/starwarsjedisurvivor-review-blogroll-1682494510142.jpg",
+            "url": "/videos/star-wars-jedi-survivor-video-review",
+            "slug": "star-wars-jedi-survivor-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Tron: Identity Video Review",
+            "videoId": "4a0f6aec-dcc6-46a3-93be-945918678197",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/tronidentityvideoreview-36939348-tronidentityreview-yt-1682451345424.jpg",
+            "url": "/videos/tron-identity-video-review",
+            "slug": "tron-identity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dredge Video Review",
+            "videoId": "1f1056a6-6f84-4e30-8ebf-d04538ce9a7c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/dredge-review-yt-1682097774045.jpg",
+            "url": "/videos/dredge-video-review",
+            "slug": "dredge-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Disney Speedstorm Early Access Video Review",
+            "videoId": "48ebce3a-c58f-4f68-a3ae-4f4a25147b4d",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/disney-speedstorm-early-access-review-blogroll-1682054814547.jpg",
+            "url": "/videos/disney-speedstorm-early-access-video-review",
+            "slug": "disney-speedstorm-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Horizon Forbidden West: Burning Shores Review",
+            "videoId": "12bafdaf-1eba-4a2a-bec3-299f960948cd",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/burning-shores-blog-1681920495225.jpg",
+            "url": "/videos/horizon-forbidden-west-burning-shores-review",
+            "slug": "horizon-forbidden-west-burning-shores-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Advance Wars 1+2 Re-Boot Camp Video Review",
+            "videoId": "506b8d5d-85e0-4bc8-a6b0-8e58a615f078",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/advancewarsrebootcampreview-yt-1681930206414.jpg",
+            "url": "/videos/advance-wars-12-re-boot-camp-video-review",
+            "slug": "advance-wars-12-re-boot-camp-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Mageseeker: A League of Legends Story Video Review",
+            "videoId": "ed0f481f-fb5e-49b1-8475-d89353f88efb",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/themageseekerreview-yt-1681927453283.jpg",
+            "url": "/videos/the-mageseeker-a-league-of-legends-story-video-review",
+            "slug": "the-mageseeker-a-league-of-legends-story-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dead Island 2 Video Review",
+            "videoId": "43320ca7-a2e9-4c5b-a6d9-c1c138c6a8f6",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/17/deadisland2-review-yt-1681766711498.jpg",
+            "url": "/videos/dead-island-2-video-review",
+            "slug": "dead-island-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Minecraft Legends Review",
+            "videoId": "f40bbd5e-ed43-4aa0-a78f-0ed76ff00f2f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/13/36190303-minecraftlegendsreview-yt-1681427754844.jpg",
+            "url": "/videos/minecraft-legends-review",
+            "slug": "minecraft-legends-review",
+            "__typename": "Recommendation"
+        }
+    ],
+    "__typename": "PlayerProps"
+  },
+  {
+    "id": "babfdca7-9920-4090-bd90-bd7fdadc9466",
+    "videoId": "babfdca7-9920-4090-bd90-bd7fdadc9466",
+    "metadata": {
+        "adBreaks": null,
+        "slug": "coreborn-nations-of-the-ultracore-early-access-trailer",
+        "url": "https://www.ign.com/videos/coreborn-nations-of-the-ultracore-early-access-trailer",
+        "title": "Coreborn: Nations of the Ultracore - Early Access Trailer",
+        "networks": [
+            "ign"
+        ],
+        "duration": 73,
+        "state": "published",
+        "noads": true,
+        "ageGate": "none",
+        "ageGated": false,
+        "classification": "Trailer",
+        "__typename": "PlayerPropsMetadata"
+    },
+    "extra": {
+        "videoSeries": null,
+        "live": false,
+        "liveOnAir": false,
+        "__typename": "PlayerPropsExtra"
+    },
+    "refs": {
+        "m3uUrl": "https://assets.ign.com/master/videos/zencoder/2023/05/16/,640/babfdca7-9920-4090-bd90-bd7fdadc9466,852/babfdca7-9920-4090-bd90-bd7fdadc9466,960/babfdca7-9920-4090-bd90-bd7fdadc9466,1280/babfdca7-9920-4090-bd90-bd7fdadc9466,1920/babfdca7-9920-4090-bd90-bd7fdadc9466,-1684274791/master.m3u8",
+        "captions": null,
+        "__typename": "PlayerPropsRef"
+    },
+    "assets": [
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/16/1920/babfdca7-9920-4090-bd90-bd7fdadc9466-1684274791.mp4",
+            "bitrate": 5943000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 25,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/16/1280/babfdca7-9920-4090-bd90-bd7fdadc9466-1684274791.mp4",
+            "bitrate": 1892000,
+            "width": 1280,
+            "height": 720,
+            "fps": 25,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/16/960/babfdca7-9920-4090-bd90-bd7fdadc9466-1684274791.mp4",
+            "bitrate": 1112000,
+            "width": 960,
+            "height": 540,
+            "fps": 25,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/16/852/babfdca7-9920-4090-bd90-bd7fdadc9466-1684274791.mp4",
+            "bitrate": 709000,
+            "width": 852,
+            "height": 480,
+            "fps": 25,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets.ign.com/videos/zencoder/2023/05/16/640/babfdca7-9920-4090-bd90-bd7fdadc9466-1684274791.mp4",
+            "bitrate": 338000,
+            "width": 640,
+            "height": 360,
+            "fps": 25,
+            "__typename": "PlayerPropsAsset"
+        }
+    ],
+    "thumbnails": [
+        {
+            "url": "https://assets-prd.ignimgs.com/2023/05/16/corebornnationsoftheultracoreearlyaccesstrailer-36190303-coreborn-cleanimage-1684274935426.jpg",
+            "styleUrl": "https://assets-prd.ignimgs.com/2023/05/16/corebornnationsoftheultracoreearlyaccesstrailer-36190303-coreborn-cleanimage-1684274935426_{size}.jpg",
+            "__typename": "PlayerPropsThumbnail"
+        }
+    ],
+    "objectRelations": [
+        {
+            "commonName": "Coreborn: Nations of the Ultracore",
+            "legacyId": "ef2cbe6c-a731-4113-b116-923c9189b179",
+            "objectType": "Game",
+            "__typename": "PlayerPropsRelation"
+        }
+    ],
+    "objects": [
+        {
+            "id": "ef2cbe6c-a731-4113-b116-923c9189b179",
+            "url": "/games/coreborn-nations-of-the-ultracore",
+            "__typename": "Object"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "Coreborn: Nations of the Ultracore - Official Closed Alpha Celebration Trailer",
+            "videoId": "0849b969-2e86-4af8-b2a6-e5135a91fbe3",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/03/16/corebornplayeralphatrailer-ign-blogroll-1679004051900.jpg",
+            "url": "/videos/coreborn-nations-of-the-ultracore-official-closed-alpha-celebration-trailer",
+            "slug": "coreborn-nations-of-the-ultracore-official-closed-alpha-celebration-trailer",
+            "__typename": "Recommendation"
+        }
+    ],
+    "__typename": "PlayerProps"
+  },
+  {
+    "id": "e1eb8ef8-7b2e-4dc5-8869-a8090c93973a",
+    "videoId": "e1eb8ef8-7b2e-4dc5-8869-a8090c93973a",
+    "metadata": {
+        "adBreaks": null,
+        "slug": "apex-legends-review-2021",
+        "url": "https://www.ign.com/videos/apex-legends-review-2021",
+        "title": "Apex Legends Review (2021)",
+        "networks": [
+            "ign"
+        ],
+        "duration": 480,
+        "state": "published",
+        "noads": false,
+        "ageGate": "none",
+        "ageGated": false,
+        "classification": "Review",
+        "__typename": "PlayerPropsMetadata"
+    },
+    "extra": {
+        "videoSeries": "Reviews: Games",
+        "live": false,
+        "liveOnAir": false,
+        "__typename": "PlayerPropsExtra"
+    },
+    "refs": {
+        "m3uUrl": "https://assets7.ign.com/master/videos/zencoder/2021/03/15/,640/5c6b396536b6cb4ce6c5f48620112bc6-500000,960/5c6b396536b6cb4ce6c5f48620112bc6-3000000,1280/5c6b396536b6cb4ce6c5f48620112bc6-7500000,1920/5c6b396536b6cb4ce6c5f48620112bc6-9000000,-1615844241/master.m3u8",
+        "captions": [
+            {
+                "url": "https://captions-prd.ign.com/videos/zencoder/captions/2021/03/16/5c6b396536b6cb4ce6c5f48620112bc6-500000-1615844241.en_US.srt",
+                "__typename": "Caption"
+            },
+            {
+                "url": "https://captions-prd.ign.com/videos/zencoder/captions/2021/03/16/5c6b396536b6cb4ce6c5f48620112bc6-500000-1615844241.en_US.ttml",
+                "__typename": "Caption"
+            },
+            {
+                "url": "https://captions-prd.ign.com/videos/zencoder/captions/2021/03/16/5c6b396536b6cb4ce6c5f48620112bc6-500000-1615844241.en_US.vtt",
+                "__typename": "Caption"
+            }
+        ],
+        "__typename": "PlayerPropsRef"
+    },
+    "assets": [
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2021/03/15/640/5c6b396536b6cb4ce6c5f48620112bc6-500000-1615844241.mp4",
+            "bitrate": 498000,
+            "width": 640,
+            "height": 360,
+            "fps": 60,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2021/03/15/960/5c6b396536b6cb4ce6c5f48620112bc6-3000000-1615844241.mp4",
+            "bitrate": 2600000,
+            "width": 960,
+            "height": 540,
+            "fps": 60,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2021/03/15/1280/5c6b396536b6cb4ce6c5f48620112bc6-7500000-1615844241.mp4",
+            "bitrate": 3870000,
+            "width": 1280,
+            "height": 720,
+            "fps": 60,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2021/03/15/1920/5c6b396536b6cb4ce6c5f48620112bc6-9000000-1615844241.mp4",
+            "bitrate": 6007000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 60,
+            "__typename": "PlayerPropsAsset"
+        }
+    ],
+    "thumbnails": [
+        {
+            "url": "https://assets1.ignimgs.com/thumbs/userUploaded/2021/3/15/apexlegendsreview202136939348apexlegends2021updatereviewyt-1615845712073.jpg",
+            "styleUrl": "https://assets1.ignimgs.com/thumbs/userUploaded/2021/3/15/apexlegendsreview202136939348apexlegends2021updatereviewyt-1615845712073_{size}.jpg",
+            "__typename": "PlayerPropsThumbnail"
+        }
+    ],
+    "objectRelations": [
+        {
+            "commonName": "Apex Legends",
+            "legacyId": "d382dd2b-83f1-4093-b74a-a958ccf31497",
+            "objectType": "Game",
+            "__typename": "PlayerPropsRelation"
+        }
+    ],
+    "objects": [
+        {
+            "id": "d382dd2b-83f1-4093-b74a-a958ccf31497",
+            "url": "/games/apex-legends",
+            "__typename": "Object"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "LEGO 2K Drive Video Review",
+            "videoId": "15529313-47d7-4e75-b9c9-df8d360238ec",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/19/lego-2k-drive-1684481748638.png",
+            "url": "/videos/lego-2k-drive-video-review",
+            "slug": "lego-2k-drive-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Outlast Trials Early Access Video Review",
+            "videoId": "53d05a0a-35f3-4afc-8ce4-b52ed1179907",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/17/theoutlasttrialsearlyaccessreview-yt-1684363368320.jpg",
+            "url": "/videos/the-outlast-trials-early-access-video-review",
+            "slug": "the-outlast-trials-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Humanity Video Review",
+            "videoId": "9887d6a6-f8f3-4c7b-bdcb-5ad468f5cc9b",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/14/humanityreview-yt-1684102295611.jpg",
+            "url": "/videos/humanity-video-review",
+            "slug": "humanity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Darkest Dungeon 2 Video Review",
+            "videoId": "c06f24b3-2f11-4b83-9955-3c2cc0a78318",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/12/darkestdungeon2-review-yt-1683850175218.jpg",
+            "url": "/videos/darkest-dungeon-2-video-review",
+            "slug": "darkest-dungeon-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Legend of Zelda: Tears of the Kingdom Video Review",
+            "videoId": "4db728bb-3b77-4b6f-a21c-8be369709095",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/11/thelegendofzeldatearsofthekingdomvideoreview-36190303-tearsofthekingdom-review-ytalt2-1683764242474.jpg",
+            "url": "/videos/the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "slug": "the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Honkai: Star Rail Video Review",
+            "videoId": "41b8a09c-0cb8-4941-93c5-1b4b5d1dc730",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/10/honkaistarrail-review-yt-1683681546292.jpg",
+            "url": "/videos/honkai-star-rail-video-review",
+            "slug": "honkai-star-rail-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review",
+            "videoId": "c0a6bd24-cd5d-4199-863a-a4aa3564589f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/04/redfall-final-blog-1920-1683186782344.png",
+            "url": "/videos/redfall-video-review",
+            "slug": "redfall-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Last Case of Benedict Fox Video Review",
+            "videoId": "67fca2d8-4e47-49f3-bb43-0d4f4d127958",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/03/thelastcaseofbenedictfox-review-blogroll-1683096631113.jpg",
+            "url": "/videos/the-last-case-of-benedict-fox-video-review",
+            "slug": "the-last-case-of-benedict-fox-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review in Progress",
+            "videoId": "6c5843f9-d749-4aaa-a9a4-92ce9baf46dc",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/redfall-blog-1920-1682933165386.png",
+            "url": "/videos/redfall-video-review-in-progress",
+            "slug": "redfall-video-review-in-progress",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Stray Blade Video Review",
+            "videoId": "7888c8ee-3e52-474f-8d9a-f6faea1bbf4e",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/28/strayblade-review-yt-1682726053191.jpg",
+            "url": "/videos/stray-blade-video-review",
+            "slug": "stray-blade-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Age of Wonders 4 Video Review",
+            "videoId": "078bc0b2-f6b9-4abe-8459-5f1d4dbd1c6f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/27/36190303-ageofwonders4review-yt-1682554084092.jpg",
+            "url": "/videos/age-of-wonders-4-video-review",
+            "slug": "age-of-wonders-4-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Star Wars Jedi: Survivor Video Review",
+            "videoId": "fced46ac-34e1-4410-bb04-c2c7af5b1982",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/26/starwarsjedisurvivor-review-blogroll-1682494510142.jpg",
+            "url": "/videos/star-wars-jedi-survivor-video-review",
+            "slug": "star-wars-jedi-survivor-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Tron: Identity Video Review",
+            "videoId": "4a0f6aec-dcc6-46a3-93be-945918678197",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/tronidentityvideoreview-36939348-tronidentityreview-yt-1682451345424.jpg",
+            "url": "/videos/tron-identity-video-review",
+            "slug": "tron-identity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dredge Video Review",
+            "videoId": "1f1056a6-6f84-4e30-8ebf-d04538ce9a7c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/dredge-review-yt-1682097774045.jpg",
+            "url": "/videos/dredge-video-review",
+            "slug": "dredge-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Disney Speedstorm Early Access Video Review",
+            "videoId": "48ebce3a-c58f-4f68-a3ae-4f4a25147b4d",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/disney-speedstorm-early-access-review-blogroll-1682054814547.jpg",
+            "url": "/videos/disney-speedstorm-early-access-video-review",
+            "slug": "disney-speedstorm-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Horizon Forbidden West: Burning Shores Review",
+            "videoId": "12bafdaf-1eba-4a2a-bec3-299f960948cd",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/burning-shores-blog-1681920495225.jpg",
+            "url": "/videos/horizon-forbidden-west-burning-shores-review",
+            "slug": "horizon-forbidden-west-burning-shores-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Advance Wars 1+2 Re-Boot Camp Video Review",
+            "videoId": "506b8d5d-85e0-4bc8-a6b0-8e58a615f078",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/advancewarsrebootcampreview-yt-1681930206414.jpg",
+            "url": "/videos/advance-wars-12-re-boot-camp-video-review",
+            "slug": "advance-wars-12-re-boot-camp-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Mageseeker: A League of Legends Story Video Review",
+            "videoId": "ed0f481f-fb5e-49b1-8475-d89353f88efb",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/themageseekerreview-yt-1681927453283.jpg",
+            "url": "/videos/the-mageseeker-a-league-of-legends-story-video-review",
+            "slug": "the-mageseeker-a-league-of-legends-story-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dead Island 2 Video Review",
+            "videoId": "43320ca7-a2e9-4c5b-a6d9-c1c138c6a8f6",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/17/deadisland2-review-yt-1681766711498.jpg",
+            "url": "/videos/dead-island-2-video-review",
+            "slug": "dead-island-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Minecraft Legends Review",
+            "videoId": "f40bbd5e-ed43-4aa0-a78f-0ed76ff00f2f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/13/36190303-minecraftlegendsreview-yt-1681427754844.jpg",
+            "url": "/videos/minecraft-legends-review",
+            "slug": "minecraft-legends-review",
+            "__typename": "Recommendation"
+        }
+    ],
+    "__typename": "PlayerProps"
+  },
+  {
+    "id": "c99e6013-0741-4440-8cb0-9bc8f7a1938c",
+    "videoId": "c99e6013-0741-4440-8cb0-9bc8f7a1938c",
+    "metadata": {
+        "adBreaks": null,
+        "slug": "fortnite-battle-royale-review",
+        "url": "https://www.ign.com/videos/fortnite-battle-royale-review",
+        "title": "Fortnite Battle Royale Review",
+        "networks": [
+            "ign"
+        ],
+        "duration": 306,
+        "state": "published",
+        "noads": false,
+        "ageGate": "none",
+        "ageGated": false,
+        "classification": "Review",
+        "__typename": "PlayerPropsMetadata"
+    },
+    "extra": {
+        "videoSeries": "Reviews: Games",
+        "live": false,
+        "liveOnAir": false,
+        "__typename": "PlayerPropsExtra"
+    },
+    "refs": {
+        "m3uUrl": "https://assets7.ign.com/master/videos/zencoder/2018/03/27/,416/496eb837f86b5f563a543602e579d534-110000,640/496eb837f86b5f563a543602e579d534-500000,960/496eb837f86b5f563a543602e579d534-3000000,1280/496eb837f86b5f563a543602e579d534-7500000,1920/496eb837f86b5f563a543602e579d534-9000000,-1522178347/master.m3u8",
+        "captions": [
+            {
+                "url": "http://assets14.ign.com/videos/zencoder/captions/2018/03/28/aNl1kXnmUXA2.sbv",
+                "__typename": "Caption"
+            },
+            {
+                "url": "http://assets14.ign.com/videos/zencoder/captions/2018/03/28/aNl1kXnmUXA2.srt",
+                "__typename": "Caption"
+            },
+            {
+                "url": "http://assets14.ign.com/videos/zencoder/captions/2018/03/28/aNl1kXnmUXA2.dfxp",
+                "__typename": "Caption"
+            },
+            {
+                "url": "http://assets14.ign.com/videos/zencoder/captions/2018/03/28/aNl1kXnmUXA2.ssa",
+                "__typename": "Caption"
+            },
+            {
+                "url": "http://assets14.ign.com/videos/zencoder/captions/2018/03/28/aNl1kXnmUXA2.vtt",
+                "__typename": "Caption"
+            }
+        ],
+        "__typename": "PlayerPropsRef"
+    },
+    "assets": [
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2018/03/27/416/496eb837f86b5f563a543602e579d534-110000-1522178347.mp4",
+            "bitrate": 107000,
+            "width": 416,
+            "height": 234,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2018/03/27/640/496eb837f86b5f563a543602e579d534-500000-1522178347.mp4",
+            "bitrate": 501000,
+            "width": 640,
+            "height": 360,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2018/03/27/960/496eb837f86b5f563a543602e579d534-3000000-1522178347.mp4",
+            "bitrate": 3002000,
+            "width": 960,
+            "height": 540,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2018/03/27/1280/496eb837f86b5f563a543602e579d534-7500000-1522178347.mp4",
+            "bitrate": 7504000,
+            "width": 1280,
+            "height": 720,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        },
+        {
+            "url": "https://assets14.ign.com/videos/zencoder/2018/03/27/1920/496eb837f86b5f563a543602e579d534-9000000-1522178347.mp4",
+            "bitrate": 5999000,
+            "width": 1920,
+            "height": 1080,
+            "fps": 30,
+            "__typename": "PlayerPropsAsset"
+        }
+    ],
+    "thumbnails": [
+        {
+            "url": "https://assets1.ignimgs.com/thumbs/userUploaded/2018/3/27/36190303fortnite-battleroyaleblogroll-1-1522178249062.jpg",
+            "styleUrl": "https://assets1.ignimgs.com/thumbs/userUploaded/2018/3/27/36190303fortnite-battleroyaleblogroll-1-1522178249062_{size}.jpg",
+            "__typename": "PlayerPropsThumbnail"
+        }
+    ],
+    "objectRelations": [
+        {
+            "commonName": "Fortnite",
+            "legacyId": "a6ee99f4-3cd1-463e-a02e-469852cbd410",
+            "objectType": "Game",
+            "__typename": "PlayerPropsRelation"
+        }
+    ],
+    "objects": [
+        {
+            "id": "a6ee99f4-3cd1-463e-a02e-469852cbd410",
+            "url": "/games/fortnite",
+            "__typename": "Object"
+        }
+    ],
+    "recommendations": [
+        {
+            "title": "LEGO 2K Drive Video Review",
+            "videoId": "15529313-47d7-4e75-b9c9-df8d360238ec",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/19/lego-2k-drive-1684481748638.png",
+            "url": "/videos/lego-2k-drive-video-review",
+            "slug": "lego-2k-drive-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Outlast Trials Early Access Video Review",
+            "videoId": "53d05a0a-35f3-4afc-8ce4-b52ed1179907",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/17/theoutlasttrialsearlyaccessreview-yt-1684363368320.jpg",
+            "url": "/videos/the-outlast-trials-early-access-video-review",
+            "slug": "the-outlast-trials-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Humanity Video Review",
+            "videoId": "9887d6a6-f8f3-4c7b-bdcb-5ad468f5cc9b",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/14/humanityreview-yt-1684102295611.jpg",
+            "url": "/videos/humanity-video-review",
+            "slug": "humanity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Darkest Dungeon 2 Video Review",
+            "videoId": "c06f24b3-2f11-4b83-9955-3c2cc0a78318",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/12/darkestdungeon2-review-yt-1683850175218.jpg",
+            "url": "/videos/darkest-dungeon-2-video-review",
+            "slug": "darkest-dungeon-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Legend of Zelda: Tears of the Kingdom Video Review",
+            "videoId": "4db728bb-3b77-4b6f-a21c-8be369709095",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/11/thelegendofzeldatearsofthekingdomvideoreview-36190303-tearsofthekingdom-review-ytalt2-1683764242474.jpg",
+            "url": "/videos/the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "slug": "the-legend-of-zelda-tears-of-the-kingdom-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Honkai: Star Rail Video Review",
+            "videoId": "41b8a09c-0cb8-4941-93c5-1b4b5d1dc730",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/10/honkaistarrail-review-yt-1683681546292.jpg",
+            "url": "/videos/honkai-star-rail-video-review",
+            "slug": "honkai-star-rail-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review",
+            "videoId": "c0a6bd24-cd5d-4199-863a-a4aa3564589f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/04/redfall-final-blog-1920-1683186782344.png",
+            "url": "/videos/redfall-video-review",
+            "slug": "redfall-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Last Case of Benedict Fox Video Review",
+            "videoId": "67fca2d8-4e47-49f3-bb43-0d4f4d127958",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/03/thelastcaseofbenedictfox-review-blogroll-1683096631113.jpg",
+            "url": "/videos/the-last-case-of-benedict-fox-video-review",
+            "slug": "the-last-case-of-benedict-fox-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Redfall Video Review in Progress",
+            "videoId": "6c5843f9-d749-4aaa-a9a4-92ce9baf46dc",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/05/01/redfall-blog-1920-1682933165386.png",
+            "url": "/videos/redfall-video-review-in-progress",
+            "slug": "redfall-video-review-in-progress",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Stray Blade Video Review",
+            "videoId": "7888c8ee-3e52-474f-8d9a-f6faea1bbf4e",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/28/strayblade-review-yt-1682726053191.jpg",
+            "url": "/videos/stray-blade-video-review",
+            "slug": "stray-blade-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Age of Wonders 4 Video Review",
+            "videoId": "078bc0b2-f6b9-4abe-8459-5f1d4dbd1c6f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/27/36190303-ageofwonders4review-yt-1682554084092.jpg",
+            "url": "/videos/age-of-wonders-4-video-review",
+            "slug": "age-of-wonders-4-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Star Wars Jedi: Survivor Video Review",
+            "videoId": "fced46ac-34e1-4410-bb04-c2c7af5b1982",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/26/starwarsjedisurvivor-review-blogroll-1682494510142.jpg",
+            "url": "/videos/star-wars-jedi-survivor-video-review",
+            "slug": "star-wars-jedi-survivor-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Tron: Identity Video Review",
+            "videoId": "4a0f6aec-dcc6-46a3-93be-945918678197",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/25/tronidentityvideoreview-36939348-tronidentityreview-yt-1682451345424.jpg",
+            "url": "/videos/tron-identity-video-review",
+            "slug": "tron-identity-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dredge Video Review",
+            "videoId": "1f1056a6-6f84-4e30-8ebf-d04538ce9a7c",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/dredge-review-yt-1682097774045.jpg",
+            "url": "/videos/dredge-video-review",
+            "slug": "dredge-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Disney Speedstorm Early Access Video Review",
+            "videoId": "48ebce3a-c58f-4f68-a3ae-4f4a25147b4d",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/21/disney-speedstorm-early-access-review-blogroll-1682054814547.jpg",
+            "url": "/videos/disney-speedstorm-early-access-video-review",
+            "slug": "disney-speedstorm-early-access-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Horizon Forbidden West: Burning Shores Review",
+            "videoId": "12bafdaf-1eba-4a2a-bec3-299f960948cd",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/burning-shores-blog-1681920495225.jpg",
+            "url": "/videos/horizon-forbidden-west-burning-shores-review",
+            "slug": "horizon-forbidden-west-burning-shores-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Advance Wars 1+2 Re-Boot Camp Video Review",
+            "videoId": "506b8d5d-85e0-4bc8-a6b0-8e58a615f078",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/advancewarsrebootcampreview-yt-1681930206414.jpg",
+            "url": "/videos/advance-wars-12-re-boot-camp-video-review",
+            "slug": "advance-wars-12-re-boot-camp-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "The Mageseeker: A League of Legends Story Video Review",
+            "videoId": "ed0f481f-fb5e-49b1-8475-d89353f88efb",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/19/themageseekerreview-yt-1681927453283.jpg",
+            "url": "/videos/the-mageseeker-a-league-of-legends-story-video-review",
+            "slug": "the-mageseeker-a-league-of-legends-story-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Dead Island 2 Video Review",
+            "videoId": "43320ca7-a2e9-4c5b-a6d9-c1c138c6a8f6",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/17/deadisland2-review-yt-1681766711498.jpg",
+            "url": "/videos/dead-island-2-video-review",
+            "slug": "dead-island-2-video-review",
+            "__typename": "Recommendation"
+        },
+        {
+            "title": "Minecraft Legends Review",
+            "videoId": "f40bbd5e-ed43-4aa0-a78f-0ed76ff00f2f",
+            "thumbnailUrl": "https://assets-prd.ignimgs.com/2023/04/13/36190303-minecraftlegendsreview-yt-1681427754844.jpg",
+            "url": "/videos/minecraft-legends-review",
+            "slug": "minecraft-legends-review",
+            "__typename": "Recommendation"
+        }
+    ],
+    "__typename": "PlayerProps"
+  }
+]

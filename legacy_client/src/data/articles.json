@@ -1,0 +1,3084 @@
+[
+    {
+        "content": {
+            "id": "0e86f7fc-b7e2-407a-a5a8-dcad1c1cfbc5",
+            "title": "Blizzard Reveals Diablo 4 Will Have Over 50 Individual Accessibility Features",
+            "subtitle": "Making Diablo 4 as accessible as possible was a 'flame that guided' Blizzard throughout development.",
+            "promoteAt": null,
+            "publishDate": "2023-05-20T15:30:55.954Z",
+            "slug": "blizzard-reveals-diablo-4-will-have-over-50-individual-accessibility-features",
+            "feedTitle": "Blizzard Reveals Diablo 4 Will Have Over 50 Individual Accessibility Features",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/20/diablo-1684596615143.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/blizzard-reveals-diablo-4-will-have-over-50-individual-accessibility-features",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "12b35e03-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Adam Bankhurst",
+                    "nickname": "Falcon-X32",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "50ec273e-cc4e-4a0d-bb1c-60c47ec7d119",
+                "url": "/games/diablo-iv",
+                "slug": "diablo-iv",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Diablo IV",
+                        "alt": [
+                            "Diablo IV",
+                            "Reign of Terror [rumored working codename]",
+                            "Fenris [rumored working codename]"
+                        ],
+                        "short": "Diablo 4",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2074983,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36433,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Blizzard Reveals Diablo 4 Will Have Over 50 Individual Accessibility Features",
+                        "Diablo 4 Accessibility Features Detailed Ahead of Launch"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "33f15980-e47d-4872-82ac-1fdfe9293a15",
+            "title": "China Approves Microsoft's Acquisition of Activision Blizzard",
+            "subtitle": "Thirty-seven total regulators have voiced approval thus far.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:29:55.915Z",
+            "slug": "china-approves-microsofts-acquisition-of-activision-blizzard",
+            "feedTitle": "China Approves Microsoft's Acquisition of Activision Blizzard",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/12/07/xbox-activision-1670454638832.jpeg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/china-approves-microsofts-acquisition-of-activision-blizzard",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "38948b2b-e40c-401e-aedd-75d228c4c00b",
+                    "name": "Rebekah Valentine",
+                    "nickname": "duckvalentine",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "f10ec343-4176-4573-aca7-ef3e61d053da",
+                "url": "/games/call-of-duty-modern-warfare-2",
+                "slug": "call-of-duty-modern-warfare-2",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Call of Duty: Modern Warfare 2",
+                        "alt": [
+                            "Call of Duty 2022",
+                            "\nCoD 2022",
+                            "\nCall of Duty -- Infinity Ward Project",
+                            "Call of Duty: Modern Warfare 2",
+                            "Call of Duty -- Infinity Ward Project",
+                            "\nCall of Duty Next",
+                            "Call of Duty: Modern Warfare 2 2022"
+                        ],
+                        "short": "Call of Duty: Modern Warfare II",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2077975,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36410,
+                    "represents": "promoTitle",
+                    "values": [
+                        "China Approves Microsoft's Acquisition of Activision Blizzard",
+                        "Microsoft's Deal to Acquire Activision Blizzard Has Now Been Approved in China"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "f418f5fd-0b16-4701-9532-0231765cd815",
+            "title": "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+            "subtitle": "No release date yet. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:27:57.681Z",
+            "slug": "deckhd-steam-deck-third-party-screen-full-hd-plus",
+            "feedTitle": "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/deckhd-1684518990417.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/deckhd-steam-deck-third-party-screen-full-hd-plus",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "66f0b875-d339-4439-984f-4deee79659ad",
+                "url": "/tech/steam-deck",
+                "slug": "steam-deck",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "Steam Deck",
+                        "alt": [
+                            "Steam Deck Portable",
+                            "Steam Deck Handheld",
+                            "Valve Steam Deck",
+                            "SteamDeck"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1939833,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36411,
+                    "represents": "promoTitle",
+                    "values": [
+                        "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+                        "DeckHD Aims to Upgrade Your Steam Deck Display to Full HD+"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "6221e663-5c14-49c0-9c7a-b6b468aedeed",
+            "title": "Dead by Daylight 7th Anniversary Stream: Everything Announced",
+            "subtitle": "Two new Dead by Daylight Games, Nicolas Cage, a new sci-fi chapter, and more.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T18:42:03.371Z",
+            "slug": "dead-by-daylight-7th-anniversary-stream-everything-announced",
+            "feedTitle": "Dead by Daylight 7th Anniversary Stream: Everything Announced",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/dbd2-1684512953870.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/dead-by-daylight-7th-anniversary-stream-everything-announced",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "12b35e03-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Adam Bankhurst",
+                    "nickname": "Falcon-X32",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "d29684d5-564a-4046-8d9a-af550890943f",
+                "url": "/games/dead-by-daylight",
+                "slug": "dead-by-daylight",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Dead by Daylight",
+                        "alt": [],
+                        "short": "Dead by Daylight",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1979064,
+                        "name": "Dead by Daylight",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "e5835f78-3b4a-4d34-9449-5ec540e72d49",
+            "title": "Dead by Daylight Spin-Offs Announced and Include a Story-Based Game from Until Dawn's Supermassive",
+            "subtitle": "The second game is a multiplayer PvE game from Midwinter Entertainment.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T18:41:09.335Z",
+            "slug": "dead-by-daylight-spin-offs-announced",
+            "feedTitle": "Dead by Daylight Spin-Offs Announced and Include a Story-Based Game from Until Dawn Dev",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/dbd-1684509888745.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/dead-by-daylight-spin-offs-announced",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "12b35e03-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Adam Bankhurst",
+                    "nickname": "Falcon-X32",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "d29684d5-564a-4046-8d9a-af550890943f",
+                "url": "/games/dead-by-daylight",
+                "slug": "dead-by-daylight",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Dead by Daylight",
+                        "alt": [],
+                        "short": "Dead by Daylight",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1979064,
+                        "name": "Dead by Daylight",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36403,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Dead by Daylight Spin-Offs Announced and Include a Story-Based Game from Until Dawn Dev",
+                        "Day by Daylight Getting Two New Spin-Offs, Including a New Multiplayer Game"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "498b40d4-c280-4e86-9d24-aebffd3cadd3",
+            "title": "Destiny 2: Where Is Xur Today? Location and Exotic Items for May 19-23",
+            "subtitle": "Don't con-Xur-ve your shards!",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T18:40:46.606Z",
+            "slug": "destiny-2-where-is-xur-today-location-and-exotic-items-for-may-19-23",
+            "feedTitle": "Destiny 2: Where Is Xur Today?",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/03/31/destiny2tellyourenemiestobuythisarmorxurlocationinventorymarch31april3-36190303-xurthumbnailedz-1680292375995.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/destiny-2-where-is-xur-today-location-and-exotic-items-for-may-19-23",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "b88f95a5-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Travis Northup",
+                    "nickname": "Tieguytravis",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "faa77400-65a8-4053-9277-f350c43acac2",
+                "url": "/games/destiny-2",
+                "slug": "destiny-2",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Destiny 2",
+                        "alt": [
+                            "Destiny [Bungie] 2"
+                        ],
+                        "short": "Destiny 2",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2115343,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36409,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Destiny 2: Where Is Xur Today?",
+                        "Where to Find Xur in Destiny 2 This Weekend"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "917f03ad-d3eb-45fb-8688-a7bafe9fdd6e",
+            "title": "Overwatch 2 Director Apologizes for Canceling PvE Hero Mode, Makes Big Promises for Story Missions",
+            "subtitle": "Aaron Keller reacts to \"emotional week\" for both the development team and the community.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T18:00:00.000Z",
+            "slug": "overwatch-2-director-pve-hero-mode",
+            "feedTitle": "Overwatch 2 Director Apologizes for Canceling PvE Hero Mode, Makes Big Promises for Story Missions",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/11/01/overwatch-2-1667327200531.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/overwatch-2-director-pve-hero-mode",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "049dbc49-20c8-438d-8fc9-e942da53febf",
+                    "name": "Kat Bailey",
+                    "nickname": "ign_kat",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "7f52914a-a4c1-424d-8b13-10cfeefd3dac",
+                "url": "/games/overwatch-2",
+                "slug": "overwatch-2",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Overwatch 2",
+                        "alt": [
+                            "Overwatch: Chapter 2",
+                            "Blizzard's Overwatch",
+                            "Over Watch"
+                        ],
+                        "short": "Overwatch 2",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2112564,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36408,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Overwatch 2 Director Apologizes for Canceling PvE Hero Mode, Makes Big Promises for Story Missions",
+                        "Overwatch 2 Director Explains Controversial Decision to Cancel PvE Hero Mode"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "f5027bd3-a92e-4a11-818d-267848088e18",
+            "title": "Mortal Kombat 1 DLC Characters Seemingly Leaked By Amazon Listing",
+            "subtitle": "Peacemaker and Homelander are named as playable fighters. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T15:27:36.030Z",
+            "slug": "mortal-kombat-1-dlc-characters-seemingly-leaked-by-amazon-listing",
+            "feedTitle": "Mortal Kombat 1 DLC Characters Seemingly Leaked By Amazon Listing",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/mortal-kombat-1-1684509264178.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/mortal-kombat-1-dlc-characters-seemingly-leaked-by-amazon-listing",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "985b5594-badf-410b-a3c6-69b9edb0ce1b",
+                    "name": "George Yang",
+                    "nickname": "yinyangfooey",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "07f72d95-e4fd-4ee6-bda7-5555c02a2ef2",
+                "url": "/games/mortal-kombat-1",
+                "slug": "mortal-kombat-1",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Mortal Kombat 1",
+                        "alt": [
+                            "Mortal Kombat XII",
+                            "Mortal Kombat 12"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2116805,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36393,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Mortal Kombat 1 DLC Characters Seemingly Leaked By Amazon Listing",
+                        "Amazon Italy Seemingly Leaks Mortal Kombat 1's First DLC Characters"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "f9cb1bb7-de4c-4344-a234-46bc2512aa41",
+            "title": "The Wonderful 101: Remastered Gets Free DLC Shadow Drop Today",
+            "subtitle": "Another pack will arrive next week.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T07:07:31.171Z",
+            "slug": "the-wonderful-101-remastered-gets-free-dlc-shadow-drop-today",
+            "feedTitle": "The Wonderful 101: Remastered Gets Free DLC Shadow Drop Today",
+            "feedImage": {
+                "url": "https://assets1.ignimgs.com/2012/10/15/wonderful-101scrn04wpjpg-9d9ff5.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/the-wonderful-101-remastered-gets-free-dlc-shadow-drop-today",
+            "__typename": "ModernContent",
+            "contributors": [],
+            "primaryObject": {
+                "id": "5fefbb02-1ba0-4ea5-82db-245151296869",
+                "url": "/games/the-wonderful-101-remastered",
+                "slug": "the-wonderful-101-remastered",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "The Wonderful 101: Remastered",
+                        "alt": [
+                            "Project P-100 [working title]"
+                        ],
+                        "short": "Wonderful 101: Remastered",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1943496,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "88bd6f45-c2c4-4d2e-a6e0-03c6d2607b23",
+            "title": "Everything Announced at the Humble Games Showcase",
+            "subtitle": "A good glimpse of games coming this year and beyond.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T17:33:34.764Z",
+            "slug": "humble-games-showcase-2023-everything-announced",
+            "feedTitle": "Everything Announced at the Humble Games Showcase",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/16/stray-gods-screenshot-4-1684253493509.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/humble-games-showcase-2023-everything-announced",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "576c059f-2d9c-4e1c-be72-12365f9c6906",
+                "url": "/games/stray-gods-the-roleplaying-musical",
+                "slug": "stray-gods-the-roleplaying-musical",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Stray Gods: The Roleplaying Musical",
+                        "alt": [
+                            "Chorus: A Musical Adventure ",
+                            "Chorus: An Adventure Musical [working title]"
+                        ],
+                        "short": "Stray Gods",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1949690,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36248,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Everything Announced at the Humble Games Showcase",
+                        "Humble Games Showcase 2023: Everything Announced"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "d1ccf056-8bbe-41a4-874d-a12b3d17a3d8",
+            "title": "Guardians of the Galaxy Vol. 3: James Gunn Reveals a Key Character's Fate",
+            "subtitle": "Here's what happened to the High Evolutionary.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:40:31.493Z",
+            "slug": "guardians-of-the-galaxy-vol-3-james-gunn-reveals-a-key-characters-fate",
+            "feedTitle": "Guardians of the Galaxy Vol. 3: James Gunn Reveals a Key Character's Fate",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/07/gotg-1683489499008.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/guardians-of-the-galaxy-vol-3-james-gunn-reveals-a-key-characters-fate",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "e2cf4fcb-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Logan Plant",
+                    "nickname": "MrHurgy",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "395b292f-2976-46b9-bdfd-160f6d015050",
+                "url": "/movies/guardians-of-the-galaxy-vol-3",
+                "slug": "guardians-of-the-galaxy-vol-3",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Guardians of the Galaxy Vol. 3",
+                        "alt": [],
+                        "short": "Guardians of the Galaxy Vol. 3",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2113162,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36423,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Guardians of the Galaxy Vol. 3: James Gunn Reveals a Key Character's Fate",
+                        "James Gunn Resolves a Key Guardians of the Galaxy Vol. 3 Mystery"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "5608b213-0a04-4155-b123-572e60f9447c",
+            "title": "Auli'i Cravalho Isn't Reprising Lead Role in Live-Action Moana Remake: 'Passing the Baton'",
+            "subtitle": "Instead, she's staying on board as an executive producer.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:38:31.837Z",
+            "slug": "aulii-cravalho-isnt-reprising-lead-role-in-live-action-moana-remake-passing-the-baton",
+            "feedTitle": "Auli'i Cravalho Isn't Reprising Lead Role in Live-Action Moana Remake: 'Passing the Baton'",
+            "feedImage": {
+                "url": "http://assets2.ignimgs.com/2014/10/20/moana-1280ajpg-60a271.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/aulii-cravalho-isnt-reprising-lead-role-in-live-action-moana-remake-passing-the-baton",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "1b3adc4c-971e-45b8-9188-f0d60da99bf0",
+                    "name": "Amelia Zollner",
+                    "nickname": "manateemailbox",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "05c4ce02-6fd9-47c6-a830-3b9f441868ab",
+                "url": "/movies/moana-live-action",
+                "slug": "moana-live-action",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Moana [Live-Action]",
+                        "alt": [],
+                        "short": "Moana",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2108086,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36418,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Auli'i Cravalho Isn't Reprising Lead Role in Live-Action Moana Remake: 'Passing the Baton'",
+                        "Auli’I Cravalho Won’t Star as Moana in Live-Action Remake, but Is an Executive Producer"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "83171569-58e7-499d-9983-1d6fa133ee92",
+            "title": "John Wick Franchise Surpasses $1 Billion in the Global Box Office",
+            "subtitle": "Welcome to the billionaires' club, Mr. Wick.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:35:00.983Z",
+            "slug": "john-wick-franchise-surpasses-1-billion-in-the-global-box-office",
+            "feedTitle": "John Wick Franchise Surpasses $1 Billion in the Global Box Office",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/03/30/john-wick-4-death-count-1680171647163.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/john-wick-franchise-surpasses-1-billion-in-the-global-box-office",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "1caafced-49f8-465f-884a-96233fd5c400",
+                    "name": "Cristina Alexander",
+                    "nickname": "SonicPrincess15",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "37ee9c50-ade7-436d-bd0e-af9e99dd501f",
+                "url": "/movies/john-wick-chapter-4",
+                "slug": "john-wick-chapter-4",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "John Wick: Chapter 4",
+                        "alt": [
+                            "John Wick: Chapter Four"
+                        ],
+                        "short": "John Wick 4",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2103274,
+                        "name": "John Wick: Chapter 4",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36422,
+                    "represents": "promoTitle",
+                    "values": [
+                        "John Wick Franchise Surpasses $1 Billion in the Global Box Office",
+                        "John Wick Series Has Now Grossed Over $1 Billion Worldwide"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "551f8a03-3c11-443f-b1f4-a9e331839119",
+            "title": "Gladiator Sequel Loses Barry Keoghan, Gains Moon Knight's May Calamawy",
+            "subtitle": "More stars are heading to the Colosseum.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T15:47:33.728Z",
+            "slug": "gladiator-sequel-loses-barry-keoghan-gains-moon-knights-may-calamawy",
+            "feedTitle": "Gladiator Sequel Loses Barry Keoghan, Gains Moon Knight's May Calamawy",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/gladiator-2-cast-changes-1684507077687.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/gladiator-sequel-loses-barry-keoghan-gains-moon-knights-may-calamawy",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9ddbd614-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Adele Ankers-Range",
+                    "nickname": "Adele-Ankers",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "0536675e-86a8-49ff-8b98-65e70e04254a",
+                "url": "/movies/gladiator-2",
+                "slug": "gladiator-2",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Gladiator 2",
+                        "alt": [
+                            "Gladiator II",
+                            "Gladiator Sequel"
+                        ],
+                        "short": "Gladiator 2",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2093340,
+                        "name": "Gladiator 2",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36392,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Gladiator Sequel Loses Barry Keoghan, Gains Moon Knight's May Calamawy",
+                        "Gladiator 2: May Calamawy Joins Cast, With Fred Hechinger Replacing Barry Keoghan"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "df0c29d1-54ad-4b0a-89be-3a93fa22ad34",
+            "title": "Spider-Man: Across the Spider-Verse Reveals Character Posters for The Spot, Spider-Cat and More",
+            "subtitle": "Take a closer look at a ton of Spider-People set to appear in the Spider-Verse sequel.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T21:23:52.195Z",
+            "slug": "spider-man-across-the-spider-verse-reveals-character-posters-for-the-spot-spider-cat-and-more",
+            "feedTitle": "Spider-Man: Across the Spider-Verse Reveals Character Posters for The Spot, Spider-Cat and More",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/04/04/acrossthespiderverse-1680598798509.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/spider-man-across-the-spider-verse-reveals-character-posters-for-the-spot-spider-cat-and-more",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "e2cf4fcb-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Logan Plant",
+                    "nickname": "MrHurgy",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "0d5220bf-c989-4894-bc2e-0369f637b165",
+                "url": "/movies/spider-man-across-the-spider-verse",
+                "slug": "spider-man-across-the-spider-verse",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Spider-Man: Across the Spider-Verse",
+                        "alt": [
+                            "SpiderMan: Into the SpiderVerse 2",
+                            "SpiderMan: Into the SpiderVerse Sequel",
+                            "Spider-Man: Into the Spider-Verse Sequel",
+                            "Spider-Man [Animated]",
+                            "Spider-Man: Into the Spider-Verse 2",
+                            "Spider-Man: Across the Spider-Verse (Part 1)\n",
+                            "Spider-Man: Across the Spider-Verse (Part One)"
+                        ],
+                        "short": "Spider-Man: Across the Spider-Verse",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2079729,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36371,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Spider-Man: Across the Spider-Verse Reveals Character Posters for The Spot, Spider-Cat and More",
+                        "Spider-Man: Across the Spider-Verse Reveals 10 New Character Posters"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "3a211d6b-10be-4adc-a18d-2525ae933f32",
+            "title": "Disney Apparently Has a Finished Alien vs. Predator Anime Series It Isn't Releasing",
+            "subtitle": "Blade Runner: Black Lotus director Shinji Aramaki is rumored to be at the helm.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T18:55:14.319Z",
+            "slug": "disney-apparently-has-a-finished-alien-vs-predator-anime-series-it-isnt-releasing",
+            "feedTitle": "Disney Apparently Has a Finished Alien vs. Predator Animated Series it Isn't Releasing",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/avpbanner-1684436094035.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/disney-apparently-has-a-finished-alien-vs-predator-anime-series-it-isnt-releasing",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "1caafced-49f8-465f-884a-96233fd5c400",
+                    "name": "Cristina Alexander",
+                    "nickname": "SonicPrincess15",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "da535b52-e3bf-4540-8e56-04cc4c2466e8",
+                "url": "/movies/alien-vs-predator",
+                "slug": "alien-vs-predator",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Alien vs. Predator",
+                        "alt": [
+                            "AvP",
+                            "Aliens vs. Predator"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1834182,
+                        "name": "Alien vs. Predator",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36367,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Disney Apparently Has a Finished Alien vs. Predator Animated Series it Isn't Releasing",
+                        "Disney Has a Complete Alien vs. Predator Anime Under Lock and Key"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "b5c93418-c579-4262-9d04-889cb9c55c71",
+            "title": "Deadpool 3 Is Bringing Back Negasonic Teenage Warhead and Yukio",
+            "subtitle": "They were both last seen together in 2018's Deadpool sequel.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T17:54:22.676Z",
+            "slug": "deadpool-3-bringing-back-negasonic-teenage-warhead-and-yukio",
+            "feedTitle": "Deadpool 3 Is Bringing Back Negasonic Teenage Warhead and Yukio",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/deadpool-3-cast-brianna-hildebrand-and-shioli-kutsuna-1684429246904.jpeg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/deadpool-3-bringing-back-negasonic-teenage-warhead-and-yukio",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9ddbd614-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Adele Ankers-Range",
+                    "nickname": "Adele-Ankers",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "c2245681-de51-437a-8026-67ccf0f7b4fa",
+                "url": "/movies/deadpool-3",
+                "slug": "deadpool-3",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Deadpool 3",
+                        "alt": [],
+                        "short": "Deadpool 3",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2046130,
+                        "name": "Deadpool 3",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36359,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Deadpool 3 Is Bringing Back Negasonic Teenage Warhead and Yukio",
+                        "Deadpool 3: Brianna Hildebrand and Shioli Kutsuna Will Both Be Returning for Threequel"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "1396553c-760f-483b-b7eb-728eeb7f91bb",
+            "title": "A Creed 3 Anime Is Exclusively Being Shown In Japan",
+            "subtitle": "Michael B. Jordan announced the anime will screen after Creed 3 showings.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T13:36:54.635Z",
+            "slug": "a-creed-3-anime-is-exclusively-being-shown-in-japan",
+            "feedTitle": "A Creed 3 Anime Is Exclusively Being Shown In Japan",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/creed-3-anime-1684411744073.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/a-creed-3-anime-is-exclusively-being-shown-in-japan",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "892bb9e5-92bb-4698-a775-eba0820feed3",
+                    "name": "Ryan Leston",
+                    "nickname": "ryanleston",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "e3ea8272-a977-4b91-a3ab-f6bff94c977a",
+                "url": "/movies/creed-iii",
+                "slug": "creed-iii",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Creed III",
+                        "alt": [
+                            "Creed Three"
+                        ],
+                        "short": "Creed 3",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2095667,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36330,
+                    "represents": "promoTitle",
+                    "values": [
+                        "A Creed 3 Anime Is Exclusively Being Shown In Japan",
+                        "Creed Is Getting an Small Anime Adaptation in Japan"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "585bc153-5b2e-4497-ac2a-492c0b15e014",
+            "title": "The Wizard of Oz: Man Finally Charged in Relation to Dorothy's Stolen Slippers",
+            "subtitle": "The shoes were recovered in 2018.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T13:27:19.642Z",
+            "slug": "the-wizard-of-oz-man-finally-charged-in-relation-to-dorothys-stolen-slippers",
+            "feedTitle": "The Wizard of Oz: Man Finally Charged in Relation to Dorothy's Stolen Slippers",
+            "feedImage": {
+                "url": "https://assets1.ignimgs.com/2018/10/26/the-wizard-of-oz-1540577811940.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/the-wizard-of-oz-man-finally-charged-in-relation-to-dorothys-stolen-slippers",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "892bb9e5-92bb-4698-a775-eba0820feed3",
+                    "name": "Ryan Leston",
+                    "nickname": "ryanleston",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "e4005086-5da9-47b8-8ed7-555537ae6e0b",
+                "url": "/movies/the-wizard-of-oz-1939",
+                "slug": "the-wizard-of-oz-1939",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "The Wizard of Oz (1939)",
+                        "alt": [
+                            "The Wizard of Oz",
+                            "Wizard of Oz",
+                            "The Wizard of Oz"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1978584,
+                        "name": "The Wizard of Oz (1939)",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36339,
+                    "represents": "promoTitle",
+                    "values": [
+                        "The Wizard of Oz: Man Finally Charged in Relation to Dorothy's Stolen Slippers",
+                        "Man Finally Charged in Relation to Dorothy's Stolen Slippers From the Wizard of Oz"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "c18f0079-e4e5-427e-b80f-953a6b92f656",
+            "title": "Guardians of the Galaxy Vol. 3's Strong Second Weekend Proves Superhero Fatigue Was Never the Issue",
+            "subtitle": "How did Marvel go from its worst second-week hold to its third-best? It's all in the quality.",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T21:03:07.438Z",
+            "slug": "guardians-of-the-galaxy-vol-3s-strong-second-weekend-proves-superhero-fatigue-was-never-the-issue",
+            "feedTitle": "Guardians of the Galaxy Vol. 3's Strong Second Weekend Proves Superhero Fatigue Was Never the Issue",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/12/guardians-thumb-1683850204469.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/guardians-of-the-galaxy-vol-3s-strong-second-weekend-proves-superhero-fatigue-was-never-the-issue",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9836955a-c125-4bdc-a960-be36e5fc6d66",
+                    "name": "Alex Stedman",
+                    "nickname": "Alex.Stedman",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "395b292f-2976-46b9-bdfd-160f6d015050",
+                "url": "/movies/guardians-of-the-galaxy-vol-3",
+                "slug": "guardians-of-the-galaxy-vol-3",
+                "type": "Movie",
+                "metadata": {
+                    "names": {
+                        "name": "Guardians of the Galaxy Vol. 3",
+                        "alt": [],
+                        "short": "Guardians of the Galaxy Vol. 3",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2113162,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36305,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Guardians of the Galaxy Vol. 3's Strong Second Weekend Proves Superhero Fatigue Was Never the Issue",
+                        "How Marvel Went From Its Worst Second-Week Drop at the Box Office to Its Third-Best"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "253ab17c-6ae1-464f-b59f-4ac92ece5941",
+            "title": "Secret Invasion Takes Winter Solider's Thriller Style 'A Step Further'",
+            "subtitle": "\"Nobody flies in the air in the show.\"",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T16:43:30.702Z",
+            "slug": "secret-invasion-takes-winter-soliders-thriller-style-a-step-further",
+            "feedTitle": "Secret Invasion Takes Winter Solider's Thriller Style 'A Step Further'",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/04/02/secret-1680455911390.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/secret-invasion-takes-winter-soliders-thriller-style-a-step-further",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "1c17ccea-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Jordan Sirani",
+                    "nickname": "jsirani",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "778e6390-9479-4a34-ba94-19e875b51db3",
+                "url": "/tv/secret-invasion",
+                "slug": "secret-invasion",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Secret Invasion",
+                        "alt": [
+                            "Marvel's Nick Fury",
+                            "Marvel's Secret Invasion"
+                        ],
+                        "short": "Secret Invasion",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2107994,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36395,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Secret Invasion Takes Winter Solider's Thriller Style 'A Step Further'",
+                        "Secret Invasion Is a Character-focused 'Paranoid Thriller'"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "b427db8b-d1be-4fcf-92c9-cf0b3574ec17",
+            "title": "The Powerpuff Girls Live-Action Show Is No Longer in Development at The CW",
+            "subtitle": "After years of development trouble with script rewrites, reshoots, and casting changes.",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T14:23:25.885Z",
+            "slug": "the-powerpuff-girls-live-action-show-no-longer-in-development-the-cw",
+            "feedTitle": "The Powerpuff Girls Live-Action Show Is No Longer in Development at The CW",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/powerpuff-girls-live-action-scrapped-1684502262557.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/the-powerpuff-girls-live-action-show-no-longer-in-development-the-cw",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9ddbd614-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Adele Ankers-Range",
+                    "nickname": "Adele-Ankers",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "9002d0ea-f8fc-491b-a3f8-523fdb52f1d7",
+                "url": "/tv/the-powerpuff-girls-live-action",
+                "slug": "the-powerpuff-girls-live-action",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "The Powerpuff Girls [Live-Action]",
+                        "alt": [],
+                        "short": "The Powerpuff Girls",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2010064,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36387,
+                    "represents": "promoTitle",
+                    "values": [
+                        "The Powerpuff Girls Live-Action Show Is No Longer in Development at The CW",
+                        "Live-Action Powerpuff Girls Series Cancelled at The CW"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "3cf6cc63-5b60-4f35-a9a0-e674b9ef50f5",
+            "title": "Willow Ended Less Than Six Months Ago, And Now It's Leaving Disney Plus",
+            "subtitle": "Disney reportedly removing dozens of shows from Hulu and Disney Plus in cost-cutting move.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T23:45:36.158Z",
+            "slug": "willow-ended-less-than-six-months-ago-and-now-its-leaving-disney-plus",
+            "feedTitle": "Willow Ended Less Than Six Months Ago, And Now It's Leaving Disney Plus",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/11/14/willowexclusivefeaturette-ign-blogroll-1668451212687.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/willow-ended-less-than-six-months-ago-and-now-its-leaving-disney-plus",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "049dbc49-20c8-438d-8fc9-e942da53febf",
+                    "name": "Kat Bailey",
+                    "nickname": "ign_kat",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "360751e5-3700-4bbf-86d9-62cbda7991d1",
+                "url": "/tv/willow",
+                "slug": "willow",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Willow",
+                        "alt": [
+                            "Willow: The TV Series",
+                            "\nWillow: The Series"
+                        ],
+                        "short": "Willow",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2035589,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36382,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Willow Ended Less Than Six Months Ago, And Now It's Leaving Disney Plus",
+                        "Willow, Y: The Last Man, and Dozens of Other Shows Being Pulled From Disney Plus and Hulu"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "d045679c-d2a3-41f8-baf6-7edf97b6912b",
+            "title": "The CW Is Moving in a New Direction as Superhero Shows Have 'Had Their Time'",
+            "subtitle": "It’s the end of the Arrowverse as we know it. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T18:35:11.570Z",
+            "slug": "cw-superhero-shows-ending",
+            "feedTitle": "The CW Is Moving in a New Direction as Superhero Shows Have 'Had Their Time'",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/78-the-flash1577058525172-1672785606511-1684434896597.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/cw-superhero-shows-ending",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "d25bf473-15b3-4ce1-ae04-7ddd83b2190a",
+                    "name": "Leanne Butkovic",
+                    "nickname": "leanne.eb",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "e2be51da-c31b-491c-b34f-03536f6b3df1",
+                "url": "/tv/kung-fu",
+                "slug": "kung-fu",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Kung Fu",
+                        "alt": [],
+                        "short": "Kung Fu",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1846400,
+                        "name": "Kung Fu",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36364,
+                    "represents": "promoTitle",
+                    "values": [
+                        "The CW Is Moving in a New Direction as Superhero Shows Have 'Had Their Time'",
+                        "The CW Is Phasing Out Superhero Shows"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "1f69ad47-ae94-431d-8b9a-9c155e4ad894",
+            "title": "Futurama Revival Comes to Hulu This July",
+            "subtitle": "After a ten-year freeze in the cryogenic chamber.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T16:30:00.000Z",
+            "slug": "futurama-season-11-hulu-revival-july-release-date",
+            "feedTitle": "Futurama Revival Comes to Hulu This July",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/futurama-season-11-premiere-date-1684409075686.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/futurama-season-11-hulu-revival-july-release-date",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9ddbd614-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Adele Ankers-Range",
+                    "nickname": "Adele-Ankers",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "f5df7070-ae70-43ab-b25c-2c9e818a496f",
+                "url": "/tv/futurama",
+                "slug": "futurama",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Futurama",
+                        "alt": [],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1936047,
+                        "name": "Futurama",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36329,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Futurama Revival Comes to Hulu This July",
+                        "Futurama Season 11 Premiere Date Revealed"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "c87ab060-5cce-4f98-af6e-3157b55d63e5",
+            "title": "Netflix's Squid Game Reality Show Arrives This November",
+            "subtitle": "“Out there, I don’t stand a chance. I do in here.”",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T13:32:59.956Z",
+            "slug": "netflixs-squid-game-reality-show-arrives-this-november",
+            "feedTitle": "Netflix's Squid Game Reality Show Arrives This November",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/09/08/squid-1662654900465.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/netflixs-squid-game-reality-show-arrives-this-november",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "892bb9e5-92bb-4698-a775-eba0820feed3",
+                    "name": "Ryan Leston",
+                    "nickname": "ryanleston",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "cd959090-64fb-4083-8444-8da0f50cc71a",
+                "url": "/tv/squid-game",
+                "slug": "squid-game",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Squid Game",
+                        "alt": [],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1908643,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36340,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Netflix's Squid Game Reality Show Arrives This November",
+                        "Squid Game: The Challenge Comes to Netflix in November"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "a7344ddd-a8a8-4504-a481-c59c4cdc3b6f",
+            "title": "Sonic Prime Season 2 Comes to Netflix This July",
+            "subtitle": "The Blue Blur is back.",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T16:14:58.242Z",
+            "slug": "sonic-prime-season-2-netflix-july-release-date",
+            "feedTitle": "Sonic Prime Season 2 Comes to Netflix This July",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/17/sonic-prime-season-2-release-date-1684336358148.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/sonic-prime-season-2-netflix-july-release-date",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "9ddbd614-b4b1-11ea-b2e3-0e7c1d759882",
+                    "name": "Adele Ankers-Range",
+                    "nickname": "Adele-Ankers",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "4a87def3-bbee-4a03-878d-5e7dd40aeefb",
+                "url": "/tv/sonic-prime",
+                "slug": "sonic-prime",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Sonic Prime",
+                        "alt": [
+                            "Sonic the Hedgehog [Netflix]",
+                            "Sonic the Hedgehog [TV]",
+                            "Sonic",
+                            "Sonic the Hedgehog - 3D Animated Series"
+                        ],
+                        "short": "Sonic Prime",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2053596,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36285,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Sonic Prime Season 2 Comes to Netflix This July",
+                        "Sonic Prime Season 2 Release Date Announced"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "cdcccf40-b464-4cb5-a4d1-94353df34105",
+            "title": "Loki Season 2 Gets Official Release Date",
+            "subtitle": "The MCU series returns this October.",
+            "promoteAt": null,
+            "publishDate": "2023-05-16T22:00:42.782Z",
+            "slug": "loki-season-2-gets-official-release-date",
+            "feedTitle": "Loki Season 2 Gets Official Release Date",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/05/09/ignlokibi-1652112982578.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/loki-season-2-gets-official-release-date",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "e2cf4fcb-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Logan Plant",
+                    "nickname": "MrHurgy",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "b94a8b8d-ffdf-489c-99d4-d43fd9771a79",
+                "url": "/tv/loki",
+                "slug": "loki",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Loki",
+                        "alt": [
+                            "Marvel's Loki [TV]",
+                            "Loki [Disney Plus]",
+                            "Marvels Loki",
+                            "Marvel's Loki"
+                        ],
+                        "short": "Loki",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1945435,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36266,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Loki Season 2 Gets Official Release Date",
+                        "Loki Season 2 Gets October 2023 Release Date"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "99350553-8068-4dd9-af22-377c7f828aa1",
+            "title": "Echo Season 1 Will Drop All at Once in November",
+            "subtitle": "It's the first Marvel show to not release weekly.",
+            "promoteAt": null,
+            "publishDate": "2023-05-16T21:49:11.434Z",
+            "slug": "echo-season-1-will-drop-all-at-once-in-november",
+            "feedTitle": "Echo Season 1 Will Drop All at Once in November",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/16/echo-1684273724275.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/echo-season-1-will-drop-all-at-once-in-november",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "049dbc49-20c8-438d-8fc9-e942da53febf",
+                    "name": "Kat Bailey",
+                    "nickname": "ign_kat",
+                    "__typename": "Contributor"
+                },
+                {
+                    "id": "9836955a-c125-4bdc-a960-be36e5fc6d66",
+                    "name": "Alex Stedman",
+                    "nickname": "Alex.Stedman",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "caa7b398-3c1b-46b3-b72f-222289514fed",
+                "url": "/tv/echo",
+                "slug": "echo",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Echo",
+                        "alt": [
+                            "Echo [TV]",
+                            "Hawkeye Spinoff",
+                            "Marvel's Echo"
+                        ],
+                        "short": "Echo",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2116480,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36267,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Echo Season 1 Will Drop All at Once in November",
+                        "Echo: Disney is Turning to the Netflix Model for Its New MCU Show"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "d417f140-7648-4f03-a798-6e311eb35f0a",
+            "title": "Mini-Rooms: Breaking Down One of the 'Evil' Hollywood Trends Fueling the Writers' Strike",
+            "subtitle": "George R.R. Martin called mini-rooms \"abominations,\" and other writers say combating the practice is crucial for their livelihoods.",
+            "promoteAt": null,
+            "publishDate": "2023-05-16T20:26:16.391Z",
+            "slug": "mini-rooms-breaking-down-one-of-the-evil-hollywood-trends-fueling-the-writers-strike",
+            "feedTitle": "Mini-Rooms: Inside One of the 'Evil' Hollywood Trends Fueling the Writers' Strike",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/16/hollywood-mini-rooms-blogroll-1684267967216.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/mini-rooms-breaking-down-one-of-the-evil-hollywood-trends-fueling-the-writers-strike",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "d25bf473-15b3-4ce1-ae04-7ddd83b2190a",
+                    "name": "Leanne Butkovic",
+                    "nickname": "leanne.eb",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "12418b96-fc72-494e-ab36-2624aa998a33",
+                "url": "/tv/game-of-thrones-house-of-the-dragon",
+                "slug": "game-of-thrones-house-of-the-dragon",
+                "type": "Show",
+                "metadata": {
+                    "names": {
+                        "name": "Game of Thrones: House of the Dragon",
+                        "alt": [
+                            "Game of Thrones: Fire & Blood [working title]",
+                            "GoT: House of the Dragon",
+                            "Game of Thrones: House of the Dragon (TV)",
+                            "Game of Thrones: House of the Dragon (TV)",
+                            "Game of Thrones: House of the Dragon (HBO)",
+                            "Game of Thrones: House of the Dragon (HBO)",
+                            "Fire and Blood"
+                        ],
+                        "short": "House of the Dragon",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2088987,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36257,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Mini-Rooms: Inside One of the 'Evil' Hollywood Trends Fueling the Writers' Strike",
+                        "Mini-Rooms: Breaking Down the 'Abominations' Fueling the Writers' Strike"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "f418f5fd-0b16-4701-9532-0231765cd815",
+            "title": "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+            "subtitle": "No release date yet. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-19T21:27:57.681Z",
+            "slug": "deckhd-steam-deck-third-party-screen-full-hd-plus",
+            "feedTitle": "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/19/deckhd-1684518990417.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/deckhd-steam-deck-third-party-screen-full-hd-plus",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "66f0b875-d339-4439-984f-4deee79659ad",
+                "url": "/tech/steam-deck",
+                "slug": "steam-deck",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "Steam Deck",
+                        "alt": [
+                            "Steam Deck Portable",
+                            "Steam Deck Handheld",
+                            "Valve Steam Deck",
+                            "SteamDeck"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 1939833,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36411,
+                    "represents": "promoTitle",
+                    "values": [
+                        "New Steam Deck Third-Party Screen Boosts Resolution All the Way to 1200p",
+                        "DeckHD Aims to Upgrade Your Steam Deck Display to Full HD+"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "30b5d3e3-6368-4728-b4b9-01babe92b13d",
+            "title": "OpenAI Releases ChatGPT App for iOS",
+            "subtitle": "An Android app is currently in development.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T18:44:54.661Z",
+            "slug": "openai-releases-chatgpt-app-for-ios",
+            "feedTitle": "OpenAI Releases ChatGPT App for iOS",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/openai-1684434243396.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/openai-releases-chatgpt-app-for-ios",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": null,
+            "abTests": [
+                {
+                    "id": 36366,
+                    "represents": "promoTitle",
+                    "values": [
+                        "OpenAI Releases ChatGPT App for iOS",
+                        "OpenAI's ChatGPT Gets Mobile App for iPhones and iPads"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "5d19641f-bd03-4096-809c-df7bcc2b1010",
+            "title": "YouTube Introducing 30-Second Unskippable Ads When Watching on TVs",
+            "subtitle": "And it's experimenting with a feature that shows ads when you pause videos.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T16:30:31.520Z",
+            "slug": "youtube-introducing-30-second-unskippable-ads-when-watching-on-tvs",
+            "feedTitle": "YouTube Introducing 30-Second Unskippable Ads When Watching on TVs",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/youtube-1684424233110.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/youtube-introducing-30-second-unskippable-ads-when-watching-on-tvs",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": null,
+            "abTests": [
+                {
+                    "id": 36352,
+                    "represents": "promoTitle",
+                    "values": [
+                        "YouTube Introducing 30-Second Unskippable Ads When Watching on TVs",
+                        "YouTube is Introducing 30-Second Unskippable Ads to TVs"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "6dbfb1ea-c805-41e1-84ba-6e5665261f21",
+            "title": "Montana Just Banned TikTok",
+            "subtitle": "It's the first state to officially ban the app.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T16:23:05.711Z",
+            "slug": "montana-just-banned-tiktok",
+            "feedTitle": "Montana Just Banned TikTok",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/tiktok-1684423861124.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/montana-just-banned-tiktok",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": null,
+            "abTests": [
+                {
+                    "id": 36350,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Montana Just Banned TikTok",
+                        "TikTok Will Be Banned in Montana Starting January 1"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "498b682f-4384-40d5-9b48-e66ea1bd92ea",
+            "title": "PlayStation's Accessibility Controller Gets More Details and Official Name",
+            "subtitle": "But no release date or price (yet). ",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T16:18:05.340Z",
+            "slug": "playstations-accessibility-controller-gets-more-details-and-official-name",
+            "feedTitle": "PlayStation's Accessibility Controller Gets More Details and Official Name",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/ps5-access-controller-1684419554786.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/playstations-accessibility-controller-gets-more-details-and-official-name",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "128c8aff-bd3a-472d-8c8e-85865ddd8e72",
+                "url": "/tech/playstation-5-access-controller",
+                "slug": "playstation-5-access-controller",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "PlayStation 5 Access Controller",
+                        "alt": [
+                            "PS5 Access Controller",
+                            "Project Leonardo"
+                        ],
+                        "short": "PlayStation 5 Access Controller",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2116739,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36342,
+                    "represents": "promoTitle",
+                    "values": [
+                        "PlayStation's Accessibility Controller Gets More Details and Official Name",
+                        "PlayStation's Project Leonardo Now Has an Official Name: Access Controller"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "2d73d5b4-3c01-466f-ab7d-8362976ef774",
+            "title": "Gears 5 Coming to GeForce Now as Part of Xbox's 10-Year Deal With Nvidia",
+            "subtitle": "Nvidia and Microsoft inked the deal earlier this year.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T13:00:00.000Z",
+            "slug": "gears-5-coming-to-geforce-now-as-xbox-10-year-deal-with-nvidia",
+            "feedTitle": "Gears 5 Coming to GeForce Now as Xbox 10-Year Deal with Nvidia",
+            "feedImage": {
+                "url": "https://assets1.ignimgs.com/2018/06/11/gears-5-kait-hero-4k-1528680467219.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/gears-5-coming-to-geforce-now-as-xbox-10-year-deal-with-nvidia",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "f81430ae-3f40-4c7a-bd2a-b09e58a7d1d2",
+                "url": "/games/deathloop",
+                "slug": "deathloop",
+                "type": "Game",
+                "metadata": {
+                    "names": {
+                        "name": "Deathloop",
+                        "alt": [
+                            "Death Loop",
+                            "Deathloop: Blackreef"
+                        ],
+                        "short": "Deathloop",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2077436,
+                        "name": "",
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36306,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Gears 5 Coming to GeForce Now as Xbox 10-Year Deal with Nvidia",
+                        "Gears 5 Is Now Available on Nvidia GeForce Now as 10-Year Deal with Xbox Kicks Off"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "9830caaf-7b54-4253-a255-f7294dc1b7d1",
+            "title": "Nvidia Officially Announces GeForce RTX 4060 Ti Desktop GPUs",
+            "subtitle": "The 8GB model is available May 24, the 16GB launches in July. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T13:00:00.000Z",
+            "slug": "nvidia-officially-announces-geforce-rtx-4060-ti-desktop-gpus",
+            "feedTitle": "Nvidia Officially Announces GeForce RTX 4060 Ti Desktop GPUs",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/17/rtx-4060-ti-1684360889816.png",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/nvidia-officially-announces-geforce-rtx-4060-ti-desktop-gpus",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": null,
+            "abTests": [
+                {
+                    "id": 36311,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Nvidia Officially Announces GeForce RTX 4060 Ti Desktop GPUs",
+                        "Nvidia Announces Two RTX 4060 Ti GPUs"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "a599901e-3686-4f99-94e8-b60cf0ffd1ec",
+            "title": "Valve's Steam Deck Latest Device to be Targeted by Company Known for Patent Lawsuits",
+            "subtitle": "Immersion Corporation previously had similar legal battles with Microsoft and Sony.",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T23:06:07.156Z",
+            "slug": "valves-steam-deck-lawsuits",
+            "feedTitle": "Valve's Steam Deck Latest Device to be Targeted by Company Known for Patent Lawsuits",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2022/10/01/steam-deck-1659557947156-1664593039070.jpeg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/valves-steam-deck-lawsuits",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "f1e887d2-8176-459c-8401-bd52cafbe0f2",
+                "url": "/tech/policy",
+                "slug": "policy",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "Policy",
+                        "alt": [
+                            "Tech Policy"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36302,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Valve's Steam Deck Latest Device to be Targeted by Company Known for Patent Lawsuits",
+                        "Valve is Being Sued by Immersion Over Rumble Tech on Steam Deck and Index"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "9a527089-b1ea-4e43-ae2b-7f53d2a5700f",
+            "title": "ASUS ROG Ally's Australian Release Date and Price Announced",
+            "subtitle": "Sick of waiting for an official Steam Deck release down under? This could be your answer. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T05:00:00.000Z",
+            "slug": "asus-rog-allys-australian-release-date-and-price-announced",
+            "feedTitle": "ASUS ROG Ally's Australian Release Date and Price Announced",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/10/asusrogally-blogroll-1683715786047.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/asus-rog-allys-australian-release-date-and-price-announced",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "447a1243-e837-48dd-ab53-465b7a4fe97f",
+                    "name": "IGN AU Staff",
+                    "nickname": "ign_au_staff",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "7503324e-115d-46ef-bde6-dd508207cd8c",
+                "url": "/tech/asus-rog-ally",
+                "slug": "asus-rog-ally",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "Asus ROG Ally",
+                        "alt": [],
+                        "short": "Ally",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [],
+                "__typename": "Object"
+            },
+            "abTests": [],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "278147e1-2a20-4f6f-bb74-23a321895fbf",
+            "title": "Apple Maps and Music Are Making it Easier to Find Concerts",
+            "subtitle": "Both apps will give you info on upcoming tours and concerts. ",
+            "promoteAt": null,
+            "publishDate": "2023-05-16T19:29:23.980Z",
+            "slug": "apple-maps-and-music-are-making-it-easier-to-find-concerts",
+            "feedTitle": "Apple Maps and Music Are Making it Easier to Find Concerts",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/16/apple-music-guides-set-lists-iphone-14-pro-2up-1684260347031.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/apple-maps-and-music-are-making-it-easier-to-find-concerts",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "3a7c1af9-dfcf-42c6-8c0d-dec967e92ad5",
+                    "name": "Taylor Lyles",
+                    "nickname": "tlyles",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "82e36c5e-c180-4879-8942-b701e2d60702",
+                "url": "/tech/iphone-14",
+                "slug": "iphone-14",
+                "type": "Tech",
+                "metadata": {
+                    "names": {
+                        "name": "iPhone 14",
+                        "alt": [],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2033120,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36256,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Apple Maps and Music Are Making it Easier to Find Concerts",
+                        "Apple Maps and Music Add Concert-Finding Features"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "666d357e-e711-4b1b-a813-8de70a129437",
+            "title": "DC Comics Brings Back the Swimsuit Special With a Bizarre Twist",
+            "subtitle": "The swimsuit special is back, and we have G'nort to thank.",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T16:00:00.000Z",
+            "slug": "dc-comics-illustrated-swimsuit-edition-gnort",
+            "feedTitle": "DC Comics Brings Back the Swimsuit Special With a Bizarre Twist",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/17/collage-maker-17-may-2023-03-53-pm-1776-1684354674976.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/dc-comics-illustrated-swimsuit-edition-gnort",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "01fe4104-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Jesse Schedeen",
+                    "nickname": "Kicksplode",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "f878cd5f-65d7-4f07-af19-b070b9603554",
+                "url": "/comics/gnorts-illustrated-swimsuit-edition",
+                "slug": "gnorts-illustrated-swimsuit-edition",
+                "type": "Comic",
+                "metadata": {
+                    "names": {
+                        "name": "G'nort's Illustrated Swimsuit Edition",
+                        "alt": [],
+                        "short": "G'nort's Illustrated Swimsuit Edition",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2116703,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36301,
+                    "represents": "promoTitle",
+                    "values": [
+                        "DC Comics Brings Back the Swimsuit Special With a Bizarre Twist",
+                        "DC's Most Unlikely Hero to Host New Swimsuit Special"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "8ca664d5-3be0-4b29-8e35-269e88149f7b",
+            "title": "The Immortal Thor: New Marvel Series In the Works From Immortal Hulk Writer",
+            "subtitle": "\"If Immortal Hulk was the Old Testament, Immortal Thor is the New Testament.”",
+            "promoteAt": null,
+            "publishDate": "2023-05-18T14:32:27.234Z",
+            "slug": "the-immortal-thor-new-marvel-series-in-the-works-from-immortal-hulk-writer",
+            "feedTitle": "The Immortal Thor: New Marvel Series In the Works From Immortal Hulk Writer",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/18/collage-maker-18-may-2023-10-21-am-8767-1684419701373.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/the-immortal-thor-new-marvel-series-in-the-works-from-immortal-hulk-writer",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "01fe4104-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Jesse Schedeen",
+                    "nickname": "Kicksplode",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "092454ae-ee2d-45aa-841d-349c983747b8",
+                "url": "/comics/immortal-thor",
+                "slug": "immortal-thor",
+                "type": "Comic",
+                "metadata": {
+                    "names": {
+                        "name": "Immortal Thor",
+                        "alt": [
+                            "The Immortal Thor"
+                        ],
+                        "short": "Immortal Thor",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2116724,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36344,
+                    "represents": "promoTitle",
+                    "values": [
+                        "The Immortal Thor: New Marvel Series In the Works From Immortal Hulk Writer",
+                        "Move Over Immortal Hulk: Marvel Reveals Immortal Thor"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "9ba23608-166d-466c-b00d-b013f8b88971",
+            "title": "Batman: One Bad Day, Clementine and More: 2023 Eisner Award Nominees Revealed",
+            "subtitle": "Honoring the best comic books and graphic novels of the past year.",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T18:14:01.251Z",
+            "slug": "batman-one-bad-day-clementine-and-more-2023-eisner-award-nominees-revealed",
+            "feedTitle": "Batman: One Bad Day, Clementine and More: 2023 Eisner Award Nominees Revealed",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/17/collage-maker-17-may-2023-02-06-pm-5251-1684346784310.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/batman-one-bad-day-clementine-and-more-2023-eisner-award-nominees-revealed",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "01fe4104-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Jesse Schedeen",
+                    "nickname": "Kicksplode",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "8753bcb4-039d-4166-87b3-6c212287c085",
+                "url": "/comics/batman-one-bad-day",
+                "slug": "batman-one-bad-day",
+                "type": "Comic",
+                "metadata": {
+                    "names": {
+                        "name": "Batman: One Bad Day",
+                        "alt": [
+                            "Batman: One Bad Day Anthology Series"
+                        ],
+                        "short": null,
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2099475,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36294,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Batman: One Bad Day, Clementine and More: 2023 Eisner Award Nominees Revealed",
+                        "Image Comics and DC Dominate 2023 Eisner Award Nominations"
+                    ],
+                    "winnerIndex": 0,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    },
+    {
+        "content": {
+            "id": "8d014c1f-9835-4d56-894e-3e27c0efb293",
+            "title": "Marvel Comics Spoils Major Death in The Amazing Spider-Man #26",
+            "subtitle": "Now Peter Parker has another reason to feel guilty.",
+            "promoteAt": null,
+            "publishDate": "2023-05-17T13:55:11.991Z",
+            "slug": "marvel-comics-spoils-major-death-in-the-amazing-spider-man-26",
+            "feedTitle": "Marvel Comics Spoils Major Death in The Amazing Spider-Man #26",
+            "feedImage": {
+                "url": "https://assets-prd.ignimgs.com/2023/05/17/collage-maker-17-may-2023-09-47-am-6409-1684331285529.jpg",
+                "__typename": "Image"
+            },
+            "v3Id": null,
+            "url": "/articles/marvel-comics-spoils-major-death-in-the-amazing-spider-man-26",
+            "__typename": "ModernContent",
+            "contributors": [
+                {
+                    "id": "01fe4104-b4b0-11ea-b2e3-0e7c1d759882",
+                    "name": "Jesse Schedeen",
+                    "nickname": "Kicksplode",
+                    "__typename": "Contributor"
+                }
+            ],
+            "primaryObject": {
+                "id": "1317c070-3ebd-4637-b9bb-f6715f08efd2",
+                "url": "/comics/the-amazing-spider-man-2022-current",
+                "slug": "the-amazing-spider-man-2022-current",
+                "type": "Comic",
+                "metadata": {
+                    "names": {
+                        "name": "The Amazing Spider-Man [2022 - Current]",
+                        "alt": [],
+                        "short": "The Amazing Spider-Man",
+                        "__typename": "Names"
+                    },
+                    "__typename": "Metadata"
+                },
+                "objectRegions": [
+                    {
+                        "id": 2046062,
+                        "name": null,
+                        "region": "US",
+                        "__typename": "ObjectRegion"
+                    }
+                ],
+                "__typename": "Object"
+            },
+            "abTests": [
+                {
+                    "id": 36279,
+                    "represents": "promoTitle",
+                    "values": [
+                        "Marvel Comics Spoils Major Death in The Amazing Spider-Man #26",
+                        "Marvel Spoils a Huge Amazing Spider-Man Death"
+                    ],
+                    "winnerIndex": 1,
+                    "__typename": "ABTest"
+                }
+            ],
+            "sponsorships": null,
+            "contentCategory": {
+                "id": 1,
+                "name": "News",
+                "__typename": "ContentCategory"
+            },
+            "brand": null,
+            "sequenceNumber": null
+        },
+        "__typename": "ModernArticle"
+    }
+]

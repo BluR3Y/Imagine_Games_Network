@@ -1,7 +1,7 @@
 -- Brand
 CREATE TABLE brands (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     slug VARCHAR(32),
     name VARCHAR(64),
     logo_light VARCHAR(16),
@@ -11,7 +11,7 @@ CREATE TABLE brands (
 -- Content Category
 CREATE TABLE content_categories (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     name VARCHAR(32)
 );
 
@@ -19,8 +19,8 @@ CREATE TABLE content_categories (
 CREATE TABLE contents (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     legacy_id UUID,
-    url VARCHAR(64),
-    slug VARCHAR(64),
+    url VARCHAR(128),
+    slug VARCHAR(128),
     type VARCHAR(16),
     vertical VARCHAR(16),
     header_image_id UUID,
@@ -28,7 +28,7 @@ CREATE TABLE contents (
     subtitle TEXT,
     feed_title TEXT,
     feed_image_id UUID,
-    primary_object_id UUID NOT NULL,
+    primary_object_id UUID,
     excerpt TEXT,
     description TEXT,
     state VARCHAR(16),
@@ -87,7 +87,7 @@ CREATE TABLE slideshows (
 -- Official Review
 CREATE TABLE official_reviews (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     score INT,
     score_text TEXT,
     editors_choice BOOLEAN,
@@ -100,7 +100,7 @@ CREATE TABLE official_reviews (
 -- User Review
 CREATE TABLE user_reviews (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
+    legacy_id INT,
     user_id UUID NOT NULL,
     legacy_user_id UUID,
     object_id UUID NOT NULL,
@@ -120,19 +120,19 @@ CREATE TABLE user_reviews (
 );
 
 -- Tag Object
-CREATE TABLE tag_objects (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    legacy_id UUID,
-    name VARCHAR(128) NOT NULL
-);
+-- CREATE TABLE tag_objects (
+--     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+--     legacy_id INT,
+--     name VARCHAR(128) NOT NULL
+-- );
 
 -- Review Tag
 CREATE TABLE review_tags (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     review_id UUID NOT NULL,
-    tag_object_id UUID NOT NULL,
+    attribute_id UUID NOT NULL,
     is_positive BOOLEAN,
 
     FOREIGN KEY (review_id) REFERENCES user_reviews (id),
-    FOREIGN KEY (tag_object_id) REFERENCES tag_objects (id)
+    FOREIGN KEY (attribute_id) REFERENCES attributes (id)
 );

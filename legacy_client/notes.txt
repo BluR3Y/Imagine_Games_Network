@@ -1,0 +1,37 @@
+
+
+
+
+
+IGN API Structure: https://ign-apis.herokuapp.com/
+        route     |     methods    |          Supported Parameters                      |             description
+------------------|----------------|----------------------------------------------------|------------------------------------------
+    /articles     |       GET      | startIndex: The index of the first record to return| Returns a list of articles sorted by 
+                  |                | in the response. Used for pagination. Default is 0,| publish date (descending) as JSON.
+                  |                | min is 0, max is 300.                              |
+                  |                |                                                    |
+                  |                | count: THe number of records to return in the resp-|                              
+                  |                | onse. Default is 10, min is 1, max is 20.          |
+-----------------------------------------------------------------------------------------------------------------------------------
+    /videos       |     GET        | startIndex: The index of the first record to return| Returns a list of videos sorted by publish
+                  |                | in the response. Used for pagination. Default is 0,| date (descending) as JSON.
+                  |                | min is 0, max is 300.                              |
+                  |                |                                                    |
+                  |                | count: The number of records to return in the resp-|
+                  |                | onse. Default is 10, min is 1, max is 20.          |
+-----------------------------------------------------------------------------------------------------------------------------------
+    /comments     |     GET        |  ids:                                              | Returns a list of the number of comments 
+                  |     POST       |    - on GET: A comma delimited string of contentIds| a piece of content has.
+                  |                |    - on POST: A JSON array of contentIds.          |
+                  |                |    * Max of 20                                     |
+
+
+ToDo:
+    - Incorporate: React Redux
+        * For storing the whole state tree of application
+        * https://redux.js.org/api/store
+    
+
+
+Tools: 
+    - Manifest Generator: https://www.simicart.com/manifest-generator.html/

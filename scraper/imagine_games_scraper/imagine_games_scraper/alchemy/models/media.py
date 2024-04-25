@@ -38,7 +38,7 @@ class Image(Base):
         String,
         nullable=False
     )
-    url = Column(
+    key = Column(
         String,
         nullable=False
     )
