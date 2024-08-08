@@ -11,3 +11,6 @@ A dynamic web application that presents an immersive and uninterrupted stream of
     src="https://reyhector.com/Images/Projects/Project5_2.jpg" height="650">
   <br/>
 </p>
+
+## Technical Architecture Diagram
+![Alt text](./IGN_Technical_Architecture_Diagram.png?raw=true "Technical Architecture Diagram")
